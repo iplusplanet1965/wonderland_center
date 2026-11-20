@@ -1,179 +1,1213 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
-<!-- 法人／事業體：水月道場有限合夥（WonderLand Center） [暫定]；登記狀態與設立沿革 [待確認]｜日期：2026-11-11（Asia/Taipei）｜官網草稿 v0.3 -->
+<!-- 水月道場 / Wonderland Center 全生態 10 條產品線（01 至 10）正式預售入口單頁 -->
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>水月道場 / Wonderland Center｜承諾，是留在人間唯一的真實（官網草稿 v0.3）</title>
-<meta name="description" content="水月道場 / Wonderland Center：結合群眾之力與前瞻科技的全球庇護平台。本頁為官網草稿 v0.3，內容待人工審核。">
-<meta name="robots" content="noindex">
-<meta name="theme-color" content="#0B253A">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>水月道場 / Wonderland Center｜全生態十大產品線預售入口</title>
+  <meta name="description" content="水月道場 / Wonderland Center（wonderland.center）攜手 AllView、AEGIS 與獨立授權平台，呈現 01 至 10 號全生態產品線之核心定位、法遵技術邊界與預售意向登記。">
+  <meta name="theme-color" content="#0B253A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ==========================================================================
+       水月道場 / Wonderland Center — CIS 設計系統（60% 底色 / 30% 結構 / 10% 點綴）
+       ========================================================================== */
+    :root {
+      --font-body: "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+      --font-display: "Cinzel", "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", serif;
+      --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, Menlo, Consolas, monospace;
+
+      --bg: #F4F7F6;
+      --surface-2: #E9EFEE;
+      --card: #FFFFFF;
+      --text: #1A1E24;
+      --heading: #0B253A;
+      --muted: #46525C;
+      --line: rgba(11, 37, 58, 0.14);
+      --line-strong: rgba(11, 37, 58, 0.35);
+
+      --accent: #D4AF37;
+      --on-accent: #1A1E24;
+      --accent-2: #D4AF37;
+      --link: #0B253A;
+      --kicker: #1E7A70;
+
+      --header-bg: rgba(244, 247, 246, 0.95);
+      --hero-bg: radial-gradient(560px 560px at 80% 28%, rgba(244, 247, 246, 0.16), transparent 64%), linear-gradient(180deg, #0B253A 0%, #0e3049 100%);
+      --hero-pattern: repeating-radial-gradient(circle at 80% 28%, transparent 0 34px, rgba(244, 247, 246, 0.05) 35px 36px);
+      --hero-text: #E4ECEA;
+      --hero-heading: #F4F7F6;
+      --hero-muted: #D0DCDA;
+      --tag-bg: rgba(244, 247, 246, 0.08);
+
+      --notice-bg: #FBF6E8;
+      --notice-border: #C59B27;
+      --notice-text: #4A3806;
+
+      --footer-bg: #1A1E24;
+      --footer-text: #C9D2D0;
+
+      --radius: 6px;
+      --radius-lg: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      letter-spacing: 0.02em;
+      font-size: 1.0625rem;
+      overflow-x: hidden;
+    }
+    img, svg { max-width: 100%; display: block; }
+    a { color: var(--link); }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    .skip {
+      position: absolute; left: -999px; top: 0;
+      background: var(--accent); color: var(--on-accent);
+      font-weight: 700; padding: 0.55rem 1rem; z-index: 200;
+      border-radius: var(--radius);
+    }
+    .skip:focus { left: 1rem; top: 1rem; }
+
+    .wrap { width: min(1200px, 100% - 2.5rem); margin-inline: auto; }
+
+    /* ==========================================================================
+       頂部黏性導覽列與無障礙大字切換按鈕
+       ========================================================================== */
+    header.site {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--header-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    header.site .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; min-height: 72px; flex-wrap: wrap; padding-block: 0.45rem;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none; color: var(--heading);
+      font-weight: 700; font-family: var(--font-display); letter-spacing: 0.04em;
+    }
+    .brand svg { width: 40px; height: 40px; flex: none; }
+    .brand small {
+      display: block; font-family: var(--font-body); font-weight: 400;
+      font-size: 0.76rem; color: var(--muted); letter-spacing: 0.06em;
+    }
+
+    nav.main ul {
+      list-style: none; display: flex; align-items: center;
+      flex-wrap: wrap; gap: 0.35rem 1.15rem; margin: 0; padding: 0;
+    }
+    nav.main a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.93rem; padding: 0.4rem 0; font-weight: 500; display: inline-block;
+    }
+    nav.main a:hover { color: var(--heading); }
+
+    .btn-toggle {
+      padding: 0.4rem 0.95rem; font-family: inherit; font-size: 0.85rem; font-weight: 600;
+      border: 1.5px solid var(--heading); color: var(--heading);
+      background: transparent; border-radius: var(--radius);
+      cursor: pointer; min-height: 42px; transition: background 0.15s ease, color 0.15s ease;
+    }
+    .btn-toggle:hover { background: rgba(11, 37, 58, 0.06); }
+    .btn-toggle[aria-pressed="true"] { background: var(--heading); color: #FFFFFF; }
+
+    /* ==========================================================================
+       Hero 主視覺區
+       ========================================================================== */
+    .hero {
+      position: relative; overflow: hidden;
+      padding: clamp(3.8rem, 8vw, 6.4rem) 0 clamp(3.2rem, 6.5vw, 5.2rem);
+      background: var(--hero-bg); color: var(--hero-text);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background: var(--hero-pattern); opacity: 0.55; pointer-events: none;
+    }
+    .hero .wrap { position: relative; }
+
+    .eyebrow {
+      display: inline-block; font-family: var(--font-mono); font-size: 0.78rem;
+      letter-spacing: 0.12em; color: var(--accent-2);
+      border: 1px solid currentColor; border-radius: 999px;
+      padding: 0.25rem 0.9rem; margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-family: var(--font-display); font-size: clamp(2rem, 4.9vw, 3.45rem);
+      line-height: 1.22; margin: 0 0 1.15rem; color: var(--hero-heading);
+      letter-spacing: 0.03em; max-width: 22ch;
+    }
+    .hero .lead {
+      font-size: clamp(1.04rem, 1.85vw, 1.2rem); max-width: 54em;
+      color: var(--hero-muted); margin: 0 0 1.9rem;
+    }
+    .cta { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.78rem 1.4rem; border-radius: var(--radius); font-family: inherit;
+      font-weight: 700; font-size: 0.95rem; text-decoration: none; border: 2px solid transparent;
+      cursor: pointer; min-height: 44px;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary { background: var(--accent); color: var(--on-accent); }
+    .btn.primary:hover { background: #e0bc44; }
+    .btn.ghost { border-color: var(--accent-2); color: var(--accent-2); background: transparent; }
+    .btn.ghost:hover { background: rgba(212, 175, 55, 0.12); }
+    .btn.ghost-dark { border-color: var(--heading); color: var(--heading); background: transparent; }
+    .btn.ghost-dark:hover { background: rgba(11, 37, 58, 0.06); }
+    .btn.teal { background: var(--kicker); color: #FFFFFF; }
+    .btn.teal:hover { background: #18645b; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 2rem; padding: 0; list-style: none; }
+    .tags li {
+      font-family: var(--font-mono); font-size: 0.8rem; padding: 0.32rem 0.78rem;
+      border-radius: 6px; background: var(--tag-bg); color: var(--hero-muted);
+      border: 1px solid rgba(244, 247, 246, 0.18);
+    }
+
+    /* ==========================================================================
+       通用區塊、生態架構卡與分類篩選列
+       ========================================================================== */
+    section { padding: clamp(3.2rem, 6.5vw, 5.2rem) 0; border-bottom: 1px solid var(--line); }
+    section.alt { background: var(--surface-2); }
+    .sec-head { max-width: 56em; margin-bottom: 2.1rem; }
+    .sec-head .kicker {
+      font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--kicker); font-weight: 700;
+    }
+    h2 {
+      font-family: var(--font-display); font-size: clamp(1.5rem, 3.1vw, 2.2rem);
+      line-height: 1.3; margin: 0.4rem 0 0.8rem; color: var(--heading);
+    }
+    h3 { font-family: var(--font-display); font-size: 1.18rem; margin: 0 0 0.55rem; color: var(--heading); line-height: 1.45; }
+    p { margin: 0 0 1rem; }
+    .muted { color: var(--muted); }
+
+    .grid { display: grid; gap: 1.35rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr)); }
+    .grid.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
+
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg);
+      padding: 1.5rem; position: relative; display: flex; flex-direction: column;
+    }
+    .card.feature { border-top: 4px solid var(--accent); }
+    .card .num {
+      font-family: var(--font-mono); font-size: 0.78rem; color: var(--kicker);
+      letter-spacing: 0.08em; font-weight: 700; display: block; margin-bottom: 0.45rem;
+    }
+
+    /* 事業體分類篩選按鈕列 */
+    .filter-bar {
+      display: flex; flex-wrap: wrap; gap: 0.65rem; margin-bottom: 1.6rem;
+      align-items: center;
+    }
+    .filter-btn {
+      padding: 0.55rem 1.15rem; font-family: inherit; font-size: 0.92rem; font-weight: 700;
+      border: 1.5px solid var(--line-strong); border-radius: 999px;
+      background: var(--card); color: var(--heading); cursor: pointer; min-height: 44px;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .filter-btn:hover { border-color: var(--heading); background: rgba(11, 37, 58, 0.05); }
+    .filter-btn[aria-pressed="true"] {
+      background: var(--heading); color: #FFFFFF; border-color: var(--heading);
+    }
+
+    .corp-banner {
+      padding: 0.9rem 1.15rem; background: var(--surface-2);
+      border-left: 4px solid var(--kicker); border-radius: 0 8px 8px 0;
+      font-size: 0.92rem; color: var(--text); margin-bottom: 1.8rem;
+    }
+
+    /* ==========================================================================
+       十大產品線卡片網格
+       ========================================================================== */
+    .products-grid {
+      display: grid; gap: 1.45rem;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+    }
+    .product-card {
+      background: var(--card); border: 1px solid var(--line);
+      border-top: 4px solid var(--accent); border-radius: var(--radius-lg);
+      padding: 1.55rem; display: flex; flex-direction: column;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 26px rgba(11, 37, 58, 0.08);
+    }
+    .product-meta {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.55rem;
+    }
+    .product-code {
+      font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700;
+      color: var(--kicker); letter-spacing: 0.06em;
+    }
+    .entity-badge {
+      font-size: 0.76rem; font-weight: 700; padding: 0.2rem 0.65rem;
+      border-radius: 999px; background: var(--surface-2); color: var(--heading);
+      border: 1px solid var(--line);
+    }
+    .entity-badge.wc { background: #FBF6E8; color: #5E480A; border-color: rgba(197, 155, 39, 0.45); }
+    .entity-badge.indep { background: #E6F3F1; color: #13574F; border-color: rgba(30, 122, 112, 0.35); }
+
+    .product-tagline {
+      font-weight: 700; font-size: 0.98rem; color: var(--heading);
+      margin-bottom: 0.65rem; line-height: 1.5;
+    }
+    .product-summary {
+      font-size: 0.93rem; color: var(--muted); margin-bottom: 0.85rem;
+    }
+    .product-highlights {
+      margin: 0 0 1rem; padding-left: 1.15rem; font-size: 0.91rem; color: var(--text);
+    }
+    .product-highlights li { margin-bottom: 0.32rem; }
+
+    .boundary-box {
+      padding: 0.78rem 0.95rem; background: var(--notice-bg);
+      border-left: 3px solid var(--notice-border); color: var(--notice-text);
+      font-size: 0.85rem; line-height: 1.6; border-radius: 0 6px 6px 0;
+      margin-bottom: 1.15rem;
+    }
+
+    .card-actions {
+      margin-top: auto; display: flex; flex-wrap: wrap; gap: 0.65rem;
+    }
+    .card-actions .btn { flex: 1 1 135px; padding: 0.65rem 0.95rem; font-size: 0.89rem; }
+
+    /* ==========================================================================
+       原生 <dialog> 詳情與 FAQ 燈箱
+       ========================================================================== */
+    dialog.detail-modal {
+      border: none; border-radius: var(--radius-lg); padding: 0;
+      width: min(860px, calc(100% - 2rem)); max-height: 88vh;
+      background: var(--card); color: var(--text);
+      box-shadow: 0 24px 54px rgba(11, 37, 58, 0.34);
+    }
+    dialog.detail-modal::backdrop { background: rgba(11, 37, 58, 0.72); backdrop-filter: blur(4px); }
+    .modal-head {
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
+      padding: 1.15rem 1.5rem; background: var(--surface-2); border-bottom: 1px solid var(--line);
+      position: sticky; top: 0; z-index: 5;
+    }
+    .modal-close {
+      background: transparent; border: 1px solid var(--line-strong);
+      border-radius: var(--radius); width: 40px; height: 40px;
+      font-size: 1.05rem; cursor: pointer; color: var(--heading); flex: none;
+    }
+    .modal-close:hover { background: var(--heading); color: #FFFFFF; }
+    .modal-body { padding: 1.4rem 1.6rem 1.7rem; overflow-y: auto; max-height: calc(88vh - 82px); }
+    .modal-section { margin-bottom: 1.4rem; }
+    .modal-section h4 {
+      font-family: var(--font-display); font-size: 1.04rem; color: var(--heading);
+      margin: 0 0 0.55rem; border-bottom: 1px solid var(--line); padding-bottom: 0.35rem;
+    }
+    .modal-faq-item {
+      background: var(--bg); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 0.85rem 1rem; margin-bottom: 0.65rem;
+    }
+    .modal-faq-item strong { display: block; color: var(--heading); margin-bottom: 0.25rem; font-size: 0.94rem; }
+    .modal-faq-item p { margin: 0; font-size: 0.9rem; color: var(--text); }
+    .modal-footer-actions {
+      display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.4rem;
+      padding-top: 1.1rem; border-top: 1px solid var(--line);
+    }
+
+    /* ==========================================================================
+       全生態無後端預售意向登記表單
+       ========================================================================== */
+    .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.55fr 1fr; align-items: start; }
+    @media (max-width: 880px) { .reserve-layout { grid-template-columns: 1fr; } }
+
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label, .label-title { display: block; font-weight: 700; font-size: 0.93rem; color: var(--heading); margin-bottom: 0.45rem; }
+    .req { color: #B42318; }
+    input[type="text"], input[type="email"], select, textarea {
+      width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--line-strong);
+      border-radius: var(--radius); font-family: inherit; font-size: 1rem;
+      color: var(--text); background: #FFFFFF; min-height: 44px;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--heading); outline: 3px solid rgba(212, 175, 55, 0.35); }
+
+    .checkbox-grid { display: grid; gap: 0.55rem; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); }
+    .checkbox-item {
+      display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.6rem 0.75rem;
+      border: 1px solid var(--line); border-radius: var(--radius);
+      background: var(--bg); font-size: 0.88rem; min-height: 44px; cursor: pointer;
+    }
+    .checkbox-item:hover { border-color: var(--heading); }
+    .checkbox-item input { margin-top: 0.25rem; accent-color: var(--heading); width: 18px; height: 18px; flex: none; }
+
+    .form-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.4rem; }
+    .form-feedback { margin-top: 1rem; font-size: 0.92rem; font-weight: 600; color: var(--kicker); min-height: 1.4em; }
+
+    dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1.2rem; margin: 0; font-size: 0.93rem; }
+    dl.facts dt { color: var(--muted); }
+    dl.facts dd { margin: 0; color: var(--heading); font-weight: 600; }
+
+    .note {
+      border: 1px dashed var(--line-strong); border-radius: var(--radius-lg);
+      padding: 1rem 1.2rem; font-size: 0.9rem; color: var(--muted); background: var(--surface-2);
+    }
+    .note strong { color: var(--heading); }
+
+    footer.site { padding: 2.8rem 0 3.2rem; background: var(--footer-bg); color: var(--footer-text); font-size: 0.92rem; }
+    footer.site .muted { color: #9FB0AD; }
+
+    @media (max-width: 720px) {
+      dl.facts { grid-template-columns: 1fr; }
+      dl.facts dt { margin-top: 0.4rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .product-card { transition: none; }
+      .btn:hover, .product-card:hover { transform: none; }
+    }
+  </style>
 </head>
 <body>
-<a class="skip" href="#main">跳到主要內容</a>
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="./" aria-label="水月道場 / Wonderland Center 首頁">
-      <svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="r" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2A9D8F"/><stop offset="1" stop-color="#0B253A"/></linearGradient></defs><circle cx="24" cy="24" r="20" fill="none" stroke="url(#r)" stroke-width="3.5"/><path d="M12 27c4-3 8 3 12 0s8-3 12 0" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/><path d="M15 32c3-2 6 2 9 0s6-2 9 0" fill="none" stroke="#2A9D8F" stroke-width="1.6" stroke-linecap="round"/><circle cx="24" cy="16" r="4" fill="#D4AF37"/></svg>
-      <span>Wonderland Center<small>水月道場</small></span>
-    </a>
-    <nav class="main" aria-label="主選單">
-      <ul>
-        <li><a href="#vision">核心精神</a></li>
-        <li><a href="#initiatives">三大倡議</a></li>
-        <li><a href="#volunteer">阿米巴志工</a></li>
-        <li><a href="#integrity">誠信揭露</a></li>
-        <li><a href="#cis">CIS 識別</a></li>
-        <li><button type="button" id="bigtext" class="btn ghost" style="padding:.25rem .8rem;font-size:.85rem;border-color:#0B253A;color:#0B253A;cursor:pointer" aria-pressed="false">長者友善大字</button></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <a class="skip" href="#main">跳到主要內容</a>
 
-<main id="main">
-  <section class="hero" aria-labelledby="hero-title">
+  <!-- 頂部導覽列 -->
+  <header class="site">
     <div class="wrap">
-      <span class="eyebrow">水月道場，以幻修真</span>
-      <h1 id="hero-title">承諾，是留在人間唯一的真實。</h1>
-      <p class="lead">水月道場 / Wonderland Center——結合群眾之力與前瞻科技的全球庇護平台。</p>
-      <div class="cta">
-        <a class="btn primary" href="#initiatives">探索初始群募倡議</a>
-        <a class="btn ghost" href="#volunteer">了解阿米巴志工發包</a>
-      </div>
+      <a class="brand" href="#top" aria-label="水月道場 Wonderland Center 全生態總覽">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <defs>
+            <linearGradient id="brand-grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#2A9D8F"/>
+              <stop offset="1" stop-color="#0B253A"/>
+            </linearGradient>
+          </defs>
+          <circle cx="24" cy="24" r="20" fill="none" stroke="url(#brand-grad)" stroke-width="3.5"/>
+          <path d="M12 27c4-3 8 3 12 0s8-3 12 0" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+          <path d="M15 32c3-2 6 2 9 0s6-2 9 0" fill="none" stroke="#2A9D8F" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="24" cy="16" r="4" fill="#D4AF37"/>
+        </svg>
+        <span>水月道場 Wonderland Center<small>wonderland.center｜全生態十大產品線預售入口</small></span>
+      </a>
+
+      <nav class="main" aria-label="主導覽選單">
+        <ul>
+          <li><a href="#ecosystem">生態架構與獨立性</a></li>
+          <li><a href="#products">十大產品線總覽</a></li>
+          <li><a href="#governance">誠實邊界與隱私原則</a></li>
+          <li><a href="#inquiry">預售意向登記</a></li>
+          <li><button type="button" id="bigtext" class="btn-toggle" aria-pressed="false">長者友善大字</button></li>
+        </ul>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section id="vision" aria-labelledby="vision-title">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker">Vision</span>
-        <h2 id="vision-title">因願而在，如約而行；虛實相濟，慈悲入世。</h2>
+  <main id="main">
+    <!-- Hero 主視覺區 -->
+    <section id="top" class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <span class="eyebrow">WONDERLAND CENTER × ALLVIEW × AEGIS × SLASH PLATFORMS</span>
+        <h1 id="hero-title">水月道場，以幻修真；十大產品線全生態預售入口。</h1>
+        <p class="lead">整合「水月道場 / Wonderland Center」高齡關懷與生命教育倡議、「AllView」隱私社群與多語文化轉譯、「AEGIS」硬體金鑰與地端密文知識庫，以及獨立運作的專家與企業數位分身授權平台，為不同需求提供邊界清楚、可稽核、以人為本的數位服務。</p>
+        <div class="cta">
+          <a class="btn primary" href="#products">瀏覽全部 10 條產品線</a>
+          <a class="btn ghost" href="#inquiry">填寫預售意向登記</a>
+        </div>
+        <ul class="tags">
+          <li>01–10 全生態產品線導覽</li>
+          <li>嚴格區隔醫療與非醫療邊界</li>
+          <li>金鑰與原始資料由持有者掌控</li>
+          <li>各產品線專屬 CTA 分頁直達</li>
+        </ul>
       </div>
-      <blockquote>千江有水千江月，萬里無雲萬里天。</blockquote>
-      <p style="margin-top:1.5rem">在科技浪潮與數位時代中，我們運用前沿資訊技術投入傳統、轉化傳統、重現人文溫情。水月道場 / Wonderland Center 的法人名稱暫定為「水月道場有限合夥（WonderLand Center）」<span class="pending">[暫定]</span>，登記狀態與設立沿革 <span class="pending">[待確認]</span>；本平台結合「群眾募資（Crowdfunding）」、「群眾發包（Crowdsourcing）」以及「非營利社會公益（Public Good）」的協同樞紐。</p>
-      <div class="grid two" style="margin-top:2rem">
-        <div class="card feature"><span class="num">「一」之核心</span><h3>全域平台經濟入口</h3><p>作為「四即一、一即四」體系的入口，對接資源、志工網絡與阿米巴組織。</p></div>
-        <div class="card feature"><span class="num">「四之四」之落地</span><h3>直接面向大眾的公益母艦</h3><p>面向大眾（B2C）的心靈撫慰、生死關懷、公益動員。</p></div>
+    </section>
+
+    <!-- 生態架構與法人獨立性說明 -->
+    <section id="ecosystem" class="alt" aria-labelledby="eco-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="kicker">Ecosystem Architecture &amp; Entity Clarity</span>
+          <h2 id="eco-title">三大事業體與獨立授權平台協作架構</h2>
+          <p class="muted">全生態依產品屬性與治理需求分屬不同事業體與獨立法人機構，彼此在技術與資源調度上協作，但不混淆產品歸屬與責任邊界。</p>
+        </div>
+
+        <div class="grid">
+          <article class="card feature">
+            <span class="num">事業體 01｜水月道場 / Wonderland Center</span>
+            <h3>高齡陪伴、生命教育與受控思念容器</h3>
+            <p style="margin:0">網域 <code>wonderland.center</code>，涵蓋 <strong>08｜永恆記憶 EternalMemory</strong>、<strong>09｜善終守護 AdvanceCare</strong> 與 <strong>10｜寰宇無界 SeniorTravel</strong>。採「AI 輔助＋真人把關」雙軌模型，嚴守非醫療與倫理紅線。</p>
+          </article>
+
+          <article class="card feature">
+            <span class="num">事業體 02｜AllView（allview.today）</span>
+            <h3>多語文化轉譯、偽匿名社群與商務沙盤</h3>
+            <p style="margin:0">涵蓋 <strong>01｜寰境再製 OrbiLocale</strong>、<strong>02｜密圈 CipherCircle</strong> 與 <strong>03｜隱證 VeilProof</strong>。聚焦跨境內容文化重構、公開偽匿名與條件式舉證社群，以及密文比對談判訓練。</p>
+          </article>
+
+          <article class="card feature">
+            <span class="num">事業體 03｜AEGIS（aegis.expert）與獨立平台</span>
+            <h3>本機安全殼層、地端知識節點與能力授權</h3>
+            <p style="margin:0">AEGIS 涵蓋 <strong>04｜神盾殼 HEShell</strong> 與 <strong>05｜密文智庫（EncryMind）</strong>。<strong>06｜斜槓一二三 / Slash123</strong>（<code>slash1to3.com</code>）與 <strong>07｜斜槓104 / Slash104</strong>（<code>slash1ofours.com</code>）各為獨立法人機構，與 AEGIS 無從屬關係，皆由水月道場有限合夥支持成立。</p>
+          </article>
+        </div>
       </div>
+    </section>
+
+    <!-- 十大產品線分類篩選與卡片網格 -->
+    <section id="products" aria-labelledby="products-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="kicker">Product Lineup 01 — 10</span>
+          <h2 id="products-title">全生態 10 條產品線總覽與專屬預售入口</h2>
+          <p class="muted">可依事業體分類篩選檢視；點擊任一產品卡片的「詳情與 FAQ」可展開完整賣點與常見問答，或點擊「前往專屬預售頁」進入該產品獨立分頁。</p>
+        </div>
+
+        <!-- 分類篩選按鈕列 -->
+        <div class="filter-bar" role="group" aria-label="產品線事業體分類篩選">
+          <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">全部 10 條產品線</button>
+          <button type="button" class="filter-btn" data-filter="wonderland" aria-pressed="false">水月道場 Wonderland Center（08–10）</button>
+          <button type="button" class="filter-btn" data-filter="allview" aria-pressed="false">AllView（01–03）</button>
+          <button type="button" class="filter-btn" data-filter="aegis_indep" aria-pressed="false">AEGIS / 獨立平台（04–07）</button>
+        </div>
+
+        <div id="filter-context-banner" class="corp-banner">
+          目前顯示：<strong>全部 10 條產品線</strong>（涵蓋水月道場 Wonderland Center、AllView、AEGIS 及獨立法人授權平台）。
+        </div>
+
+        <!-- 產品卡片容器 -->
+        <div id="products-grid" class="products-grid"></div>
+      </div>
+    </section>
+
+    <!-- 全生態誠實邊界與隱私治理原則 -->
+    <section id="governance" class="alt" aria-labelledby="gov-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="kicker">Honest Boundaries &amp; Compliance Principles</span>
+          <h2 id="gov-title">全生態共同恪守的誠實揭露與邊界原則</h2>
+          <p class="muted">我們拒絕過度誇大或模糊承諾，所有產品線在公開說明中均清楚界定能力範圍、非醫療定位與待確認事項。</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <span class="num">原則 01｜嚴格區隔醫療與非醫療定位</span>
+            <h3>教育輔助與節奏調節，絕不替代臨床醫療</h3>
+            <p style="margin:0"><strong>09｜善終守護 AdvanceCare</strong> 嚴格定位為教育與決策輔助工具，絕非醫療行為本身，亦不替代醫師臨床說明，正式健保卡預立意願註記須至法定合法醫療機構完成。<strong>10｜寰宇無界 SeniorTravel</strong> 的穿戴感知只用來動態調節體驗節奏，不提供醫療診斷，也不是醫療器材。</p>
+          </div>
+
+          <div class="card">
+            <span class="num">原則 02｜技術分級透明與零模型擅自訓練</span>
+            <h3>清楚說明 S1／L1–L2 分級，不收存明文知識包</h3>
+            <p style="margin:0"><strong>04｜神盾殼 HEShell</strong> 採 L0–L3 分級（L1 本期交付、L2 條件交付、L3 非現行科技不承諾，結果以明文回傳）。<strong>05｜密文智庫（EncryMind）</strong> v1 為 S1 地端受控執行（推論時有受控短暫解密點）。<strong>06｜斜槓一二三</strong>與 <strong>07｜斜槓104</strong> 不訓練模型、不收存明文知識包。</p>
+          </div>
+
+          <div class="card">
+            <span class="num">原則 03｜倫理紅線與真人把關（HITL）</span>
+            <h3>強制標示 AI 身分，關鍵時刻由真人接手</h3>
+            <p style="margin:0"><strong>08｜永恆記憶 EternalMemory</strong> 全程標示 AI 仿生重現水印、生前未表態議題拒絕臆測、私密通訊須法定書面授權，並配備真人即時熔斷（Kill-Switch）。<strong>10｜寰宇無界</strong> 一鍵求助即由遠端志工視訊接手並自動模糊居家背景。</p>
+          </div>
+
+          <div class="card">
+            <span class="num">原則 04｜誠信預售揭露與隱私保護</span>
+            <h3>不承諾未公布價格與 SLA，不刊載匯款帳號</h3>
+            <p style="margin:0">各產品線之正式定價、方案細則與上線時程以正式簽署合約或官方公告為準（水月道場 08、09、10 預定交付期為 2027-02-15，交付範圍、驗收、履約量能與契約條件尚待確認，不得由此延伸額外服務承諾）。本公開入口頁不收集信用卡號或機密原稿，亦不刊載任何匯款帳號。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 無後端全生態預售意向登記系統 -->
+    <section id="inquiry" aria-labelledby="inquiry-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="kicker">Presale Interest Registration</span>
+          <h2 id="inquiry-title">全生態預售意向與需求登記</h2>
+          <p class="muted">請勾選您或貴單位感興趣的產品線（可複選）並留下聯絡資訊；系統將自動彙整登記摘要，您可一鍵開啟信箱寄送至 <code>contact@wonderland.center</code> 或複製摘要保存。</p>
+        </div>
+
+        <div class="reserve-layout">
+          <form id="ecosystem-inquiry-form" class="card" novalidate>
+            <div class="grid two">
+              <div class="form-group">
+                <label for="reg-name">稱呼 / 機構或企業名稱 <span class="req">*</span></label>
+                <input type="text" id="reg-name" placeholder="例如：王先生 / 某某科技研發部或社福機構" required>
+              </div>
+              <div class="form-group">
+                <label for="reg-email">聯絡電子信箱 <span class="req">*</span></label>
+                <input type="email" id="reg-email" placeholder="name@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-role">您的參與身分 <span class="req">*</span></label>
+              <select id="reg-role">
+                <option value="企業 / 組織導入評估">企業 / 組織導入評估</option>
+                <option value="個人專家 / 創作者 / 顧問合作">個人專家 / 創作者 / 顧問合作</option>
+                <option value="家庭 / 當事人與家屬需求諮詢">家庭 / 當事人與家屬需求諮詢</option>
+                <option value="醫療院所 / 長照機構 / 社區據點 / 公益團體">醫療院所 / 長照機構 / 社區據點 / 公益團體</option>
+                <option value="陪伴志工 / 設備支持 / 生態系夥伴">陪伴志工 / 設備支持 / 生態系夥伴</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <span class="label-title">感興趣的產品線（可複選） <span class="req">*</span></span>
+              <div id="product-checkboxes" class="checkbox-grid"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-notes">使用情境與需求簡述</label>
+              <textarea id="reg-notes" rows="4" placeholder="請簡述您的應用情境、預計規模或希望進一步了解的項目（請勿在此填入個人病歷、私密金鑰或機密原稿）"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn primary">開啟信箱寄送意向登記</button>
+              <button type="button" id="copy-summary-btn" class="btn ghost-dark">一鍵複製登記摘要</button>
+            </div>
+            <p id="reg-feedback" class="form-feedback" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="card">
+            <h3>全生態總窗口與使用說明</h3>
+            <dl class="facts" style="margin:1rem 0">
+              <dt>核心入口網域</dt><dd>wonderland.center</dd>
+              <dt>生態系總窗口</dt><dd><a href="mailto:contact@wonderland.center">contact@wonderland.center</a></dd>
+              <dt>產品線涵蓋</dt><dd>01 至 10 號全生態產品線</dd>
+              <dt>登記方式</dt><dd>零後端即時生成摘要與郵件喚起</dd>
+            </dl>
+            <div class="note">
+              <strong>隱私與誠信聲明：</strong>本網頁為純前端靜態頁面，不會在瀏覽器外儲存您的表單輸入，亦不收集信用卡號、身分證件或機密文件，且不刊載任何匯款帳號。
+            </div>
+            <p style="margin-top:1.2rem;margin-bottom:0">
+              <a class="btn ghost-dark" style="width:100%" href="#products">回到上方挑選產品線</a>
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 產品詳情與 FAQ 互動燈箱（Modal） -->
+  <dialog id="product-modal" class="detail-modal" aria-labelledby="modal-title">
+    <div class="modal-head">
+      <div>
+        <span id="modal-code" class="product-code" style="display:block;margin-bottom:0.2rem"></span>
+        <h3 id="modal-title" style="margin:0;font-size:1.28rem"></h3>
+      </div>
+      <button type="button" id="modal-close-btn" class="modal-close" aria-label="關閉詳情視窗">✕</button>
     </div>
-  </section>
+    <div id="modal-body-content" class="modal-body"></div>
+  </dialog>
 
-  <section id="initiatives" class="alt" aria-labelledby="init-title">
+  <footer class="site">
     <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker">Initiatives</span>
-        <h2 id="init-title">三大初期群眾倡議</h2>
-        <p class="muted">以下皆為預售／倡議模式，本頁不收取任何款項或個人資料。</p>
-      </div>
-      <div class="grid">
-        <article class="card feature">
-          <span class="num">C2-WC-DMR</span>
-          <h3>讓往生者重現當世｜永恆記憶 EternalMemory</h3>
-          <p>數位記憶重組與思念昇華，以溫暖、莊重且具科技敬意的方式呈現。</p>
-          <p><b>隱私邊界：</b>個人生前語音影像資料不上公鏈，採受控私密保存。</p>
-          <p class="code">預售交付期：2027-02-15（Asia/Taipei 日期，PMO t12u 提供）；交付範圍、驗收與履約條件 <span class="pending">[待確認]</span></p>
-          <a class="more" href="https://github.com/wonderland-org/EternalMemory">EternalMemory 產品線 repo</a>
+      <p><strong>© 2026 水月道場 / Wonderland Center（wonderland.center）× AllView（allview.today）× AEGIS（aegis.expert）</strong></p>
+      <p class="muted" style="font-size:0.84rem">斜槓一二三 / Slash123（slash1to3.com）與斜槓104 / Slash104（slash1ofours.com）各為獨立法人機構，與 AEGIS 無從屬關係，皆由水月道場有限合夥支持成立。本頁內容依各產品線審定之行銷與預售說明編製，正式規格與服務條款以簽署合約為準。</p>
+    </div>
+  </footer>
+
+  <script>
+    /**
+     * 可調整參數：
+     * - CONTACT_EMAIL：全生態預售意向登記收件信箱
+     * - PRODUCTS：01 至 10 號全生態產品線結構化資料與專屬 CTA 路徑
+     */
+    const CONTACT_EMAIL = "contact@wonderland.center";
+
+    const PRODUCTS = [
+      {
+        id: "01",
+        code: "01｜OrbiLocale",
+        name: "01｜寰境再製 OrbiLocale",
+        category: "allview",
+        entityLabel: "AllView（allview.today）",
+        entityBadgeClass: "",
+        ctaUrl: "OrbiLocale/01_OrbiLocale.html",
+        tagline: "不是翻譯器：先凍結事實，再為 8 種語系的目標市場重寫文化語感。",
+        summary: "接收企業母語官網或創作者成片，先鎖定品名、規格、數據、價格與法規聲明不更動，再依目標市場閱讀習慣、賣點順序與影音節奏重構在地化交付包。",
+        highlights: [
+          "事實凍結器（FR-OL-001）：鎖定規格數據與保證條款，擅改數值即判定失敗。",
+          "封閉 8 語系白名單：支援 zh-TW、zh-CN、en-US、ja-JP、ko-KR、es-ES、fr-FR、de-DE。",
+          "影音三軌同步交付：產出口白稿（VO）、字幕稿（SRT/VTT）與畫面動態字稿（OSG）。",
+          "每語系獨立封裝並附上在地法規與文化敏感點人工複核清單。"
+        ],
+        boundary: "範圍邊界：僅支援 8 種封閉白名單語系，不處理白名單外語系或純逐字直譯需求；不新增來源未提及之認證或功效宣稱；價格與交期尚未公布。",
+        faqs: [
+          {
+            q: "跟一般機器翻譯工具有什麼不同？",
+            a: "一般工具只做字面語言轉換。OrbiLocale 會先萃取不可變更的事實表（鎖定規格、數據與免責聲明），再依目標市場重排賣點、改寫置入廣告利益點，並同步產出 VO、字幕與 OSG 三軌稿件與建議剪輯點。"
+          },
+          {
+            q: "重寫過程會改動產品數據、規格或價格嗎？",
+            a: "依設計原則不會。所有物理規格、數據、認證與價格皆寫入不可變更事實表；當地市場標示細節（如稅制用語）則列入人工複核註記提醒團隊確認。"
+          },
+          {
+            q: "產出後的交付包可以直接上架嗎？",
+            a: "系統交付的是可上架用的在地化內容包與一份人工複核註記清單，建議由貴團隊檢視複核清單確認無誤後再正式發布。"
+          }
+        ]
+      },
+      {
+        id: "02",
+        code: "02｜CipherCircle",
+        name: "02｜密圈 CipherCircle",
+        category: "allview",
+        entityLabel: "AllView（allview.today）",
+        entityBadgeClass: "",
+        ctaUrl: "CipherCircle/02_CipherCircle.html",
+        tagline: "公開場合不露名，重要紀錄可查證。",
+        summary: "結合視覺化社群、端對端加密通訊與直播授課、FHE 密文推薦與匿名投票，以及授權門檻下可查驗的 Merkle 證據鏈，讓隱私保護與可信任問責同時存在。",
+        highlights: [
+          "公開偽匿名＋零知識證明（ZKP）：不出示真實帳號也能驗證組織成員或閱讀資格。",
+          "端對端加密通訊與直播授課：支援加密群聊、閱後即焚與課程作業加密繳交。",
+          "FHE 密文運算：密文狀態下執行推薦匹配與同態加法匿名投票。",
+          "簽章收據與條件式舉證：收據寫入 Merkle 證據鏈，僅在司法仲裁或授權門檻湊齊時檢驗。"
+        ],
+        boundary: "誠實設計邊界：密圈定位為「公開偽匿名＋條件式舉證」，並非「誰都查不到」的絕對匿名承諾；本頁不宣稱已通過司法認證或達到外部通訊軟體同等完成度；價格與上線時程尚未公布。",
+        faqs: [
+          {
+            q: "密圈是匿名到誰都查不到的平台嗎？",
+            a: "不是。密圈的設計是公開環境下的偽匿名：一般公開場合不暴露真實身分；但若授權或司法仲裁門檻滿足，特定發表或閱讀紀錄可以被驗證。"
+          },
+          {
+            q: "誰來保管可以調閱證據的金鑰？",
+            a: "系統設計為僅在「司法仲裁或授權門檻金鑰湊齊時」方可檢視特定紀錄；具體門檻金鑰持有者配置將依組織部署方案定案。"
+          },
+          {
+            q: "平台看得到我的內容與投票選擇嗎？",
+            a: "通訊以端對端加密為預設方向，推薦匹配與匿名投票以 FHE 密文運算為設計目標，避免計票方或平台在未解密前看到個別選擇。"
+          }
+        ]
+      },
+      {
+        id: "03",
+        code: "03｜VeilProof",
+        name: "03｜隱證 VeilProof",
+        category: "allview",
+        entityLabel: "AllView（allview.today）",
+        entityBadgeClass: "",
+        ctaUrl: "VeilProof/03_VeilProof.html",
+        tagline: "底牌不攤牌，動作可回放的商務沙盤推演。",
+        summary: "涵蓋商戰對決、併購談判、供應鏈議價與危機公關演練。敏感底線數字在客戶端加密後以密文比對，僅揭露是否進入可成交區間等必要結果，每次出價皆簽章供覆盤。",
+        highlights: [
+          "策略不可知：底線成本、預算上限與讓步階梯於客戶端加密，禁止明文或僅靠 TLS 上傳。",
+          "行動不可否認：每次出價、施壓與查看皆留下數位簽章並串成狀態鏈，支援逐步回放。",
+          "八大模組（MOD-01～08）：整合 ZOPA、BATNA、What-if 分支、AI 對手與脫敏個案匯出。",
+          "角色與模式守衛：區分教練、觀察員、選手三種角色，訓練與實戰模式嚴格分離。"
+        ],
+        boundary: "免責與技術邊界：AI 提示、勝率估算與策略建議僅供商務決策訓練與教育參考，不構成正式法律、投資或併購操作依據；FHE 僅用於固定比較評分電路，AI 對話走隔離受控推論。",
+        faqs: [
+          {
+            q: "平台看得到我們輸入的底線數字嗎？",
+            a: "依設計不會。底牌在客戶端加密後才送出，運算節點只在密文上比對，且嚴禁底牌以明文或僅用傳輸加密的方式送到伺服器。"
+          },
+          {
+            q: "AI 對手的對話也是同態加密運算嗎？",
+            a: "不是。密文運算僅用於預先定義的比較、評分與加權計算；AI 對手的自然語言對話走隔離的受控推論。"
+          },
+          {
+            q: "推演紀錄可以拿來當法律證據嗎？",
+            a: "不建議這樣主張。紀錄可用於覆盤與教學，但本產品聲明不構成正式法律、投資或併購操作依據。"
+          }
+        ]
+      },
+      {
+        id: "04",
+        code: "04｜HEShell",
+        name: "04｜神盾殼 HEShell",
+        category: "aegis_indep",
+        entityLabel: "AEGIS（aegis.expert）",
+        entityBadgeClass: "",
+        ctaUrl: "HEShell/04_HEShell.html",
+        tagline: "不支援密文就不送，沒有明文後備。",
+        summary: "本機 AI 安全殼層與密文路由中繼：私鑰於本機當場組合成複合金鑰存放在 USB，提問明文不送往外部 HE Provider，目標端點無經簽章能力宣告即阻斷，拔除 USB 立即抹除記憶體。",
+        highlights: [
+          "FAIL-CLOSED 路由：檢查端點經簽章的 L1／L2 能力宣告，不支援密文即拒絕，絕不改送明文。",
+          "複合金鑰與 USB 邊界：私鑰於本機組合存於 USB（不做雲端備份），伺服器端不持有解密金鑰。",
+          "拔除即清除與記憶體鎖定：拔除 USB 即中止傳輸、白屏並抹除記憶體明文，防止寫入 Swap。",
+          "四段階段指示器與零明文日誌：誠實呈現批次等待階段，不假裝逐字串流。"
+        ],
+        boundary: "能力分級與回傳邊界：L0（僅 TLS）非本產品；L1（固定電路密文運算）本期交付；L2（端點密文推論）條件交付；L3（任意閉源商用 LLM 直接處理密文）非現行科技不承諾。加密範圍為使用者輸入，結果以明文回傳。",
+        faqs: [
+          {
+            q: "可以用 HEShell 加密我們現在用的雲端 AI 聊天服務嗎？",
+            a: "不行。一般商用 LLM API 不能直接處理密文（L3 不是現行技術）；HEShell 只會把請求送往有明確密文能力宣告的端點，其餘一律拒絕。"
+          },
+          {
+            q: "明文會送到外部 HE Provider 嗎？結果也是加密的嗎？",
+            a: "提問明文不會送到外部 HE Provider，伺服器端也不持有解密金鑰；HEShell 的加密範圍為送出的使用者輸入，運算結果以明文回傳。"
+          },
+          {
+            q: "USB 遺失怎麼辦？系統會訓練我們的資料嗎？",
+            a: "USB 位於虛擬機的 USB 埠，可自行備份、遺失不補發、不做雲端備份；HEShell 不訓練也不微調任何模型。"
+          }
+        ]
+      },
+      {
+        id: "05",
+        code: "05｜EncryMind",
+        name: "05｜密文智庫（EncryMind）",
+        category: "aegis_indep",
+        entityLabel: "AEGIS（aegis.expert）",
+        entityBadgeClass: "",
+        ctaUrl: "EncryMind/05_EncryMind.html",
+        tagline: "知識留在地端機房，問題密文進、答案密文出。",
+        summary: "地端私有知識庫 AI 節點：研發配方與製程參數以靜態加密存放在地端儲存設備上，由本地模型與本地 RAG 推論，不依賴公有雲大模型；問題與回答雙向以會話金鑰封裝，USB 在位才解密。",
+        highlights: [
+          "知識留在地端：本地小型語言模型＋本地 RAG，不連接外部公有雲或閉源大型語言模型 API。",
+          "去回雙向密文封裝：問題以密文進入，答案由回吐層以同一把會話金鑰封裝為密文送出。",
+          "USB 在位解密與命名空間授權：USB 在位才解密顯示，拔除即清除前端明文，依命名空間切分權限。",
+          "六項強制行為規範與零原文日誌：正式服務模式封鎖明文匯出，日誌僅記識別碼與密文雜湊。"
+        ],
+        boundary: "必揭露 S1 邊界聲明：密文智庫 v1 為 S1「地端受控執行＋雙向密文封裝」，模型在設備隔離環境內推論，過程中有受控的短暫解密點（非全程密文運算）；S2 密文域同態推論為實驗模組；S3 雲端大模型排除；S0 單向輸入加密架構嚴格廢棄。",
+        faqs: [
+          {
+            q: "密文智庫 v1 是全程同態加密推論嗎？",
+            a: "v1 不是。v1 為 S1「地端受控執行」：模型在設備的隔離環境內推論，過程中有受控的短暫解密點，回答再以同一把會話金鑰封裝成密文送出；S2 僅為研發／實驗模組。"
+          },
+          {
+            q: "可以連接外部雲端的大模型嗎？",
+            a: "不行。S3 明確排除任意雲端大模型的雙向密文互動，系統也不保留任何改送雲端明文的後路。"
+          },
+          {
+            q: "密文智庫與神盾殼 HEShell 有什麼不同？",
+            a: "密文智庫自帶本地模型、RAG、儲存與回吐層，是地端運算與知識庫節點（回答以密文回傳至地端模型端）；HEShell 是本機安全殼層與路由中繼（結果以明文回傳），兩者安全分級體系亦不同。"
+          }
+        ]
+      },
+      {
+        id: "06",
+        code: "06｜Slash123",
+        name: "06｜斜槓一二三 / Slash123",
+        category: "aegis_indep",
+        entityLabel: "獨立法人（slash1to3.com）",
+        entityBadgeClass: "indep",
+        ctaUrl: "Slash123/06_Slash123.html",
+        tagline: "買授權，不買資料：個人專家數位分身能力授權與標售平台。",
+        summary: "個人專家將研究、案例與配方留在自己的地端設備上，平台不訓練模型、不收存明文知識包；買方購買授權後持綁定硬體金鑰直連分身提問，取得的是問答授權而非原始資料。",
+        highlights: [
+          "買授權不買資料：原始知識、配方與權重不離開專家地端設備，平台不中繼明文對話。",
+          "一位專家、多個分身：可為不同領域建立獨立分身，自主設定期限、次數與權限等級。",
+          "四級權限分級：支援僅問答（QNA_ONLY）、附引用索引（WITH_CITATION）等，再授權預設停用且嚴禁轉售。",
+          "試問不洩底與收據對帳：未購前僅提供合成示範，每次調用留下授權收據供雙方對帳。"
+        ],
+        boundary: "法人獨立與邊界聲明：斜槓一二三 / Slash123 為獨立法人機構，與 AEGIS 無從屬關係，由水月道場有限合夥支持成立。平台不訓練模型、不收存明文知識包；價格、抽成與上線時程尚未公布。",
+        faqs: [
+          {
+            q: "平台會拿專家的知識去訓練模型嗎？",
+            a: "不會。平台不訓練模型、不收存明文知識包；分身能力在專家自己的地端設備上形成。"
+          },
+          {
+            q: "購買的授權可以轉賣給其他人嗎？",
+            a: "不可以。再授權權限（REAUTHORIZE）預設停用，而且嚴禁轉售；撤銷後新的提問請求會立即失敗。"
+          },
+          {
+            q: "交易方式有哪些？",
+            a: "規劃包含公開定價訂閱、次數包與限額競標三種方式，交易標的是可計量的權利物件（Grant），不是資料集。"
+          }
+        ]
+      },
+      {
+        id: "07",
+        code: "07｜Slash104",
+        name: "07｜斜槓104 / Slash104",
+        category: "aegis_indep",
+        entityLabel: "獨立法人（slash1ofours.com）",
+        entityBadgeClass: "indep",
+        ctaUrl: "Slash104/07_Slash104.html",
+        tagline: "分身歸公司，知識不跟著離職走。",
+        summary: "企業級領域知識與智慧財產數位分身授權平台：團隊成員餵入的知識經審核者核可後才併入公司數位分身，人員離職即撤銷權限，並透過智財標籤隔離內部機密與對外授權。",
+        highlights: [
+          "分身與智財歸公司：人員離職或調組即撤銷權限並同步至地端設備側，知識留在公司。",
+          "Reviewer 審核閘門：未經審核者核可的知識片段留置於暫存區，不會被索引或對外回答。",
+          "智財標籤隔離與五階 RBAC：以 IP_INTERNAL_ONLY 隔離內部機密，對外分身無法檢索。",
+          "對內治理＋對外雙層授權：管理層只看用量與成功率，不能調閱員工或買方問答明文。"
+        ],
+        boundary: "法人獨立與邊界聲明：斜槓104 / Slash104 為獨立法人機構，與 AEGIS 無從屬關係，由水月道場有限合夥支持成立。不適用於跨公司共編分身或需要下載原始資料庫者；企業方案與價格尚未公布。",
+        faqs: [
+          {
+            q: "斜槓104 跟斜槓一二三有什麼不同？",
+            a: "斜槓一二三是個人專家授權自己的能力；斜槓104 的主體是公司或團隊，知識由多位成員貢獻並經過審核，資產歸公司，並同時處理對內治理與對外授權。"
+          },
+          {
+            q: "主管或管理層可以看員工問了 AI 什麼嗎？",
+            a: "不行。依設計，管理層只能看用量與成功率，不能調閱員工或買方的問答明文。"
+          },
+          {
+            q: "員工離職後，知識與權限會如何處理？",
+            a: "人員異動時權限標記失效並同步至地端設備側，新請求立即阻斷；已併入的知識留在公司，不會以明文被帶走。"
+          }
+        ]
+      },
+      {
+        id: "08",
+        code: "08｜EternalMemory",
+        name: "08｜永恆記憶 EternalMemory",
+        category: "wonderland",
+        entityLabel: "水月道場 / Wonderland Center",
+        entityBadgeClass: "wc",
+        ctaUrl: "EternalMemory/08_EternalMemory.html",
+        tagline: "永恆記憶不會假裝他還在：有邊界、可審計的數位思想容器。",
+        summary: "以經合法授權的公開著作、演講與訪談語料為基礎，重現已故先驅或思念親人的說話方式與思維框架，全程標示 AI 重現、拒絕代替本人表態，關鍵環節由真人把關。",
+        highlights: [
+          "紅線一｜強制透明宣告：影音固定位置加註 AI 仿生重現水印，語音開場前宣告身分屬性。",
+          "紅線二｜事實邊界與拒絕臆測：生前未表態議題不以本人立場裁斷，僅做標明假設的推演。",
+          "紅線三｜資料來源白名單：未經著作權人或法定繼承人書面授權之私密通訊嚴禁匯入。",
+          "真人把關（HITL）：家屬同意、心理衝擊評估、敏感立場審查與即時熔斷（Kill-Switch）。"
+        ],
+        boundary: "核心免責與時程聲明：重現的數位形象只是「回聲」，不代表已故者在現世法律、政治或商業上的實質代理人。預定交付期 2027-02-15（Asia/Taipei）；交付範圍、驗收、履約量能與契約條件尚待確認，不得由此延伸額外服務承諾。",
+        faqs: [
+          {
+            q: "AI 會說出他沒說過的話嗎？",
+            a: "系統以其公開著作與授權語料回應；對他生前未表態的議題，只能以其思想框架提出推演，並明確標示為假設，不會以「本人立場」作確定性回答。"
+          },
+          {
+            q: "可以用家人的 LINE 對話或私人信件嗎？",
+            a: "未經著作權人、出版機構或法定遺產繼承人書面授權的私密通訊，不得匯入；具體授權流程尚待確認。"
+          },
+          {
+            q: "如果 AI 說了不恰當的話怎麼辦？",
+            a: "爭議言論由真人以即時熔斷機制（Kill-Switch）中斷，並進行事後覆盤。"
+          }
+        ]
+      },
+      {
+        id: "09",
+        code: "09｜AdvanceCare",
+        name: "09｜善終守護 AdvanceCare",
+        category: "wonderland",
+        entityLabel: "水月道場 / Wonderland Center",
+        entityBadgeClass: "wc",
+        ctaUrl: "AdvanceCare/09_AdvanceCare.html",
+        tagline: "「安寧」不等於「放棄治療」：在沒有壓力的時候，先看見兩條路。",
+        summary: "安寧緩和醫療意願教育與決策輔助工具，以安寧緩和專科醫師審核過的情境、個人化對照影片與互動沙盤推演，陪伴當事人與家屬理解不同選擇對生活品質與照顧負荷的影響。",
+        highlights: [
+          "醫學審查閘門：每個新模擬劇本與臨床情境，均須經安寧緩和專科醫師電子簽章審核才上線。",
+          "隨時可以停：觀看過程可隨時一鍵中止；偵測高風險情緒時暫停 AI 並轉接真人支持。",
+          "不替你簽署：AI 只協助條例問答與預填表單，正式健保卡註記須至法定醫療機構見證完成。",
+          "隱私與零訓練：肖像與生成影片加密保存，自上傳起 90 天自動永久銷毀（可隨時立即刪除）。"
+        ],
+        boundary: "核心聲明（必讀）：善終守護 AdvanceCare 嚴格定位為「教育與決策輔助工具」，絕非醫療行為本身，亦不替代醫師臨床說明。所有正式健保卡預立意願註記（不施行心肺復甦術、不施行維生醫療）均須導引至法定合法醫療機構完成。預定交付期 2027-02-15（Asia/Taipei），交付範圍與條件尚待確認。",
+        faqs: [
+          {
+            q: "這是醫療諮詢嗎？可以在這裡完成健保卡註記嗎？",
+            a: "不是醫療諮詢，也不替代醫師臨床說明。系統只產出預填表單，所有正式健保卡預立意願註記均須導引至法定合法醫療機構由專人見證完成。"
+          },
+          {
+            q: "影片裡的情況會真的發生在我身上嗎？",
+            a: "不一定。影片與指標是經安寧緩和專科醫師審核的情境模擬，屬非絕對預測，僅供教育決策輔助參考。"
+          },
+          {
+            q: "我和家人的照片會怎麼處理？",
+            a: "加密儲存，自上傳起 90 天自動永久刪除，也可以隨時手動立即銷毀；不會用來訓練或微調任何 AI 模型。"
+          }
+        ]
+      },
+      {
+        id: "10",
+        code: "10｜SeniorTravel",
+        name: "10｜寰宇無界 SeniorTravel",
+        category: "wonderland",
+        entityLabel: "水月道場 / Wonderland Center",
+        entityBadgeClass: "wc",
+        ctaUrl: "SeniorTravel/10_SeniorTravel.html",
+        tagline: "走不遠了，還是可以一起去看看：AI 帶路，真人陪伴。",
+        summary: "高齡長者雙軌虛擬旅遊陪伴服務，讓行動不便的長輩在家透過 XR 或 360° 場景重遊故地，由多方言 AI 導遊帶路、遠端真人志工守護，外地子女也能用手機一起同遊。",
+        highlights: [
+          "多方言自適應導遊：支援台語、客語、粵語與國語導覽，語速放慢至常人 70%–80%。",
+          "一鍵求助與主動降級：按下求助時 AI 導遊靜音，遠端志工以視訊接手並自動模糊居家背景。",
+          "親友同遊與漫遊手札：外地子女可用手機加入同一個景點，旅程結束生成附語音祝福的手札。",
+          "長者友善設計目標：對比度 ≥ 7:1、字體 ≥ 24pt、觸控目標 ≥ 64×64 px，瞬移過渡防暈眩。"
+        ],
+        boundary: "非醫療與設計目標聲明：本系統的穿戴感知只用來動態調節體驗節奏，不提供醫療診斷，也不是醫療器材。無障礙規格以 WCAG 2.1 AAA 準則為設計目標，尚未經第三方認證。預定交付期 2027-02-15（Asia/Taipei），交付範圍與條件尚待確認。",
+        faqs: [
+          {
+            q: "手環的心率資料會用來看病嗎？",
+            a: "不會。穿戴感知只用來動態調節旅程體驗節奏（例如偵測到疲勞時自動進入休整模式），系統不提供醫療診斷，也不是醫療器材。"
+          },
+          {
+            q: "志工看得到我家嗎？",
+            a: "志工接入視訊時，系統會自動模糊居家背景、遮蔽病歷與私人物品。"
+          },
+          {
+            q: "符合無障礙標準嗎？需要買 VR 設備嗎？",
+            a: "介面以 WCAG 2.1 AAA 準則為設計目標（如對比度 ≥ 7:1、字體 ≥ 24pt），尚未經第三方認證；支援設備與租賃條件尚待確認。"
+          }
+        ]
+      }
+    ];
+
+    const FILTER_DESCRIPTIONS = {
+      all: "目前顯示：<strong>全部 10 條產品線</strong>（涵蓋水月道場 Wonderland Center、AllView、AEGIS 及獨立法人授權平台）。",
+      wonderland: "目前顯示：<strong>水月道場 / Wonderland Center（08–10）</strong> — 高齡虛擬旅遊陪伴、安寧預立意願教育輔助與受控數位思想容器（預定交付期 2027-02-15，交付範圍與契約條件尚待確認）。",
+      allview: "目前顯示：<strong>AllView 事業體（01–03）</strong> — 多語內容文化轉譯再製、公開偽匿名與條件式舉證社群、商務沙盤推演訓練引擎。",
+      aegis_indep: "目前顯示：<strong>AEGIS 事業體（04–05）與獨立授權平台（06–07）</strong> — 註：06｜斜槓一二三與 07｜斜槓104 各為獨立法人機構，與 AEGIS 無從屬關係，皆由水月道場有限合夥支持成立。"
+    };
+
+    /**
+     * 渲染產品卡片網格
+     */
+    function renderProducts(filterKey = "all") {
+      const grid = document.getElementById("products-grid");
+      const banner = document.getElementById("filter-context-banner");
+      if (!grid) return;
+
+      if (banner && FILTER_DESCRIPTIONS[filterKey]) {
+        banner.innerHTML = FILTER_DESCRIPTIONS[filterKey];
+      }
+
+      const list = filterKey === "all"
+        ? PRODUCTS
+        : PRODUCTS.filter((item) => item.category === filterKey);
+
+      grid.innerHTML = list.map((p) => `
+        <article class="product-card" data-category="${p.category}">
+          <div class="product-meta">
+            <span class="product-code">${p.code}</span>
+            <span class="entity-badge ${p.entityBadgeClass}">${p.entityLabel}</span>
+          </div>
+          <h3>${p.name}</h3>
+          <p class="product-tagline">${p.tagline}</p>
+          <p class="product-summary">${p.summary}</p>
+          <ul class="product-highlights">
+            ${p.highlights.map((h) => `<li>${h}</li>`).join("")}
+          </ul>
+          <div class="boundary-box">${p.boundary}</div>
+          <div class="card-actions">
+            <button type="button" class="btn ghost-dark" data-detail-id="${p.id}">詳情與 FAQ</button>
+            <a class="btn primary" href="${p.ctaUrl}">前往專屬預售頁 →</a>
+          </div>
         </article>
-        <article class="card feature">
-          <span class="num">C2-WC-ACP</span>
-          <h3>《安寧緩和醫療條例》預立意願推廣｜善終守護 AdvanceCare</h3>
-          <p>公益性衛教：協助民眾了解預立安寧緩和醫療與器官捐贈意願註記於健保卡之法定權利與流程，並提供宣導資料與志願諮詢。</p>
-          <p class="note" style="margin:.8rem 0 0"><strong>非醫療行為聲明：</strong>本倡議為公益衛教與意願註記推廣，屬「非醫療行為」，不提供醫療診斷、治療或醫療建議；醫療決定請諮詢專業醫療人員。</p>
-          <a class="more" href="https://github.com/wonderland-org/AdvanceCare">AdvanceCare 產品線 repo</a>
-        </article>
-        <article class="card feature">
-          <span class="num">C2-WC-VST</span>
-          <h3>不便出行長者之虛擬旅行陪伴｜寰宇無界 SeniorTravel</h3>
-          <p>沉浸式虛擬實境（VR／360 影音）陪伴方案，以跨國走讀促進世代共融；招募在地陪伴志工與硬體設備贊助。</p>
-          <a class="more" href="https://github.com/wonderland-org/SeniorTravel">SeniorTravel 產品線 repo</a>
-        </article>
-      </div>
-      <p class="muted" style="margin-top:1.2rem">產品命名依 PMO t12u 確認：C2-WC-DMR 永恆記憶 EternalMemory、C2-WC-ACP 善終守護 AdvanceCare、C2-WC-VST 寰宇無界 SeniorTravel。三條預售產品交付期：2027-02-15（Asia/Taipei 日期）；交付範圍與履約條件 <span class="pending">[待確認]</span>。命名、品牌與網域確認不視為內容核准，其餘草稿／<span class="pending">[待確認]</span> 標註維持。</p>
-    </div>
-  </section>
+      `).join("");
 
-  <section id="volunteer" aria-labelledby="vol-title">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker">Crowdsourcing &amp; Amoeba Network</span>
-        <h2 id="vol-title">群眾發包與阿米巴志工網絡</h2>
-        <p>從剩食運送、偏鄉探視，到跨國災後重建專案協調——以公益任務連結志工的時間與專長。</p>
-      </div>
-      <div class="grid">
-        <div class="card"><span class="num">點數 01</span><h3>人力點數</h3><p>人力資源的投入，以點數計量。</p></div>
-        <div class="card"><span class="num">點數 02</span><h3>計算機資源點數</h3><p>計算機資源的投入，以點數計量。</p></div>
-        <div class="card"><span class="num">點數 03</span><h3>財務資源週轉透明化</h3><p>以透明化模型呈現財務資源週轉。</p></div>
-      </div>
-      <p class="muted" style="margin-top:1.2rem">志工登錄表單與點數查詢入口規劃中，開放時程 <span class="pending">[待確認]</span></p>
-    </div>
-  </section>
+      // 綁定詳情彈窗開啟事件
+      grid.querySelectorAll("button[data-detail-id]").forEach((btn) => {
+        btn.addEventListener("click", () => openProductModal(btn.dataset.detailId));
+      });
+    }
 
-  <section id="integrity" class="alt" aria-labelledby="int-title">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker">Integrity &amp; Disclosure</span>
-        <h2 id="int-title">法規與誠信揭露</h2>
-      </div>
-      <div class="grid two">
-        <div class="card"><h3>個人資料保護</h3><p>將適用標準制式個資政策；正式條文、適用範圍、公告及法務審查 <span class="pending">[待確認]</span>，不宣稱已合規。</p></div>
-        <div class="card"><h3>預售資金隔離</h3><p>預售資金隔離與託管契約、授權及責任安排 <span class="pending">[待確認]</span>；本頁不刊載銀行帳號，也不構成資金保障或託管效力宣稱。</p></div>
-        <div class="card"><h3>不在本站處理敏感資料</h3><p>官網前端不收集、不暫存信用卡號或高敏感病歷資訊；涉及款項之流程將跳轉至合規第三方金流端點。</p></div>
-        <div class="card"><h3>過度承諾檢核</h3><p>所有倡議文案須明確標示為預售／倡議模式，並經法遵審核後方正式發布。</p></div>
-      </div>
-    </div>
-  </section>
+    /**
+     * 開啟產品詳情與 FAQ 燈箱（Modal）
+     */
+    function openProductModal(productId) {
+      const product = PRODUCTS.find((item) => item.id === productId);
+      const dlg = document.getElementById("product-modal");
+      const codeEl = document.getElementById("modal-code");
+      const titleEl = document.getElementById("modal-title");
+      const bodyEl = document.getElementById("modal-body-content");
 
-  <section id="cis" aria-labelledby="cis-title">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker">Corporate Identity System</span>
-        <h2 id="cis-title">水之至柔、月之清輝、鏡之澄澈、道場之安定</h2>
-        <p>標誌由「外環圓融（水月圓環）」與「中心雙相水波與晶格光芒」疊合，象徵生命的循環、承諾的圓滿，以及將心願經由科技妥善封存與重現。</p>
-      </div>
-      <div class="swatches">
-        <div class="swatch"><div class="chip" style="background:#0B253A"></div><div class="meta"><b>水月青</b><code>#0B253A</code></div></div>
-        <div class="swatch"><div class="chip" style="background:#F4F7F6"></div><div class="meta"><b>月光白</b><code>#F4F7F6</code></div></div>
-        <div class="swatch"><div class="chip" style="background:#1A1E24"></div><div class="meta"><b>玄墨黑</b><code>#1A1E24</code></div></div>
-        <div class="swatch"><div class="chip" style="background:#D4AF37"></div><div class="meta"><b>澄心金</b><code>#D4AF37</code></div></div>
-        <div class="swatch"><div class="chip" style="background:#2A9D8F"></div><div class="meta"><b>琉璃青</b><code>#2A9D8F</code></div></div>
-        <div class="swatch"><div class="chip" style="background:#6C5CE7"></div><div class="meta"><b>願力紫</b><code>#6C5CE7</code></div></div>
-      </div>
-      <p class="muted" style="margin-top:1.2rem">信條：以科技守護心願，以行動實踐承諾。</p>
-    </div>
-  </section>
+      if (!product || !dlg || !bodyEl) return;
 
-  <section id="entity" class="alt" aria-labelledby="entity-title">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker">Legal Entity</span>
-        <h2 id="entity-title">法人資訊</h2>
-      </div>
-      <dl class="facts">
-        <dt>品牌中文全稱</dt><dd>水月道場</dd>
-        <dt>品牌英文全稱</dt><dd>Wonderland Center</dd>
-        <dt>網域</dt><dd>wonderland.center</dd>
-        <dt>PMO 專案代號</dt><dd>C1-WC-CORP（wonderland-center-corporate）</dd>
-        <dt>法人名稱（暫定）</dt><dd>水月道場有限合夥（WonderLand Center） <span class="pending">[暫定]</span>，不代表已完成登記</dd>
-        <dt>登記狀態、正式登記名稱與設立沿革</dt><dd><span class="pending">[待確認]</span></dd>
-      </dl>
-    </div>
-  </section>
-</main>
+      codeEl.textContent = `${product.code} · ${product.entityLabel}`;
+      titleEl.textContent = product.name;
 
-<footer class="site">
-  <div class="wrap">
-    <p>© 水月道場 / Wonderland Center｜以科技守護心願，以行動實踐承諾。</p>
-    <p>本預覽站以 GitHub Pages 呈現，依規範僅供 UI Review 與設計規範預覽，不處理任何捐款、個資或意願註記。原始規格：<a href="https://github.com/four-as-one/wonderland_center_cis">four-as-one/wonderland_center_cis</a></p>
-    <p class="draft">本網頁為草稿 v0.3，內容待人工審核｜2026-11-11</p>
-    <p class="muted">v0.3 變更（2026-11-11，Asia/Taipei）：依 t12u 補暫定法人名稱、三產品命名、交付期與個資政策方向；託管與法人登記維持待確認，銀行帳號不公開。品牌與網域確認不視為核准，草稿與其餘 <span class="pending">[待確認]</span> 標註維持。</p>
-    <p class="muted">後續 CIS 全面採 PR 流程 <span class="pending">[待確認]</span>；本次起實際一律透過 PR，不直接推送 main。</p>
-    <p class="muted">人工審核清單：法人名稱及登記資訊、協作／託管授權與責任、產品交付條件及個資政策之適用（如涉及）、其餘未核准內容與 PR 治理政策均須人工確認。</p>
-  </div>
-</footer>
-<script>
-(function(){var b=document.getElementById('bigtext');if(!b)return;var k='wc-bigtext';function set(on){document.documentElement.style.fontSize=on?'125%':'';b.setAttribute('aria-pressed',on?'true':'false');try{localStorage.setItem(k,on?'1':'0')}catch(e){}}
-try{set(localStorage.getItem(k)==='1')}catch(e){}b.addEventListener('click',function(){set(b.getAttribute('aria-pressed')!=='true')});})();
-</script>
+      bodyEl.innerHTML = `
+        <p style="font-weight:700;color:var(--heading);font-size:1.05rem">${product.tagline}</p>
+        <p>${product.summary}</p>
+
+        <div class="modal-section">
+          <h4>核心設計重點與交付價值</h4>
+          <ul class="product-highlights" style="margin-bottom:0">
+            ${product.highlights.map((h) => `<li>${h}</li>`).join("")}
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h4>法遵、安全與服務邊界聲明</h4>
+          <div class="boundary-box" style="margin-bottom:0">${product.boundary}</div>
+        </div>
+
+        <div class="modal-section" style="margin-bottom:0">
+          <h4>常見問答（FAQ）</h4>
+          ${product.faqs.map((f) => `
+            <div class="modal-faq-item">
+              <strong>Q：${f.q}</strong>
+              <p>A：${f.a}</p>
+            </div>
+          `).join("")}
+        </div>
+
+        <div class="modal-footer-actions">
+          <a class="btn primary" href="${product.ctaUrl}">進入「${product.name}」專屬預售頁 →</a>
+          <button type="button" class="btn teal" data-select-product="${product.name}">勾選此產品並前往登記意向</button>
+        </div>
+      `;
+
+      const selectBtn = bodyEl.querySelector("button[data-select-product]");
+      if (selectBtn) {
+        selectBtn.addEventListener("click", () => {
+          const targetName = selectBtn.dataset.selectProduct;
+          const cb = Array.from(document.querySelectorAll("input[name='interest_products']"))
+            .find((el) => el.value === targetName);
+          if (cb) cb.checked = true;
+          dlg.close();
+          const inquirySection = document.getElementById("inquiry");
+          if (inquirySection) inquirySection.scrollIntoView({ behavior: "smooth" });
+        });
+      }
+
+      dlg.showModal();
+    }
+
+    /**
+     * 初始化事業體分類篩選按鈕列
+     */
+    function initCategoryFilters() {
+      const buttons = document.querySelectorAll(".filter-btn[data-filter]");
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const selected = btn.dataset.filter;
+          buttons.forEach((b) => b.setAttribute("aria-pressed", b === btn ? "true" : "false"));
+          renderProducts(selected);
+        });
+      });
+    }
+
+    /**
+     * 初始化 Modal 關閉控制
+     */
+    function initModalControls() {
+      const dlg = document.getElementById("product-modal");
+      const closeBtn = document.getElementById("modal-close-btn");
+      if (!dlg || !closeBtn) return;
+
+      closeBtn.addEventListener("click", () => dlg.close());
+      dlg.addEventListener("click", (e) => {
+        if (e.target === dlg) dlg.close();
+      });
+    }
+
+    /**
+     * 長者友善大字模式切換（122%，記憶於 localStorage）
+     */
+    function initBigText() {
+      const bigBtn = document.getElementById("bigtext");
+      if (!bigBtn) return;
+      const storageKey = "wc-bigtext";
+      const applyBigText = (on) => {
+        document.documentElement.style.fontSize = on ? "122%" : "";
+        bigBtn.setAttribute("aria-pressed", on ? "true" : "false");
+        try { localStorage.setItem(storageKey, on ? "1" : "0"); } catch (_) {}
+      };
+      try { if (localStorage.getItem(storageKey) === "1") applyBigText(true); } catch (_) {}
+      bigBtn.addEventListener("click", () => applyBigText(bigBtn.getAttribute("aria-pressed") !== "true"));
+    }
+
+    /**
+     * 渲染意向登記表單之 10 條產品線多選核取方塊並綁定零後端送出／複製功能
+     */
+    function initInquirySystem() {
+      const boxContainer = document.getElementById("product-checkboxes");
+      if (boxContainer) {
+        boxContainer.innerHTML = PRODUCTS.map((p) => `
+          <label class="checkbox-item">
+            <input type="checkbox" name="interest_products" value="${p.name}">
+            <span>${p.name}</span>
+          </label>
+        `).join("");
+      }
+
+      const form = document.getElementById("ecosystem-inquiry-form");
+      const copyBtn = document.getElementById("copy-summary-btn");
+      const feedback = document.getElementById("reg-feedback");
+      if (!form) return;
+
+      const buildPayload = () => {
+        const name = document.getElementById("reg-name").value.trim();
+        const email = document.getElementById("reg-email").value.trim();
+        const role = document.getElementById("reg-role").value;
+        const notes = document.getElementById("reg-notes").value.trim();
+        const selected = Array.from(document.querySelectorAll("input[name='interest_products']:checked"))
+          .map((el) => el.value);
+
+        if (!name || !email) {
+          return { error: "請填寫「稱呼 / 機構或企業名稱」與「聯絡電子信箱」。" };
+        }
+        if (selected.length === 0) {
+          return { error: "請至少勾選一項「感興趣的產品線」。" };
+        }
+
+        const subject = `[水月道場 / 全生態預售意向登記] ${name}（${selected.length} 項產品線）`;
+        const body = [
+          "您好，我想登記水月道場 / Wonderland Center 全生態產品線的預售意向與諮詢：",
+          "",
+          `・稱呼 / 機構：${name}`,
+          `・聯絡電子信箱：${email}`,
+          `・參與身分：${role}`,
+          `・感興趣的產品線：`,
+          ...selected.map((item) => `  - ${item}`),
+          `・使用情境與需求簡述：${notes || "（尚未填寫）"}`,
+          "",
+          "---",
+          "此意向登記摘要由 水月道場 / Wonderland Center 全生態預售入口產生"
+        ].join("\n");
+
+        return { subject, body };
+      };
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const res = buildPayload();
+        if (res.error) {
+          feedback.style.color = "#B42318";
+          feedback.textContent = res.error;
+          return;
+        }
+        feedback.style.color = "#1E7A70";
+        feedback.textContent = "已為您整理意向登記摘要並開啟預設郵件程式；若未自動開啟，請點擊「一鍵複製登記摘要」。";
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(res.subject)}&body=${encodeURIComponent(res.body)}`;
+      });
+
+      if (copyBtn) {
+        copyBtn.addEventListener("click", async () => {
+          const res = buildPayload();
+          if (res.error) {
+            feedback.style.color = "#B42318";
+            feedback.textContent = res.error;
+            return;
+          }
+          const fullText = `${res.subject}\n\n${res.body}`;
+          try {
+            await navigator.clipboard.writeText(fullText);
+            feedback.style.color = "#1E7A70";
+            feedback.textContent = "✓ 預售意向登記摘要已複製到剪貼簿！";
+          } catch (_) {
+            const ta = document.createElement("textarea");
+            ta.value = fullText;
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+              document.execCommand("copy");
+              feedback.style.color = "#1E7A70";
+              feedback.textContent = "✓ 預售意向登記摘要已複製到剪貼簿！";
+            } catch (__) {
+              feedback.style.color = "#B42318";
+              feedback.textContent = "瀏覽器限制自動複製，請改用「開啟信箱寄送意向登記」。";
+            } finally {
+              document.body.removeChild(ta);
+            }
+          }
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderProducts("all");
+      initCategoryFilters();
+      initModalControls();
+      initBigText();
+      initInquirySystem();
+    });
+  </script>
 </body>
 </html>

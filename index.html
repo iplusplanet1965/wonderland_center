@@ -428,7 +428,7 @@
           <li>01–10 全生態產品線導覽</li>
           <li>嚴格區隔醫療與非醫療邊界</li>
           <li>金鑰與原始資料由持有者掌控</li>
-          <li>各產品線專屬 CTA 分頁直達</li>
+          <li>各產品線專屬預售頁直達</li>
         </ul>
       </div>
     </section>
@@ -521,7 +521,7 @@
           <div class="card">
             <span class="num">原則 04｜誠信預售揭露與隱私保護</span>
             <h3>不承諾未公布價格與 SLA，不刊載匯款帳號</h3>
-            <p style="margin:0">各產品線之正式定價、方案細則與上線時程以正式簽署合約或官方公告為準（水月道場 08、09、10 預定交付期為 2027-02-15，交付範圍、驗收、履約量能與契約條件尚待確認，不得由此延伸額外服務承諾）。本公開入口頁不收集信用卡號或機密原稿，亦不刊載任何匯款帳號。</p>
+            <p style="margin:0">各產品線之正式定價、方案細則與上線時程以正式簽署合約或官方公告為準。本公開入口頁不收集信用卡號或機密原稿，亦不刊載任何匯款帳號。</p>
           </div>
         </div>
       </div>
@@ -620,7 +620,7 @@
     /**
      * 可調整參數：
      * - CONTACT_EMAIL：全生態預售意向登記收件信箱
-     * - PRODUCTS：01 至 10 號全生態產品線結構化資料與專屬 CTA 路徑
+     * - PRODUCTS：01 至 10 號全生態產品線結構化資料與專屬 CTA 路徑（統一指向各目錄下的 index.html）
      */
     const CONTACT_EMAIL = "contact@wonderland.center";
 
@@ -632,8 +632,7 @@
         category: "allview",
         entityLabel: "AllView（allview.today）",
         entityBadgeClass: "",
-        ctaUrl: "OrbiLocale/01_OrbiLocale.html",
-        fallbackUrl: "OrbiLocale/index.html",
+        ctaUrl: "OrbiLocale/index.html",
         tagline: "不是翻譯器：先凍結事實，再為 8 種語系的目標市場重寫文化語感。",
         summary: "接收企業母語官網或創作者成片，先鎖定品名、規格、數據、價格與法規聲明不更動，再依目標市場閱讀習慣、賣點順序與影音節奏重構在地化交付包。",
         highlights: [
@@ -665,8 +664,7 @@
         category: "allview",
         entityLabel: "AllView（allview.today）",
         entityBadgeClass: "",
-        ctaUrl: "CipherCircle/02_CipherCircle.html",
-        fallbackUrl: "CipherCircle/index.html",
+        ctaUrl: "CipherCircle/index.html",
         tagline: "公開場合不露名，重要紀錄可查證。",
         summary: "結合視覺化社群、端對端加密通訊與直播授課、FHE 密文推薦與匿名投票，以及授權門檻下可查驗的 Merkle 證據鏈，讓隱私保護與可信任問責同時存在。",
         highlights: [
@@ -698,8 +696,7 @@
         category: "allview",
         entityLabel: "AllView（allview.today）",
         entityBadgeClass: "",
-        ctaUrl: "VeilProof/03_VeilProof.html",
-        fallbackUrl: "VeilProof/index.html",
+        ctaUrl: "VeilProof/index.html",
         tagline: "底牌不攤牌，動作可回放的商務沙盤推演。",
         summary: "涵蓋商戰對決、併購談判、供應鏈議價與危機公關演練。敏感底線數字在客戶端加密後以密文比對，僅揭露是否進入可成交區間等必要結果，每次出價皆簽章供覆盤。",
         highlights: [
@@ -731,8 +728,7 @@
         category: "aegis_indep",
         entityLabel: "AEGIS（aegis.expert）",
         entityBadgeClass: "",
-        ctaUrl: "HEShell/04_HEShell.html",
-        fallbackUrl: "HEShell/index.html",
+        ctaUrl: "HEShell/index.html",
         tagline: "不支援密文就不送，沒有明文後備。",
         summary: "本機 AI 安全殼層與密文路由中繼：私鑰於本機當場組合成複合金鑰存放在 USB，提問明文不送往外部 HE Provider，目標端點無經簽章能力宣告即阻斷，拔除 USB 立即抹除記憶體。",
         highlights: [
@@ -764,8 +760,7 @@
         category: "aegis_indep",
         entityLabel: "AEGIS（aegis.expert）",
         entityBadgeClass: "",
-        ctaUrl: "EncryMind/05_EncryMind.html",
-        fallbackUrl: "EncryMind/index.html",
+        ctaUrl: "EncryMind/index.html",
         tagline: "知識留在地端機房，問題密文進、答案密文出。",
         summary: "地端私有知識庫 AI 節點：研發配方與製程參數以靜態加密存放在地端儲存設備上，由本地模型與本地 RAG 推論，不依賴公有雲大模型；問題與回答雙向以會話金鑰封裝，USB 在位才解密。",
         highlights: [
@@ -797,8 +792,7 @@
         category: "aegis_indep",
         entityLabel: "獨立法人（slash1to3.com）",
         entityBadgeClass: "indep",
-        ctaUrl: "Slash123/06_Slash123.html",
-        fallbackUrl: "Slash123/index.html",
+        ctaUrl: "Slash123/index.html",
         tagline: "買授權，不買資料：個人專家數位分身能力授權與標售平台。",
         summary: "個人專家將研究、案例與配方留在自己的地端設備上，平台不訓練模型、不收存明文知識包；買方購買授權後持綁定硬體金鑰直連分身提問，取得的是問答授權而非原始資料。",
         highlights: [
@@ -830,8 +824,7 @@
         category: "aegis_indep",
         entityLabel: "獨立法人（slash1ofours.com）",
         entityBadgeClass: "indep",
-        ctaUrl: "Slash104/07_Slash104.html",
-        fallbackUrl: "Slash104/index.html",
+        ctaUrl: "Slash104/index.html",
         tagline: "分身歸公司，知識不跟著離職走。",
         summary: "企業級領域知識與智慧財產數位分身授權平台：團隊成員餵入的知識經審核者核可後才併入公司數位分身，人員離職即撤銷權限，並透過智財標籤隔離內部機密與對外授權。",
         highlights: [
@@ -863,8 +856,7 @@
         category: "wonderland",
         entityLabel: "水月道場 / Wonderland Center",
         entityBadgeClass: "wc",
-        ctaUrl: "EternalMemory/08_EternalMemory.html",
-        fallbackUrl: "EternalMemory/index.html",
+        ctaUrl: "EternalMemory/index.html",
         tagline: "永恆記憶不會假裝他還在：有邊界、可審計的數位思想容器。",
         summary: "以經合法授權的公開著作、演講與訪談語料為基礎，重現已故先驅或思念親人的說話方式與思維框架，全程標示 AI 重現、拒絕代替本人表態，關鍵環節由真人把關。",
         highlights: [
@@ -873,7 +865,7 @@
           "紅線三｜資料來源白名單：未經著作權人或法定繼承人書面授權之私密通訊嚴禁匯入。",
           "真人把關（HITL）：家屬同意、心理衝擊評估、敏感立場審查與即時熔斷（Kill-Switch）。"
         ],
-        boundary: "核心免責與時程聲明：重現的數位形象只是「回聲」，不代表已故者在現世法律、政治或商業上的實質代理人。預定交付期 2027-02-15（Asia/Taipei）；交付範圍、驗收、履約量能與契約條件尚待確認，不得由此延伸額外服務承諾。",
+        boundary: "核心免責與時程聲明：重現的數位形象只是「回聲」，不代表已故者在現世法律、政治或商業上的實質代理人。方案與價格尚未公布，交付範圍、驗收、履約量能與契約條件尚待確認。",
         faqs: [
           {
             q: "AI 會說出他沒說過的話嗎？",
@@ -896,8 +888,7 @@
         category: "wonderland",
         entityLabel: "水月道場 / Wonderland Center",
         entityBadgeClass: "wc",
-        ctaUrl: "AdvanceCare/09_AdvanceCare.html",
-        fallbackUrl: "AdvanceCare/index.html",
+        ctaUrl: "AdvanceCare/index.html",
         tagline: "「安寧」不等於「放棄治療」：在沒有壓力的時候，先看見兩條路。",
         summary: "安寧緩和醫療意願教育與決策輔助工具，以安寧緩和專科醫師審核過的情境、個人化對照影片與互動沙盤推演，陪伴當事人與家屬理解不同選擇對生活品質與照顧負荷的影響。",
         highlights: [
@@ -906,7 +897,7 @@
           "不替你簽署：AI 只協助條例問答與預填表單，正式健保卡註記須至法定醫療機構見證完成。",
           "隱私與零訓練：肖像與生成影片加密保存，自上傳起 90 天自動永久銷毀（可隨時立即刪除）。"
         ],
-        boundary: "核心聲明（必讀）：善終守護 AdvanceCare 嚴格定位為「教育與決策輔助工具」，絕非醫療行為本身，亦不替代醫師臨床說明。所有正式健保卡預立意願註記（不施行心肺復甦術、不施行維生醫療）均須導引至法定合法醫療機構完成。預定交付期 2027-02-15（Asia/Taipei），交付範圍與條件尚待確認。",
+        boundary: "核心聲明（必讀）：善終守護 AdvanceCare 嚴格定位為「教育與決策輔助工具」，絕非醫療行為本身，亦不替代醫師臨床說明。所有正式健保卡預立意願註記（不施行心肺復甦術、不施行維生醫療）均須導引至法定合法醫療機構完成。",
         faqs: [
           {
             q: "這是醫療諮詢嗎？可以在這裡完成健保卡註記嗎？",
@@ -929,8 +920,7 @@
         category: "wonderland",
         entityLabel: "水月道場 / Wonderland Center",
         entityBadgeClass: "wc",
-        ctaUrl: "SeniorTravel/10_SeniorTravel.html",
-        fallbackUrl: "SeniorTravel/index.html",
+        ctaUrl: "SeniorTravel/index.html",
         tagline: "走不遠了，還是可以一起去看看：AI 帶路，真人陪伴。",
         summary: "高齡長者雙軌虛擬旅遊陪伴服務，讓行動不便的長輩在家透過 XR 或 360° 場景重遊故地，由多方言 AI 導遊帶路、遠端真人志工守護，外地子女也能用手機一起同遊。",
         highlights: [
@@ -939,7 +929,7 @@
           "親友同遊與漫遊手札：外地子女可用手機加入同一個景點，旅程結束生成附語音祝福的手札。",
           "長者友善設計目標：對比度 ≥ 7:1、字體 ≥ 24pt、觸控目標 ≥ 64×64 px，瞬移過渡防暈眩。"
         ],
-        boundary: "非醫療與設計目標聲明：本系統的穿戴感知只用來動態調節體驗節奏，不提供醫療診斷，也不是醫療器材。無障礙規格以 WCAG 2.1 AAA 準則為設計目標，尚未經第三方認證。預定交付期 2027-02-15（Asia/Taipei），交付範圍與條件尚待確認。",
+        boundary: "非醫療與設計目標聲明：本系統的穿戴感知只用來動態調節體驗節奏，不提供醫療診斷，也不是醫療器材。無障礙規格以 WCAG 2.1 AAA 準則為設計目標，尚未經第三方認證；方案與價格尚未公布。",
         faqs: [
           {
             q: "手環的心率資料會用來看病嗎？",
@@ -959,13 +949,13 @@
 
     const FILTER_DESCRIPTIONS = {
       all: "目前顯示：<strong>全部 10 條產品線</strong>（涵蓋水月道場 Wonderland Center、AllView、AEGIS 及獨立法人授權平台）。",
-      wonderland: "目前顯示：<strong>水月道場 / Wonderland Center（08–10）</strong> — 高齡虛擬旅遊陪伴、安寧預立意願教育輔助與受控數位思想容器（預定交付期 2027-02-15，交付範圍與契約條件尚待確認）。",
+      wonderland: "目前顯示：<strong>水月道場 / Wonderland Center（08–10）</strong> — 高齡虛擬旅遊陪伴、安寧預立意願教育輔助與受控數位思想容器。",
       allview: "目前顯示：<strong>AllView 事業體（01–03）</strong> — 多語內容文化轉譯再製、公開偽匿名與條件式舉證社群、商務沙盤推演訓練引擎。",
       aegis_indep: "目前顯示：<strong>AEGIS 事業體（04–05）與獨立授權平台（06–07）</strong> — 註：06｜斜槓一二三與 07｜斜槓104 各為獨立法人機構，與 AEGIS 無從屬關係，皆由水月道場有限合夥支持成立。"
     };
 
     /**
-     * 渲染產品卡片網格
+     * 渲染產品卡片網格（所有 CTA 連結統一指向各目錄下的 index.html）
      */
     function renderProducts(filterKey = "all") {
       const grid = document.getElementById("products-grid");
@@ -995,12 +985,11 @@
           <div class="boundary-box">${p.boundary}</div>
           <div class="card-actions">
             <button type="button" class="btn ghost-dark" data-detail-id="${p.id}">詳情與 FAQ</button>
-            <a class="btn primary cta-nav-link" href="${p.ctaUrl}" data-primary-url="${p.ctaUrl}" data-fallback-url="${p.fallbackUrl}">前往專屬預售頁 →</a>
+            <a class="btn primary" href="${p.ctaUrl}">前往專屬預售頁 →</a>
           </div>
         </article>
       `).join("");
 
-      // 綁定詳情彈窗開啟事件
       grid.querySelectorAll("button[data-detail-id]").forEach((btn) => {
         btn.addEventListener("click", () => openProductModal(btn.dataset.detailId));
       });
@@ -1048,7 +1037,7 @@
         </div>
 
         <div class="modal-footer-actions">
-          <a class="btn primary cta-nav-link" href="${product.ctaUrl}" data-primary-url="${product.ctaUrl}" data-fallback-url="${product.fallbackUrl}">進入「${product.name}」專屬預售頁 →</a>
+          <a class="btn primary" href="${product.ctaUrl}">進入「${product.name}」專屬預售頁 →</a>
           <button type="button" class="btn teal" data-select-product="${product.name}">勾選此產品並前往登記意向</button>
         </div>
       `;
@@ -1114,53 +1103,100 @@
     }
 
     /**
-     * 智慧 CTA 路徑導向與自動備援（找不到主檔案時自動切換至該目錄下的 index.html）
+     * 渲染並初始化無後端全生態預售意向登記表單（支援 mailto: 喚起與一鍵複製登記摘要）
      */
-    function initSmartCtaRouting() {
-      document.addEventListener("click", async (e) => {
-        const link = e.target.closest("a.cta-nav-link");
-        if (!link) return;
+    function initInquirySystem() {
+      const boxContainer = document.getElementById("product-checkboxes");
+      if (boxContainer) {
+        boxContainer.innerHTML = PRODUCTS.map((p) => `
+          <label class="checkbox-item">
+            <input type="checkbox" name="interest_products" value="${p.name}">
+            <span><strong>${p.name}</strong></span>
+          </label>
+        `).join("");
+      }
 
-        // 允許使用者按住 Ctrl / Cmd / Shift 或中鍵以新分頁開啟
-        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      const form = document.getElementById("ecosystem-inquiry-form");
+      const copyBtn = document.getElementById("copy-summary-btn");
+      const feedback = document.getElementById("reg-feedback");
+      if (!form) return;
 
-        const primaryUrl = link.dataset.primaryUrl || link.getAttribute("href");
-        const fallbackUrl = link.dataset.fallbackUrl;
-        if (!primaryUrl || !fallbackUrl) return;
+      const buildPayload = () => {
+        const name = document.getElementById("reg-name").value.trim();
+        const email = document.getElementById("reg-email").value.trim();
+        const role = document.getElementById("reg-role").value;
+        const notes = document.getElementById("reg-notes").value.trim();
+        const selected = Array.from(document.querySelectorAll("input[name='interest_products']:checked"))
+          .map((el) => el.value);
 
+        if (!name || !email) {
+          return { error: "請填寫「稱呼 / 機構或企業名稱」與「聯絡電子信箱」。" };
+        }
+        if (selected.length === 0) {
+          return { error: "請至少勾選一項「感興趣的產品線」。" };
+        }
+
+        const subject = `[水月道場 / 全生態預售意向登記] ${name}（共 ${selected.length} 項產品線）`;
+        const body = [
+          "您好，我想登記諮詢以下生態系產品線的正式方案與後續進度：",
+          "",
+          `・稱呼 / 機構：${name}`,
+          `・聯絡信箱：${email}`,
+          `・參與身分：${role}`,
+          `・感興趣的產品線：${selected.join("、")}`,
+          `・使用情境與需求簡述：${notes || "（尚未填寫）"}`,
+          "",
+          "---",
+          "此登記摘要由 水月道場 / Wonderland Center 全生態預售入口產生"
+        ].join("\n");
+
+        return { subject, body };
+      };
+
+      form.addEventListener("submit", (e) => {
         e.preventDefault();
-
-        // 若在本地 file:// 協定開啟，瀏覽器安全策略會阻擋跨檔案 fetch，直接放行主路徑並附帶容錯導向
-        if (window.location.protocol === "file:") {
-          window.location.href = primaryUrl;
+        const res = buildPayload();
+        if (res.error) {
+          feedback.style.color = "#B42318";
+          feedback.textContent = res.error;
           return;
         }
-
-        const originalText = link.textContent;
-        link.style.opacity = "0.75";
-        link.style.pointerEvents = "none";
-
-        try {
-          let res = await fetch(primaryUrl, { method: "HEAD", cache: "no-store" });
-          // 部分靜態伺服器不支援 HEAD（回傳 405），改以 GET 確認
-          if (res.status === 405) {
-            res = await fetch(primaryUrl, { method: "GET", cache: "no-store" });
-          }
-
-          if (res.ok) {
-            window.location.href = primaryUrl;
-          } else {
-            window.location.href = fallbackUrl;
-          }
-        } catch (_) {
-          // 網路錯誤或 CORS 限制時自動導向目錄預設入口
-          window.location.href = fallbackUrl;
-        } finally {
-          link.textContent = originalText;
-          link.style.opacity = "";
-          link.style.pointerEvents = "";
-        }
+        feedback.style.color = "#1E7A70";
+        feedback.textContent = "已為您整理登記摘要並開啟預設郵件程式；若未自動開啟，請點擊「一鍵複製登記摘要」。";
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(res.subject)}&body=${encodeURIComponent(res.body)}`;
       });
+
+      if (copyBtn) {
+        copyBtn.addEventListener("click", async () => {
+          const res = buildPayload();
+          if (res.error) {
+            feedback.style.color = "#B42318";
+            feedback.textContent = res.error;
+            return;
+          }
+          const fullText = `${res.subject}\n\n${res.body}`;
+          try {
+            await navigator.clipboard.writeText(fullText);
+            feedback.style.color = "#1E7A70";
+            feedback.textContent = "✓ 登記摘要已複製到剪貼簿！您可以直接貼上寄送給窗口。";
+          } catch (_) {
+            const ta = document.createElement("textarea");
+            ta.value = fullText;
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+              document.execCommand("copy");
+              feedback.style.color = "#1E7A70";
+              feedback.textContent = "✓ 登記摘要已複製到剪貼簿！";
+            } catch (__) {
+              feedback.style.color = "#B42318";
+              feedback.textContent = "瀏覽器限制自動複製，請改用「開啟信箱寄送意向登記」。";
+            } finally {
+              document.body.removeChild(ta);
+            }
+          }
+        });
+      }
     }
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -1169,7 +1205,6 @@
       initModalControls();
       initBigText();
       initInquirySystem();
-      initSmartCtaRouting();
     });
   </script>
 </body>

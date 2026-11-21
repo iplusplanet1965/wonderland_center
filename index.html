@@ -620,7 +620,7 @@
     /**
      * 可調整參數：
      * - CONTACT_EMAIL：全生態預售意向登記收件信箱
-     * - PRODUCTS：01 至 10 號全生態產品線結構化資料與專屬 CTA 路徑（統一指向各目錄下的 index.html）
+     * - PRODUCTS：01 至 10 號全生態產品線結構化資料與專屬 CTA 路徑
      */
     const CONTACT_EMAIL = "contact@wonderland.center";
 
@@ -760,7 +760,7 @@
         category: "aegis_indep",
         entityLabel: "AEGIS（aegis.expert）",
         entityBadgeClass: "",
-        ctaUrl: "EncryMind/index.html",
+        ctaUrl: "Encrymind/index.html",
         tagline: "知識留在地端機房，問題密文進、答案密文出。",
         summary: "地端私有知識庫 AI 節點：研發配方與製程參數以靜態加密存放在地端儲存設備上，由本地模型與本地 RAG 推論，不依賴公有雲大模型；問題與回答雙向以會話金鑰封裝，USB 在位才解密。",
         highlights: [
@@ -955,7 +955,7 @@
     };
 
     /**
-     * 渲染產品卡片網格（所有 CTA 連結統一指向各目錄下的 index.html）
+     * 渲染產品卡片網格
      */
     function renderProducts(filterKey = "all") {
       const grid = document.getElementById("products-grid");

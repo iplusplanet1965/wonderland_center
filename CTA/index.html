@@ -161,10 +161,14 @@
       font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
       padding: 0.22rem 0.6rem; border-radius: 6px; background: var(--heading); color: #FFFFFF;
     }
+    .sync-badge {
+      font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
+      padding: 0.2rem 0.6rem; border-radius: 999px;
+      background: #E6F3F1; color: var(--kicker-dark); border: 1px solid rgba(30, 122, 112, 0.3);
+    }
     .wb-card-head h2 { margin: 0; font-family: var(--font-display); font-size: 1.12rem; color: var(--heading); }
     .wb-card-body { padding: 1.35rem; }
 
-    /* 產品快速切換列（方便未帶參數直接進入時也能切換） */
     .product-switcher-bar {
       display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
       gap: 0.75rem; padding: 0.85rem 1.1rem; border-radius: 12px;
@@ -177,7 +181,6 @@
       background: #FFFFFF; min-height: 40px; max-width: 100%;
     }
 
-    /* Step 1 雙欄版面 */
     .step1-grid {
       display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.4rem; align-items: start;
     }
@@ -200,7 +203,6 @@
     .prod-title { margin: 0 0 0.3rem; font-family: var(--font-display); font-size: 1.5rem; color: var(--heading); }
     .prod-tagline { margin: 0 0 1rem; font-size: 0.94rem; color: var(--muted); }
 
-    /* 計費週期切換（年繳 vs 月繳） */
     .billing-bar {
       display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
       gap: 0.6rem; margin-bottom: 0.85rem;
@@ -215,7 +217,6 @@
     }
     .billing-btn.active { background: var(--heading); color: #FFFFFF; }
 
-    /* 軟體訂閱方案網格 */
     .tiers-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
       gap: 0.65rem; margin-bottom: 1.15rem;
@@ -238,7 +239,6 @@
     .tier-sale { font-size: 0.92rem; font-weight: 700; color: var(--heading); }
     .tier-custom { font-size: 0.86rem; font-weight: 700; color: #9A6700; }
 
-    /* 硬體與額度加購區塊 */
     .addon-group {
       border: 1px solid var(--line); border-radius: 12px; padding: 0.95rem 1.05rem;
       background: var(--bg); margin-bottom: 0.95rem;
@@ -263,7 +263,6 @@
     }
     .qty-val { padding-inline: 0.55rem; font-family: var(--font-mono); font-size: 0.84rem; font-weight: 700; }
 
-    /* 右側 7 折總結算明細卡 */
     .summary-card {
       background: linear-gradient(180deg, #0B253A 0%, #10324D 100%);
       color: #F4F7F6; border-radius: 14px; padding: 1.35rem;
@@ -302,7 +301,6 @@
       background: rgba(0, 0, 0, 0.25); font-size: 0.76rem; color: #C9D6D4; line-height: 1.55;
     }
 
-    /* 合規與服務邊界強制宣告框 */
     .compliance-alert {
       margin-top: 1.25rem; padding: 1.05rem 1.2rem; border-radius: 12px;
       background: var(--notice-bg); border: 1.5px solid var(--notice-border);
@@ -321,7 +319,6 @@
     .compliance-alert ul { margin: 0; padding-left: 1.2rem; font-size: 0.86rem; }
     .compliance-alert li { margin-bottom: 0.22rem; }
 
-    /* Step 1 強制勾選框 */
     .consent-label {
       margin-top: 1.1rem; display: flex; align-items: flex-start; gap: 0.8rem;
       padding: 0.95rem 1.1rem; border-radius: 12px;
@@ -339,7 +336,6 @@
     }
     .consent-badge.ok { background: var(--kicker); color: #FFFFFF; }
 
-    /* 鎖定遮罩區 */
     .lock-box {
       background: var(--card); border: 2px dashed var(--line-strong);
       border-radius: var(--radius-lg); padding: 2.2rem 1.5rem; text-align: center;
@@ -352,7 +348,6 @@
     .lock-box h3 { margin: 0 0 0.4rem; color: var(--heading); font-size: 1.12rem; }
     .lock-box p { margin: 0 auto 1rem; max-width: 48ch; font-size: 0.9rem; color: var(--muted); }
 
-    /* Step 2：三張付款方式卡片 */
     .methods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
     @media (max-width: 820px) { .methods-grid { grid-template-columns: 1fr; } }
     .method-card {
@@ -390,7 +385,6 @@
       content: ""; width: 6px; height: 6px; border-radius: 50%; background: #FFFFFF;
     }
 
-    /* Step 3：付款細節面板 */
     .bank-layout { display: grid; grid-template-columns: 1.35fr 1fr; gap: 1.3rem; }
     @media (max-width: 820px) { .bank-layout { grid-template-columns: 1fr; } }
 
@@ -438,7 +432,6 @@
       border: 1px solid rgba(180, 35, 24, 0.3); color: #7A1810; font-size: 0.85rem;
     }
 
-    /* 通用按鈕與表單元件 */
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem;
       padding: 0.68rem 1.2rem; border-radius: var(--radius); font-family: inherit;
@@ -470,7 +463,6 @@
       display: flex; align-items: center; gap: 0.45rem;
     }
 
-    /* Step 4：電子收據憑證 */
     .receipt-box {
       margin-top: 1.4rem; border: 2px solid var(--heading); border-radius: 16px;
       overflow: hidden; background: #FFFFFF;
@@ -495,6 +487,45 @@
       padding: 0.65rem 1rem; border-radius: 10px;
       border: 2px solid var(--kicker); background: #EDF6F5; color: var(--kicker-dark);
     }
+
+    .catalog-controls {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 0.85rem; margin-bottom: 1.2rem;
+    }
+    .price-mode-toggle {
+      display: inline-flex; background: var(--surface-2); padding: 0.3rem;
+      border-radius: 10px; gap: 0.3rem; border: 1px solid var(--line);
+    }
+    .mode-btn {
+      border: none; background: transparent; padding: 0.45rem 0.95rem; border-radius: 8px;
+      font-family: inherit; font-size: 0.84rem; font-weight: 700; color: var(--muted); cursor: pointer;
+    }
+    .mode-btn.active { background: var(--heading); color: #FFFFFF; }
+
+    .table-scroll {
+      overflow-x: auto; border: 1px solid var(--line); border-radius: 12px;
+      background: #FFFFFF; margin-bottom: 1.5rem;
+    }
+    table.pricing-table {
+      width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 760px;
+    }
+    table.pricing-table th, table.pricing-table td {
+      padding: 0.75rem 0.9rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle;
+    }
+    table.pricing-table th {
+      background: var(--surface-2); color: var(--heading); font-weight: 700; white-space: nowrap;
+    }
+    table.pricing-table tr:last-child td { border-bottom: none; }
+    table.pricing-table tr:hover td { background: #F8FAFC; }
+    .num-col { text-align: right !important; font-family: var(--font-mono); white-space: nowrap; }
+    .sale-val { font-weight: 700; color: var(--kicker-dark); }
+    .orig-val { font-weight: 600; color: var(--muted); }
+    .cat-pill {
+      font-size: 0.74rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 6px;
+      background: var(--surface-2); color: var(--heading); white-space: nowrap;
+    }
+    .cat-pill.hw { background: #FBF6E8; color: #5E480A; }
+    .cat-pill.ad { background: #E6F3F1; color: var(--kicker-dark); }
 
     dialog.cart-modal {
       border: none; border-radius: 16px; padding: 0; width: min(460px, calc(100% - 2rem));
@@ -539,14 +570,15 @@
         <div>
           <h1 class="brand-title">
             預售安心核銷工作台
-            <span class="escrow-pill">7 折嘗鮮預售・託管級核銷</span>
+            <span id="header-discount-pill" class="escrow-pill">7 折嘗鮮預售・託管級核銷</span>
           </h1>
-          <p class="brand-sub">水月道場 / Wonderland Center × AllView × AEGIS × Slash 聯合結帳中心</p>
+          <p class="brand-sub">水月道場 / Wonderland Center × AllView × AEGIS × Slash 聯合結帳與綜合計價中心</p>
         </div>
       </div>
 
       <div class="header-actions">
         <a id="back-to-product-btn" class="nav-pill-link" href="../index.html#products">← 返回產品介紹頁</a>
+        <a class="nav-pill-link" href="#full-catalog-section">全系列價目總表</a>
         <a class="nav-pill-link" href="../index.html">全生態總覽</a>
         <button type="button" id="bigtext-btn" class="btn-bigtext" aria-pressed="false">長者友善大字</button>
       </div>
@@ -601,29 +633,26 @@
           <span class="step-tag">STEP 1</span>
           <h2>配置 7 折預售方案與確認服務邊界</h2>
         </div>
-        <span id="entity-badge" class="domain-pill" style="font-weight:700;color:var(--heading)"></span>
+        <span id="md-sync-status" class="sync-badge">正在讀取 ./serviceandpricing.md...</span>
       </div>
 
       <div class="wb-card-body">
-        <!-- 產品線快速切換列 -->
         <div class="product-switcher-bar">
           <label for="quick-product-select">目前結算產品線（可隨時切換 01–10 號產品）：</label>
           <select id="quick-product-select" onchange="handleQuickProductChange()"></select>
         </div>
 
         <div class="step1-grid">
-          <!-- 左側：方案選擇、硬體勾選與額度加購 -->
           <div>
             <div class="pill-row">
               <span id="prod-code-pill" class="code-pill"></span>
-              <span id="prod-domain-pill" class="domain-pill"></span>
+              <span id="entity-badge" class="domain-pill" style="font-weight:700;color:var(--heading)"></span>
               <span id="agency-pill" class="agency-pill hidden">⚖️ 依授權代收合約由全視界（AllView）代收預售款</span>
             </div>
 
             <h3 id="prod-title" class="prod-title"></h3>
             <p id="prod-tagline" class="prod-tagline"></p>
 
-            <!-- 1. 軟體訂閱方案與月繳/年繳切換 -->
             <div class="billing-bar">
               <span class="section-mini-title">① 選擇軟體訂閱方案</span>
               <div class="billing-tabs" role="group" aria-label="計費週期切換">
@@ -633,42 +662,35 @@
             </div>
             <div id="tiers-container" class="tiers-grid"></div>
 
-            <!-- 2. 搭配硬體一次購／加購（依產品動態顯示） -->
             <div id="hardware-section" class="addon-group hidden">
               <div class="section-mini-title" style="margin-bottom:0.35rem">② 搭配硬體設備（一次購／加購・同享 7 折預售）</div>
               <div id="hardware-list"></div>
             </div>
 
-            <!-- 3. 超出額度加購包（依產品動態顯示） -->
             <div id="quota-section" class="addon-group hidden">
               <div class="section-mini-title" style="margin-bottom:0.35rem">③ 預購額度加購包（選購・同享 7 折預售）</div>
               <div id="quota-list"></div>
             </div>
           </div>
 
-          <!-- 右側：即時 7 折結算明細卡片 -->
           <aside class="summary-card">
-            <span class="discount-ribbon">★ 早鳥嘗鮮預售 7 折（現省 30%）</span>
+            <span id="discount-ribbon-label" class="discount-ribbon">★ 早鳥嘗鮮預售 7 折（現省 30%）</span>
             <div style="font-size:0.86rem;color:#D0DCDA;font-weight:700">本次預售組合明細：</div>
 
             <div id="summary-lines" class="line-items"></div>
 
-            <!-- 一般可結帳金額顯示 -->
             <div id="payable-summary-block">
               <div class="orig-total-row">
                 <span>標準原價合計：<span id="orig-total-display" style="text-decoration:line-through;font-family:var(--font-mono)"></span></span>
                 <span id="save-total-badge" class="save-badge"></span>
               </div>
               <div class="final-price-row">
-                <span style="font-size:0.92rem;font-weight:700">7 折預售實付：</span>
+                <span style="font-size:0.92rem;font-weight:700">預售實付總額：</span>
                 <span id="sale-total-display" class="final-amount"></span>
               </div>
-              <div class="usdt-equiv">
-                ≈ <span id="sale-usdt-display"></span> USDT（參考匯率 1:32.5）
-              </div>
+              <div id="usdt-equiv-row" class="usdt-equiv"></div>
             </div>
 
-            <!-- 「洽談」專案提示 -->
             <div id="custom-summary-block" class="hidden" style="padding-block:0.5rem">
               <div style="font-size:1.35rem;font-weight:700;color:var(--accent)">客製化專案（專人洽談報價）</div>
               <p style="font-size:0.83rem;color:#D0DCDA;margin:0.4rem 0 0">
@@ -677,12 +699,11 @@
             </div>
 
             <div class="price-disclaimer">
-              ⓘ 定價基準係依《產品定價與 7 折嘗鮮預售價總表》動態計算；正式商業條款、稅務憑證與交付驗收標準以簽署合約為準。
+              ⓘ 定價與折扣率即時同步自 <code>CTA/serviceandpricing.md</code>；正式商業條款、稅務憑證與交付驗收標準以簽署合約為準。
             </div>
           </aside>
         </div>
 
-        <!-- 專屬合規與服務邊界強制宣告 -->
         <div class="compliance-alert">
           <div class="compliance-head">
             <h3 id="comp-title">專屬合規與服務邊界強制宣告</h3>
@@ -692,11 +713,10 @@
           <ul id="comp-bullets"></ul>
         </div>
 
-        <!-- 強制勾選框 -->
         <label class="consent-label" for="consent-checkbox">
           <input type="checkbox" id="consent-checkbox" onchange="handleConsentChange()">
           <div class="consent-copy">
-            <strong>我已詳閱並了解上述 7 折預售方案規格、交付範圍與服務邊界聲明</strong>
+            <strong>我已詳閱並了解上述預售方案規格、交付範圍與服務邊界聲明</strong>
             <span>勾選後立即解鎖下方結帳通道（或客製專案洽談登記表單）。</span>
           </div>
           <span id="consent-status" class="consent-badge">尚未確認</span>
@@ -704,9 +724,6 @@
       </div>
     </section>
 
-    <!-- =====================================================================
-         未勾選 Step 1 時的鎖定提示
-         ===================================================================== -->
     <div id="lock-overlay" class="lock-box no-print">
       <div class="lock-icon" aria-hidden="true">🔒</div>
       <h3>Step 2 至 Step 4 結帳通道目前處於安全鎖定狀態</h3>
@@ -714,16 +731,13 @@
       <button type="button" class="btn btn-primary" onclick="scrollToConsent()">前往 Step 1 勾選確認 ↑</button>
     </div>
 
-    <!-- =====================================================================
-         情況 A：若選取「洽談」項目，顯示客製專案洽談登記卡
-         ===================================================================== -->
     <section id="custom-inquiry-section" class="wb-card hidden no-print">
       <div class="wb-card-head">
         <div class="wb-head-left">
           <span class="step-tag">CUSTOM</span>
           <h2>客製化專案與大型部署需求登記</h2>
         </div>
-        <span class="cycle-badge">免預付・專屬顧問對接</span>
+        <span class="sync-badge">免預付・專屬顧問對接</span>
       </div>
       <div class="wb-card-body">
         <form onsubmit="handleCustomSubmit(event)">
@@ -742,7 +756,7 @@
             <textarea id="cust-notes" rows="3" placeholder="請簡述您的團隊人數、預計每月呼叫次數、硬體槽數或特殊合規需求"></textarea>
           </div>
           <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.8rem">
-            <small style="color:var(--muted)">送出後將自動整理您的配置摘要並喚起信箱寄送至 <code>contact@wonderland.ngo</code>。</small>
+            <small style="color:var(--muted)">送出後將自動整理您的配置摘要並喚起信箱寄送至 <code>contact@wonderland.center</code>。</small>
             <div style="display:flex;gap:0.6rem">
               <button type="button" class="btn btn-outline" onclick="copyCustomSummary()">複製洽談摘要</button>
               <button type="submit" class="btn btn-gold">開啟信箱寄送洽談需求</button>
@@ -752,12 +766,9 @@
       </div>
     </section>
 
-    <!-- =====================================================================
-         情況 B：標準 7 折預售結帳（STEP 2 ～ STEP 4 工作區）
-         ===================================================================== -->
     <div id="unlocked-area" class="unlocked-stack hidden">
 
-      <!-- STEP 2：選擇結帳方式 -->
+      <!-- STEP 2 -->
       <section id="sec-step-2" class="wb-card no-print">
         <div class="wb-card-head">
           <div class="wb-head-left">
@@ -820,39 +831,37 @@
         </div>
       </section>
 
-      <!-- STEP 3：執行付款明細 -->
+      <!-- STEP 3 -->
       <section id="sec-step-3" class="wb-card no-print">
         <div class="wb-card-head">
           <div class="wb-head-left">
             <span class="step-tag">STEP 3</span>
             <h2>執行付款｜專屬收款通道明細</h2>
           </div>
-          <span id="step3-channel-pill" class="cycle-badge"></span>
+          <span id="step3-channel-pill" class="sync-badge"></span>
         </div>
 
         <div class="wb-card-body">
-          <!-- 面板 A：第三方購物車 -->
           <div id="panel-cart" class="hidden">
-            <div class="specs-box" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.2rem">
+            <div class="addon-group" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.2rem;margin-bottom:0">
               <div style="max-width:56ch">
-                <span class="cycle-badge" style="margin-bottom:0.5rem;display:inline-block">🔒 SSL 256-bit 加密安全結帳</span>
+                <span class="sync-badge" style="margin-bottom:0.5rem;display:inline-block">🔒 SSL 256-bit 加密安全結帳</span>
                 <h3 style="margin:0 0 0.4rem;color:var(--heading)">第三方金流快速結帳購物車</h3>
                 <p style="margin:0 0 0.5rem;font-size:0.9rem;color:var(--muted)">
-                  系統已帶入「<strong id="cart-prod-label" style="color:var(--heading)"></strong>」7 折早鳥預售組合參數。點擊右側按鈕開啟結帳視窗；完成後請於 Step 4 回填授權碼或訂單末五碼。
+                  系統已帶入「<strong id="cart-prod-label" style="color:var(--heading)"></strong>」早鳥預售組合參數。點擊右側按鈕開啟結帳視窗；完成後請於 Step 4 回填授權碼或訂單末五碼。
                 </p>
                 <div style="font-family:var(--font-mono);font-size:0.78rem;color:var(--muted)">
                   SKU 識別碼：<span id="cart-sku-label"></span>
                 </div>
               </div>
               <div style="text-align:right">
-                <small style="display:block;color:var(--muted)">應付 7 折早鳥總價</small>
+                <small style="display:block;color:var(--muted)">應付預售總價</small>
                 <strong id="cart-amount-label" style="display:block;font-family:var(--font-mono);font-size:1.65rem;color:var(--heading);margin-bottom:0.65rem"></strong>
                 <button type="button" class="btn btn-gold" onclick="openCartModal()">前往第三方金流結帳 ↗</button>
               </div>
             </div>
           </div>
 
-          <!-- 面板 B：銀行電匯 / 台灣 Pay -->
           <div id="panel-bank" class="hidden">
             <div id="bank-wc-notice" class="compliance-alert hidden" style="margin-top:0;margin-bottom:1.1rem">
               <div class="compliance-head">
@@ -891,14 +900,13 @@
 
                 <div class="info-row" style="background:#0B253A;color:#FFFFFF;margin-bottom:0">
                   <div>
-                    <small style="color:#C9D6D4">本次應匯款 7 折預售金額（TWD）</small>
+                    <small style="color:#C9D6D4">本次應匯款預售金額（TWD）</small>
                     <strong id="bank-amount-label" class="mono" style="color:#D4AF37"></strong>
                   </div>
                   <button type="button" class="btn btn-gold btn-sm" onclick="copyTwdNumber()">複製金額數字</button>
                 </div>
               </div>
 
-              <!-- 台灣 Pay / 網銀掃碼 QR Code -->
               <div class="qr-panel">
                 <strong style="font-size:0.9rem;color:var(--heading)">台灣 Pay / 行動網銀掃碼</strong>
                 <small style="color:var(--muted)">TWQR 共通轉帳規格（009 彰化銀行）</small>
@@ -934,7 +942,6 @@
             </div>
           </div>
 
-          <!-- 面板 C：USDT 虛擬貨幣支付 -->
           <div id="panel-usdt" class="hidden">
             <div class="portal-grid">
               <div id="portal-allview" class="portal-card" role="button" tabindex="0" onclick="switchUsdtPortal('allview')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();switchUsdtPortal('allview')}">
@@ -956,7 +963,7 @@
 
             <div class="info-row" style="flex-wrap:wrap">
               <div>
-                <small>應轉入 7 折預售 USDT 數量（1:32.5 換算）</small>
+                <small>應轉入預售 USDT 數量</small>
                 <div style="display:flex;align-items:center;gap:0.6rem;margin-top:0.2rem">
                   <strong id="usdt-amount-label" class="mono" style="color:var(--kicker);font-size:1.35rem"></strong>
                   <button type="button" class="btn btn-outline btn-sm" onclick="copyUsdtNumber()">複製數量</button>
@@ -987,7 +994,7 @@
         </div>
       </section>
 
-      <!-- STEP 4：付款回報與即時電子收據憑證 -->
+      <!-- STEP 4 -->
       <section id="sec-step-4" class="wb-card">
         <div class="wb-card-head no-print">
           <div class="wb-head-left">
@@ -1032,12 +1039,11 @@
             </div>
           </form>
 
-          <!-- 生成的電子收據憑證 -->
           <div id="receipt-area" class="hidden">
             <div id="receipt-printable" class="receipt-box">
               <div class="receipt-head">
                 <div>
-                  <span class="escrow-pill">OFFICIAL 70% EARLY-BIRD PRESALE RECEIPT</span>
+                  <span class="escrow-pill">OFFICIAL EARLY-BIRD PRESALE RECEIPT</span>
                   <h3 style="margin:0.35rem 0 0;font-family:var(--font-display);font-size:1.3rem">預售席次保留電子收據憑證</h3>
                 </div>
                 <div style="text-align:right">
@@ -1063,7 +1069,7 @@
 
                 <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1rem">
                   <div>
-                    <small style="display:block;color:var(--muted);font-size:0.78rem">回報 7 折早鳥預售保留總金額</small>
+                    <small style="display:block;color:var(--muted);font-size:0.78rem">回報預售保留總金額</small>
                     <strong id="rcp-amount" style="font-family:var(--font-mono);font-size:1.45rem;color:var(--heading)"></strong>
                     <small id="rcp-notes" style="display:block;color:var(--muted);margin-top:0.2rem"></small>
                   </div>
@@ -1078,7 +1084,7 @@
                 </div>
 
                 <div style="background:var(--surface-2);padding:0.75rem 1rem;border-radius:8px;font-size:0.8rem;color:var(--muted)">
-                  本憑證代表您已完成 7 折早鳥預售席次保留款回報。財務與 PMO 團隊將於 1–2 個工作天內完成帳務核銷並寄發正式確認通知。
+                  本憑證代表您已完成早鳥預售席次保留款回報。財務與 PMO 團隊將於 1–2 個工作天內完成帳務核銷並寄發正式確認通知。
                 </div>
               </div>
             </div>
@@ -1092,6 +1098,48 @@
         </div>
       </section>
     </div>
+
+    <!-- =====================================================================
+         全系列價目總覽與「首年入門套裝預售對比表」（原價 / 7 折預售價 一鍵切換）
+         ===================================================================== -->
+    <section id="full-catalog-section" class="wb-card no-print">
+      <div class="wb-card-head">
+        <div class="wb-head-left">
+          <span class="step-tag">CATALOG</span>
+          <h2>全系列 10 大產品價目總覽與首年入門套裝預售對比表</h2>
+        </div>
+        <span class="sync-badge">資料來源：./serviceandpricing.md</span>
+      </div>
+
+      <div class="wb-card-body">
+        <div class="catalog-controls">
+          <div style="font-size:0.9rem;color:var(--muted)">
+            點擊表格任一產品列的「帶入結算」，即可立即切換上方工作台進行配置與試算。
+          </div>
+
+          <div class="price-mode-toggle" role="group" aria-label="價目表顯示模式切換">
+            <button type="button" id="mode-sale-btn" class="mode-btn active" onclick="setCatalogPriceMode('sale')">★ 7 折嘗鮮預售價（現省 30%）</button>
+            <button type="button" id="mode-orig-btn" class="mode-btn" onclick="setCatalogPriceMode('orig')">標準原價（TWD）</button>
+          </div>
+        </div>
+
+        <h3 style="margin:0 0 0.65rem;font-family:var(--font-display);font-size:1.05rem;color:var(--heading)">一、十大產品「首年入門套裝」預售對比表</h3>
+        <div class="table-scroll">
+          <table class="pricing-table" id="starter-compare-table"></table>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.6rem;margin:1.5rem 0 0.65rem">
+          <h3 style="margin:0;font-family:var(--font-display);font-size:1.05rem;color:var(--heading)">二、全系列 10 項產品完整方案與硬體／額度價目表</h3>
+          <select id="catalog-filter-select" onchange="renderCatalogTables()" style="padding:0.4rem 0.75rem;border-radius:8px;border:1.5px solid var(--line-strong);font-family:inherit;font-size:0.86rem;font-weight:600;color:var(--heading)">
+            <option value="all">顯示全部 10 項產品完整明細</option>
+          </select>
+        </div>
+        <div class="table-scroll" style="margin-bottom:0">
+          <table class="pricing-table" id="full-pricing-table"></table>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- 外部第三方購物車模擬彈窗 -->
@@ -1101,13 +1149,13 @@
         <strong style="font-size:1.05rem;color:var(--heading)">🔒 正在銜接第三方安全金流閘道</strong>
         <button type="button" onclick="closeCartModal()" style="border:none;background:transparent;font-size:1.1rem;cursor:pointer">✕</button>
       </div>
-      <div class="specs-box" style="margin-bottom:0.9rem;font-size:0.88rem">
+      <div class="addon-group" style="margin-bottom:0.9rem;font-size:0.88rem">
         <div style="display:flex;justify-content:space-between;margin-bottom:0.35rem">
           <span style="color:var(--muted)">預售組合：</span>
           <strong id="modal-prod"></strong>
         </div>
         <div style="display:flex;justify-content:space-between;margin-bottom:0.35rem">
-          <span style="color:var(--muted)">7 折結帳金額：</span>
+          <span style="color:var(--muted)">結帳金額：</span>
           <strong id="modal-price" style="color:var(--kicker)"></strong>
         </div>
         <div style="display:flex;justify-content:space-between">
@@ -1133,19 +1181,8 @@
   </footer>
 
   <script>
-    /**
-     * ==========================================================================
-     * 可調整參數區：
-     * 1. DISCOUNT_RATE：早鳥預售折扣率（預設 0.7 = 7 折，與 Excel 總表 C3 一致）
-     * 2. USDT_RATE：台幣對 USDT 參考匯率（32.5）
-     * 3. CONTACT_EMAIL：財務與 PMO 核銷窗口信箱
-     * 4. USDT_WALLETS：AllView 與 AEGIS 體系專屬 USDT 收款地址
-     * 5. PRODUCTS_DB：完整匯入《產品定價與7折嘗鮮預售價總表.xlsx》全部 10 條產品線（59 項規格）
-     * ==========================================================================
-     */
-    const DISCOUNT_RATE = 0.7;
-    const USDT_RATE = 32.5;
-    const CONTACT_EMAIL = "contact@wonderland.ngo";
+    const PRICING_MD_PATH = "./serviceandpricing.md";
+    const CONTACT_EMAIL = "contact@wonderland.center";
 
     const USDT_WALLETS = {
       allview: {
@@ -1160,30 +1197,12 @@
       }
     };
 
-    const calcSale = (orig) => (typeof orig === "number" ? Math.round(orig * DISCOUNT_RATE) : null);
-
-    const PRODUCTS_DB = [
-      {
-        num: "01",
-        code: "P01-OL",
-        folder: "OrbiLocale",
-        aliases: ["01", "1", "orbilocale", "p01-ol"],
-        name: "寰境再製 OrbiLocale",
-        entity: "AllView（allview.today）",
-        domain: "allview.tw",
-        usdtPortal: "allview",
-        isWonderlandAgency: false,
+    const PRODUCT_META = {
+      "01": {
+        code: "P01-OL", folder: "OrbiLocale", aliases: ["01", "1", "orbilocale", "p01-ol"],
+        name: "寰境再製 OrbiLocale", entity: "AllView（allview.today）", domain: "allview.tw",
+        usdtPortal: "allview", isWonderlandAgency: false,
         tagline: "不是翻譯器：先凍結事實，再為 8 種封閉白名單語系重寫文化語感。",
-        subscriptions: [
-          { plan: "Starter", spec: "創作者、小型團隊、試用", quota: "每月 8 次再製任務", m: 4900, y: 49000 },
-          { plan: "Pro", spec: "中小企業、活躍創作者／MCN", quota: "每月 25 次再製任務", m: 12900, y: 129000 },
-          { plan: "Business", spec: "有固定海外內容需求的企業", quota: "每月 70 次再製任務", m: 29900, y: 299000 },
-          { plan: "Enterprise", spec: "大型或客製需求", quota: "客製（洽談）", custom: true }
-        ],
-        hardwares: [],
-        addons: [
-          { name: "任務加購包", spec: "超出額度加購", quota: "10 次再製任務", price: 5900 }
-        ],
         compTitle: "寰境再製 OrbiLocale 服務邊界與合規宣告",
         compBody: "本產品定位為多語內容文化轉譯再製代理，僅支援 8 種封閉白名單語系（zh-TW / zh-CN / en-US / ja-JP / ko-KR / es-ES / fr-FR / de-DE），白名單外語系請求將予以拒絕。",
         compBullets: [
@@ -1191,27 +1210,11 @@
           "不新增來源未提及之認證、獎項、功效宣稱或權威推薦。"
         ]
       },
-      {
-        num: "02",
-        code: "P02-CC",
-        folder: "CipherCircle",
-        aliases: ["02", "2", "ciphercircle", "p02-cc"],
-        name: "密圈 CipherCircle",
-        entity: "AllView（allview.today）",
-        domain: "allview.tw",
-        usdtPortal: "allview",
-        isWonderlandAgency: false,
+      "02": {
+        code: "P02-CC", folder: "CipherCircle", aliases: ["02", "2", "ciphercircle", "p02-cc"],
+        name: "密圈 CipherCircle", entity: "AllView（allview.today）", domain: "allview.tw",
+        usdtPortal: "allview", isWonderlandAgency: false,
         tagline: "公開場合不露名，重要紀錄可查證的偽匿名知識社群平台。",
-        subscriptions: [
-          { plan: "Community", spec: "小型知識社群、試用課程", quota: "每月 50 活躍成員席次", m: 6900, y: 69000 },
-          { plan: "Professional", spec: "活躍課程／論壇主辦方", quota: "每月 200 活躍成員席次", m: 18900, y: 189000 },
-          { plan: "Organization", spec: "較大規模知識社群或機構", quota: "每月 800 活躍成員席次", m: 49900, y: 499000 },
-          { plan: "Enterprise", spec: "大型或需客製規則", quota: "客製（洽談）", custom: true }
-        ],
-        hardwares: [],
-        addons: [
-          { name: "額外席次包", spec: "超出席次加購", quota: "每 50 席", price: 4900 }
-        ],
         compTitle: "密圈 CipherCircle 隱私與條件式舉證邊界宣告",
         compBody: "密圈定位為「公開偽匿名＋條件式舉證」，並非「誰都查不到」的絕對匿名承諾。",
         compBullets: [
@@ -1219,27 +1222,11 @@
           "本頁不宣稱已通過司法認證或達到外部通訊軟體同等完成度。"
         ]
       },
-      {
-        num: "03",
-        code: "P03-VP",
-        folder: "VeilProof",
-        aliases: ["03", "3", "veilproof", "p03-vp"],
-        name: "隱證 VeilProof",
-        entity: "AllView（allview.today）",
-        domain: "allview.tw",
-        usdtPortal: "allview",
-        isWonderlandAgency: false,
+      "03": {
+        code: "P03-VP", folder: "VeilProof", aliases: ["03", "3", "veilproof", "p03-vp"],
+        name: "隱證 VeilProof", entity: "AllView（allview.today）", domain: "allview.tw",
+        usdtPortal: "allview", isWonderlandAgency: false,
         tagline: "底牌不攤牌、動作可回放的商務沙盤推演與談判訓練引擎。",
-        subscriptions: [
-          { plan: "Practice", spec: "個人自我訓練、小型內訓", quota: "每月 6 場推演場次", m: 7900, y: 79000 },
-          { plan: "Team", spec: "企業談判／策略團隊", quota: "每月 20 場推演場次", m: 22900, y: 229000 },
-          { plan: "Academy", spec: "商學院、培訓機構、較高頻率使用", quota: "每月 50 場推演場次", m: 49900, y: 499000 },
-          { plan: "Enterprise", spec: "大型或需客製情境", quota: "客製（洽談）", custom: true }
-        ],
-        hardwares: [],
-        addons: [
-          { name: "額外場次包", spec: "超出額度加購", quota: "5 場推演場次", price: 9900 }
-        ],
         compTitle: "隱證 VeilProof 訓練用途與免責邊界宣告",
         compBody: "AI 提示、勝率估算與策略建議僅供商務決策訓練與教育參考，不構成正式法律、投資或併購操作依據。",
         compBullets: [
@@ -1247,29 +1234,11 @@
           "推演紀錄供覆盤與教學使用，不主張具備正式訴訟證據效力。"
         ]
       },
-      {
-        num: "04",
-        code: "P04-HS",
-        folder: "HEShell",
-        aliases: ["04", "4", "heshell", "p04-hs"],
-        name: "神盾殼 HEShell",
-        entity: "AEGIS（aegis.expert）",
-        domain: "aegis.expert",
-        usdtPortal: "aegis",
-        isWonderlandAgency: false,
+      "04": {
+        code: "P04-HS", folder: "HEShell", aliases: ["04", "4", "heshell", "p04-hs"],
+        name: "神盾殼 HEShell", entity: "AEGIS（aegis.expert）", domain: "aegis.expert",
+        usdtPortal: "aegis", isWonderlandAgency: false,
         tagline: "不支援密文就不送，沒有明文後備的本機 AI 安全殼層。",
-        subscriptions: [
-          { plan: "Starter", spec: "個人或小團隊試用", quota: "每月 100 次密文運算請求", m: 1900, y: 19000 },
-          { plan: "Professional", spec: "資安或研發團隊日常使用", quota: "每月 500 次密文運算請求", m: 4900, y: 49000 },
-          { plan: "Team", spec: "多人共用或較高頻率", quota: "每月 2,000 次密文運算請求", m: 12900, y: 129000 },
-          { plan: "Enterprise", spec: "需客製或大量使用", quota: "客製（洽談）", custom: true }
-        ],
-        hardwares: [
-          { cat: "硬體一次購", name: "USB 金鑰（Starter／Pro／Team 通用）", spec: "隨貨交付（遺失不補發）", note: "單把硬體金鑰（Team 可加購）", price: 12900, allowQty: true, defaultBundle: true }
-        ],
-        addons: [
-          { name: "額外請求包", spec: "超出額度加購", quota: "100 次密文運算請求", price: 1490 }
-        ],
         compTitle: "神盾殼 HEShell 能力分級（L0–L3）強制宣告",
         compBody: "傳送層加密（L0 TLS）非本產品賣點；L1 本期交付、L2 視端點能力條件交付、L3（任意閉源商用 LLM 直接處理密文）非現行科技明確不承諾。",
         compBullets: [
@@ -1277,31 +1246,11 @@
           "USB 金鑰不做雲端備份，系統不訓練也不微調任何模型。"
         ]
       },
-      {
-        num: "05",
-        code: "P05-AV",
-        folder: "Encrymind",
-        aliases: ["05", "5", "encrymind", "aegis-vault", "p05-av"],
-        name: "密文智庫（EncryMind）",
-        entity: "AEGIS（aegis.expert）",
-        domain: "aegis.expert",
-        usdtPortal: "aegis",
-        isWonderlandAgency: false,
+      "05": {
+        code: "P05-AV", folder: "Encrymind", aliases: ["05", "5", "encrymind", "aegis-vault", "p05-av"],
+        name: "密文智庫（EncryMind）", entity: "AEGIS（aegis.expert）", domain: "aegis.expert",
+        usdtPortal: "aegis", isWonderlandAgency: false,
         tagline: "知識留在地端機房，問題密文進、答案密文出。",
-        subscriptions: [
-          { plan: "Basic", spec: "搭配 2 槽個人型", quota: "每月 300 次 AI 問答", m: 2900, y: 29000, matchHwIdx: 0 },
-          { plan: "Standard", spec: "搭配 4 槽小組型", quota: "每月 1,200 次 AI 問答", m: 6900, y: 69000, matchHwIdx: 1 },
-          { plan: "Advanced", spec: "搭配 8 槽全公司型", quota: "每月 4,000 次 AI 問答", m: 14900, y: 149000, matchHwIdx: 2 },
-          { plan: "Enterprise", spec: "任意規格客製", quota: "客製（洽談）", custom: true }
-        ],
-        hardwares: [
-          { cat: "硬體一次購", name: "AI NAS 個人型", spec: "2 槽（個人或極小團隊，不含硬碟）", note: "搭配 Basic 方案", price: 48900, allowQty: false, defaultBundle: true },
-          { cat: "硬體一次購", name: "AI NAS 小組型", spec: "4 槽（部門或專案小組，不含硬碟）", note: "搭配 Standard 方案", price: 89900, allowQty: false, defaultBundle: false },
-          { cat: "硬體一次購", name: "AI NAS 全公司型", spec: "8 槽（公司級部署，不含硬碟）", note: "搭配 Advanced 方案", price: 168900, allowQty: false, defaultBundle: false }
-        ],
-        addons: [
-          { name: "額外問答包", spec: "超出額度加購", quota: "100 次 AI 問答", price: 1200 }
-        ],
         compTitle: "密文智庫 v1 安全等級（S1）誠實揭露宣告",
         compBody: "密文智庫 v1 交付基準為 S1「地端受控執行＋雙向密文封裝」，模型在設備隔離環境內推論時存在受控的短暫解密點，並非全程密文運算。",
         compBullets: [
@@ -1309,113 +1258,44 @@
           "系統不保留任何改送雲端明文 API 之回退路徑。"
         ]
       },
-      {
-        num: "06",
-        code: "P06-S123",
-        folder: "Slash123",
-        aliases: ["06", "6", "slash123", "slash1to3", "p06-s123"],
-        name: "斜槓一二三 / Slash123",
-        entity: "獨立法人（slash1to3.com）",
-        domain: "slash1to3.com",
-        usdtPortal: "aegis",
-        usdtSubTag: "slash1to3.com 專屬子通道",
-        isWonderlandAgency: false,
+      "06": {
+        code: "P06-S123", folder: "Slash123", aliases: ["06", "6", "slash123", "slash1to3", "p06-s123"],
+        name: "斜槓一二三 / Slash123", entity: "獨立法人（slash1to3.com）", domain: "slash1to3.com",
+        usdtPortal: "aegis", usdtSubTag: "slash1to3.com 專屬子通道", isWonderlandAgency: false,
         tagline: "買授權，不買資料：個人專家數位分身能力授權與標售平台。",
-        subscriptions: [
-          { plan: "Expert Starter", spec: "剛開始上架的專家", quota: "每月可售出最多 200 次提問", m: 1900, y: 19000 },
-          { plan: "Expert Pro", spec: "活躍專家", quota: "每月可售出最多 800 次提問", m: 4900, y: 49000 },
-          { plan: "Expert Unlimited", spec: "高頻或多元分身專家", quota: "每月可售出最多 2,500 次提問", m: 9900, y: 99000 },
-          { plan: "Enterprise", spec: "需客製規則", quota: "客製（洽談）", custom: true }
-        ],
-        hardwares: [
-          { cat: "硬體一次購", name: "兩槽 AI NAS 套組", spec: "2 槽個人型（含機殼與預裝，不含硬碟）", note: "專家個人地端節點", price: 48900, allowQty: false, defaultBundle: true },
-          { cat: "硬體加購", name: "USB 金鑰（加購）", spec: "單把（用於授權解密）", note: "可多把對應不同分身", price: 3900, allowQty: true, defaultBundle: false }
-        ],
-        addons: [],
         compTitle: "斜槓一二三 / Slash123 法人獨立與授權邊界宣告",
         compBody: "斜槓一二三 / Slash123 為獨立法人機構，與 AEGIS 無從屬關係，由水月道場有限合夥支持成立。平台不訓練模型、不收存明文知識包。",
         compBullets: [
           "買方取得的是向分身提問之權利物件（Grant），再授權（REAUTHORIZE）預設停用且嚴禁轉售。"
         ]
       },
-      {
-        num: "07",
-        code: "P07-S104",
-        folder: "Slash104",
-        aliases: ["07", "7", "slash104", "slash1ofours", "p07-s104"],
-        name: "斜槓104 / Slash104",
-        entity: "獨立法人（slash1ofours.com）",
-        domain: "slash1ofours.com",
-        usdtPortal: "aegis",
-        usdtSubTag: "slash1ofours.com 專屬子通道",
-        isWonderlandAgency: false,
+      "07": {
+        code: "P07-S104", folder: "Slash104", aliases: ["07", "7", "slash104", "slash1ofours", "p07-s104"],
+        name: "斜槓104 / Slash104", entity: "獨立法人（slash1ofours.com）", domain: "slash1ofours.com",
+        usdtPortal: "aegis", usdtSubTag: "slash1ofours.com 專屬子通道", isWonderlandAgency: false,
         tagline: "分身歸公司，知識不跟著離職走：企業級領域知識與智財分身平台。",
-        subscriptions: [
-          { plan: "Team", spec: "單一團隊或專案組", quota: "每月 1,000 次提問額度", m: 9900, y: 99000 },
-          { plan: "Company", spec: "多部門公司", quota: "每月 4,000 次提問額度", m: 24900, y: 249000 },
-          { plan: "Enterprise", spec: "大型或高頻使用", quota: "每月 12,000 次提問額度", m: 49900, y: 499000 },
-          { plan: "Custom", spec: "需客製規則", quota: "客製（洽談）", custom: true }
-        ],
-        hardwares: [
-          { cat: "硬體一次購", name: "八槽 AI NAS 套組", spec: "8 槽全公司型（含機殼與預裝，不含硬碟）", note: "公司級知識庫與多部門共用", price: 168900, allowQty: false, defaultBundle: true },
-          { cat: "硬體加購", name: "USB 金鑰（加購）", spec: "單把（用於對內或對外授權解密）", note: "可依角色與夥伴數量加購", price: 3900, allowQty: true, defaultBundle: false }
-        ],
-        addons: [],
         compTitle: "斜槓104 / Slash104 法人獨立與企業治理邊界宣告",
         compBody: "斜槓104 / Slash104 為獨立法人機構，與 AEGIS 無從屬關係，由水月道場有限合夥支持成立。不適用於跨公司共編分身或需下載原始資料庫者。",
         compBullets: [
           "個資法與營業秘密法已列為上線前審查閘門，現階段預售不作「已法規合規」宣稱。"
         ]
       },
-      {
-        num: "08",
-        code: "C2-WC-DMR",
-        folder: "EternalMemory",
-        aliases: ["08", "8", "eternalmemory", "c2-wc-dmr"],
-        name: "永恆記憶 EternalMemory",
-        entity: "水月道場 / Wonderland Center",
-        domain: "allview.tw",
-        usdtPortal: "allview",
-        isWonderlandAgency: true,
+      "08": {
+        code: "C2-WC-DMR", folder: "EternalMemory", aliases: ["08", "8", "eternalmemory", "c2-wc-dmr"],
+        name: "永恆記憶 EternalMemory", entity: "水月道場 / Wonderland Center", domain: "allview.tw",
+        usdtPortal: "allview", isWonderlandAgency: true,
         tagline: "永恆記憶不會假裝他還在：有邊界、可審計的數位思想容器。",
-        subscriptions: [
-          { plan: "Family", spec: "家屬留念", quota: "每月 8 場互動場次", m: 4900, y: 49000 },
-          { plan: "Institution", spec: "紀念機構、學術單位", quota: "每月 30 場互動場次", m: 14900, y: 149000 },
-          { plan: "Legacy", spec: "較高頻或企業傳承", quota: "每月 80 場互動場次", m: 29900, y: 299000 },
-          { plan: "Custom", spec: "特殊需求", quota: "客製（洽談）", custom: true }
-        ],
-        hardwares: [
-          { cat: "硬體一次購", name: "四槽 AI NAS 套組", spec: "4 槽小組型（含機殼與預裝，不含硬碟）", note: "家屬小組或小型紀念機構", price: 89900, allowQty: false, defaultBundle: true },
-          { cat: "硬體加購", name: "USB 金鑰（加購）", spec: "單把（用於授權驗證與解密）", note: "若採用時加購", price: 3900, allowQty: true, defaultBundle: false }
-        ],
-        addons: [],
         compTitle: "永恆記憶 EternalMemory 倫理紅線與代收宣告",
         compBody: "數位形象僅為「回聲」，不代表已故者在現世法律、政治或商業上的實質代理人。未經著作權人或法定繼承人書面授權之私密通訊嚴禁匯入。",
         compBullets: [
           "本預售款項係依授權代收合約由貝里斯商全視界數位內容有限公司台灣分公司代收。"
         ]
       },
-      {
-        num: "09",
-        code: "C2-WC-ACP",
-        folder: "AdvanceCare",
-        aliases: ["09", "9", "advancecare", "c2-wc-acp"],
-        name: "善終守護 AdvanceCare",
-        entity: "水月道場 / Wonderland Center",
-        domain: "allview.tw",
-        usdtPortal: "allview",
-        isWonderlandAgency: true,
+      "09": {
+        code: "C2-WC-ACP", folder: "AdvanceCare", aliases: ["09", "9", "advancecare", "c2-wc-acp"],
+        name: "善終守護 AdvanceCare", entity: "水月道場 / Wonderland Center", domain: "allview.tw",
+        usdtPortal: "allview", isWonderlandAgency: true,
         tagline: "「安寧」不等於「放棄治療」：在沒有壓力的時候，先看見兩條路。",
-        subscriptions: [
-          { plan: "Personal", spec: "當事人與家人", quota: "每月 3 場決策輔助場次", m: 1900, y: 19000 },
-          { plan: "Family", spec: "多位家屬共同使用", quota: "每月 8 場決策輔助場次", m: 3900, y: 39000 },
-          { plan: "Institution", spec: "醫院社服、長照機構、社區據點", quota: "每月 40 場決策輔助場次", m: 12900, y: 129000 },
-          { plan: "Custom", spec: "特殊合作", quota: "客製（洽談）", custom: true }
-        ],
-        hardwares: [],
-        addons: [
-          { name: "額外場次包", spec: "超出額度加購", quota: "3 場決策輔助場次", price: 1490 }
-        ],
         compTitle: "善終守護 AdvanceCare 核心醫療邊界強制聲明",
         compBody: "善終守護 AdvanceCare 嚴格定位為「教育與決策輔助工具」，絕非醫療行為本身，亦不替代醫師臨床說明。",
         compBullets: [
@@ -1423,30 +1303,11 @@
           "本預售款項係依授權代收合約由貝里斯商全視界數位內容有限公司台灣分公司代收。"
         ]
       },
-      {
-        num: "10",
-        code: "C2-WC-VST",
-        folder: "SeniorTravel",
-        aliases: ["10", "seniortravel", "c2-wc-vst"],
-        name: "寰宇無界 SeniorTravel",
-        entity: "水月道場 / Wonderland Center",
-        domain: "allview.tw",
-        usdtPortal: "allview",
-        isWonderlandAgency: true,
+      "10": {
+        code: "C2-WC-VST", folder: "SeniorTravel", aliases: ["10", "seniortravel", "c2-wc-vst"],
+        name: "寰宇無界 SeniorTravel", entity: "水月道場 / Wonderland Center", domain: "allview.tw",
+        usdtPortal: "allview", isWonderlandAgency: true,
         tagline: "走不遠了，還是可以一起去看看：AI 帶路，真人陪伴。",
-        subscriptions: [
-          { plan: "Home", spec: "單一家庭", quota: "每月 8 場虛擬出遊場次", m: 1900, y: 19000 },
-          { plan: "Family Plus", spec: "多位家人共用", quota: "每月 20 場虛擬出遊場次", m: 3900, y: 39000 },
-          { plan: "Care Center", spec: "長照／社區據點", quota: "每月 60 場虛擬出遊場次", m: 9900, y: 99000 },
-          { plan: "Custom", spec: "特殊需求", quota: "客製（洽談）", custom: true }
-        ],
-        hardwares: [
-          { cat: "硬體一次購", name: "兩槽 AI NAS 套組", spec: "2 槽個人型（含機殼與預裝，不含硬碟）", note: "單一家庭本地體驗節點", price: 48900, allowQty: false, defaultBundle: true },
-          { cat: "硬體加購", name: "XR／360° 終端", spec: "加購或租賃", note: "待確認（洽談）", custom: true }
-        ],
-        addons: [
-          { name: "額外場次包", spec: "超出額度加購", quota: "5 場虛擬出遊場次", price: 990 }
-        ],
         compTitle: "寰宇無界 SeniorTravel 非醫療與無障礙邊界宣告",
         compBody: "本系統的穿戴感知功能只用來動態調節體驗節奏（如疲勞時自動休整），不提供醫療診斷，也不是醫療器材。",
         compBullets: [
@@ -1454,65 +1315,301 @@
           "本預售款項係依授權代收合約由貝里斯商全視界數位內容有限公司台灣分公司代收。"
         ]
       }
-    ];
+    };
+
+    const FALLBACK_MD_SOURCE = `---
+discount_rate: 0.7
+usdt_rate: 32.5
+---
+## 首年入門套裝預售對比
+| 編號 | 產品代碼 | 產品名稱 | 入門首年組合內容 | 硬體原價 | 軟體年繳原價 | 首年總原價 | 硬體7折預售 | 軟體年繳7折預售 | 首年7折嘗鮮總價 | 首年現省金額 |
+| :--- | :--- | :--- | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 01 | P01-OL | 寰境再製 OrbiLocale | Starter 年繳（純軟體） | 0 | 49000 | 49000 | 0 | 34300 | 34300 | 14700 |
+| 02 | P02-CC | 密圈 CipherCircle | Community 年繳（純軟體） | 0 | 69000 | 69000 | 0 | 48300 | 48300 | 20700 |
+| 03 | P03-VP | 隱證 VeilProof | Practice 年繳（純軟體） | 0 | 79000 | 79000 | 0 | 55300 | 55300 | 23700 |
+| 04 | P04-HS | 神盾殼 HEShell | USB 金鑰 + Starter 年繳 | 12900 | 19000 | 31900 | 9030 | 13300 | 22330 | 9570 |
+| 05 | P05-AV | 密文智庫 EncryMind | 2槽 AI NAS + Basic 年繳 | 48900 | 29000 | 77900 | 34230 | 20300 | 54530 | 23370 |
+| 06 | P06-S123 | 斜槓一二三 Slash123 | 2槽 AI NAS + Expert Starter 年繳 | 48900 | 19000 | 67900 | 34230 | 13300 | 47530 | 20370 |
+| 07 | P07-S104 | 斜槓104 Slash104 | 8槽 AI NAS + Team 年繳 | 168900 | 99000 | 267900 | 118230 | 69300 | 187530 | 80370 |
+| 08 | C2-WC-DMR | 永恆記憶 EternalMemory | 4槽 AI NAS + Family 年繳 | 89900 | 49000 | 138900 | 62930 | 34300 | 97230 | 41670 |
+| 09 | C2-WC-ACP | 善終守護 AdvanceCare | Personal 年繳（純軟體） | 0 | 19000 | 19000 | 0 | 13300 | 13300 | 5700 |
+| 10 | C2-WC-VST | 寰宇無界 SeniorTravel | 2槽 AI NAS + Home 年繳 | 48900 | 19000 | 67900 | 34230 | 13300 | 47530 | 20370 |
+
+## [01] 寰境再製 OrbiLocale
+| 計費類別 | 方案／項目名稱 | 規格／適用對象 | 週期額度／說明 | 標準月繳 | 標準年繳 | 標準一次購/加購 | 7折月繳 | 7折年繳 | 7折一次購/加購 |
+| 軟體訂閱 | Starter | 創作者、小型團隊、試用 | 每月 8 次再製任務 | 4900 | 49000 | - | 3430 | 34300 | - |
+| 軟體訂閱 | Pro | 中小企業、活躍創作者／MCN | 每月 25 次再製任務 | 12900 | 129000 | - | 9030 | 90300 | - |
+| 軟體訂閱 | Business | 有固定海外內容需求的企業 | 每月 70 次再製任務 | 29900 | 299000 | - | 20930 | 209300 | - |
+| 軟體訂閱 | Enterprise | 大型或客製需求 | 客製（洽談） | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 |
+| 額度加購 | 任務加購包 | 超出額度加購 | 10 次再製任務 | - | - | 5900 | - | - | 4130 |
+
+## [02] 密圈 CipherCircle
+| 計費類別 | 方案／項目名稱 | 規格／適用對象 | 週期額度／說明 | 標準月繳 | 標準年繳 | 標準一次購/加購 | 7折月繳 | 7折年繳 | 7折一次購/加購 |
+| 軟體訂閱 | Community | 小型知識社群、試用課程 | 每月 50 活躍成員席次 | 6900 | 69000 | - | 4830 | 48300 | - |
+| 軟體訂閱 | Professional | 活躍課程／論壇主辦方 | 每月 200 活躍成員席次 | 18900 | 189000 | - | 13230 | 132300 | - |
+| 軟體訂閱 | Organization | 較大規模知識社群或機構 | 每月 800 活躍成員席次 | 49900 | 499000 | - | 34930 | 349300 | - |
+| 軟體訂閱 | Enterprise | 大型或需客製規則 | 客製（洽談） | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 |
+| 額度加購 | 額外席次包 | 超出席次加購 | 每 50 席 | - | - | 4900 | - | - | 3430 |
+
+## [03] 隱證 VeilProof
+| 計費類別 | 方案／項目名稱 | 規格／適用對象 | 週期額度／說明 | 標準月繳 | 標準年繳 | 標準一次購/加購 | 7折月繳 | 7折年繳 | 7折一次購/加購 |
+| 軟體訂閱 | Practice | 個人自我訓練、小型內訓 | 每月 6 場推演場次 | 7900 | 79000 | - | 5530 | 55300 | - |
+| 軟體訂閱 | Team | 企業談判／策略團隊 | 每月 20 場推演場次 | 22900 | 229000 | - | 16030 | 160300 | - |
+| 軟體訂閱 | Academy | 商學院、培訓機構、較高頻率使用 | 每月 50 場推演場次 | 49900 | 499000 | - | 34930 | 349300 | - |
+| 軟體訂閱 | Enterprise | 大型或需客製情境 | 客製（洽談） | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 |
+| 額度加購 | 額外場次包 | 超出額度加購 | 5 場推演場次 | - | - | 9900 | - | - | 6930 |
+
+## [04] 神盾殼 HEShell
+| 計費類別 | 方案／項目名稱 | 規格／適用對象 | 週期額度／說明 | 標準月繳 | 標準年繳 | 標準一次購/加購 | 7折月繳 | 7折年繳 | 7折一次購/加購 |
+| 硬體一次購 | USB 金鑰（Starter／Pro／Team 通用） | 隨貨交付（遺失不補發） | 單把硬體金鑰（Team 可加購） | - | - | 12900 | - | - | 9030 |
+| 軟體訂閱 | Starter | 個人或小團隊試用 | 每月 100 次密文運算請求 | 1900 | 19000 | - | 1330 | 13300 | - |
+| 軟體訂閱 | Professional | 資安或研發團隊日常使用 | 每月 500 次密文運算請求 | 4900 | 49000 | - | 3430 | 34300 | - |
+| 軟體訂閱 | Team | 多人共用或較高頻率 | 每月 2,000 次密文運算請求 | 12900 | 129000 | - | 9030 | 90300 | - |
+| 軟體訂閱 | Enterprise | 需客製或大量使用 | 客製（洽談） | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 |
+| 額度加購 | 額外請求包 | 超出額度加購 | 100 次密文運算請求 | - | - | 1490 | - | - | 1043 |
+
+## [05] 密文智庫 EncryMind
+| 計費類別 | 方案／項目名稱 | 規格／適用對象 | 週期額度／說明 | 標準月繳 | 標準年繳 | 標準一次購/加購 | 7折月繳 | 7折年繳 | 7折一次購/加購 |
+| 硬體一次購 | AI NAS 個人型 | 2 槽（個人或極小團隊，不含硬碟） | 搭配 Basic 方案 | - | - | 48900 | - | - | 34230 |
+| 硬體一次購 | AI NAS 小組型 | 4 槽（部門或專案小組，不含硬碟） | 搭配 Standard 方案 | - | - | 89900 | - | - | 62930 |
+| 硬體一次購 | AI NAS 全公司型 | 8 槽（公司級部署，不含硬碟） | 搭配 Advanced 方案 | - | - | 168900 | - | - | 118230 |
+| 軟體訂閱 | Basic | 搭配 2 槽個人型 | 每月 300 次 AI 問答 | 2900 | 29000 | - | 2030 | 20300 | - |
+| 軟體訂閱 | Standard | 搭配 4 槽小組型 | 每月 1,200 次 AI 問答 | 6900 | 69000 | - | 4830 | 48300 | - |
+| 軟體訂閱 | Advanced | 搭配 8 槽全公司型 | 每月 4,000 次 AI 問答 | 14900 | 149000 | - | 10430 | 104300 | - |
+| 軟體訂閱 | Enterprise | 任意規格客製 | 客製（洽談） | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 |
+| 額度加購 | 額外問答包 | 超出額度加購 | 100 次 AI 問答 | - | - | 1200 | - | - | 840 |
+
+## [06] 斜槓一二三 Slash123
+| 計費類別 | 方案／項目名稱 | 規格／適用對象 | 週期額度／說明 | 標準月繳 | 標準年繳 | 標準一次購/加購 | 7折月繳 | 7折年繳 | 7折一次購/加購 |
+| 硬體一次購 | 兩槽 AI NAS 套組 | 2 槽個人型（含機殼與預裝，不含硬碟） | 專家個人地端節點 | - | - | 48900 | - | - | 34230 |
+| 硬體加購 | USB 金鑰（加購） | 單把（用於授權解密） | 可多把對應不同分身 | - | - | 3900 | - | - | 2730 |
+| 軟體訂閱 | Expert Starter | 剛開始上架的專家 | 每月可售出最多 200 次提問 | 1900 | 19000 | - | 1330 | 13300 | - |
+| 軟體訂閱 | Expert Pro | 活躍專家 | 每月可售出最多 800 次提問 | 4900 | 49000 | - | 3430 | 34300 | - |
+| 軟體訂閱 | Expert Unlimited | 高頻或多元分身專家 | 每月可售出最多 2,500 次提問 | 9900 | 99000 | - | 6930 | 69300 | - |
+| 軟體訂閱 | Enterprise | 需客製規則 | 客製（洽談） | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 |
+
+## [07] 斜槓104 Slash104
+| 計費類別 | 方案／項目名稱 | 規格／適用對象 | 週期額度／說明 | 標準月繳 | 標準年繳 | 標準一次購/加購 | 7折月繳 | 7折年繳 | 7折一次購/加購 |
+| 硬體一次購 | 八槽 AI NAS 套組 | 8 槽全公司型（含機殼與預裝，不含硬碟） | 公司級知識庫與多部門共用 | - | - | 168900 | - | - | 118230 |
+| 硬體加購 | USB 金鑰（加購） | 單把（用於對內或對外授權解密） | 可依角色與夥伴數量加購 | - | - | 3900 | - | - | 2730 |
+| 軟體訂閱 | Team | 單一團隊或專案組 | 每月 1,000 次提問額度 | 9900 | 99000 | - | 6930 | 69300 | - |
+| 軟體訂閱 | Company | 多部門公司 | 每月 4,000 次提問額度 | 24900 | 249000 | - | 17430 | 174300 | - |
+| 軟體訂閱 | Enterprise | 大型或高頻使用 | 每月 12,000 次提問額度 | 49900 | 499000 | - | 34930 | 349300 | - |
+| 軟體訂閱 | Custom | 需客製規則 | 客製（洽談） | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 |
+
+## [08] 永恆記憶 EternalMemory
+| 計費類別 | 方案／項目名稱 | 規格／適用對象 | 週期額度／說明 | 標準月繳 | 標準年繳 | 標準一次購/加購 | 7折月繳 | 7折年繳 | 7折一次購/加購 |
+| 硬體一次購 | 四槽 AI NAS 套組 | 4 槽小組型（含機殼與預裝，不含硬碟） | 家屬小組或小型紀念機構 | - | - | 89900 | - | - | 62930 |
+| 硬體加購 | USB 金鑰（加購） | 單把（用於授權驗證與解密） | 若採用時加購 | - | - | 3900 | - | - | 2730 |
+| 軟體訂閱 | Family | 家屬留念 | 每月 8 場互動場次 | 4900 | 49000 | - | 3430 | 34300 | - |
+| 軟體訂閱 | Institution | 紀念機構、學術單位 | 每月 30 場互動場次 | 14900 | 149000 | - | 10430 | 104300 | - |
+| 軟體訂閱 | Legacy | 較高頻或企業傳承 | 每月 80 場互動場次 | 29900 | 299000 | - | 20930 | 209300 | - |
+| 軟體訂閱 | Custom | 特殊需求 | 客製（洽談） | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 |
+
+## [09] 善終守護 AdvanceCare
+| 計費類別 | 方案／項目名稱 | 規格／適用對象 | 週期額度／說明 | 標準月繳 | 標準年繳 | 標準一次購/加購 | 7折月繳 | 7折年繳 | 7折一次購/加購 |
+| 軟體訂閱 | Personal | 當事人與家人 | 每月 3 場決策輔助場次 | 1900 | 19000 | - | 1330 | 13300 | - |
+| 軟體訂閱 | Family | 多位家屬共同使用 | 每月 8 場決策輔助場次 | 3900 | 39000 | - | 2730 | 27300 | - |
+| 軟體訂閱 | Institution | 醫院社服、長照機構、社區據點 | 每月 40 場決策輔助場次 | 12900 | 129000 | - | 9030 | 90300 | - |
+| 軟體訂閱 | Custom | 特殊合作 | 客製（洽談） | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 |
+| 額度加購 | 額外場次包 | 超出額度加購 | 3 場決策輔助場次 | - | - | 1490 | - | - | 1043 |
+
+## [10] 寰宇無界 SeniorTravel
+| 計費類別 | 方案／項目名稱 | 規格／適用對象 | 週期額度／說明 | 標準月繳 | 標準年繳 | 標準一次購/加購 | 7折月繳 | 7折年繳 | 7折一次購/加購 |
+| 硬體一次購 | 兩槽 AI NAS 套組 | 2 槽個人型（含機殼與預裝，不含硬碟） | 單一家庭本地體驗節點 | - | - | 48900 | - | - | 34230 |
+| 硬體加購 | XR／360° 終端 | 加購或租賃 | 待確認（洽談） | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 |
+| 軟體訂閱 | Home | 單一家庭 | 每月 8 場虛擬出遊場次 | 1900 | 19000 | - | 1330 | 13300 | - |
+| 軟體訂閱 | Family Plus | 多位家人共用 | 每月 20 場虛擬出遊場次 | 3900 | 39000 | - | 2730 | 27300 | - |
+| 軟體訂閱 | Care Center | 長照／社區據點 | 每月 60 場虛擬出遊場次 | 9900 | 99000 | - | 6930 | 69300 | - |
+| 軟體訂閱 | Custom | 特殊需求 | 客製（洽談） | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 | 洽談 |
+| 額度加購 | 額外場次包 | 超出額度加購 | 5 場虛擬出遊場次 | - | - | 990 | - | - | 693 |`;
+
+    let DYNAMIC_CONFIG = {
+      discountRate: 0.7,
+      usdtRate: 32.5,
+      starterRows: [],
+      productsMap: {}
+    };
 
     const state = {
       productNum: "01",
       tierIdx: 0,
-      billing: "yearly",      // "yearly" | "monthly"
-      hwSelected: {},         // { hwIdx: qty }
-      addonQty: {},           // { addonIdx: qty }
+      billing: "yearly",
+      hwSelected: {},
+      addonQty: {},
       consent: false,
       method: "bank",
       usdtPortal: "allview",
-      usdtNet: "TRC20"
+      usdtNet: "TRC20",
+      catalogPriceMode: "sale"
     };
 
+    const parsePriceCell = (val) => {
+      if (!val || val === "-" || val === "—") return null;
+      if (val.includes("洽談")) return "洽談";
+      const num = Number(val.replace(/,/g, ""));
+      return isNaN(num) ? null : num;
+    };
+
+    function parseServiceAndPricingMarkdown(mdText) {
+      let discountRate = 0.7;
+      let usdtRate = 32.5;
+
+      const dMatch = mdText.match(/discount_rate:\s*([0-9.]+)/i);
+      if (dMatch && !isNaN(parseFloat(dMatch[1]))) discountRate = parseFloat(dMatch[1]);
+
+      const uMatch = mdText.match(/usdt_rate:\s*([0-9.]+)/i);
+      if (uMatch && !isNaN(parseFloat(uMatch[1]))) usdtRate = parseFloat(uMatch[1]);
+
+      const calcSale = (orig) => (typeof orig === "number" ? Math.round(orig * discountRate) : orig);
+
+      const starterRows = [];
+      const starterSec = mdText.match(/##\s*首年入門套裝預售對比([\s\S]*?)(?=\n---|\n##\s*\[)/);
+      if (starterSec) {
+        starterSec[1].trim().split("\n").forEach(line => {
+          const t = line.trim();
+          if (!t.startsWith("|") || t.includes("---")) return;
+          const cells = t.split("|").map(c => c.trim()).filter((_, i, a) => i > 0 && i < a.length - 1);
+          if (cells.length >= 11 && /^\d{2}$/.test(cells[0])) {
+            const hwOrig = Number(cells[4].replace(/,/g, "")) || 0;
+            const swOrig = Number(cells[5].replace(/,/g, "")) || 0;
+            const totOrig = Number(cells[6].replace(/,/g, "")) || (hwOrig + swOrig);
+            const hwSale = calcSale(hwOrig);
+            const swSale = calcSale(swOrig);
+            const totSale = hwSale + swSale;
+            starterRows.push({
+              num: cells[0],
+              code: cells[1],
+              name: cells[2],
+              combo: cells[3],
+              hwOrig, swOrig, totOrig,
+              hwSale, swSale, totSale,
+              saved: totOrig - totSale
+            });
+          }
+        });
+      }
+
+      const productsMap = {};
+      const prodRegex = /##\s*\[(\d{2})\][^\n]*\n([\s\S]*?)(?=\n---|\n##\s*\[|$)/g;
+      let match;
+      while ((match = prodRegex.exec(mdText)) !== null) {
+        const num = match[1];
+        const block = match[2];
+        const subscriptions = [];
+        const hardwares = [];
+        const addons = [];
+
+        block.split("\n").forEach(line => {
+          const t = line.trim();
+          if (!t.startsWith("|") || t.includes("---") || t.includes("計費類別")) return;
+          const cells = t.split("|").map(c => c.trim()).filter((_, i, a) => i > 0 && i < a.length - 1);
+          if (cells.length < 7) return;
+
+          const [cat, planName, spec, quota, mRaw, yRaw, oRaw] = cells;
+          const m = parsePriceCell(mRaw);
+          const y = parsePriceCell(yRaw);
+          const o = parsePriceCell(oRaw);
+
+          if (cat === "軟體訂閱") {
+            const isCustom = (m === "洽談" || y === "洽談");
+            let matchHwIdx = undefined;
+            if (num === "05") {
+              if (planName === "Basic") matchHwIdx = 0;
+              if (planName === "Standard") matchHwIdx = 1;
+              if (planName === "Advanced") matchHwIdx = 2;
+            }
+            subscriptions.push({
+              plan: planName,
+              spec,
+              quota,
+              m: typeof m === "number" ? m : null,
+              y: typeof y === "number" ? y : null,
+              custom: isCustom,
+              matchHwIdx
+            });
+          } else if (cat.startsWith("硬體")) {
+            const isCustom = (o === "洽談");
+            const allowQty = cat === "硬體加購" || planName.includes("通用");
+            const defaultBundle = cat === "硬體一次購" && hardwares.filter(h => h.cat === "硬體一次購").length === 0;
+            hardwares.push({
+              cat,
+              name: planName,
+              spec,
+              note: quota,
+              price: typeof o === "number" ? o : null,
+              custom: isCustom,
+              allowQty,
+              defaultBundle
+            });
+          } else if (cat === "額度加購") {
+            addons.push({
+              name: planName,
+              spec,
+              quota,
+              price: typeof o === "number" ? o : 0
+            });
+          }
+        });
+
+        productsMap[num] = { subscriptions, hardwares, addons };
+      }
+
+      return { discountRate, usdtRate, starterRows, productsMap };
+    }
+
+    function getDiscountLabel() {
+      const fold = Math.round(DYNAMIC_CONFIG.discountRate * 100);
+      return fold % 10 === 0 ? `${fold / 10} 折` : `${fold} 折`;
+    }
+
+    function calcSale(orig) {
+      return typeof orig === "number" ? Math.round(orig * DYNAMIC_CONFIG.discountRate) : null;
+    }
+
     function getProduct() {
-      return PRODUCTS_DB.find(p => p.num === state.productNum) || PRODUCTS_DB[0];
+      const meta = PRODUCT_META[state.productNum] || PRODUCT_META["01"];
+      const dyn = DYNAMIC_CONFIG.productsMap[state.productNum] || { subscriptions: [], hardwares: [], addons: [] };
+      return { num: state.productNum, ...meta, ...dyn };
     }
 
-    function initQuickSelect() {
-      const sel = document.getElementById("quick-product-select");
-      sel.innerHTML = PRODUCTS_DB.map(p =>
-        `<option value="${p.num}">${p.num}｜${p.name}（${p.code}）</option>`
+    function initSelectMenus() {
+      const quickSel = document.getElementById("quick-product-select");
+      const catSel = document.getElementById("catalog-filter-select");
+      const optionsHtml = Object.entries(PRODUCT_META).map(([num, m]) =>
+        `<option value="${num}">${num}｜${m.name}（${m.code}）</option>`
       ).join("");
+      quickSel.innerHTML = optionsHtml;
+      catSel.innerHTML = `<option value="all">顯示全部 10 項產品完整明細</option>` + optionsHtml;
     }
 
-    // 解析跨頁網址參數 (?product=...&plan=...&billing=...&bundle=1&name=...&email=...&notes=...)
     function parseQueryParams() {
       const q = new URLSearchParams(window.location.search);
       const pRaw = (q.get("product") || "").trim().toLowerCase();
       if (pRaw) {
-        const found = PRODUCTS_DB.find(item =>
-          item.num === pRaw ||
-          item.code.toLowerCase() === pRaw ||
-          item.folder.toLowerCase() === pRaw ||
-          item.aliases.includes(pRaw)
-        );
-        if (found) state.productNum = found.num;
+        const foundNum = Object.keys(PRODUCT_META).find(num => {
+          const m = PRODUCT_META[num];
+          return num === pRaw || m.code.toLowerCase() === pRaw || m.folder.toLowerCase() === pRaw || m.aliases.includes(pRaw);
+        });
+        if (foundNum) state.productNum = foundNum;
       }
 
       const prod = getProduct();
       const billRaw = (q.get("billing") || "").trim().toLowerCase();
-      if (billRaw === "monthly" || billRaw === "yearly") {
-        state.billing = billRaw;
-      }
+      if (billRaw === "monthly" || billRaw === "yearly") state.billing = billRaw;
 
-      // 預設選中方案
       state.tierIdx = 0;
       const planRaw = (q.get("plan") || "").trim().toLowerCase();
-      if (planRaw) {
+      if (planRaw && prod.subscriptions.length > 0) {
         const idx = prod.subscriptions.findIndex(s => s.plan.toLowerCase() === planRaw);
         if (idx >= 0) state.tierIdx = idx;
       }
 
-      // 是否預設勾選搭配硬體 (bundle=1)
       state.hwSelected = {};
       state.addonQty = {};
       if (q.get("bundle") === "1" && prod.hardwares.length > 0) {
         const sub = prod.subscriptions[state.tierIdx];
-        if (typeof sub.matchHwIdx === "number") {
+        if (sub && typeof sub.matchHwIdx === "number") {
           state.hwSelected[sub.matchHwIdx] = 1;
         } else {
           const defIdx = prod.hardwares.findIndex(h => h.defaultBundle && !h.custom);
@@ -1520,7 +1617,6 @@
         }
       }
 
-      // 預填聯絡資訊
       if (q.get("name")) {
         document.getElementById("inp-name").value = q.get("name");
         document.getElementById("cust-name").value = q.get("name");
@@ -1536,8 +1632,8 @@
       }
     }
 
-    function handleQuickProductChange() {
-      state.productNum = document.getElementById("quick-product-select").value;
+    function selectProductFromCatalog(num) {
+      state.productNum = num;
       state.tierIdx = 0;
       state.hwSelected = {};
       state.addonQty = {};
@@ -1545,7 +1641,12 @@
       document.getElementById("consent-checkbox").checked = false;
       document.getElementById("receipt-area").classList.add("hidden");
       renderAll();
-      showToast(`已切換至「${getProduct().name}」`);
+      document.getElementById("sec-step-1").scrollIntoView({ behavior: "smooth" });
+      showToast(`已帶入「${num}｜${getProduct().name}」至結算工作台`);
+    }
+
+    function handleQuickProductChange() {
+      selectProductFromCatalog(document.getElementById("quick-product-select").value);
     }
 
     function switchBilling(mode) {
@@ -1558,7 +1659,7 @@
       state.tierIdx = idx;
       const prod = getProduct();
       const sub = prod.subscriptions[idx];
-      if (typeof sub.matchHwIdx === "number" && Object.keys(state.hwSelected).length > 0) {
+      if (sub && typeof sub.matchHwIdx === "number" && Object.keys(state.hwSelected).length > 0) {
         state.hwSelected = { [sub.matchHwIdx]: 1 };
       }
       document.getElementById("receipt-area").classList.add("hidden");
@@ -1582,8 +1683,7 @@
 
     function changeHwQty(idx, delta) {
       const cur = state.hwSelected[idx] || 1;
-      const next = Math.max(1, Math.min(20, cur + delta));
-      state.hwSelected[idx] = next;
+      state.hwSelected[idx] = Math.max(1, Math.min(20, cur + delta));
       renderAll();
     }
 
@@ -1597,7 +1697,7 @@
 
     function calculateTotals() {
       const prod = getProduct();
-      const sub = prod.subscriptions[state.tierIdx];
+      const sub = prod.subscriptions[state.tierIdx] || { plan: "N/A", quota: "", custom: true };
       let hasCustom = Boolean(sub.custom);
       let origTotal = 0;
       let saleTotal = 0;
@@ -1648,12 +1748,21 @@
         });
       });
 
-      const usdtTotal = (saleTotal / USDT_RATE).toFixed(2);
+      const usdtTotal = (saleTotal / DYNAMIC_CONFIG.usdtRate).toFixed(2);
       return { hasCustom, origTotal, saleTotal, savedTotal: origTotal - saleTotal, usdtTotal, lines };
     }
 
     function renderAll() {
       const prod = getProduct();
+      const dLabel = getDiscountLabel();
+      const savePct = Math.round((1 - DYNAMIC_CONFIG.discountRate) * 100);
+
+      document.getElementById("header-discount-pill").textContent = `${dLabel}嘗鮮預售・託管級核銷`;
+      document.getElementById("discount-ribbon-label").textContent = `★ 早鳥嘗鮮預售 ${dLabel}（現省 ${savePct}%）`;
+      document.getElementById("bill-yearly").textContent = `年繳方案（再享 ${dLabel}）`;
+      document.getElementById("bill-monthly").textContent = `月繳方案（享 ${dLabel}）`;
+      document.getElementById("mode-sale-btn").textContent = `★ ${dLabel}嘗鮮預售價（現省 ${savePct}%）`;
+
       document.getElementById("quick-product-select").value = prod.num;
 
       const backBtn = document.getElementById("back-to-product-btn");
@@ -1662,7 +1771,6 @@
 
       document.getElementById("entity-badge").textContent = prod.entity;
       document.getElementById("prod-code-pill").textContent = prod.code;
-      document.getElementById("prod-domain-pill").textContent = prod.domain;
       document.getElementById("agency-pill").classList.toggle("hidden", !prod.isWonderlandAgency);
 
       document.getElementById("prod-title").textContent = `${prod.num}｜${prod.name}`;
@@ -1689,7 +1797,7 @@
         const unit = state.billing === "yearly" ? "/年" : "/月";
         return `
           <button type="button" class="tier-card ${isSel ? "selected" : ""}" onclick="selectTier(${idx})">
-            <div class="tier-name"><span>${s.plan}</span><span style="font-size:0.72rem;color:var(--kicker)">7 折</span></div>
+            <div class="tier-name"><span>${s.plan}</span><span style="font-size:0.72rem;color:var(--kicker)">${dLabel}</span></div>
             <div class="tier-quota">${s.quota}</div>
             <div class="tier-spec">${s.spec}</div>
             <div class="tier-price-line">
@@ -1748,7 +1856,7 @@
             <div class="addon-row">
               <div class="addon-info">
                 <strong style="font-size:0.88rem;color:var(--heading)">${ad.name}（${ad.quota}）</strong>
-                <span class="addon-meta">${ad.spec}｜單包 7 折 NT$ ${calcSale(ad.price).toLocaleString("zh-TW")}（原價 NT$ ${ad.price.toLocaleString("zh-TW")}）</span>
+                <span class="addon-meta">${ad.spec}｜單包 ${dLabel} NT$ ${calcSale(ad.price).toLocaleString("zh-TW")}（原價 NT$ ${ad.price.toLocaleString("zh-TW")}）</span>
               </div>
               <div class="addon-right">
                 <div class="qty-box">
@@ -1774,7 +1882,7 @@
         document.getElementById("orig-total-display").textContent = `NT$ ${totals.origTotal.toLocaleString("zh-TW")}`;
         document.getElementById("save-total-badge").textContent = `現省 NT$ ${totals.savedTotal.toLocaleString("zh-TW")}`;
         document.getElementById("sale-total-display").textContent = `NT$ ${totals.saleTotal.toLocaleString("zh-TW")}`;
-        document.getElementById("sale-usdt-display").textContent = totals.usdtTotal;
+        document.getElementById("usdt-equiv-row").textContent = `≈ ${totals.usdtTotal} USDT（參考匯率 1:${DYNAMIC_CONFIG.usdtRate}）`;
       }
 
       document.getElementById("comp-title").textContent = prod.compTitle;
@@ -1788,14 +1896,144 @@
 
       updateLockUI();
       renderPaymentPanels();
+      renderCatalogTables();
+    }
+
+    function setCatalogPriceMode(mode) {
+      state.catalogPriceMode = mode;
+      document.getElementById("mode-sale-btn").classList.toggle("active", mode === "sale");
+      document.getElementById("mode-orig-btn").classList.toggle("active", mode === "orig");
+      renderCatalogTables();
+    }
+
+    function renderCatalogTables() {
+      const isSale = state.catalogPriceMode === "sale";
+      const dLabel = getDiscountLabel();
+
+      const starterTable = document.getElementById("starter-compare-table");
+      if (starterTable) {
+        const rowsHtml = DYNAMIC_CONFIG.starterRows.map(r => {
+          const hwVal = isSale ? r.hwSale : r.hwOrig;
+          const swVal = isSale ? r.swSale : r.swOrig;
+          const totVal = isSale ? r.totSale : r.totOrig;
+          const cls = isSale ? "sale-val" : "orig-val";
+          return `
+            <tr>
+              <td><code>${r.num}</code></td>
+              <td><strong>${r.name}</strong></td>
+              <td>${r.combo}</td>
+              <td class="num-col ${cls}">${hwVal === 0 ? "—" : `NT$ ${hwVal.toLocaleString("zh-TW")}`}</td>
+              <td class="num-col ${cls}">NT$ ${swVal.toLocaleString("zh-TW")}</td>
+              <td class="num-col ${cls}" style="font-size:0.96rem">NT$ ${totVal.toLocaleString("zh-TW")}</td>
+              <td class="num-col" style="color:var(--kicker)">${isSale ? `省 NT$ ${r.saved.toLocaleString("zh-TW")}` : `${dLabel} NT$ ${r.totSale.toLocaleString("zh-TW")}`}</td>
+              <td style="text-align:right"><button type="button" class="btn btn-outline btn-sm" onclick="selectProductFromCatalog('${r.num}')">帶入結算</button></td>
+            </tr>
+          `;
+        }).join("");
+
+        starterTable.innerHTML = `
+          <thead>
+            <tr>
+              <th>編號</th>
+              <th>產品名稱</th>
+              <th>入門首年組合內容</th>
+              <th class="num-col">硬體（${isSale ? dLabel : "原價"}）</th>
+              <th class="num-col">軟體年繳（${isSale ? dLabel : "原價"}）</th>
+              <th class="num-col">首年總計（${isSale ? dLabel : "原價"}）</th>
+              <th class="num-col">${isSale ? "現省金額" : `${dLabel}參考價`}</th>
+              <th style="text-align:right">操作</th>
+            </tr>
+          </thead>
+          <tbody>${rowsHtml}</tbody>
+        `;
+      }
+
+      const fullTable = document.getElementById("full-pricing-table");
+      const filterVal = document.getElementById("catalog-filter-select").value;
+      if (fullTable) {
+        const nums = filterVal === "all" ? Object.keys(PRODUCT_META) : [filterVal];
+        const allRows = [];
+
+        nums.forEach(num => {
+          const meta = PRODUCT_META[num];
+          const pData = DYNAMIC_CONFIG.productsMap[num];
+          if (!meta || !pData) return;
+
+          const fmtCell = (origVal) => {
+            if (origVal === null) return "—";
+            if (origVal === "洽談") return `<span style="color:#9A6700;font-weight:700">洽談</span>`;
+            const val = isSale ? calcSale(origVal) : origVal;
+            return `<span class="${isSale ? "sale-val" : "orig-val"}">NT$ ${val.toLocaleString("zh-TW")}</span>`;
+          };
+
+          pData.subscriptions.forEach(s => {
+            allRows.push(`
+              <tr>
+                <td><code>${num}</code> ${meta.name}</td>
+                <td><span class="cat-pill">軟體訂閱</span></td>
+                <td><strong>${s.plan}</strong></td>
+                <td>${s.spec}｜${s.quota}</td>
+                <td class="num-col">${s.custom ? fmtCell("洽談") : fmtCell(s.m)}</td>
+                <td class="num-col">${s.custom ? fmtCell("洽談") : fmtCell(s.y)}</td>
+                <td class="num-col">—</td>
+                <td style="text-align:right"><button type="button" class="btn btn-outline btn-sm" onclick="selectProductFromCatalog('${num}')">選購</button></td>
+              </tr>
+            `);
+          });
+
+          pData.hardwares.forEach(h => {
+            allRows.push(`
+              <tr>
+                <td><code>${num}</code> ${meta.name}</td>
+                <td><span class="cat-pill hw">${h.cat}</span></td>
+                <td><strong>${h.name}</strong></td>
+                <td>${h.spec}｜${h.note}</td>
+                <td class="num-col">—</td>
+                <td class="num-col">—</td>
+                <td class="num-col">${h.custom ? fmtCell("洽談") : fmtCell(h.price)}</td>
+                <td style="text-align:right"><button type="button" class="btn btn-outline btn-sm" onclick="selectProductFromCatalog('${num}')">選購</button></td>
+              </tr>
+            `);
+          });
+
+          pData.addons.forEach(a => {
+            allRows.push(`
+              <tr>
+                <td><code>${num}</code> ${meta.name}</td>
+                <td><span class="cat-pill ad">額度加購</span></td>
+                <td><strong>${a.name}</strong></td>
+                <td>${a.spec}｜${a.quota}</td>
+                <td class="num-col">—</td>
+                <td class="num-col">—</td>
+                <td class="num-col">${fmtCell(a.price)}</td>
+                <td style="text-align:right"><button type="button" class="btn btn-outline btn-sm" onclick="selectProductFromCatalog('${num}')">選購</button></td>
+              </tr>
+            `);
+          });
+        });
+
+        fullTable.innerHTML = `
+          <thead>
+            <tr>
+              <th>產品線</th>
+              <th>計費類別</th>
+              <th>方案／項目名稱</th>
+              <th>規格與週期額度</th>
+              <th class="num-col">月繳（${isSale ? dLabel : "原價"}）</th>
+              <th class="num-col">年繳（${isSale ? dLabel : "原價"}）</th>
+              <th class="num-col">一次購／加購（${isSale ? dLabel : "原價"}）</th>
+              <th style="text-align:right">操作</th>
+            </tr>
+          </thead>
+          <tbody>${allRows.join("")}</tbody>
+        `;
+      }
     }
 
     function handleConsentChange() {
       state.consent = document.getElementById("consent-checkbox").checked;
       updateLockUI();
-      if (state.consent) {
-        showToast("已確認服務邊界，結帳與核銷工作台已解鎖！");
-      }
+      if (state.consent) showToast("已確認服務邊界，結帳與核銷工作台已解鎖！");
     }
 
     function updateLockUI() {
@@ -1828,10 +2066,7 @@
       document.getElementById("step-sub-4").textContent = ok ? (totals.hasCustom ? "寄送洽談摘要" : "填寫回報開憑證") : "即時開立電子收據";
     }
 
-    function selectMethod(m) {
-      state.method = m;
-      renderPaymentPanels();
-    }
+    function selectMethod(m) { state.method = m; renderPaymentPanels(); }
 
     function renderPaymentPanels() {
       const prod = getProduct();
@@ -1851,7 +2086,7 @@
       if (state.method === "cart") {
         pill.textContent = "🛒 第三方金流購物車";
         document.getElementById("cart-prod-label").textContent = `${prod.name}（${totals.lines.map(l => l.label).join("＋")}）`;
-        document.getElementById("cart-sku-label").textContent = `${prod.code}-${state.billing.toUpperCase()}-70OFF`;
+        document.getElementById("cart-sku-label").textContent = `${prod.code}-${state.billing.toUpperCase()}-PRESALE`;
         document.getElementById("cart-amount-label").textContent = `NT$ ${totals.saleTotal.toLocaleString("zh-TW")}`;
 
         syncLabel.textContent = "🛒 第三方金流購物車（刷卡 / 虛擬帳號）";
@@ -1949,6 +2184,7 @@
       e.preventDefault();
       const prod = getProduct();
       const totals = calculateTotals();
+      const dLabel = getDiscountLabel();
       const payer = document.getElementById("inp-name").value.trim();
       const contact = document.getElementById("inp-contact").value.trim();
       const tx = document.getElementById("inp-tx").value.trim();
@@ -1968,8 +2204,8 @@
       let maskedTx = tx.length > 8 ? `${tx.slice(0, 6)}••••${tx.slice(-5)}` : (tx.length === 5 ? `末五碼 ***${tx}` : tx);
       let methodText = state.method === "cart" ? "第三方金流購物車" : (state.method === "bank" ? "彰化銀行 (009) 電匯" : `USDT (${state.usdtNet})`);
       let amtText = state.method === "usdt"
-        ? `${totals.usdtTotal} USDT（7 折預售價 NT$ ${totals.saleTotal.toLocaleString("zh-TW")}）`
-        : `NT$ ${totals.saleTotal.toLocaleString("zh-TW")}（原價 NT$ ${totals.origTotal.toLocaleString("zh-TW")} 之 7 折）`;
+        ? `${totals.usdtTotal} USDT（${dLabel}預售價 NT$ ${totals.saleTotal.toLocaleString("zh-TW")}）`
+        : `NT$ ${totals.saleTotal.toLocaleString("zh-TW")}（原價 NT$ ${totals.origTotal.toLocaleString("zh-TW")} 之 ${dLabel}）`;
 
       document.getElementById("rcp-id").textContent = rcpId;
       document.getElementById("rcp-time").textContent = `${timeStr} (Asia/Taipei)`;
@@ -1996,7 +2232,7 @@
 
     function buildReceiptPlainText() {
       return [
-        "【預售席次保留電子收據憑證（7 折早鳥方案）】",
+        `【預售席次保留電子收據憑證（${getDiscountLabel()}早鳥方案）】`,
         `憑證編號：${document.getElementById("rcp-id").textContent}`,
         `核發時間：${document.getElementById("rcp-time").textContent}`,
         `預售產品：${document.getElementById("rcp-prod").textContent}`,
@@ -2012,7 +2248,7 @@
     }
 
     function copyReceipt() { copyText(buildReceiptPlainText(), "電子收據憑證文字"); }
-    function copyTwdNumber() { copyText(String(calculateTotals().saleTotal), `7 折預售金額 ${calculateTotals().saleTotal}`); }
+    function copyTwdNumber() { copyText(String(calculateTotals().saleTotal), `預售金額 ${calculateTotals().saleTotal}`); }
     function copyUsdtNumber() { copyText(calculateTotals().usdtTotal, `USDT 數量 ${calculateTotals().usdtTotal}`); }
     function copyUsdtAddr() { copyText(document.getElementById("usdt-wallet-addr").textContent, `${state.usdtNet} 錢包地址`); }
 
@@ -2059,7 +2295,7 @@
       const btn = document.getElementById("bigtext-btn");
       const key = "wc-bigtext";
       const apply = on => {
-        document.documentElement.style.fontSize = on ? "120%" : "";
+        document.documentElement.style.fontSize = on ? "122%" : "";
         btn.setAttribute("aria-pressed", on ? "true" : "false");
         try { localStorage.setItem(key, on ? "1" : "0"); } catch (_) {}
       };
@@ -2067,12 +2303,27 @@
       btn.addEventListener("click", () => apply(btn.getAttribute("aria-pressed") !== "true"));
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      initQuickSelect();
-      parseQueryParams();
+    async function bootstrap() {
+      initSelectMenus();
       initBigText();
+
+      const statusBadge = document.getElementById("md-sync-status");
+      try {
+        const resp = await fetch(PRICING_MD_PATH, { cache: "no-cache" });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const mdText = await resp.text();
+        DYNAMIC_CONFIG = parseServiceAndPricingMarkdown(mdText);
+        statusBadge.textContent = `✓ 已即時同步 ./serviceandpricing.md（${getDiscountLabel()}預售）`;
+      } catch (_) {
+        DYNAMIC_CONFIG = parseServiceAndPricingMarkdown(FALLBACK_MD_SOURCE);
+        statusBadge.textContent = `✓ 已載入備援價目（與 ./serviceandpricing.md 同步）`;
+      }
+
+      parseQueryParams();
       renderAll();
-    });
+    }
+
+    document.addEventListener("DOMContentLoaded", bootstrap);
   </script>
 </body>
 </html>

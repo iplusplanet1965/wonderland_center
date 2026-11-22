@@ -1,19 +1,16 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
-<!-- 產品線：01｜寰境再製 OrbiLocale（所屬事業體：AllView / allview.today）｜檔案層級：cta/OrbiLocale.html -->
+<!-- 產品線：01｜寰境再製 OrbiLocale（所屬事業體：AllView / allview.today）｜檔案路徑：OrbiLocale/index.html -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>寰境再製 OrbiLocale｜多語內容文化轉譯再製代理 — 專屬預售諮詢</title>
+  <title>寰境再製 OrbiLocale｜多語內容文化轉譯再製代理 — 7 折嘗鮮預售</title>
   <meta name="description" content="寰境再製 OrbiLocale 不是翻譯器，而是具備文化轉譯（Transcreation）的內容再製代理。先凍結事實，再為 8 種封閉白名單語系市場重寫文化語感。">
   <meta name="theme-color" content="#0B253A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* ==========================================================================
-       水月道場 / Wonderland Center — CIS 設計變數（60% 底色 / 30% 結構 / 10% 點綴）
-       ========================================================================== */
     :root {
       --font-body: "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
       --font-display: "Cinzel", "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", serif;
@@ -33,6 +30,7 @@
       --accent-2: #D4AF37;
       --link: #0B253A;
       --kicker: #1E7A70;
+      --kicker-dark: #145750;
 
       --header-bg: rgba(244, 247, 246, 0.95);
       --hero-bg: radial-gradient(520px 520px at 78% 30%, rgba(244, 247, 246, 0.16), transparent 62%), linear-gradient(180deg, #0B253A 0%, #0e3049 100%);
@@ -77,12 +75,8 @@
       border-radius: var(--radius);
     }
     .skip:focus { left: 1rem; top: 1rem; }
-
     .wrap { width: min(1160px, 100% - 2.5rem); margin-inline: auto; }
 
-    /* ==========================================================================
-       頂部黏性導覽列與無障礙大字切換按鈕
-       ========================================================================== */
     header.site {
       position: sticky; top: 0; z-index: 50;
       background: var(--header-bg);
@@ -124,9 +118,6 @@
     .btn-toggle:hover { background: rgba(11, 37, 58, 0.06); }
     .btn-toggle[aria-pressed="true"] { background: var(--heading); color: #FFFFFF; }
 
-    /* ==========================================================================
-       Hero 主視覺區
-       ========================================================================== */
     .hero {
       position: relative; overflow: hidden;
       padding: clamp(3.5rem, 8vw, 6.2rem) 0 clamp(3rem, 6.5vw, 5rem);
@@ -172,6 +163,8 @@
     .btn:hover { transform: translateY(-2px); }
     .btn.primary { background: var(--accent); color: var(--on-accent); }
     .btn.primary:hover { background: #e0bc44; }
+    .btn.teal { background: var(--kicker); color: #FFFFFF; }
+    .btn.teal:hover { background: var(--kicker-dark); }
     .btn.ghost { border-color: var(--accent-2); color: var(--accent-2); background: transparent; }
     .btn.ghost:hover { background: rgba(212, 175, 55, 0.12); }
     .btn.ghost-dark { border-color: var(--heading); color: var(--heading); background: transparent; }
@@ -184,9 +177,6 @@
       border: 1px solid rgba(244, 247, 246, 0.18);
     }
 
-    /* ==========================================================================
-       通用區塊、卡片與表格樣式
-       ========================================================================== */
     section { padding: clamp(3.2rem, 6.5vw, 5.2rem) 0; border-bottom: 1px solid var(--line); }
     section.alt { background: var(--surface-2); }
     .sec-head { max-width: 54em; margin-bottom: 2.1rem; }
@@ -251,9 +241,7 @@
       color: var(--kicker); margin-bottom: 0.4rem;
     }
 
-    /* ==========================================================================
-       宣傳影片（自動循環播放）與六張視覺圖庫樣式
-       ========================================================================== */
+    /* 宣傳影片與六張視覺圖庫 */
     .video-feature {
       background: var(--card); border: 1px solid var(--line);
       border-top: 4px solid var(--accent); border-radius: var(--radius-lg);
@@ -261,18 +249,12 @@
       display: grid; grid-template-columns: 1.35fr 1fr; align-items: stretch;
     }
     @media (max-width: 820px) { .video-feature { grid-template-columns: 1fr; } }
-
     .video-stage {
       background: #0B253A; display: flex; align-items: center;
       justify-content: center; min-height: 260px; position: relative;
     }
-    .video-stage video {
-      width: 100%; height: 100%; max-height: 440px;
-      object-fit: contain; display: block;
-    }
-    .video-info {
-      padding: 1.5rem; display: flex; flex-direction: column; justify-content: center;
-    }
+    .video-stage video { width: 100%; height: 100%; max-height: 440px; object-fit: contain; display: block; }
+    .video-info { padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }
 
     .media-grid {
       display: grid; gap: 1.35rem;
@@ -284,34 +266,19 @@
       display: flex; flex-direction: column;
       transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
-    .media-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(11, 37, 58, 0.08);
-    }
+    .media-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(11, 37, 58, 0.08); }
     .media-thumb {
       background: #0B253A; aspect-ratio: 16 / 10;
-      overflow: hidden; display: flex; align-items: center; justify-content: center;
-      position: relative;
+      overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative;
     }
-    .media-thumb img {
-      width: 100%; height: 100%; object-fit: cover;
-      cursor: zoom-in; transition: transform 0.2s ease;
-    }
+    .media-thumb img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform 0.2s ease; }
     .media-thumb img:hover { transform: scale(1.03); }
     .media-body { padding: 1.15rem 1.3rem; flex: 1; display: flex; flex-direction: column; }
     .media-body h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
     .media-body p { margin: 0 0 0.75rem; font-size: 0.92rem; color: var(--muted); }
-    .media-zoom-btn {
-      margin-top: auto; align-self: flex-start;
-      padding: 0.4rem 0.85rem; font-size: 0.84rem; min-height: 36px;
-    }
+    .media-zoom-btn { margin-top: auto; align-self: flex-start; padding: 0.4rem 0.85rem; font-size: 0.84rem; min-height: 36px; }
+    .media-fallback { color: #E4ECEA; font-size: 0.86rem; padding: 1.1rem; text-align: center; line-height: 1.55; }
 
-    .media-fallback {
-      color: #E4ECEA; font-size: 0.86rem; padding: 1.1rem;
-      text-align: center; line-height: 1.55;
-    }
-
-    /* 圖片放大檢視燈箱 */
     dialog.img-modal {
       border: none; border-radius: var(--radius-lg); padding: 0;
       width: min(900px, calc(100% - 2rem)); max-height: 90vh;
@@ -332,20 +299,58 @@
     .img-modal-body { padding: 1.2rem 1.4rem; text-align: center; overflow-y: auto; }
     .img-modal-body img { max-height: 68vh; margin-inline: auto; border-radius: var(--radius); }
 
-    /* ==========================================================================
-       FAQ 與零後端專屬預售諮詢表單
-       ========================================================================== */
+    /* FAQ 與 7 折方案選購跳轉區 */
     .faq-list { display: grid; gap: 1rem; }
     .faq-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.35rem 1.5rem; }
     .faq-card h3 { font-size: 1.08rem; margin-bottom: 0.45rem; }
     .faq-card p { margin: 0; color: var(--text); }
+
+    .billing-switch-bar {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 0.8rem; margin-bottom: 1.2rem;
+    }
+    .billing-pills {
+      display: inline-flex; background: var(--surface-2); padding: 0.3rem;
+      border-radius: 10px; gap: 0.3rem;
+    }
+    .bill-pill {
+      border: none; background: transparent; padding: 0.45rem 1rem; border-radius: 8px;
+      font-family: inherit; font-size: 0.88rem; font-weight: 700; color: var(--muted); cursor: pointer;
+    }
+    .bill-pill.active { background: var(--heading); color: #FFFFFF; }
+
+    .plans-grid {
+      display: grid; gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      margin-bottom: 1.8rem;
+    }
+    .plan-card {
+      background: var(--card); border: 2px solid var(--line); border-radius: var(--radius-lg);
+      padding: 1.25rem; cursor: pointer; text-align: left; font-family: inherit;
+      display: flex; flex-direction: column; transition: all 0.15s ease;
+    }
+    .plan-card:hover { border-color: var(--heading); transform: translateY(-2px); }
+    .plan-card.selected {
+      border-color: var(--heading); background: #FFFFFF;
+      box-shadow: 0 10px 24px rgba(11, 37, 58, 0.1);
+    }
+    .plan-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
+    .plan-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--heading); }
+    .plan-badge {
+      font-size: 0.74rem; font-weight: 700; padding: 0.18rem 0.55rem;
+      border-radius: 999px; background: #E6F3F1; color: var(--kicker-dark);
+    }
+    .plan-quota { font-weight: 700; font-size: 0.92rem; color: var(--kicker); margin-bottom: 0.25rem; }
+    .plan-target { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.9rem; }
+    .plan-pricing { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--line); font-family: var(--font-mono); }
+    .plan-orig { font-size: 0.8rem; color: var(--muted); text-decoration: line-through; display: block; }
+    .plan-sale { font-size: 1.28rem; font-weight: 700; color: var(--heading); }
 
     .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.5fr 1fr; align-items: start; }
     @media (max-width: 860px) { .reserve-layout { grid-template-columns: 1fr; } }
 
     .form-group { margin-bottom: 1.2rem; }
     .form-group label, .label-title { display: block; font-weight: 700; font-size: 0.93rem; color: var(--heading); margin-bottom: 0.45rem; }
-    .req { color: #B42318; }
     input[type="text"], input[type="email"], select, textarea {
       width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--line-strong);
       border-radius: var(--radius); font-family: inherit; font-size: 1rem;
@@ -365,9 +370,15 @@
     .form-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.4rem; }
     .form-feedback { margin-top: 1rem; font-size: 0.92rem; font-weight: 600; color: var(--kicker); min-height: 1.4em; }
 
-    dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1.2rem; margin: 0; font-size: 0.93rem; }
-    dl.facts dt { color: var(--muted); }
-    dl.facts dd { margin: 0; color: var(--heading); font-weight: 600; }
+    .checkout-summary-box {
+      background: linear-gradient(180deg, #0B253A 0%, #10324D 100%);
+      color: #F4F7F6; border-radius: var(--radius-lg); padding: 1.5rem;
+      border: 1.5px solid rgba(212, 175, 55, 0.45);
+    }
+    .checkout-summary-box h3 { color: #FFFFFF; margin-bottom: 0.75rem; }
+    dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1.1rem; margin: 0; font-size: 0.92rem; }
+    dl.facts dt { color: #B8C7C5; }
+    dl.facts dd { margin: 0; color: #FFFFFF; font-weight: 700; }
 
     footer.site { padding: 2.8rem 0 3.2rem; background: var(--footer-bg); color: var(--footer-text); font-size: 0.92rem; }
     footer.site .muted { color: #9FB0AD; }
@@ -378,15 +389,14 @@
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .btn, .media-card, .media-thumb img { transition: none; }
-      .btn:hover, .media-card:hover, .media-thumb img:hover { transform: none; }
+      .btn, .media-card, .media-thumb img, .plan-card { transition: none; }
+      .btn:hover, .media-card:hover, .media-thumb img:hover, .plan-card:hover { transform: none; }
     }
   </style>
 </head>
 <body>
   <a class="skip" href="#main">跳到主要內容</a>
 
-  <!-- 頂部黏性導覽列 -->
   <header class="site">
     <div class="wrap">
       <a class="brand" href="../index.html" aria-label="返回水月道場全生態總覽">
@@ -402,7 +412,7 @@
           <path d="M15 32c3-2 6 2 9 0s6-2 9 0" fill="none" stroke="#2A9D8F" stroke-width="1.6" stroke-linecap="round"/>
           <circle cx="24" cy="16" r="4" fill="#D4AF37"/>
         </svg>
-        <span>OrbiLocale 寰境再製<small>AllView 生態系｜專屬預售頁</small></span>
+        <span>OrbiLocale 寰境再製<small>AllView 生態系｜7 折嘗鮮預售頁</small></span>
       </a>
 
       <nav class="main" aria-label="本頁選單">
@@ -412,7 +422,7 @@
           <li><a href="#marketing-assets">影音與視覺素材</a></li>
           <li><a href="#specs">核心規格與語系</a></li>
           <li><a href="#faq">常見問答</a></li>
-          <li><a href="#cta-form">預約諮詢</a></li>
+          <li><a href="#cta-form">7 折方案與結算</a></li>
           <li><button type="button" id="bigtext" class="btn-toggle" aria-pressed="false">長者友善大字</button></li>
         </ul>
       </nav>
@@ -420,7 +430,6 @@
   </header>
 
   <main id="main">
-    <!-- Hero 區 -->
     <section class="hero" aria-labelledby="page-title">
       <div class="wrap">
         <nav class="breadcrumb" aria-label="麵包屑導覽">
@@ -434,19 +443,18 @@
         <h1 id="page-title">不是翻譯器：先凍結事實，再為目標市場重寫文化語感。</h1>
         <p class="lead">寰境再製（OrbiLocale）接收您的母語官網與影音內容，先鎖定品名、規格、數據、價格與法規聲明不更動，再依目標市場的閱讀習慣、賣點順序與影音節奏重構在地化交付包。</p>
         <div class="cta">
-          <a class="btn primary" href="#cta-form">登記出海需求與預售諮詢</a>
+          <a class="btn primary" href="#cta-form">選擇 7 折預售方案並前往結算 →</a>
           <a class="btn ghost" href="#marketing-assets">觀看宣傳影片與視覺圖</a>
         </div>
         <ul class="tags">
           <li>不可變更事實表凍結</li>
           <li>8 語系封閉白名單</li>
           <li>VO / 字幕 / OSG 影音三軌</li>
-          <li>每語系附人工複核註記</li>
+          <li>早鳥嘗鮮預售全系列 7 折</li>
         </ul>
       </div>
     </section>
 
-    <!-- 核心差異與兩類服務情境 -->
     <section id="scenarios" aria-labelledby="scenarios-title">
       <div class="wrap">
         <div class="sec-head">
@@ -483,7 +491,6 @@
       </div>
     </section>
 
-    <!-- 行銷短片與六張視覺圖庫展示區（頁面文字不顯示任何檔案路徑） -->
     <section id="marketing-assets" class="alt" aria-labelledby="assets-title">
       <div class="wrap">
         <div class="sec-head">
@@ -492,24 +499,19 @@
           <p class="muted">透過動態概念短片與六張視覺圖解，快速了解事實凍結、三軌同步與分語系交付的運作方式；點擊任一張視覺圖片可放大檢視。</p>
         </div>
 
-        <!-- 宣傳影片主位區（載入時自動靜音循環播放） -->
         <div id="promo-video-box" class="video-feature"></div>
-
-        <!-- 六張視覺素材卡片區 -->
         <div id="promo-images-grid" class="media-grid"></div>
       </div>
     </section>
 
-    <!-- 產品規格、管線與語系白名單 -->
     <section id="specs" aria-labelledby="specs-title">
       <div class="wrap">
         <div class="sec-head">
           <span class="kicker">Specifications &amp; Pipeline</span>
           <h2 id="specs-title">五段再製管線、功能規格與 8 語系白名單</h2>
-          <p class="muted">以下為寰境再製（OrbiLocale）之系統設計規格（目前處於早期預售階段，正式套餐與交付時程將於方案確認後公布）。</p>
+          <p class="muted">以下為寰境再製（OrbiLocale）之系統設計規格與 8 語系支援清單。</p>
         </div>
 
-        <!-- 五段管線 -->
         <h3 style="margin-bottom:1rem">五段處理管線</h3>
         <ol class="pipeline" style="margin-bottom:2.5rem">
           <li><strong>事實萃取</strong><br><span class="muted" style="font-size:.9rem">解析文字、語音與 OCR，生成不可變更事實表。</span></li>
@@ -519,7 +521,6 @@
           <li><strong>分包與標註</strong><br><span class="muted" style="font-size:.9rem">依語系獨立封裝，產出在地法規與文化人工複核清單。</span></li>
         </ol>
 
-        <!-- 功能需求表 -->
         <h3 style="margin-bottom:1rem">核心功能模組（FR-OL-001 ～ FR-OL-007）</h3>
         <div class="table-wrap" style="margin-bottom:2.5rem">
           <table>
@@ -570,7 +571,6 @@
           </table>
         </div>
 
-        <!-- 8 語系白名單表 -->
         <h3 style="margin-bottom:1rem">封閉式 8 語系白名單</h3>
         <div class="table-wrap">
           <table>
@@ -597,7 +597,6 @@
       </div>
     </section>
 
-    <!-- 常見問答 FAQ -->
     <section id="faq" class="alt" aria-labelledby="faq-title">
       <div class="wrap">
         <div class="sec-head">
@@ -622,39 +621,45 @@
             <h3>Q4：支援哪些語言？可以擴充白名單以外的語系嗎？</h3>
             <p>目前僅支援 <code>zh-TW</code>、<code>zh-CN</code>、<code>en-US</code>、<code>ja-JP</code>、<code>ko-KR</code>、<code>es-ES</code>、<code>fr-FR</code>、<code>de-DE</code> 共 8 種封閉白名單語系；若來源已是其中之一，僅對您指定的其餘語系產出。白名單以外的語系請求會被系統拒絕，不隨意擴充。</p>
           </article>
-          <article class="faq-card">
-            <h3>Q5：目前的方案價格與交付時程為何？</h3>
-            <p>本產品目前處於早期預售與需求登記階段，正式定價、套餐方案與交付時程尚未公布。歡迎透過下方表單留下您的需求情境，方案確認後將由專人主動與您聯繫。</p>
-          </article>
         </div>
       </div>
     </section>
 
-    <!-- 專屬預售諮詢表單 -->
     <section id="cta-form" aria-labelledby="cta-form-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Call to Action · OrbiLocale</span>
-          <h2 id="cta-form-title">告訴我們您的出海需求</h2>
-          <p class="muted">請填寫您的來源語系、目標市場與內容類型（官網／影片），我們將於正式方案確認後與您聯繫（不承諾未公布之價格、交期或試用）。</p>
+          <span class="kicker">70% Early-Bird Presale · OrbiLocale</span>
+          <h2 id="cta-form-title">選擇您的 7 折嘗鮮預售方案並前往結算</h2>
+          <p class="muted">全系列早鳥預售享 <strong>7 折優惠（現省 30%）</strong>；請先點選下方方案與計費週期，填寫基本需求後即可一鍵帶入參數前往共用結算中心完成預售保留。</p>
         </div>
+
+        <div class="billing-switch-bar">
+          <strong style="color:var(--heading);font-size:0.95rem">步驟 ①：點選訂閱方案與計費週期</strong>
+          <div class="billing-pills" role="group" aria-label="計費週期切換">
+            <button type="button" id="bill-yearly" class="bill-pill active" onclick="setBilling('yearly')">年繳方案（再享 7 折）</button>
+            <button type="button" id="bill-monthly" class="bill-pill" onclick="setBilling('monthly')">月繳方案（享 7 折）</button>
+          </div>
+        </div>
+
+        <div id="plans-grid" class="plans-grid"></div>
 
         <div class="reserve-layout">
           <form id="product-cta-form" class="card form-card" novalidate>
+            <h3 style="margin-bottom:0.85rem">步驟 ②：預填聯絡與出海語系需求（將自動帶入結算頁）</h3>
             <div class="grid two">
               <div class="form-group">
-                <label for="user-name">稱呼 / 公司或頻道名稱 <span class="req">*</span></label>
-                <input type="text" id="user-name" placeholder="例如：陳經理 / 某某品牌行銷部" required>
+                <label for="user-name">稱呼 / 公司或頻道名稱</label>
+                <input type="text" id="user-name" placeholder="例如：陳經理 / 某某品牌行銷部">
               </div>
               <div class="form-group">
-                <label for="user-email">聯絡電子信箱 <span class="req">*</span></label>
-                <input type="email" id="user-email" placeholder="name@example.com" required>
+                <label for="user-email">聯絡電子信箱</label>
+                <input type="email" id="user-email" placeholder="name@example.com">
               </div>
             </div>
 
             <div class="grid two">
               <div class="form-group">
-                <label for="content-type">內容類型 <span class="req">*</span></label>
+                <label for="content-type">內容類型</label>
                 <select id="content-type">
                   <option value="企業官網文案＋產品展示影片">企業官網文案＋產品展示影片</option>
                   <option value="僅企業官網／產品型錄文案">僅企業官網／產品型錄文案</option>
@@ -665,56 +670,59 @@
               <div class="form-group">
                 <label for="source-locale">來源語系</label>
                 <select id="source-locale">
-                  <option value="zh-TW（繁體中文）">zh-TW（繁體中文）</option>
-                  <option value="zh-CN（簡體中文）">zh-CN（簡體中文）</option>
-                  <option value="en-US（英文）">en-US（英文）</option>
-                  <option value="ja-JP（日文）">ja-JP（日文）</option>
-                  <option value="ko-KR（韓文）">ko-KR（韓文）</option>
-                  <option value="es-ES（西班牙文）">es-ES（西班牙文）</option>
-                  <option value="fr-FR（法文）">fr-FR（法文）</option>
-                  <option value="de-DE（德文）">de-DE（德文）</option>
+                  <option value="zh-TW">zh-TW（繁體中文）</option>
+                  <option value="zh-CN">zh-CN（簡體中文）</option>
+                  <option value="en-US">en-US（英文）</option>
+                  <option value="ja-JP">ja-JP（日文）</option>
+                  <option value="ko-KR">ko-KR（韓文）</option>
+                  <option value="es-ES">es-ES（西班牙文）</option>
+                  <option value="fr-FR">fr-FR（法文）</option>
+                  <option value="de-DE">de-DE（德文）</option>
                 </select>
               </div>
             </div>
 
             <div class="form-group">
-              <span class="label-title">目標市場語系（可複選） <span class="req">*</span></span>
+              <span class="label-title">目標市場語系（可複選）</span>
               <div class="checkbox-grid">
-                <label class="checkbox-item"><input type="checkbox" name="locales" value="en-US（英文／北美基準）"><span><code>en-US</code> 英文（北美基準）</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="locales" value="ja-JP（日文）"><span><code>ja-JP</code> 日文</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="locales" value="ko-KR（韓文）"><span><code>ko-KR</code> 韓文</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="locales" value="zh-TW（繁體中文）"><span><code>zh-TW</code> 繁體中文</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="locales" value="zh-CN（簡體中文）"><span><code>zh-CN</code> 簡體中文</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="locales" value="es-ES（西班牙文）"><span><code>es-ES</code> 西班牙文</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="locales" value="fr-FR（法文）"><span><code>fr-FR</code> 法文</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="locales" value="de-DE（德文）"><span><code>de-DE</code> 德文</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="locales" value="en-US"><span><code>en-US</code> 英文（北美基準）</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="locales" value="ja-JP"><span><code>ja-JP</code> 日文</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="locales" value="ko-KR"><span><code>ko-KR</code> 韓文</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="locales" value="zh-TW"><span><code>zh-TW</code> 繁體中文</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="locales" value="zh-CN"><span><code>zh-CN</code> 簡體中文</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="locales" value="es-ES"><span><code>es-ES</code> 西班牙文</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="locales" value="fr-FR"><span><code>fr-FR</code> 法文</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="locales" value="de-DE"><span><code>de-DE</code> 德文</span></label>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="user-notes">專案背景與預計數量簡述</label>
-              <textarea id="user-notes" rows="4" placeholder="例如：預計將 B2B 產品官網與產品介紹片轉譯為英文與日文市場版本"></textarea>
+              <label for="user-notes">專案背景簡述（選填）</label>
+              <textarea id="user-notes" rows="3" placeholder="例如：預計將 B2B 產品官網與產品介紹片轉譯為英文與日文市場版本"></textarea>
             </div>
 
             <div class="form-actions">
-              <button type="submit" class="btn primary">開啟信箱寄送預售諮詢</button>
-              <button type="button" id="copy-btn" class="btn ghost-dark">複製登記摘要</button>
+              <button type="button" id="go-checkout-btn" class="btn primary">前往 7 折預售結算中心（../CTA） →</button>
+              <button type="button" id="mail-inquiry-btn" class="btn ghost-dark">僅先寄信諮詢（暫不結帳）</button>
             </div>
             <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
           </form>
 
-          <aside class="card info-aside">
-            <h3>產品識別與窗口資訊</h3>
+          <aside class="checkout-summary-box">
+            <h3>已選預售配置摘要</h3>
             <dl class="facts" style="margin:1rem 0">
-              <dt>產品線名稱</dt><dd>01｜寰境再製 OrbiLocale</dd>
+              <dt>產品代碼</dt><dd>01｜P01-OL（OrbiLocale）</dd>
               <dt>所屬事業體</dt><dd>AllView（allview.today）</dd>
-              <dt>生態系總窗口</dt><dd><a id="direct-email" href="mailto:contact@wonderland.center">contact@wonderland.center</a></dd>
+              <dt>選定方案</dt><dd id="sum-plan-name">Pro（每月 25 次再製任務）</dd>
+              <dt>計費週期</dt><dd id="sum-billing">年繳方案</dd>
+              <dt>標準原價</dt><dd id="sum-orig-price" style="text-decoration:line-through;color:#B8C7C5">NT$ 129,000</dd>
+              <dt>7 折預售價</dt><dd id="sum-sale-price" style="color:#D4AF37;font-size:1.25rem">NT$ 90,300</dd>
             </dl>
-            <div class="note">
-              <strong>誠信與隱私提醒：</strong>本頁不收集任何信用卡號或機密原始檔案，亦不刊載未簽約匯款帳號。
+            <div class="note" style="background:rgba(255,255,255,0.08);border-color:rgba(212,175,55,0.4);color:#E4ECEA">
+              <strong style="color:#D4AF37">跳轉說明：</strong>點擊「前往 7 折預售結算中心」將導向上層 <code>CTA/index.html</code>，結算頁支援銀行電匯、第三方刷卡與 USDT 入金，並可加購「任務加購包（10 次 NT$ 4,130）」。
             </div>
             <p style="margin-top:1.2rem;margin-bottom:0">
-              <a class="btn ghost-dark" style="width:100%" href="../index.html#products">瀏覽其他 9 條生態系產品線</a>
+              <a class="btn ghost" style="width:100%" href="../index.html#products">瀏覽其他 9 條生態系產品線</a>
             </p>
           </aside>
         </div>
@@ -722,7 +730,6 @@
     </section>
   </main>
 
-  <!-- 圖片放大檢視燈箱 -->
   <dialog id="img-lightbox" class="img-modal" aria-label="視覺圖片放大檢視">
     <div class="img-modal-head">
       <strong id="img-modal-title">視覺素材檢視</strong>
@@ -737,19 +744,23 @@
   <footer class="site">
     <div class="wrap">
       <p><strong>© 2026 AllView（allview.today）× 水月道場 / Wonderland Center</strong>｜寰境再製 OrbiLocale 專屬預售頁</p>
-      <p class="muted" style="font-size:.84rem">本頁內容依《寰境再製 OrbiLocale 產品說明與預售內容》編製，正式規格與服務條款以簽署合約為準。</p>
+      <p class="muted" style="font-size:.84rem">本頁內容依《寰境再製 OrbiLocale 產品說明與預售內容》及《產品定價與 7 折嘗鮮預售價總表》編製，正式規格與服務條款以簽署合約為準。</p>
     </div>
   </footer>
 
   <script>
-    /**
-     * 可調整參數：
-     * - CONTACT_EMAIL：預售諮詢收件信箱
-     * - MEDIA_DIR：行銷素材目錄相對路徑（靜默於程式內部，不顯示於頁面文字）
-     * - MARKETING_MEDIA：對應 ./marketing/ 目錄下的宣傳影片與六張圖片
-     */
+    const PRODUCT_CODE = "01";
+    const CHECKOUT_PATH = "../CTA/index.html";
     const CONTACT_EMAIL = "contact@wonderland.center";
+    const DISCOUNT_RATE = 0.7;
     const MEDIA_DIR = "./marketing";
+
+    const PLANS_01 = [
+      { plan: "Starter", target: "創作者、小型團隊、試用", quota: "每月 8 次再製任務", m: 4900, y: 49000 },
+      { plan: "Pro", target: "中小企業、活躍創作者／MCN", quota: "每月 25 次再製任務", m: 12900, y: 129000, recommended: true },
+      { plan: "Business", target: "有固定海外內容需求的企業", quota: "每月 70 次再製任務", m: 29900, y: 299000 },
+      { plan: "Enterprise", target: "大型或客製需求", quota: "客製（洽談）", custom: true }
+    ];
 
     const MARKETING_MEDIA = {
       video: {
@@ -760,49 +771,129 @@
         caption: "呈現核心事實鎖定與多語系語音波形、字幕同步轉譯之視覺概念；實際支援語系依 8 語系封閉白名單為準，輸出附人工複核註記。"
       },
       images: [
-        {
-          file: "1.形象廣告.jpg",
-          badge: "品牌形象",
-          title: "文化轉譯內容再製代理",
-          caption: "不是字面翻譯器，而是具備文化轉譯（Transcreation）的內容再製代理：先凍結事實，再重寫語感。"
-        },
-        {
-          file: "2.產品說明流程.jpg",
-          badge: "運作流程",
-          title: "五段產品運作流程",
-          caption: "1 事實萃取 → 2 語系規格載入 → 3 文化與三軌重製 → 4 一致性與反幻覺閘門 → 5 分語系封裝與複核註記。"
-        },
-        {
-          file: "3.服務交付流程.jpg",
-          badge: "交付架構",
-          title: "單次再製任務與分語系交付包",
-          caption: "區隔企業官網與產品片、創作者成片與置入廣告，產出不可變更事實表、三軌稿件與人工複核註記。"
-        },
-        {
-          file: "4.行銷推廣圖片.jpg",
-          badge: "核心守則",
-          title: "先凍結事實，再重寫語感",
-          caption: "鎖定品名、規格、數據、價格與法規邊界，支援 8 語系封閉白名單，每語系附人工複核註記。"
-        },
-        {
-          file: "5.社群概念圖.jpg",
-          badge: "影音三軌",
-          title: "影音出海，三軌同步再製",
-          caption: "同步產出口白稿（VO）、字幕稿（SRT/VTT）與畫面動態字稿（OSG），進行置入廣告文化改編且不新增未提及宣稱。"
-        },
-        {
-          file: "6.B2B 企業出海 EDM.jpg",
-          badge: "企業出海",
-          title: "B2B 企業官網與產品影片出海",
-          caption: "鎖定規格與數據、重構在地賣點並附上人工複核清單，讓品牌官網與產品影片真正走進目標市場。"
-        }
+        { file: "1.形象廣告.jpg", badge: "品牌形象", title: "文化轉譯內容再製代理", caption: "不是字面翻譯器，而是具備文化轉譯（Transcreation）的內容再製代理：先凍結事實，再重寫語感。" },
+        { file: "2.產品說明流程.jpg", badge: "運作流程", title: "五段產品運作流程", caption: "1 事實萃取 → 2 語系規格載入 → 3 文化與三軌重製 → 4 一致性與反幻覺閘門 → 5 分語系封裝與複核註記。" },
+        { file: "3.服務交付流程.jpg", badge: "交付架構", title: "單次再製任務與分語系交付包", caption: "區隔企業官網與產品片、創作者成片與置入廣告，產出不可變更事實表、三軌稿件與人工複核註記。" },
+        { file: "4.行銷推廣圖片.jpg", badge: "核心守則", title: "先凍結事實，再重寫語感", caption: "鎖定品名、規格、數據、價格與法規邊界，支援 8 語系封閉白名單，每語系附人工複核註記。" },
+        { file: "5.社群概念圖.jpg", badge: "影音三軌", title: "影音出海，三軌同步再製", caption: "同步產出口白稿（VO）、字幕稿（SRT/VTT）與畫面動態字稿（OSG），進行置入廣告文化改編且不新增未提及宣稱。" },
+        { file: "6.B2B 企業出海 EDM.jpg", badge: "企業出海", title: "B2B 企業官網與產品影片出海", caption: "鎖定規格與數據、重構在地賣點並附上人工複核清單，讓品牌官網與產品影片真正走進目標市場。" }
       ]
     };
 
-    /**
-     * 渲染 ./marketing/ 下的宣傳短片（自動靜音循環播放）與六張視覺圖卡
-     * 注意：所有可見文字皆不包含任何檔案路徑字串
-     */
+    let selectedPlanIdx = 1;
+    let billingCycle = "yearly";
+
+    function renderPlans() {
+      const grid = document.getElementById("plans-grid");
+      if (!grid) return;
+
+      document.getElementById("bill-yearly").classList.toggle("active", billingCycle === "yearly");
+      document.getElementById("bill-monthly").classList.toggle("active", billingCycle === "monthly");
+
+      grid.innerHTML = PLANS_01.map((p, idx) => {
+        const isSel = idx === selectedPlanIdx;
+        if (p.custom) {
+          return `
+            <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
+              <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">客製專案</span></div>
+              <div class="plan-quota">${p.quota}</div>
+              <div class="plan-target">${p.target}</div>
+              <div class="plan-pricing"><span class="plan-orig">依專案規模評估</span><span class="plan-sale">專人洽談報價</span></div>
+            </button>
+          `;
+        }
+        const orig = billingCycle === "yearly" ? p.y : p.m;
+        const sale = Math.round(orig * DISCOUNT_RATE);
+        const unit = billingCycle === "yearly" ? "/ 年" : "/ 月";
+        return `
+          <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
+            <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">${p.recommended ? "★ 熱門推薦" : "7 折早鳥"}</span></div>
+            <div class="plan-quota">${p.quota}</div>
+            <div class="plan-target">${p.target}</div>
+            <div class="plan-pricing">
+              <span class="plan-orig">原價 NT$ ${orig.toLocaleString("zh-TW")} ${unit}</span>
+              <span class="plan-sale">NT$ ${sale.toLocaleString("zh-TW")} <small style="font-size:0.78rem">${unit}</small></span>
+            </div>
+          </button>
+        `;
+      }).join("");
+
+      const cur = PLANS_01[selectedPlanIdx];
+      document.getElementById("sum-plan-name").textContent = `${cur.plan}（${cur.quota}）`;
+      document.getElementById("sum-billing").textContent = cur.custom ? "客製專案（洽談）" : (billingCycle === "yearly" ? "年繳方案" : "月繳方案");
+
+      if (cur.custom) {
+        document.getElementById("sum-orig-price").textContent = "專案報價";
+        document.getElementById("sum-sale-price").textContent = "專人洽談";
+      } else {
+        const orig = billingCycle === "yearly" ? cur.y : cur.m;
+        const sale = Math.round(orig * DISCOUNT_RATE);
+        document.getElementById("sum-orig-price").textContent = `NT$ ${orig.toLocaleString("zh-TW")}`;
+        document.getElementById("sum-sale-price").textContent = `NT$ ${sale.toLocaleString("zh-TW")}`;
+      }
+    }
+
+    function selectPlan(idx) { selectedPlanIdx = idx; renderPlans(); }
+    function setBilling(mode) { billingCycle = mode; renderPlans(); }
+
+    function initCheckoutBridge() {
+      const goBtn = document.getElementById("go-checkout-btn");
+      const mailBtn = document.getElementById("mail-inquiry-btn");
+      const feedback = document.getElementById("form-feedback");
+
+      const collectFields = () => {
+        const cur = PLANS_01[selectedPlanIdx];
+        const name = document.getElementById("user-name").value.trim();
+        const email = document.getElementById("user-email").value.trim();
+        const contentType = document.getElementById("content-type").value;
+        const sourceLocale = document.getElementById("source-locale").value;
+        const notes = document.getElementById("user-notes").value.trim();
+        const targetLocales = Array.from(document.querySelectorAll("input[name='locales']:checked")).map(el => el.value);
+        return { cur, name, email, contentType, sourceLocale, targetLocales, notes };
+      };
+
+      goBtn.addEventListener("click", () => {
+        const data = collectFields();
+        const params = new URLSearchParams();
+        params.set("product", PRODUCT_CODE);
+        params.set("plan", data.cur.plan);
+        params.set("billing", billingCycle);
+        params.set("bundle", "0");
+        if (data.name) params.set("name", data.name);
+        if (data.email) params.set("email", data.email);
+        if (data.targetLocales.length > 0) {
+          params.set("locales", `${data.sourceLocale}→${data.targetLocales.join(",")}`);
+        }
+        const combinedNotes = [data.contentType, data.notes].filter(Boolean).join("｜");
+        if (combinedNotes) params.set("notes", combinedNotes);
+
+        window.location.href = `${CHECKOUT_PATH}?${params.toString()}`;
+      });
+
+      mailBtn.addEventListener("click", () => {
+        const data = collectFields();
+        if (!data.name || !data.email) {
+          feedback.style.color = "#B42318";
+          feedback.textContent = "若要寄送郵件諮詢，請先填寫「稱呼 / 公司名稱」與「聯絡電子信箱」。";
+          return;
+        }
+        const subject = `[OrbiLocale 寰境再製 預售諮詢] ${data.name}（${data.cur.plan}）`;
+        const body = [
+          "您好，我想諮詢「01｜寰境再製 OrbiLocale」的 7 折預售方案：",
+          "",
+          `・稱呼 / 單位：${data.name}`,
+          `・聯絡信箱：${data.email}`,
+          `・感興趣方案：${data.cur.plan}（${billingCycle === "yearly" ? "年繳" : "月繳"}）`,
+          `・內容類型：${data.contentType}`,
+          `・來源與目標語系：${data.sourceLocale} → ${data.targetLocales.join("、") || "尚未勾選"}`,
+          `・專案背景簡述：${data.notes || "（尚未填寫）"}`
+        ].join("\n");
+        feedback.style.color = "#1E7A70";
+        feedback.textContent = "已為您開啟預設郵件程式寄送諮詢摘要。";
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
+    }
+
     function renderMarketingAssets() {
       const videoBox = document.getElementById("promo-video-box");
       if (videoBox && MARKETING_MEDIA.video) {
@@ -816,40 +907,27 @@
               <source src="${videoSrc}" type="video/mp4">
               您的瀏覽器不支援 HTML5 影片播放。
             </video>
-            <div id="video-error-fallback" class="media-fallback" style="display:none">
-              宣傳影片載入中或暫時無法播放，請重新整理頁面後再試。
-            </div>
+            <div id="video-error-fallback" class="media-fallback" style="display:none">宣傳影片載入中或暫時無法播放，請重新整理頁面後再試。</div>
           </div>
           <div class="video-info">
             <span class="num">${v.badge}</span>
             <h3>${v.title}</h3>
             <p class="muted">${v.caption}</p>
-            <div style="margin-top:0.8rem">
-              <a class="btn primary" href="#cta-form">登記出海需求與諮詢</a>
-            </div>
+            <div style="margin-top:0.8rem"><a class="btn primary" href="#cta-form">查看 7 折預售方案 →</a></div>
           </div>
         `;
 
         const videoEl = document.getElementById("promo-video-player");
         const videoErrEl = document.getElementById("video-error-fallback");
         if (videoEl) {
-          // 確保載入後主動觸發靜音自動播放
           videoEl.muted = true;
           const playPromise = videoEl.play();
-          if (playPromise && typeof playPromise.catch === "function") {
-            playPromise.catch(() => {
-              // 若瀏覽器省電模式阻擋自動播放，仍保留 controls 供使用者點擊播放
-            });
-          }
-
+          if (playPromise && typeof playPromise.catch === "function") playPromise.catch(() => {});
           if (videoErrEl) {
-            const showVideoFallback = () => {
-              videoEl.style.display = "none";
-              videoErrEl.style.display = "block";
-            };
-            videoEl.addEventListener("error", showVideoFallback);
-            const sourceEl = videoEl.querySelector("source");
-            if (sourceEl) sourceEl.addEventListener("error", showVideoFallback);
+            const showFallback = () => { videoEl.style.display = "none"; videoErrEl.style.display = "block"; };
+            videoEl.addEventListener("error", showFallback);
+            const srcEl = videoEl.querySelector("source");
+            if (srcEl) srcEl.addEventListener("error", showFallback);
           }
         }
       }
@@ -863,9 +941,7 @@
               <div class="media-thumb">
                 <img src="${imgSrc}" alt="${item.title}" loading="lazy" data-idx="${idx}"
                      onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-                <div class="media-fallback" style="display:none">
-                  視覺圖卡載入中，請稍候重新整理檢視。
-                </div>
+                <div class="media-fallback" style="display:none">視覺圖卡載入中，請稍候重新整理檢視。</div>
               </div>
               <div class="media-body">
                 <span class="num" style="margin-bottom:0.25rem">${item.badge}</span>
@@ -893,28 +969,22 @@
           dlg.showModal();
         };
 
-        imgGrid.querySelectorAll("[data-idx], [data-zoom-idx]").forEach((el) => {
-          el.addEventListener("click", () => {
-            const index = el.dataset.idx ?? el.dataset.zoomIdx;
-            openLightbox(index);
-          });
+        imgGrid.querySelectorAll("[data-idx], [data-zoom-idx]").forEach(el => {
+          el.addEventListener("click", () => openLightbox(el.dataset.idx ?? el.dataset.zoomIdx));
         });
 
         if (dlgClose && dlg) {
           dlgClose.addEventListener("click", () => dlg.close());
-          dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+          dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
         }
       }
     }
 
-    /**
-     * 長者友善大字切換（122%，記憶於 localStorage）
-     */
     function initBigText() {
       const bigBtn = document.getElementById("bigtext");
       if (!bigBtn) return;
       const storageKey = "wc-bigtext";
-      const applyBigText = (on) => {
+      const applyBigText = on => {
         document.documentElement.style.fontSize = on ? "122%" : "";
         bigBtn.setAttribute("aria-pressed", on ? "true" : "false");
         try { localStorage.setItem(storageKey, on ? "1" : "0"); } catch (_) {}
@@ -923,94 +993,11 @@
       bigBtn.addEventListener("click", () => applyBigText(bigBtn.getAttribute("aria-pressed") !== "true"));
     }
 
-    /**
-     * 零後端預售諮詢表單（支援 mailto 寄送與剪貼簿複製摘要）
-     */
-    function initInquiryForm() {
-      const form = document.getElementById("product-cta-form");
-      const copyBtn = document.getElementById("copy-btn");
-      const feedback = document.getElementById("form-feedback");
-      if (!form) return;
-
-      const buildPayload = () => {
-        const name = document.getElementById("user-name").value.trim();
-        const email = document.getElementById("user-email").value.trim();
-        const contentType = document.getElementById("content-type").value;
-        const sourceLocale = document.getElementById("source-locale").value;
-        const notes = document.getElementById("user-notes").value.trim();
-        const targetLocales = Array.from(document.querySelectorAll("input[name='locales']:checked")).map((el) => el.value);
-
-        if (!name || !email) return { error: "請填寫「稱呼 / 公司或頻道名稱」與「聯絡電子信箱」。" };
-        if (targetLocales.length === 0) return { error: "請至少勾選一項「目標市場語系」。" };
-
-        const subject = `[OrbiLocale 寰境再製 預售諮詢] ${name}（${contentType}）`;
-        const body = [
-          "您好，我想諮詢「01｜寰境再製 OrbiLocale」的預售與合作方案：",
-          "",
-          `・稱呼 / 單位：${name}`,
-          `・聯絡信箱：${email}`,
-          `・內容類型：${contentType}`,
-          `・來源語系：${sourceLocale}`,
-          `・目標市場語系：${targetLocales.join("、")}`,
-          `・專案背景與需求簡述：${notes || "（尚未填寫）"}`,
-          "",
-          "---",
-          "來源產品：01｜寰境再製 OrbiLocale（AllView）"
-        ].join("\n");
-
-        return { subject, body };
-      };
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const res = buildPayload();
-        if (res.error) {
-          feedback.style.color = "#B42318";
-          feedback.textContent = res.error;
-          return;
-        }
-        feedback.style.color = "#1E7A70";
-        feedback.textContent = "已為您整理需求摘要並開啟預設郵件程式；若未自動開啟，請使用「複製登記摘要」。";
-        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(res.subject)}&body=${encodeURIComponent(res.body)}`;
-      });
-
-      if (copyBtn) {
-        copyBtn.addEventListener("click", async () => {
-          const res = buildPayload();
-          if (res.error) {
-            feedback.style.color = "#B42318";
-            feedback.textContent = res.error;
-            return;
-          }
-          const fullText = `${res.subject}\n\n${res.body}`;
-          try {
-            await navigator.clipboard.writeText(fullText);
-            feedback.style.color = "#1E7A70";
-            feedback.textContent = "✓ 登記摘要已複製到剪貼簿！您可以直接貼上寄送給窗口或貼入表單。";
-          } catch (_) {
-            const ta = document.createElement("textarea");
-            ta.value = fullText;
-            document.body.appendChild(ta);
-            ta.select();
-            try {
-              document.execCommand("copy");
-              feedback.style.color = "#1E7A70";
-              feedback.textContent = "✓ 登記摘要已複製到剪貼簿！";
-            } catch (__) {
-              feedback.style.color = "#B42318";
-              feedback.textContent = "瀏覽器限制自動複製，請改用「開啟信箱寄送預售諮詢」。";
-            } finally {
-              document.body.removeChild(ta);
-            }
-          }
-        });
-      }
-    }
-
     document.addEventListener("DOMContentLoaded", () => {
       renderMarketingAssets();
+      renderPlans();
+      initCheckoutBridge();
       initBigText();
-      initInquiryForm();
     });
   </script>
 </body>

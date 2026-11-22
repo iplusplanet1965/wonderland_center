@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
+<!-- 產品線：02｜密圈 CipherCircle（所屬事業體：AllView / allview.today）｜檔案路徑：CipherCircle/index.html -->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>密圈 CipherCircle｜公開偽匿名與條件式舉證社群平台 — 專屬預售諮詢</title>
-  <meta name="description" content="密圈 CipherCircle 是 AllView 規劃中的知識社群與加密通訊平台：公開場合不露名，通訊端對端加密，推薦與投票走密文運算，重要紀錄留存可驗證證據鏈。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>密圈 CipherCircle｜FHE 密文防護之偽匿名知識社群 — 7 折嘗鮮預售</title>
+  <meta name="description" content="密圈 CipherCircle 結合視覺化社群、端對端加密通訊與直播授課、FHE 密文推薦與匿名投票，以及授權門檻下可查驗的 Merkle 證據鏈。">
   <meta name="theme-color" content="#0B253A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* 水月道場 / Wonderland Center — CIS 設計系統（60% 底色 / 30% 結構 / 10% 點綴） */
     :root {
       --font-body: "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
       --font-display: "Cinzel", "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", serif;
@@ -19,22 +22,23 @@
       --text: #1A1E24;
       --heading: #0B253A;
       --muted: #46525C;
-      --line: rgba(11, 37, 58, .14);
-      --line-strong: rgba(11, 37, 58, .35);
+      --line: rgba(11, 37, 58, 0.14);
+      --line-strong: rgba(11, 37, 58, 0.35);
 
       --accent: #D4AF37;
       --on-accent: #1A1E24;
       --accent-2: #D4AF37;
       --link: #0B253A;
       --kicker: #1E7A70;
+      --kicker-dark: #145750;
 
-      --header-bg: rgba(244, 247, 246, .94);
-      --hero-bg: radial-gradient(520px 520px at 78% 30%, rgba(244, 247, 246, .16), transparent 62%), linear-gradient(180deg, #0B253A 0%, #0e3049 100%);
-      --hero-pattern: repeating-radial-gradient(circle at 78% 30%, transparent 0 34px, rgba(244, 247, 246, .05) 35px 36px);
+      --header-bg: rgba(244, 247, 246, 0.95);
+      --hero-bg: radial-gradient(520px 520px at 78% 30%, rgba(244, 247, 246, 0.16), transparent 62%), linear-gradient(180deg, #0B253A 0%, #0e3049 100%);
+      --hero-pattern: repeating-radial-gradient(circle at 78% 30%, transparent 0 34px, rgba(244, 247, 246, 0.05) 35px 36px);
       --hero-text: #E4ECEA;
       --hero-heading: #F4F7F6;
       --hero-muted: #D0DCDA;
-      --tag-bg: rgba(244, 247, 246, .08);
+      --tag-bg: rgba(244, 247, 246, 0.08);
 
       --notice-bg: #FBF6E8;
       --notice-border: #C59B27;
@@ -55,8 +59,9 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.75;
-      letter-spacing: .02em;
+      letter-spacing: 0.02em;
       font-size: 1.0625rem;
+      overflow-x: hidden;
     }
     img, svg { max-width: 100%; display: block; }
     a { color: var(--link); }
@@ -66,220 +71,311 @@
     .skip {
       position: absolute; left: -999px; top: 0;
       background: var(--accent); color: var(--on-accent);
-      padding: .5rem 1rem; z-index: 100;
+      font-weight: 700; padding: 0.55rem 1rem; z-index: 200;
+      border-radius: var(--radius);
     }
     .skip:focus { left: 1rem; top: 1rem; }
-
     .wrap { width: min(1160px, 100% - 2.5rem); margin-inline: auto; }
 
-    /* 頂部導覽列 */
     header.site {
       position: sticky; top: 0; z-index: 50;
       background: var(--header-bg);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
     header.site .wrap {
       display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; min-height: 70px; flex-wrap: wrap; padding-block: .4rem;
+      gap: 1rem; min-height: 70px; flex-wrap: wrap; padding-block: 0.45rem;
     }
     .brand {
-      display: flex; align-items: center; gap: .7rem;
+      display: flex; align-items: center; gap: 0.7rem;
       text-decoration: none; color: var(--heading);
-      font-weight: 700; font-family: var(--font-display); letter-spacing: .04em;
+      font-weight: 700; font-family: var(--font-display); letter-spacing: 0.04em;
     }
     .brand svg { width: 38px; height: 38px; flex: none; }
-    .brand small { display: block; font-weight: 400; font-size: .75rem; color: var(--muted); letter-spacing: .06em; }
+    .brand small {
+      display: block; font-family: var(--font-body); font-weight: 400;
+      font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em;
+    }
 
     nav.main ul {
       list-style: none; display: flex; align-items: center;
-      flex-wrap: wrap; gap: .3rem 1.1rem; margin: 0; padding: 0;
+      flex-wrap: wrap; gap: 0.3rem 1.05rem; margin: 0; padding: 0;
     }
-    nav.main a { color: var(--muted); text-decoration: none; font-size: .92rem; padding: .35rem 0; font-weight: 500; }
+    nav.main a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.92rem; padding: 0.4rem 0; font-weight: 500; display: inline-block;
+    }
     nav.main a:hover { color: var(--heading); }
 
     .btn-toggle {
-      padding: .3rem .85rem; font-size: .85rem; font-weight: 600;
+      padding: 0.4rem 0.9rem; font-family: inherit; font-size: 0.85rem; font-weight: 600;
       border: 1.5px solid var(--heading); color: var(--heading);
       background: transparent; border-radius: var(--radius);
-      cursor: pointer; transition: background .15s ease, color .15s ease;
+      cursor: pointer; min-height: 40px; transition: background 0.15s ease, color 0.15s ease;
     }
+    .btn-toggle:hover { background: rgba(11, 37, 58, 0.06); }
     .btn-toggle[aria-pressed="true"] { background: var(--heading); color: #FFFFFF; }
 
-    /* Hero 區塊 */
     .hero {
       position: relative; overflow: hidden;
-      padding: clamp(3.6rem, 8vw, 6rem) 0 clamp(3rem, 6vw, 4.8rem);
+      padding: clamp(3.5rem, 8vw, 6.2rem) 0 clamp(3rem, 6.5vw, 5rem);
       background: var(--hero-bg); color: var(--hero-text);
     }
     .hero::before {
       content: ""; position: absolute; inset: 0;
-      background: var(--hero-pattern); opacity: .55; pointer-events: none;
+      background: var(--hero-pattern); opacity: 0.55; pointer-events: none;
     }
     .hero .wrap { position: relative; }
-    .breadcrumb { font-size: .88rem; color: var(--hero-muted); margin-bottom: 1rem; display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+
+    .breadcrumb {
+      font-size: 0.88rem; color: var(--hero-muted); margin-bottom: 1rem;
+      display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center;
+    }
     .breadcrumb a { color: var(--accent-2); text-decoration: none; }
     .breadcrumb a:hover { text-decoration: underline; }
 
     .eyebrow {
-      display: inline-block; font-family: var(--font-mono); font-size: .78rem;
-      letter-spacing: .12em; color: var(--accent-2);
+      display: inline-block; font-family: var(--font-mono); font-size: 0.78rem;
+      letter-spacing: 0.12em; color: var(--accent-2);
       border: 1px solid currentColor; border-radius: 999px;
-      padding: .25rem .85rem; margin-bottom: 1.2rem;
+      padding: 0.25rem 0.85rem; margin-bottom: 1.2rem;
     }
     .hero h1 {
-      font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.22; margin: 0 0 1.1rem; color: var(--hero-heading);
-      letter-spacing: .03em; max-width: 22ch;
+      font-family: var(--font-display); font-size: clamp(1.9rem, 4.8vw, 3.35rem);
+      line-height: 1.22; margin: 0 0 1.15rem; color: var(--hero-heading);
+      letter-spacing: 0.03em; max-width: 24ch;
     }
     .hero .lead {
-      font-size: clamp(1.04rem, 1.9vw, 1.2rem); max-width: 48em;
-      color: var(--hero-muted); margin: 0 0 1.8rem;
+      font-size: clamp(1.03rem, 1.85vw, 1.2rem); max-width: 52em;
+      color: var(--hero-muted); margin: 0 0 1.9rem;
     }
-    .cta { display: flex; flex-wrap: wrap; gap: .9rem; }
+    .cta { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-      padding: .78rem 1.4rem; border-radius: var(--radius); font-weight: 700;
-      font-size: .95rem; text-decoration: none; border: 2px solid transparent;
-      cursor: pointer; transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.78rem 1.4rem; border-radius: var(--radius); font-family: inherit;
+      font-weight: 700; font-size: 0.95rem; text-decoration: none; border: 2px solid transparent;
+      cursor: pointer; min-height: 44px;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
     }
     .btn:hover { transform: translateY(-2px); }
     .btn.primary { background: var(--accent); color: var(--on-accent); }
     .btn.primary:hover { background: #e0bc44; }
+    .btn.teal { background: var(--kicker); color: #FFFFFF; }
+    .btn.teal:hover { background: var(--kicker-dark); }
     .btn.ghost { border-color: var(--accent-2); color: var(--accent-2); background: transparent; }
-    .btn.ghost:hover { background: rgba(212, 175, 55, .12); }
+    .btn.ghost:hover { background: rgba(212, 175, 55, 0.12); }
     .btn.ghost-dark { border-color: var(--heading); color: var(--heading); background: transparent; }
-    .btn.ghost-dark:hover { background: rgba(11, 37, 58, .06); }
+    .btn.ghost-dark:hover { background: rgba(11, 37, 58, 0.06); }
 
-    .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.8rem; padding: 0; list-style: none; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.9rem; padding: 0; list-style: none; }
     .tags li {
-      font-family: var(--font-mono); font-size: .8rem; padding: .3rem .75rem;
+      font-family: var(--font-mono); font-size: 0.8rem; padding: 0.3rem 0.75rem;
       border-radius: 6px; background: var(--tag-bg); color: var(--hero-muted);
-      border: 1px solid rgba(244, 247, 246, .18);
+      border: 1px solid rgba(244, 247, 246, 0.18);
     }
 
-    /* 通用區塊與卡片 */
-    section { padding: clamp(3.2rem, 6.5vw, 5rem) 0; border-bottom: 1px solid var(--line); }
+    section { padding: clamp(3.2rem, 6.5vw, 5.2rem) 0; border-bottom: 1px solid var(--line); }
     section.alt { background: var(--surface-2); }
-    .sec-head { max-width: 52em; margin-bottom: 2rem; }
+    .sec-head { max-width: 54em; margin-bottom: 2.1rem; }
     .sec-head .kicker {
-      font-family: var(--font-mono); font-size: .78rem; letter-spacing: .16em;
+      font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.16em;
       text-transform: uppercase; color: var(--kicker); font-weight: 700;
     }
     h2 {
-      font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.2rem);
-      line-height: 1.3; margin: .4rem 0 .75rem; color: var(--heading);
+      font-family: var(--font-display); font-size: clamp(1.5rem, 3.1vw, 2.2rem);
+      line-height: 1.3; margin: 0.4rem 0 0.8rem; color: var(--heading);
     }
-    h3 { font-family: var(--font-display); font-size: 1.15rem; margin: 0 0 .5rem; color: var(--heading); line-height: 1.45; }
+    h3 { font-family: var(--font-display); font-size: 1.16rem; margin: 0 0 0.55rem; color: var(--heading); line-height: 1.45; }
     p { margin: 0 0 1rem; }
     .muted { color: var(--muted); }
 
-    .grid { display: grid; gap: 1.3rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); }
+    .grid { display: grid; gap: 1.35rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
     .grid.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
 
     .card {
       background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg);
-      padding: 1.45rem; position: relative; display: flex; flex-direction: column;
+      padding: 1.5rem; position: relative; display: flex; flex-direction: column;
     }
     .card.feature { border-top: 4px solid var(--accent); }
     .card .num {
-      font-family: var(--font-mono); font-size: .78rem; color: var(--kicker);
-      letter-spacing: .1em; font-weight: 700; display: block; margin-bottom: .4rem;
+      font-family: var(--font-mono); font-size: 0.78rem; color: var(--kicker);
+      letter-spacing: 0.1em; font-weight: 700; display: block; margin-bottom: 0.45rem;
     }
-    .product-highlights { margin: .35rem 0 0; padding-left: 1.15rem; font-size: .94rem; color: var(--text); }
-    .product-highlights li { margin-bottom: .3rem; }
 
     .boundary-box {
-      margin-top: 1.5rem; padding: .85rem 1.05rem;
-      background: var(--notice-bg); border-left: 3px solid var(--notice-border);
-      color: var(--notice-text); font-size: .88rem; border-radius: 0 6px 6px 0;
+      padding: 0.85rem 1.05rem; background: var(--notice-bg);
+      border-left: 3px solid var(--notice-border); color: var(--notice-text);
+      font-size: 0.88rem; line-height: 1.65; border-radius: 0 6px 6px 0;
     }
-
-    /* 宣傳影片與視覺展示區 */
-    .video-feature {
-      background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--accent);
-      border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.8rem;
-      display: grid; grid-template-columns: 1.35fr 1fr; align-items: stretch;
-    }
-    @media (max-width: 820px) { .video-feature { grid-template-columns: 1fr; } }
-    .video-stage { background: #0B253A; display: flex; align-items: center; justify-content: center; min-height: 260px; }
-    .video-stage video { width: 100%; height: 100%; max-height: 430px; object-fit: contain; display: block; }
-    .video-info { padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }
-
-    .media-grid { display: grid; gap: 1.3rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
-    .media-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
-    .media-thumb { background: #0B253A; aspect-ratio: 16 / 10; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    .media-thumb img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform .2s ease; }
-    .media-thumb img:hover { transform: scale(1.03); }
-    .media-body { padding: 1.15rem 1.3rem; }
-    .media-body h3 { font-size: 1.05rem; margin-bottom: .35rem; }
-    .media-body p { margin: 0; font-size: .92rem; color: var(--muted); }
-    .media-missing { color: #E4ECEA; font-size: .86rem; padding: 1rem; text-align: center; }
-
-    /* 資料流與 FAQ */
-    .flow-grid { counter-reset: flow; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); list-style: none; padding: 0; margin: 0; }
-    .flow-grid li { counter-increment: flow; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.3rem; }
-    .flow-grid li::before { content: "FLOW " counter(flow, decimal-leading-zero); display: block; font-family: var(--font-mono); font-size: .78rem; font-weight: 700; color: var(--kicker); margin-bottom: .4rem; }
-
-    .faq-list { display: grid; gap: 1rem; }
-    .faq-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.35rem 1.5rem; }
-    .faq-card h3 { font-size: 1.08rem; margin-bottom: .45rem; }
-    .faq-card p { margin: 0; }
-
-    /* 預約表單區 */
-    .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.5fr 1fr; align-items: start; }
-    @media (max-width: 860px) { .reserve-layout { grid-template-columns: 1fr; } }
-    .form-group { margin-bottom: 1.15rem; }
-    .form-group label, .label-title { display: block; font-weight: 700; font-size: .93rem; color: var(--heading); margin-bottom: .45rem; }
-    .req { color: #B42318; }
-    input[type="text"], input[type="email"], select, textarea {
-      width: 100%; padding: .7rem .9rem; border: 1.5px solid var(--line-strong);
-      border-radius: var(--radius); font-family: inherit; font-size: 1rem;
-      color: var(--text); background: #FFFFFF;
-    }
-    input:focus, select:focus, textarea:focus { border-color: var(--heading); outline: 3px solid rgba(212, 175, 55, .35); }
-    .checkbox-grid { display: grid; gap: .55rem; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
-    .checkbox-item {
-      display: flex; align-items: flex-start; gap: .5rem; padding: .55rem .7rem;
-      border: 1px solid var(--line); border-radius: var(--radius);
-      background: var(--bg); font-size: .88rem; cursor: pointer;
-    }
-    .checkbox-item input { margin-top: .25rem; accent-color: var(--heading); }
-    .form-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.3rem; }
-    .form-feedback { margin-top: .9rem; font-size: .92rem; font-weight: 600; color: var(--kicker); min-height: 1.4em; }
-
-    dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: .55rem 1.2rem; margin: 0; font-size: .93rem; }
-    dl.facts dt { color: var(--muted); }
-    dl.facts dd { margin: 0; color: var(--heading); font-weight: 600; }
-
     .note {
       border: 1px dashed var(--line-strong); border-radius: var(--radius-lg);
-      padding: 1rem 1.2rem; font-size: .9rem; color: var(--muted); background: var(--surface-2);
+      padding: 1rem 1.2rem; font-size: 0.9rem; color: var(--muted); background: var(--surface-2);
     }
     .note strong { color: var(--heading); }
 
-    /* 圖片放大燈箱 */
-    dialog.img-modal { border: none; border-radius: var(--radius-lg); padding: 0; width: min(880px, calc(100% - 2rem)); background: var(--card); color: var(--text); box-shadow: 0 24px 48px rgba(11, 37, 58, .3); }
-    dialog.img-modal::backdrop { background: rgba(11, 37, 58, .72); backdrop-filter: blur(4px); }
-    .img-modal-head { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.4rem; background: var(--surface-2); border-bottom: 1px solid var(--line); }
-    .modal-close { background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius); width: 34px; height: 34px; font-size: 1rem; cursor: pointer; color: var(--heading); }
-    .img-modal-body { padding: 1.2rem 1.4rem; text-align: center; }
-    .img-modal-body img { max-height: 70vh; margin-inline: auto; border-radius: var(--radius); }
+    .pipeline {
+      counter-reset: step; display: grid; gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      list-style: none; padding: 0; margin: 0;
+    }
+    .pipeline li {
+      counter-increment: step; background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius-lg); padding: 1.25rem;
+    }
+    .pipeline li::before {
+      content: "STEP " counter(step, decimal-leading-zero); display: block;
+      font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700;
+      color: var(--kicker); margin-bottom: 0.4rem;
+    }
 
-    footer.site { padding: 2.6rem 0 3rem; background: var(--footer-bg); color: var(--footer-text); font-size: .92rem; }
+    .video-feature {
+      background: var(--card); border: 1px solid var(--line);
+      border-top: 4px solid var(--accent); border-radius: var(--radius-lg);
+      overflow: hidden; margin-bottom: 1.8rem;
+      display: grid; grid-template-columns: 1.35fr 1fr; align-items: stretch;
+    }
+    @media (max-width: 820px) { .video-feature { grid-template-columns: 1fr; } }
+    .video-stage {
+      background: #0B253A; display: flex; align-items: center;
+      justify-content: center; min-height: 260px; position: relative;
+    }
+    .video-stage video { width: 100%; height: 100%; max-height: 440px; object-fit: contain; display: block; }
+    .video-info { padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }
+
+    .media-grid {
+      display: grid; gap: 1.35rem;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
+    }
+    .media-card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius-lg); overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .media-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(11, 37, 58, 0.08); }
+    .media-thumb {
+      background: #0B253A; aspect-ratio: 16 / 10;
+      overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative;
+    }
+    .media-thumb img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform 0.2s ease; }
+    .media-thumb img:hover { transform: scale(1.03); }
+    .media-body { padding: 1.15rem 1.3rem; flex: 1; display: flex; flex-direction: column; }
+    .media-body h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+    .media-body p { margin: 0 0 0.75rem; font-size: 0.92rem; color: var(--muted); }
+    .media-zoom-btn { margin-top: auto; align-self: flex-start; padding: 0.4rem 0.85rem; font-size: 0.84rem; min-height: 36px; }
+    .media-fallback { color: #E4ECEA; font-size: 0.86rem; padding: 1.1rem; text-align: center; line-height: 1.55; }
+
+    dialog.img-modal {
+      border: none; border-radius: var(--radius-lg); padding: 0;
+      width: min(900px, calc(100% - 2rem)); max-height: 90vh;
+      background: var(--card); color: var(--text);
+      box-shadow: 0 24px 48px rgba(11, 37, 58, 0.32);
+    }
+    dialog.img-modal::backdrop { background: rgba(11, 37, 58, 0.72); backdrop-filter: blur(4px); }
+    .img-modal-head {
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      padding: 1rem 1.4rem; background: var(--surface-2); border-bottom: 1px solid var(--line);
+    }
+    .modal-close {
+      background: transparent; border: 1px solid var(--line-strong);
+      border-radius: var(--radius); width: 40px; height: 40px;
+      font-size: 1rem; cursor: pointer; color: var(--heading); flex: none;
+    }
+    .modal-close:hover { background: var(--heading); color: #FFFFFF; }
+    .img-modal-body { padding: 1.2rem 1.4rem; text-align: center; overflow-y: auto; }
+    .img-modal-body img { max-height: 68vh; margin-inline: auto; border-radius: var(--radius); }
+
+    .faq-list { display: grid; gap: 1rem; }
+    .faq-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.35rem 1.5rem; }
+    .faq-card h3 { font-size: 1.08rem; margin-bottom: 0.45rem; }
+    .faq-card p { margin: 0; color: var(--text); }
+
+    .billing-switch-bar {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 0.8rem; margin-bottom: 1.2rem;
+    }
+    .billing-pills {
+      display: inline-flex; background: var(--surface-2); padding: 0.3rem;
+      border-radius: 10px; gap: 0.3rem;
+    }
+    .bill-pill {
+      border: none; background: transparent; padding: 0.45rem 1rem; border-radius: 8px;
+      font-family: inherit; font-size: 0.88rem; font-weight: 700; color: var(--muted); cursor: pointer;
+    }
+    .bill-pill.active { background: var(--heading); color: #FFFFFF; }
+
+    .plans-grid {
+      display: grid; gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      margin-bottom: 1.8rem;
+    }
+    .plan-card {
+      background: var(--card); border: 2px solid var(--line); border-radius: var(--radius-lg);
+      padding: 1.25rem; cursor: pointer; text-align: left; font-family: inherit;
+      display: flex; flex-direction: column; transition: all 0.15s ease;
+    }
+    .plan-card:hover { border-color: var(--heading); transform: translateY(-2px); }
+    .plan-card.selected {
+      border-color: var(--heading); background: #FFFFFF;
+      box-shadow: 0 10px 24px rgba(11, 37, 58, 0.1);
+    }
+    .plan-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
+    .plan-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--heading); }
+    .plan-badge {
+      font-size: 0.74rem; font-weight: 700; padding: 0.18rem 0.55rem;
+      border-radius: 999px; background: #E6F3F1; color: var(--kicker-dark);
+    }
+    .plan-quota { font-weight: 700; font-size: 0.92rem; color: var(--kicker); margin-bottom: 0.25rem; }
+    .plan-target { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.9rem; }
+    .plan-pricing { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--line); font-family: var(--font-mono); }
+    .plan-orig { font-size: 0.8rem; color: var(--muted); text-decoration: line-through; display: block; }
+    .plan-sale { font-size: 1.28rem; font-weight: 700; color: var(--heading); }
+
+    .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.5fr 1fr; align-items: start; }
+    @media (max-width: 860px) { .reserve-layout { grid-template-columns: 1fr; } }
+
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-weight: 700; font-size: 0.93rem; color: var(--heading); margin-bottom: 0.45rem; }
+    input[type="text"], input[type="email"], select, textarea {
+      width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--line-strong);
+      border-radius: var(--radius); font-family: inherit; font-size: 1rem;
+      color: var(--text); background: #FFFFFF; min-height: 44px;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--heading); outline: 3px solid rgba(212, 175, 55, 0.35); }
+
+    .form-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.4rem; }
+    .form-feedback { margin-top: 1rem; font-size: 0.92rem; font-weight: 600; color: var(--kicker); min-height: 1.4em; }
+
+    .checkout-summary-box {
+      background: linear-gradient(180deg, #0B253A 0%, #10324D 100%);
+      color: #F4F7F6; border-radius: var(--radius-lg); padding: 1.5rem;
+      border: 1.5px solid rgba(212, 175, 55, 0.45);
+    }
+    .checkout-summary-box h3 { color: #FFFFFF; margin-bottom: 0.75rem; }
+    dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1.1rem; margin: 0; font-size: 0.92rem; }
+    dl.facts dt { color: #B8C7C5; }
+    dl.facts dd { margin: 0; color: #FFFFFF; font-weight: 700; }
+
+    footer.site { padding: 2.8rem 0 3.2rem; background: var(--footer-bg); color: var(--footer-text); font-size: 0.92rem; }
     footer.site .muted { color: #9FB0AD; }
 
+    @media (max-width: 720px) {
+      dl.facts { grid-template-columns: 1fr; }
+      dl.facts dt { margin-top: 0.4rem; }
+    }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .btn, .media-thumb img { transition: none; }
-      .btn:hover, .media-thumb img:hover { transform: none; }
+      .btn, .media-card, .media-thumb img, .plan-card { transition: none; }
+      .btn:hover, .media-card:hover, .media-thumb img:hover, .plan-card:hover { transform: none; }
     }
   </style>
 </head>
 <body>
   <a class="skip" href="#main">跳到主要內容</a>
 
-  <!-- 頂部導覽列 -->
   <header class="site">
     <div class="wrap">
       <a class="brand" href="../index.html" aria-label="返回水月道場全生態總覽">
@@ -295,17 +391,17 @@
           <path d="M15 32c3-2 6 2 9 0s6-2 9 0" fill="none" stroke="#2A9D8F" stroke-width="1.6" stroke-linecap="round"/>
           <circle cx="24" cy="16" r="4" fill="#D4AF37"/>
         </svg>
-        <span>密圈 CipherCircle<small>AllView 生態系｜專屬預售頁</small></span>
+        <span>CipherCircle 密圈<small>AllView 生態系｜7 折嘗鮮預售頁</small></span>
       </a>
 
       <nav class="main" aria-label="本頁選單">
         <ul>
           <li><a href="../index.html#products">← 返回十大產品線</a></li>
-          <li><a href="#media-showcase">影音與視覺圖庫</a></li>
-          <li><a href="#modules">六大功能模組</a></li>
-          <li><a href="#architecture">資料流與邊界</a></li>
+          <li><a href="#features">四大能力模組</a></li>
+          <li><a href="#marketing-assets">影音與視覺素材</a></li>
+          <li><a href="#flow">資料流與舉證</a></li>
           <li><a href="#faq">常見問答</a></li>
-          <li><a href="#cta-form">預約諮詢</a></li>
+          <li><a href="#cta-form">7 折方案與結算</a></li>
           <li><button type="button" id="bigtext" class="btn-toggle" aria-pressed="false">長者友善大字</button></li>
         </ul>
       </nav>
@@ -313,7 +409,6 @@
   </header>
 
   <main id="main">
-    <!-- Hero 區 -->
     <section class="hero" aria-labelledby="page-title">
       <div class="wrap">
         <nav class="breadcrumb" aria-label="麵包屑導覽">
@@ -323,29 +418,68 @@
           <span>/</span>
           <span>02｜密圈 CipherCircle</span>
         </nav>
-        <span class="eyebrow">02｜AllView（allview.today）· 密文防護之偽匿名社群與知識空間</span>
+        <span class="eyebrow">02｜AllView（allview.today）· FHE 密文防護之偽匿名知識社群</span>
         <h1 id="page-title">公開場合不露名，重要紀錄可查證。</h1>
-        <p class="lead">多數社群會讓你在兩件事裡選一邊：被看光，或匿名到出事也說不清。密圈結合視覺化社群、端對端加密通訊、密文推薦與匿名投票，以及授權門檻下可驗證的證據鏈，讓隱私保護與可信任問責同時存在。</p>
+        <p class="lead">密圈（CipherCircle）把動態牆、論壇、直播授課與端對端加密通訊放進同一個空間；以零知識證明驗證成員資格、FHE 執行密文推薦與匿名投票，並於授權條件成立時提供可查驗的 Merkle 證據鏈。</p>
         <div class="cta">
-          <a class="btn primary" href="#cta-form">登記社群與課程空間諮詢</a>
-          <a class="btn ghost" href="#media-showcase">觀看宣傳短片與視覺圖</a>
+          <a class="btn primary" href="#cta-form">選擇 7 折預售方案並前往結算 →</a>
+          <a class="btn ghost" href="#marketing-assets">觀看宣傳影片與視覺圖</a>
         </div>
         <ul class="tags">
-          <li>公開偽匿名 · 資格憑證驗證</li>
-          <li>端對端加密通訊與直播</li>
-          <li>密文推薦與匿名投票</li>
-          <li>條件式調閱證據鏈</li>
+          <li>公開偽匿名＋零知識證明</li>
+          <li>端對端加密通訊與直播授課</li>
+          <li>FHE 密文推薦與匿名投票</li>
+          <li>早鳥嘗鮮預售全系列 7 折</li>
         </ul>
       </div>
     </section>
 
-    <!-- 宣傳影片與視覺圖庫 -->
-    <section id="media-showcase" class="alt" aria-labelledby="media-title">
+    <section id="features" aria-labelledby="features-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Visual &amp; Motion Showcase</span>
-          <h2 id="media-title">密圈宣傳短片與核心視覺說明</h2>
-          <p class="muted">短片載入後自動循環播放，點擊下方任一視覺圖卡可放大檢視細節。</p>
+          <span class="kicker">Four-Layer Architecture</span>
+          <h2 id="features-title">四大能力組合，兼顧隱私保護與可信任問責</h2>
+          <p class="muted">現代社群常卡在「被看光」或「匿名到出事也說不清」的兩難。密圈透過四層架構，讓社群交流與專業授課同時具備隱私防護與條件式舉證能力。</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card feature">
+            <span class="num">能力 01｜端對端加密通訊與社群空間</span>
+            <h3>動態牆、短影音與 E2EE 加密群聊</h3>
+            <p style="margin:0">整合動態牆、短影音、故事與端對端加密通訊，支援加密群聊、語音／視訊與螢幕共享，並提供限時閱後即焚與本機受控金鑰備份。</p>
+          </div>
+
+          <div class="card feature">
+            <span class="num">能力 02｜論壇、演講與直播授課</span>
+            <h3>階層式知識討論與加密作業繳交</h3>
+            <p style="margin:0">專為知識社群與線上學院設計，支援階層式論壇、端對端加密直播授課與預約演講、講義發布以及課程作業加密繳交。</p>
+          </div>
+
+          <div class="card feature">
+            <span class="num">能力 03｜FHE 密文推薦與匿名投票</span>
+            <h3>平台不解開明文即可完成匹配與計票</h3>
+            <p style="margin:0">在密文狀態下執行私密推薦與標籤匹配；以同態加法累計匿名投票，避免計票方或平台提前看到個別成員的選擇。</p>
+          </div>
+
+          <div class="card feature">
+            <span class="num">能力 04｜偽匿名身分與條件式證據鏈</span>
+            <h3>ZKP 驗證資格＋簽章收據 Merkle Tree</h3>
+            <p style="margin:0">成員可用零知識證明（ZKP）出示組織資格而不暴露真實帳號；重要操作產生簽章收據寫入 Merkle 證據鏈，僅在司法仲裁或授權門檻湊齊時檢驗。</p>
+          </div>
+        </div>
+
+        <div class="boundary-box" style="margin-top:1.8rem">
+          <strong>誠實設計邊界聲明：</strong>密圈定位為「公開偽匿名＋條件式舉證」，並非「誰都查不到」的絕對匿名承諾。當司法仲裁或授權門檻金鑰條件滿足時，特定發表或閱讀紀錄可被驗證；本頁不宣稱已通過司法認證或達到外部通訊軟體同等完成度。
+        </div>
+      </div>
+    </section>
+
+    <section id="marketing-assets" class="alt" aria-labelledby="assets-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="kicker">Marketing Showcase</span>
+          <h2 id="assets-title">密圈 CipherCircle 行銷短片與視覺圖庫</h2>
+          <p class="muted">透過動態概念短片與六張視覺圖解，了解偽匿名社群、端對端加密授課與條件式證據鏈的運作邏輯；點擊任一張圖片可放大檢視。</p>
         </div>
 
         <div id="promo-video-box" class="video-feature"></div>
@@ -353,112 +487,24 @@
       </div>
     </section>
 
-    <!-- 六大功能模組 -->
-    <section id="modules" aria-labelledby="modules-title">
+    <section id="flow" aria-labelledby="flow-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Core Modules A — F</span>
-          <h2 id="modules-title">將社群互動、加密通訊與課程協作放進同一空間</h2>
-          <p class="muted">以下為密圈規劃之六大功能模組（目前處於早期預售與需求登記階段，各模組上線狀態與定量門檻以正式版規格為準）。</p>
+          <span class="kicker">Verifiable Data Flow</span>
+          <h2 id="flow-title">典型訊息與知識交付資料流</h2>
+          <p class="muted">確保日常互動不暴露真實身分，同時在授權條件成立時具備可查驗的操作軌跡。</p>
         </div>
 
-        <div class="grid">
-          <article class="card feature">
-            <span class="num">模組 A｜視覺化內容與社群層</span>
-            <h3>動態牆、短影音與私密互動</h3>
-            <ul class="product-highlights">
-              <li>支援多圖文動態牆、短影音與限時動態排版。</li>
-              <li>具備點讚、表情回應、轉發、私密收藏與主題標籤整理。</li>
-              <li>採 Mobile First 與響應式跨裝置介面設計。</li>
-            </ul>
-          </article>
-
-          <article class="card feature">
-            <span class="num">模組 B｜端對端安全通訊</span>
-            <h3>加密群聊、語音視訊與閱後即焚</h3>
-            <ul class="product-highlights">
-              <li>通訊以端對端加密為預設方向，重視前向與後向保密。</li>
-              <li>支援加密群組聊天、語音／視訊通話與螢幕共享。</li>
-              <li>提供限時閱後即焚訊息與本機受控金鑰備份。</li>
-            </ul>
-          </article>
-
-          <article class="card feature">
-            <span class="num">模組 C｜論壇、演講與課程</span>
-            <h3>加密直播授課與作業繳交</h3>
-            <ul class="product-highlights">
-              <li>階層式主題論壇、精華置頂與權限分級版塊。</li>
-              <li>支援端對端加密直播授課與預約制線上演講。</li>
-              <li>內建講義發布、作業加密繳交、測驗與學習進度追蹤。</li>
-            </ul>
-          </article>
-
-          <article class="card feature">
-            <span class="num">模組 D｜匿名認證與資格證明</span>
-            <h3>不出示真實帳號也能證明資格</h3>
-            <ul class="product-highlights">
-              <li>一般公開場合不暴露真實身分，以金鑰對建立公眾身分。</li>
-              <li>透過零知識證明出示組織成員資格或閱讀權限，不必公開真實帳號。</li>
-            </ul>
-          </article>
-
-          <article class="card feature">
-            <span class="num">模組 E｜密文運算</span>
-            <h3>密文推薦與匿名投票</h3>
-            <ul class="product-highlights">
-              <li>於密文狀態下比對興趣標籤與內容特徵，讓服務端不必先解開原始內容。</li>
-              <li>社群投票以同態加法累計票數，避免計票方在開票前看到個別選擇。</li>
-            </ul>
-          </article>
-
-          <article class="card feature">
-            <span class="num">模組 F｜證據鏈與可驗證審計</span>
-            <h3>簽章收據與條件式調閱</h3>
-            <ul class="product-highlights">
-              <li>重要發表、點擊、閱讀與資料調用產生簽章收據。</li>
-              <li>收據打包寫入證據鏈，防止任意竄改。</li>
-              <li>僅在司法仲裁或授權門檻金鑰湊齊時依規檢驗。</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 典型資料流與邊界說明 -->
-    <section id="architecture" class="alt" aria-labelledby="arch-title">
-      <div class="wrap">
-        <div class="sec-head">
-          <span class="kicker">Data Flow &amp; Honest Boundaries</span>
-          <h2 id="arch-title">「公開偽匿名＋條件式舉證」運作流程與誠實邊界</h2>
-          <p class="muted">前端維持互動體驗，不直接執行重度密文運算；重度分析採批次處理，儲存層採信封加密且密鑰由客戶端持有。</p>
-        </div>
-
-        <ol class="flow-grid" style="margin-bottom:2rem">
-          <li><strong>客戶端加密與簽署</strong><br><span class="muted" style="font-size:.9rem">於客戶端加密內容、簽署操作收據，並上傳加密特徵向量。</span></li>
-          <li><strong>本地解密與閱讀回執</strong><br><span class="muted" style="font-size:.9rem">授權成員取得內容後於本地解密閱覽，並回傳閱讀收據。</span></li>
-          <li><strong>寫入證據鏈</strong><br><span class="muted" style="font-size:.9rem">收據定期打包寫入證據鏈，保留可驗證紀錄。</span></li>
-          <li><strong>授權門檻下查驗</strong><br><span class="muted" style="font-size:.9rem">僅當符合司法仲裁或授權門檻憑證時，方可驗證特定紀錄。</span></li>
+        <ol class="pipeline">
+          <li><strong>客戶端加密與簽署</strong><br><span class="muted" style="font-size:.9rem">發文或傳訊於發送端加密，並產生發送簽章收據。</span></li>
+          <li><strong>本地解密與閱讀回執</strong><br><span class="muted" style="font-size:.9rem">具備資格的接收方於本機解密閱覽，回傳閱讀收據。</span></li>
+          <li><strong>寫入 Merkle 證據鏈</strong><br><span class="muted" style="font-size:.9rem">操作與閱讀收據定期打包為 Merkle Tree 不可竄改存證。</span></li>
+          <li><strong>授權門檻條件式檢驗</strong><br><span class="muted" style="font-size:.9rem">僅在司法仲裁或授權門檻金鑰湊齊時，方可檢驗特定紀錄。</span></li>
         </ol>
-
-        <div class="grid two">
-          <div class="card">
-            <h3>跨事業體技術協作說明</h3>
-            <p>密圈產品歸屬 <strong>AllView（allview.today）</strong>。底層共用全同態加密核心能力與 <strong>AEGIS（aegis.expert）</strong> 技術棧協同；資源點數調度則與 <strong>水月道場 / Wonderland Center</strong> 生態銜接。</p>
-          </div>
-          <div class="card">
-            <h3>誠實設計邊界聲明</h3>
-            <p>密圈定位為「公開偽匿名＋條件式舉證」，<strong>不是「誰都查不到」的絕對匿名承諾</strong>。本頁亦不宣稱已通過特定司法或法規認證，或已達到外部通訊與社群平台之同等安全等級與完成度。</p>
-          </div>
-        </div>
-
-        <div class="boundary-box">
-          <strong>範圍提醒：</strong>價格與正式上線時程目前尚未公布；各功能之實際上線進度與門檻金鑰治理細節以正式方案為準。
-        </div>
       </div>
     </section>
 
-    <!-- 常見問答 FAQ -->
-    <section id="faq" aria-labelledby="faq-title">
+    <section id="faq" class="alt" aria-labelledby="faq-title">
       <div class="wrap">
         <div class="sec-head">
           <span class="kicker">Frequently Asked Questions</span>
@@ -468,90 +514,93 @@
         <div class="faq-list">
           <article class="faq-card">
             <h3>Q1：密圈是匿名到誰都查不到的平台嗎？</h3>
-            <p>不是。密圈的設計是「公開環境下的偽匿名」：一般公開場合不暴露真實身分；但若授權或司法仲裁門檻滿足，特定發表或閱讀紀錄可以被驗證，讓行為在授權條件成立時無法被任意否認。</p>
+            <p>不是。密圈的設計是公開環境下的偽匿名：一般公開場合不暴露真實身分；但若司法仲裁或授權門檻金鑰滿足，特定發表或閱讀紀錄可以被驗證。</p>
           </article>
           <article class="faq-card">
             <h3>Q2：誰來保管可以調閱證據的金鑰？</h3>
-            <p>系統設計為僅在「司法仲裁或授權門檻金鑰湊齊時」可以檢視特定紀錄；門檻金鑰持有者配置與規則將依部署方案定案，不於預售階段擅自補述。</p>
+            <p>系統設計為僅在「司法仲裁或授權門檻金鑰湊齊時」方可檢視特定紀錄；具體門檻金鑰持有者與治理規則將依組織部署方案定案。</p>
           </article>
           <article class="faq-card">
-            <h3>Q3：平台看得到我的內容、推薦與投票選擇嗎？</h3>
-            <p>通訊以端對端加密為預設方向，內容於客戶端加密後上傳；推薦匹配與匿名投票以密文運算為設計目標，避免計票方或平台在未解密原始資料前看到個別選擇。</p>
+            <h3>Q3：平台看得到我的聊天內容與投票選擇嗎？</h3>
+            <p>通訊以端對端加密為預設方向，推薦匹配與匿名投票以 FHE 密文運算為設計目標，避免計票方或平台在未解密前看到個別選擇。</p>
           </article>
           <article class="faq-card">
-            <h3>Q4：目前的方案價格與上線時間為何？</h3>
-            <p>價格與上線時間目前尚未公布。如果您經營的知識社群、課程或論壇同時需要隱私保護與可查證性，歡迎在下方簡述使用情境。</p>
+            <h3>Q4：若社群人數超過方案上限怎麼辦？</h3>
+            <p>可在結算中心加購「額外席次包」（每 50 席，原價 NT$ 4,900，7 折嘗鮮預售價 NT$ 3,430）。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 專屬預售諮詢表單 -->
-    <section id="cta-form" class="alt" aria-labelledby="cta-form-title">
+    <section id="cta-form" aria-labelledby="cta-form-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Call to Action · CipherCircle</span>
-          <h2 id="cta-form-title">登記知識社群與課程空間諮詢</h2>
-          <p class="muted">如果您經營的知識社群、課程或論壇同時需要隱私與可查證性，請簡述您的使用情境；正式方案確認後我們將與您聯繫。</p>
+          <span class="kicker">70% Early-Bird Presale · CipherCircle</span>
+          <h2 id="cta-form-title">選擇您的 7 折嘗鮮預售方案並前往結算</h2>
+          <p class="muted">全系列早鳥預售享 <strong>7 折優惠（現省 30%）</strong>；點選適合您社群規模的方案後，即可一鍵帶入參數前往共用結算中心。</p>
         </div>
+
+        <div class="billing-switch-bar">
+          <strong style="color:var(--heading);font-size:0.95rem">步驟 ①：點選訂閱方案與計費週期</strong>
+          <div class="billing-pills" role="group" aria-label="計費週期切換">
+            <button type="button" id="bill-yearly" class="bill-pill active" onclick="setBilling('yearly')">年繳方案（再享 7 折）</button>
+            <button type="button" id="bill-monthly" class="bill-pill" onclick="setBilling('monthly')">月繳方案（享 7 折）</button>
+          </div>
+        </div>
+
+        <div id="plans-grid" class="plans-grid"></div>
 
         <div class="reserve-layout">
           <form id="product-cta-form" class="card form-card" novalidate>
+            <h3 style="margin-bottom:0.85rem">步驟 ②：預填聯絡與社群規模需求（將自動帶入結算頁）</h3>
             <div class="grid two">
               <div class="form-group">
-                <label for="user-name">稱呼 / 社群或組織名稱 <span class="req">*</span></label>
-                <input type="text" id="user-name" placeholder="例如：林老師 / 某某專業研究社群" required>
+                <label for="user-name">稱呼 / 社群或機構名稱</label>
+                <input type="text" id="user-name" placeholder="例如：林院長 / 某某研究社群">
               </div>
               <div class="form-group">
-                <label for="user-email">聯絡電子信箱 <span class="req">*</span></label>
-                <input type="email" id="user-email" placeholder="name@example.com" required>
+                <label for="user-email">聯絡電子信箱</label>
+                <input type="email" id="user-email" placeholder="name@example.com">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="community-type">主要應用場景 <span class="req">*</span></label>
+              <label for="community-type">主要應用情境</label>
               <select id="community-type">
-                <option value="知識社群與付費會員論壇">知識社群與付費會員論壇</option>
-                <option value="線上課程、加密直播授課與作業繳交">線上課程、加密直播授課與作業繳交</option>
-                <option value="專業組織內部高隱私討論與匿名投票">專業組織內部高隱私討論與匿名投票</option>
-                <option value="跨國研討與演講主辦單位">跨國研討與演講主辦單位</option>
+                <option value="付費知識社群／線上直播學院">付費知識社群／線上直播學院</option>
+                <option value="敏感議題研究／產業吹哨與匿名投票">敏感議題研究／產業吹哨與匿名投票</option>
+                <option value="專業學會／會員資格 ZKP 驗證論壇">專業學會／會員資格 ZKP 驗證論壇</option>
+                <option value="大型機構客製門檻仲裁部署">大型機構客製門檻仲裁部署</option>
               </select>
             </div>
 
             <div class="form-group">
-              <span class="label-title">重點關注模組（可複選）</span>
-              <div class="checkbox-grid">
-                <label class="checkbox-item"><input type="checkbox" name="modules" value="端對端加密群聊與直播授課"><span>端對端加密群聊與直播授課</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="modules" value="零知識證明成員資格驗證"><span>零知識證明成員資格驗證</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="modules" value="密文推薦與匿名投票"><span>密文推薦與匿名投票</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="modules" value="簽章收據與證據鏈查驗"><span>簽章收據與證據鏈查驗</span></label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="user-notes">使用情境與需求簡述</label>
-              <textarea id="user-notes" rows="4" placeholder="請簡述您的社群性質、重視的隱私保護或授權查驗需求"></textarea>
+              <label for="user-notes">社群需求簡述（選填）</label>
+              <textarea id="user-notes" rows="3" placeholder="例如：預計開設 150 人規模的加密直播課程與匿名投票"></textarea>
             </div>
 
             <div class="form-actions">
-              <button type="submit" class="btn primary">開啟信箱寄送預售諮詢</button>
-              <button type="button" id="copy-btn" class="btn ghost-dark">複製登記摘要</button>
+              <button type="button" id="go-checkout-btn" class="btn primary">前往 7 折預售結算中心（../CTA） →</button>
+              <button type="button" id="mail-inquiry-btn" class="btn ghost-dark">僅先寄信諮詢（暫不結帳）</button>
             </div>
             <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
           </form>
 
-          <aside class="card info-aside">
-            <h3>產品識別與窗口資訊</h3>
+          <aside class="checkout-summary-box">
+            <h3>已選預售配置摘要</h3>
             <dl class="facts" style="margin:1rem 0">
-              <dt>產品名稱</dt><dd>02｜密圈 CipherCircle</dd>
+              <dt>產品代碼</dt><dd>02｜P02-CC（CipherCircle）</dd>
               <dt>所屬事業體</dt><dd>AllView（allview.today）</dd>
-              <dt>生態系總窗口</dt><dd><a id="direct-email" href="mailto:contact@wonderland.center">contact@wonderland.center</a></dd>
+              <dt>選定方案</dt><dd id="sum-plan-name">Professional（每月 200 活躍成員席次）</dd>
+              <dt>計費週期</dt><dd id="sum-billing">年繳方案</dd>
+              <dt>標準原價</dt><dd id="sum-orig-price" style="text-decoration:line-through;color:#B8C7C5">NT$ 189,000</dd>
+              <dt>7 折預售價</dt><dd id="sum-sale-price" style="color:#D4AF37;font-size:1.25rem">NT$ 132,300</dd>
             </dl>
-            <div class="note">
-              <strong>誠信與隱私提醒：</strong>本頁不收集任何信用卡號或私密金鑰，亦不刊載未簽約匯款帳號。
+            <div class="note" style="background:rgba(255,255,255,0.08);border-color:rgba(212,175,55,0.4);color:#E4ECEA">
+              <strong style="color:#D4AF37">跳轉說明：</strong>點擊「前往 7 折預售結算中心」將導向上層 <code>CTA/index.html</code>，結算頁支援銀行電匯、第三方刷卡與 USDT 入金，並可加購「額外席次包（每 50 席 NT$ 3,430）」。
             </div>
             <p style="margin-top:1.2rem;margin-bottom:0">
-              <a class="btn ghost-dark" style="width:100%" href="../index.html#products">瀏覽其他生態系產品線</a>
+              <a class="btn ghost" style="width:100%" href="../index.html#products">瀏覽其他 9 條生態系產品線</a>
             </p>
           </aside>
         </div>
@@ -559,131 +608,222 @@
     </section>
   </main>
 
-  <!-- 圖片放大檢視燈箱 -->
-  <dialog id="img-lightbox" class="img-modal" aria-label="圖片放大檢視">
+  <dialog id="img-lightbox" class="img-modal" aria-label="視覺圖片放大檢視">
     <div class="img-modal-head">
       <strong id="img-modal-title">視覺素材檢視</strong>
       <button type="button" id="img-modal-close" class="modal-close" aria-label="關閉">✕</button>
     </div>
     <div class="img-modal-body">
       <img id="img-modal-src" src="" alt="">
-      <p id="img-modal-caption" class="muted" style="margin-top:.8rem;margin-bottom:0"></p>
+      <p id="img-modal-caption" class="muted" style="margin-top:.85rem;margin-bottom:0"></p>
     </div>
   </dialog>
 
   <footer class="site">
     <div class="wrap">
       <p><strong>© 2026 AllView（allview.today）× 水月道場 / Wonderland Center</strong>｜密圈 CipherCircle 專屬預售頁</p>
-      <p class="muted" style="font-size:.84rem">本頁內容依《密圈產品說明與預售內容》編製，正式規格與服務條款以簽署合約為準。</p>
+      <p class="muted" style="font-size:.84rem">本頁內容依《密圈 CipherCircle 產品說明與預售內容》及《產品定價與 7 折嘗鮮預售價總表》編製，正式規格與服務條款以簽署合約為準。</p>
     </div>
   </footer>
 
   <script>
+    const PRODUCT_CODE = "02";
+    const CHECKOUT_PATH = "../CTA/index.html";
     const CONTACT_EMAIL = "contact@wonderland.center";
+    const DISCOUNT_RATE = 0.7;
+    const MEDIA_DIR = "./marketing";
 
-    // 背景靜默載入媒體設定（畫面上不顯示檔案路徑）
-    const MEDIA_CONFIG = {
+    const PLANS_02 = [
+      { plan: "Community", target: "小型知識社群、試用課程", quota: "每月 50 活躍成員席次", m: 6900, y: 69000 },
+      { plan: "Professional", target: "活躍課程／論壇主辦方", quota: "每月 200 活躍成員席次", m: 18900, y: 189000, recommended: true },
+      { plan: "Organization", target: "較大規模知識社群或機構", quota: "每月 800 活躍成員席次", m: 49900, y: 499000 },
+      { plan: "Enterprise", target: "大型或需客製規則", quota: "客製（洽談）", custom: true }
+    ];
+
+    const MARKETING_MEDIA = {
       video: {
-        src: "./marketing/0.行銷短片.mp4",
-        poster: "./marketing/1.形象廣告.jpg",
-        title: "密圈 CipherCircle 核心概念短片",
-        caption: "呈現公開偽匿名保護、端對端加密互動、密文推薦與可驗證證據鏈的整體概念。"
+        file: "0.行銷短片.mp4",
+        poster: "1.形象廣告.jpg",
+        badge: "概念短片",
+        title: "密圈 CipherCircle 偽匿名與條件式證據鏈概念短片",
+        caption: "呈現公開偽匿名交流、端對端加密直播授課與授權門檻下可查驗 Merkle 證據鏈之架構概念。"
       },
       images: [
-        {
-          src: "./marketing/1.形象廣告.jpg",
-          title: "公開不露名，爭議可查證",
-          caption: "以公開偽匿名與條件式舉證為核心，兼顧隱私保護與可查證紀錄。"
-        },
-        {
-          src: "./marketing/2.產品說明流程.jpg",
-          title: "四步運作與證據鏈流程",
-          caption: "客戶端加密與簽署收據 → 本地解密閱覽回傳收據 → 寫入證據鏈 → 授權或仲裁門檻驗證。"
-        },
-        {
-          src: "./marketing/3.服務交付流程.jpg",
-          title: "服務架構與五大核心能力",
-          caption: "串聯知識社群、課程主辦方與重視隱私問責之成員，整合論壇、加密直播、資格驗證、密文投票與簽章收據。"
-        },
-        {
-          src: "./marketing/4.行銷推廣圖片.jpg",
-          title: "隱私與問責，同時存在",
-          caption: "整合視覺化社群空間、端對端加密通訊與直播、密文推薦與匿名投票，以及不可否認證據鏈。"
-        },
-        {
-          src: "./marketing/5.社群概念圖.jpg",
-          title: "知識社群與論壇隱私空間",
-          caption: "支援加密直播授課、成員資格驗證與匿名表決，打造兼具隱私與可查證性的交流空間。"
-        },
-        {
-          src: "./marketing/6.B2B 企業出海 EDM.jpg",
-          title: "跨場景社群與協作願景",
-          caption: "協助社群與組織在保護隱私的前提下進行安全交流、課程互動與紀錄查驗。"
-        }
+        { file: "1.形象廣告.jpg", badge: "品牌形象", title: "公開不露名，爭議可查證", caption: "結合零知識證明資格驗證與簽章收據證據鏈，在隱私保護與問責之間建立平衡。" },
+        { file: "2.產品說明流程.jpg", badge: "運作流程", title: "四步可驗證資料流", caption: "客戶端加密簽章 → 對方本地解密並回傳閱讀收據 → 寫入 Merkle 證據鏈 → 授權門檻條件式檢驗。" },
+        { file: "3.服務交付流程.jpg", badge: "社群授課", title: "端對端加密直播與知識論壇", caption: "支援階層式論壇、E2EE 直播授課、講義發布與作業加密繳交，保護師生智慧財產。" },
+        { file: "4.行銷推廣圖片.jpg", badge: "密文運算", title: "FHE 密文推薦與匿名投票", caption: "在密文狀態下執行內容匹配與同態加法累計投票，計票方在未解密前無法窺探個別選擇。" },
+        { file: "5.社群概念圖.jpg", badge: "設計邊界", title: "公開偽匿名＋條件式舉證", caption: "非絕對不可追蹤承諾；僅在司法仲裁或授權門檻金鑰湊齊時方可查驗特定操作收據。" },
+        { file: "6.B2B 企業出海 EDM.jpg", badge: "組織部署", title: "知識學院與機構專屬社群方案", caption: "支援 50 至 800 名活躍成員席次，可依組織規模彈性加購額外席次包。" }
       ]
     };
 
-    function setupAutoLoopVideo(videoEl) {
-      if (!videoEl) return;
-      videoEl.muted = true;
-      videoEl.loop = true;
-      videoEl.autoplay = true;
-      videoEl.playsInline = true;
+    let selectedPlanIdx = 1;
+    let billingCycle = "yearly";
 
-      const tryPlay = () => {
-        const p = videoEl.play();
-        if (p && typeof p.catch === "function") {
-          p.catch(() => {});
+    function renderPlans() {
+      const grid = document.getElementById("plans-grid");
+      if (!grid) return;
+
+      document.getElementById("bill-yearly").classList.toggle("active", billingCycle === "yearly");
+      document.getElementById("bill-monthly").classList.toggle("active", billingCycle === "monthly");
+
+      grid.innerHTML = PLANS_02.map((p, idx) => {
+        const isSel = idx === selectedPlanIdx;
+        if (p.custom) {
+          return `
+            <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
+              <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">客製專案</span></div>
+              <div class="plan-quota">${p.quota}</div>
+              <div class="plan-target">${p.target}</div>
+              <div class="plan-pricing"><span class="plan-orig">依組織規模評估</span><span class="plan-sale">專人洽談報價</span></div>
+            </button>
+          `;
         }
+        const orig = billingCycle === "yearly" ? p.y : p.m;
+        const sale = Math.round(orig * DISCOUNT_RATE);
+        const unit = billingCycle === "yearly" ? "/ 年" : "/ 月";
+        return `
+          <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
+            <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">${p.recommended ? "★ 熱門推薦" : "7 折早鳥"}</span></div>
+            <div class="plan-quota">${p.quota}</div>
+            <div class="plan-target">${p.target}</div>
+            <div class="plan-pricing">
+              <span class="plan-orig">原價 NT$ ${orig.toLocaleString("zh-TW")} ${unit}</span>
+              <span class="plan-sale">NT$ ${sale.toLocaleString("zh-TW")} <small style="font-size:0.78rem">${unit}</small></span>
+            </div>
+          </button>
+        `;
+      }).join("");
+
+      const cur = PLANS_02[selectedPlanIdx];
+      document.getElementById("sum-plan-name").textContent = `${cur.plan}（${cur.quota}）`;
+      document.getElementById("sum-billing").textContent = cur.custom ? "客製專案（洽談）" : (billingCycle === "yearly" ? "年繳方案" : "月繳方案");
+
+      if (cur.custom) {
+        document.getElementById("sum-orig-price").textContent = "專案報價";
+        document.getElementById("sum-sale-price").textContent = "專人洽談";
+      } else {
+        const orig = billingCycle === "yearly" ? cur.y : cur.m;
+        const sale = Math.round(orig * DISCOUNT_RATE);
+        document.getElementById("sum-orig-price").textContent = `NT$ ${orig.toLocaleString("zh-TW")}`;
+        document.getElementById("sum-sale-price").textContent = `NT$ ${sale.toLocaleString("zh-TW")}`;
+      }
+    }
+
+    function selectPlan(idx) { selectedPlanIdx = idx; renderPlans(); }
+    function setBilling(mode) { billingCycle = mode; renderPlans(); }
+
+    function initCheckoutBridge() {
+      const goBtn = document.getElementById("go-checkout-btn");
+      const mailBtn = document.getElementById("mail-inquiry-btn");
+      const feedback = document.getElementById("form-feedback");
+
+      const collectFields = () => {
+        const cur = PLANS_02[selectedPlanIdx];
+        const name = document.getElementById("user-name").value.trim();
+        const email = document.getElementById("user-email").value.trim();
+        const commType = document.getElementById("community-type").value;
+        const notes = document.getElementById("user-notes").value.trim();
+        return { cur, name, email, commType, notes };
       };
 
-      tryPlay();
-      videoEl.addEventListener("canplay", tryPlay, { once: true });
-      videoEl.addEventListener("ended", () => {
-        videoEl.currentTime = 0;
-        tryPlay();
+      goBtn.addEventListener("click", () => {
+        const data = collectFields();
+        const params = new URLSearchParams();
+        params.set("product", PRODUCT_CODE);
+        params.set("plan", data.cur.plan);
+        params.set("billing", billingCycle);
+        params.set("bundle", "0");
+        if (data.name) params.set("name", data.name);
+        if (data.email) params.set("email", data.email);
+        const combinedNotes = [data.commType, data.notes].filter(Boolean).join("｜");
+        if (combinedNotes) params.set("notes", combinedNotes);
+
+        window.location.href = `${CHECKOUT_PATH}?${params.toString()}`;
+      });
+
+      mailBtn.addEventListener("click", () => {
+        const data = collectFields();
+        if (!data.name || !data.email) {
+          feedback.style.color = "#B42318";
+          feedback.textContent = "若要寄送郵件諮詢，請先填寫「稱呼 / 社群名稱」與「聯絡電子信箱」。";
+          return;
+        }
+        const subject = `[CipherCircle 密圈 預售諮詢] ${data.name}（${data.cur.plan}）`;
+        const body = [
+          "您好，我想諮詢「02｜密圈 CipherCircle」的 7 折預售方案：",
+          "",
+          `・稱呼 / 單位：${data.name}`,
+          `・聯絡信箱：${data.email}`,
+          `・感興趣方案：${data.cur.plan}（${billingCycle === "yearly" ? "年繳" : "月繳"}）`,
+          `・應用情境：${data.commType}`,
+          `・需求簡述：${data.notes || "（尚未填寫）"}`
+        ].join("\n");
+        feedback.style.color = "#1E7A70";
+        feedback.textContent = "已為您開啟預設郵件程式寄送諮詢摘要。";
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       });
     }
 
-    function renderMediaGallery() {
+    function renderMarketingAssets() {
       const videoBox = document.getElementById("promo-video-box");
-      if (videoBox && MEDIA_CONFIG.video) {
-        const v = MEDIA_CONFIG.video;
+      if (videoBox && MARKETING_MEDIA.video) {
+        const v = MARKETING_MEDIA.video;
+        const videoSrc = `${MEDIA_DIR}/${encodeURIComponent(v.file)}`;
+        const posterSrc = v.poster ? `${MEDIA_DIR}/${encodeURIComponent(v.poster)}` : "";
+
         videoBox.innerHTML = `
           <div class="video-stage">
-            <video id="cipher-loop-video" autoplay muted loop playsinline controls preload="auto" poster="${v.poster}">
-              <source src="${v.src}" type="video/mp4">
-              您的瀏覽器不支援影片播放。
+            <video id="promo-video-player" autoplay muted loop playsinline controls preload="auto"${posterSrc ? ` poster="${posterSrc}"` : ""}>
+              <source src="${videoSrc}" type="video/mp4">
+              您的瀏覽器不支援 HTML5 影片播放。
             </video>
+            <div id="video-error-fallback" class="media-fallback" style="display:none">宣傳影片載入中或暫時無法播放，請重新整理頁面後再試。</div>
           </div>
           <div class="video-info">
-            <span class="num">宣傳短片 · 自動循環播放</span>
+            <span class="num">${v.badge}</span>
             <h3>${v.title}</h3>
             <p class="muted">${v.caption}</p>
-            <div style="margin-top:1rem">
-              <a class="btn primary" href="#cta-form">預約了解密圈方案</a>
-            </div>
+            <div style="margin-top:0.8rem"><a class="btn primary" href="#cta-form">查看 7 折預售方案 →</a></div>
           </div>
         `;
-        setupAutoLoopVideo(document.getElementById("cipher-loop-video"));
+
+        const videoEl = document.getElementById("promo-video-player");
+        const videoErrEl = document.getElementById("video-error-fallback");
+        if (videoEl) {
+          videoEl.muted = true;
+          const playPromise = videoEl.play();
+          if (playPromise && typeof playPromise.catch === "function") playPromise.catch(() => {});
+          if (videoErrEl) {
+            const showFallback = () => { videoEl.style.display = "none"; videoErrEl.style.display = "block"; };
+            videoEl.addEventListener("error", showFallback);
+            const srcEl = videoEl.querySelector("source");
+            if (srcEl) srcEl.addEventListener("error", showFallback);
+          }
+        }
       }
 
       const imgGrid = document.getElementById("promo-images-grid");
       if (imgGrid) {
-        imgGrid.innerHTML = (MEDIA_CONFIG.images || []).map((item, idx) => `
-          <article class="media-card">
-            <div class="media-thumb">
-              <img src="${item.src}" alt="${item.title}" loading="lazy" data-idx="${idx}"
-                   onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-              <div class="media-missing" style="display:none">視覺素材載入中，請確認目錄檔案已就緒。</div>
-            </div>
-            <div class="media-body">
-              <span class="num" style="margin-bottom:.25rem">視覺圖庫</span>
-              <h3>${item.title}</h3>
-              <p>${item.caption}</p>
-            </div>
-          </article>
-        `).join("");
+        imgGrid.innerHTML = (MARKETING_MEDIA.images || []).map((item, idx) => {
+          const imgSrc = `${MEDIA_DIR}/${encodeURIComponent(item.file)}`;
+          return `
+            <article class="media-card">
+              <div class="media-thumb">
+                <img src="${imgSrc}" alt="${item.title}" loading="lazy" data-idx="${idx}"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <div class="media-fallback" style="display:none">視覺圖卡載入中，請稍候重新整理檢視。</div>
+              </div>
+              <div class="media-body">
+                <span class="num" style="margin-bottom:0.25rem">${item.badge}</span>
+                <h3>${item.title}</h3>
+                <p>${item.caption}</p>
+                <button type="button" class="btn ghost-dark media-zoom-btn" data-zoom-idx="${idx}">放大檢視圖片</button>
+              </div>
+            </article>
+          `;
+        }).join("");
 
         const dlg = document.getElementById("img-lightbox");
         const dlgImg = document.getElementById("img-modal-src");
@@ -691,100 +831,45 @@
         const dlgCap = document.getElementById("img-modal-caption");
         const dlgClose = document.getElementById("img-modal-close");
 
-        imgGrid.querySelectorAll("img[data-idx]").forEach((imgEl) => {
-          imgEl.addEventListener("click", () => {
-            const data = MEDIA_CONFIG.images[Number(imgEl.dataset.idx)];
-            if (!data || !dlg) return;
-            dlgImg.src = data.src;
-            dlgImg.alt = data.title;
-            dlgTitle.textContent = data.title;
-            dlgCap.textContent = data.caption;
-            dlg.showModal();
-          });
+        const openLightbox = (idx) => {
+          const data = MARKETING_MEDIA.images[Number(idx)];
+          if (!data || !dlg) return;
+          dlgImg.src = `${MEDIA_DIR}/${encodeURIComponent(data.file)}`;
+          dlgImg.alt = data.title;
+          dlgTitle.textContent = data.title;
+          dlgCap.textContent = data.caption;
+          dlg.showModal();
+        };
+
+        imgGrid.querySelectorAll("[data-idx], [data-zoom-idx]").forEach(el => {
+          el.addEventListener("click", () => openLightbox(el.dataset.idx ?? el.dataset.zoomIdx));
         });
 
         if (dlgClose && dlg) {
           dlgClose.addEventListener("click", () => dlg.close());
-          dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+          dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
         }
       }
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      renderMediaGallery();
-
-      // 大字模式同步
+    function initBigText() {
       const bigBtn = document.getElementById("bigtext");
+      if (!bigBtn) return;
       const storageKey = "wc-bigtext";
-      const applyBigText = (on) => {
+      const applyBigText = on => {
         document.documentElement.style.fontSize = on ? "122%" : "";
         bigBtn.setAttribute("aria-pressed", on ? "true" : "false");
         try { localStorage.setItem(storageKey, on ? "1" : "0"); } catch (_) {}
       };
       try { if (localStorage.getItem(storageKey) === "1") applyBigText(true); } catch (_) {}
       bigBtn.addEventListener("click", () => applyBigText(bigBtn.getAttribute("aria-pressed") !== "true"));
+    }
 
-      // 表單處理
-      const form = document.getElementById("product-cta-form");
-      const copyBtn = document.getElementById("copy-btn");
-      const feedback = document.getElementById("form-feedback");
-
-      const buildPayload = () => {
-        const name = document.getElementById("user-name").value.trim();
-        const email = document.getElementById("user-email").value.trim();
-        const scene = document.getElementById("community-type").value;
-        const notes = document.getElementById("user-notes").value.trim();
-        const mods = Array.from(document.querySelectorAll("input[name='modules']:checked")).map(el => el.value);
-
-        if (!name || !email) return { error: "請填寫「稱呼 / 社群或組織名稱」與「聯絡電子信箱」。" };
-
-        const subject = `[密圈 CipherCircle 預售諮詢] ${name}（${scene}）`;
-        const body = [
-          "您好，我想諮詢「02｜密圈 CipherCircle」的預售與導入方案：",
-          "",
-          `・稱呼 / 組織：${name}`,
-          `・聯絡信箱：${email}`,
-          `・主要應用場景：${scene}`,
-          `・關注功能模組：${mods.length > 0 ? mods.join("、") : "（全功能了解）"}`,
-          `・使用情境與需求簡述：${notes || "（尚未填寫）"}`,
-          "",
-          "---",
-          "此登記摘要由 密圈 CipherCircle 預售頁面產生"
-        ].join("\n");
-
-        return { subject, body };
-      };
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const res = buildPayload();
-        if (res.error) {
-          feedback.style.color = "#B42318";
-          feedback.textContent = res.error;
-          return;
-        }
-        feedback.style.color = "#1E7A70";
-        feedback.textContent = "已為您整理需求摘要並開啟預設郵件程式；若未自動開啟，請使用右側「複製登記摘要」。";
-        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(res.subject)}&body=${encodeURIComponent(res.body)}`;
-      });
-
-      copyBtn.addEventListener("click", async () => {
-        const res = buildPayload();
-        if (res.error) {
-          feedback.style.color = "#B42318";
-          feedback.textContent = res.error;
-          return;
-        }
-        const text = `${res.subject}\n\n${res.body}`;
-        try {
-          await navigator.clipboard.writeText(text);
-          feedback.style.color = "#1E7A70";
-          feedback.textContent = "✓ 登記摘要已複製到剪貼簿！";
-        } catch (_) {
-          feedback.style.color = "#B42318";
-          feedback.textContent = "瀏覽器限制自動複製，請改用「開啟信箱寄送預售諮詢」。";
-        }
-      });
+    document.addEventListener("DOMContentLoaded", () => {
+      renderMarketingAssets();
+      renderPlans();
+      initCheckoutBridge();
+      initBigText();
     });
   </script>
 </body>

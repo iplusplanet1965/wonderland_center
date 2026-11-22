@@ -1,19 +1,16 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
-<!-- 產品線：10｜寰宇無界 SeniorTravel（水月道場 / Wonderland Center · C2-WC-VST）｜檔案層級：cta/SeniorTravel.html -->
+<!-- 產品線：10｜寰宇無界 SeniorTravel（水月道場 / Wonderland Center）｜檔案路徑：SeniorTravel/index.html -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>寰宇無界 SeniorTravel｜高齡長者雙軌虛擬旅遊陪伴服務 — 專屬預售諮詢</title>
-  <meta name="description" content="寰宇無界 SeniorTravel 是水月道場 / Wonderland Center 規劃中的高齡長者虛擬旅遊陪伴服務：AI 帶路、真人陪伴，支援台語、客語、粵語與國語導覽，外地子女也能一起同遊。">
+  <title>寰宇無界 SeniorTravel｜高齡長者雙軌虛擬旅遊陪伴服務 — 7 折嘗鮮預售</title>
+  <meta name="description" content="寰宇無界 SeniorTravel 採 AI 帶路、真人陪伴雙軌協同模型，支援多方言慢語速導覽、一鍵求助遠端志工視訊接手與外地家人手機同遊。">
   <meta name="theme-color" content="#0B253A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* ==========================================================================
-       水月道場 / Wonderland Center — CIS 設計系統（60% 底色 / 30% 結構 / 10% 點綴）
-       ========================================================================== */
     :root {
       --font-body: "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
       --font-display: "Cinzel", "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", serif;
@@ -33,6 +30,7 @@
       --accent-2: #D4AF37;
       --link: #0B253A;
       --kicker: #1E7A70;
+      --kicker-dark: #145750;
 
       --header-bg: rgba(244, 247, 246, 0.95);
       --hero-bg: radial-gradient(520px 520px at 78% 30%, rgba(244, 247, 246, 0.16), transparent 62%), linear-gradient(180deg, #0B253A 0%, #0e3049 100%);
@@ -44,7 +42,7 @@
 
       --notice-bg: #FBF6E8;
       --notice-border: #C59B27;
-      --notice-text: #4A3806;
+      --notice-text: #5E480A;
 
       --footer-bg: #1A1E24;
       --footer-text: #C9D2D0;
@@ -77,12 +75,8 @@
       border-radius: var(--radius);
     }
     .skip:focus { left: 1rem; top: 1rem; }
-
     .wrap { width: min(1160px, 100% - 2.5rem); margin-inline: auto; }
 
-    /* ==========================================================================
-       頂部黏性導覽列與無障礙大字切換
-       ========================================================================== */
     header.site {
       position: sticky; top: 0; z-index: 50;
       background: var(--header-bg);
@@ -124,9 +118,6 @@
     .btn-toggle:hover { background: rgba(11, 37, 58, 0.06); }
     .btn-toggle[aria-pressed="true"] { background: var(--heading); color: #FFFFFF; }
 
-    /* ==========================================================================
-       Hero 主視覺區
-       ========================================================================== */
     .hero {
       position: relative; overflow: hidden;
       padding: clamp(3.5rem, 8vw, 6.2rem) 0 clamp(3rem, 6.5vw, 5rem);
@@ -172,6 +163,8 @@
     .btn:hover { transform: translateY(-2px); }
     .btn.primary { background: var(--accent); color: var(--on-accent); }
     .btn.primary:hover { background: #e0bc44; }
+    .btn.teal { background: var(--kicker); color: #FFFFFF; }
+    .btn.teal:hover { background: var(--kicker-dark); }
     .btn.ghost { border-color: var(--accent-2); color: var(--accent-2); background: transparent; }
     .btn.ghost:hover { background: rgba(212, 175, 55, 0.12); }
     .btn.ghost-dark { border-color: var(--heading); color: var(--heading); background: transparent; }
@@ -184,9 +177,6 @@
       border: 1px solid rgba(244, 247, 246, 0.18);
     }
 
-    /* ==========================================================================
-       通用區塊、非醫療聲明框與卡片樣式
-       ========================================================================== */
     section { padding: clamp(3.2rem, 6.5vw, 5.2rem) 0; border-bottom: 1px solid var(--line); }
     section.alt { background: var(--surface-2); }
     .sec-head { max-width: 54em; margin-bottom: 2.1rem; }
@@ -202,23 +192,6 @@
     p { margin: 0 0 1rem; }
     .muted { color: var(--muted); }
 
-    .non-medical-banner {
-      background: var(--notice-bg);
-      border: 2px solid var(--notice-border);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem 1.5rem;
-      color: var(--notice-text);
-      margin-bottom: 2.2rem;
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-    .non-medical-banner strong.title {
-      color: var(--heading);
-      display: block;
-      margin-bottom: 0.3rem;
-      font-size: 1.06rem;
-    }
-
     .grid { display: grid; gap: 1.35rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
     .grid.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
 
@@ -232,24 +205,17 @@
       letter-spacing: 0.1em; font-weight: 700; display: block; margin-bottom: 0.45rem;
     }
 
-    .product-highlights { margin: 0.35rem 0 0; padding-left: 1.15rem; font-size: 0.94rem; color: var(--text); }
-    .product-highlights li { margin-bottom: 0.42rem; }
-
     .boundary-box {
-      padding: 0.95rem 1.15rem; background: var(--notice-bg);
-      border-left: 3px solid var(--notice-border); color: var(--notice-text);
-      font-size: 0.9rem; line-height: 1.65; border-radius: 0 6px 6px 0;
+      padding: 0.9rem 1.1rem; background: var(--notice-bg);
+      border-left: 4px solid var(--notice-border); color: var(--notice-text);
+      font-size: 0.89rem; line-height: 1.65; border-radius: 0 6px 6px 0;
     }
-
     .note {
       border: 1px dashed var(--line-strong); border-radius: var(--radius-lg);
       padding: 1rem 1.2rem; font-size: 0.9rem; color: var(--muted); background: var(--surface-2);
     }
     .note strong { color: var(--heading); }
 
-    /* ==========================================================================
-       宣傳短片（自動靜音循環播放）與六張視覺圖庫樣式
-       ========================================================================== */
     .video-feature {
       background: var(--card); border: 1px solid var(--line);
       border-top: 4px solid var(--accent); border-radius: var(--radius-lg);
@@ -257,18 +223,12 @@
       display: grid; grid-template-columns: 1.35fr 1fr; align-items: stretch;
     }
     @media (max-width: 820px) { .video-feature { grid-template-columns: 1fr; } }
-
     .video-stage {
       background: #0B253A; display: flex; align-items: center;
       justify-content: center; min-height: 260px; position: relative;
     }
-    .video-stage video {
-      width: 100%; height: 100%; max-height: 440px;
-      object-fit: contain; display: block;
-    }
-    .video-info {
-      padding: 1.5rem; display: flex; flex-direction: column; justify-content: center;
-    }
+    .video-stage video { width: 100%; height: 100%; max-height: 440px; object-fit: contain; display: block; }
+    .video-info { padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }
 
     .media-grid {
       display: grid; gap: 1.35rem;
@@ -280,34 +240,19 @@
       display: flex; flex-direction: column;
       transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
-    .media-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(11, 37, 58, 0.08);
-    }
+    .media-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(11, 37, 58, 0.08); }
     .media-thumb {
       background: #0B253A; aspect-ratio: 16 / 10;
-      overflow: hidden; display: flex; align-items: center; justify-content: center;
-      position: relative;
+      overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative;
     }
-    .media-thumb img {
-      width: 100%; height: 100%; object-fit: cover;
-      cursor: zoom-in; transition: transform 0.2s ease;
-    }
+    .media-thumb img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform 0.2s ease; }
     .media-thumb img:hover { transform: scale(1.03); }
     .media-body { padding: 1.15rem 1.3rem; flex: 1; display: flex; flex-direction: column; }
     .media-body h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
     .media-body p { margin: 0 0 0.75rem; font-size: 0.92rem; color: var(--muted); }
-    .media-zoom-btn {
-      margin-top: auto; align-self: flex-start;
-      padding: 0.4rem 0.85rem; font-size: 0.84rem; min-height: 36px;
-    }
+    .media-zoom-btn { margin-top: auto; align-self: flex-start; padding: 0.4rem 0.85rem; font-size: 0.84rem; min-height: 36px; }
+    .media-fallback { color: #E4ECEA; font-size: 0.86rem; padding: 1.1rem; text-align: center; line-height: 1.55; }
 
-    .media-fallback {
-      color: #E4ECEA; font-size: 0.86rem; padding: 1.1rem;
-      text-align: center; line-height: 1.55;
-    }
-
-    /* 原生 <dialog> 圖片放大燈箱 */
     dialog.img-modal {
       border: none; border-radius: var(--radius-lg); padding: 0;
       width: min(900px, calc(100% - 2rem)); max-height: 90vh;
@@ -328,20 +273,65 @@
     .img-modal-body { padding: 1.2rem 1.4rem; text-align: center; overflow-y: auto; }
     .img-modal-body img { max-height: 68vh; margin-inline: auto; border-radius: var(--radius); }
 
-    /* ==========================================================================
-       FAQ 與零後端專屬預售諮詢表單
-       ========================================================================== */
     .faq-list { display: grid; gap: 1rem; }
     .faq-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.35rem 1.5rem; }
     .faq-card h3 { font-size: 1.08rem; margin-bottom: 0.45rem; }
     .faq-card p { margin: 0; color: var(--text); }
+
+    .billing-switch-bar {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 0.8rem; margin-bottom: 1.2rem;
+    }
+    .billing-pills {
+      display: inline-flex; background: var(--surface-2); padding: 0.3rem;
+      border-radius: 10px; gap: 0.3rem;
+    }
+    .bill-pill {
+      border: none; background: transparent; padding: 0.45rem 1rem; border-radius: 8px;
+      font-family: inherit; font-size: 0.88rem; font-weight: 700; color: var(--muted); cursor: pointer;
+    }
+    .bill-pill.active { background: var(--heading); color: #FFFFFF; }
+
+    .plans-grid {
+      display: grid; gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      margin-bottom: 1.2rem;
+    }
+    .plan-card {
+      background: var(--card); border: 2px solid var(--line); border-radius: var(--radius-lg);
+      padding: 1.25rem; cursor: pointer; text-align: left; font-family: inherit;
+      display: flex; flex-direction: column; transition: all 0.15s ease;
+    }
+    .plan-card:hover { border-color: var(--heading); transform: translateY(-2px); }
+    .plan-card.selected {
+      border-color: var(--heading); background: #FFFFFF;
+      box-shadow: 0 10px 24px rgba(11, 37, 58, 0.1);
+    }
+    .plan-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
+    .plan-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--heading); }
+    .plan-badge {
+      font-size: 0.74rem; font-weight: 700; padding: 0.18rem 0.55rem;
+      border-radius: 999px; background: #E6F3F1; color: var(--kicker-dark);
+    }
+    .plan-quota { font-weight: 700; font-size: 0.92rem; color: var(--kicker); margin-bottom: 0.25rem; }
+    .plan-target { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.9rem; }
+    .plan-pricing { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--line); font-family: var(--font-mono); }
+    .plan-orig { font-size: 0.8rem; color: var(--muted); text-decoration: line-through; display: block; }
+    .plan-sale { font-size: 1.28rem; font-weight: 700; color: var(--heading); }
+
+    .hw-bundle-box {
+      background: var(--surface-2); border: 1.5px solid var(--line-strong);
+      border-radius: var(--radius-lg); padding: 1.15rem 1.35rem; margin-bottom: 1.8rem;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .hw-bundle-label { display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; flex: 1; min-width: 240px; }
+    .hw-bundle-label input { width: 22px; height: 22px; margin-top: 0.2rem; accent-color: var(--heading); flex: none; cursor: pointer; }
 
     .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.5fr 1fr; align-items: start; }
     @media (max-width: 860px) { .reserve-layout { grid-template-columns: 1fr; } }
 
     .form-group { margin-bottom: 1.2rem; }
     .form-group label { display: block; font-weight: 700; font-size: 0.93rem; color: var(--heading); margin-bottom: 0.45rem; }
-    .req { color: #B42318; }
     input[type="text"], input[type="email"], select, textarea {
       width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--line-strong);
       border-radius: var(--radius); font-family: inherit; font-size: 1rem;
@@ -352,9 +342,15 @@
     .form-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.4rem; }
     .form-feedback { margin-top: 1rem; font-size: 0.92rem; font-weight: 600; color: var(--kicker); min-height: 1.4em; }
 
-    dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1.2rem; margin: 0; font-size: 0.93rem; }
-    dl.facts dt { color: var(--muted); }
-    dl.facts dd { margin: 0; color: var(--heading); font-weight: 600; }
+    .checkout-summary-box {
+      background: linear-gradient(180deg, #0B253A 0%, #10324D 100%);
+      color: #F4F7F6; border-radius: var(--radius-lg); padding: 1.5rem;
+      border: 1.5px solid rgba(212, 175, 55, 0.45);
+    }
+    .checkout-summary-box h3 { color: #FFFFFF; margin-bottom: 0.75rem; }
+    dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1.1rem; margin: 0; font-size: 0.92rem; }
+    dl.facts dt { color: #B8C7C5; }
+    dl.facts dd { margin: 0; color: #FFFFFF; font-weight: 700; }
 
     footer.site { padding: 2.8rem 0 3.2rem; background: var(--footer-bg); color: var(--footer-text); font-size: 0.92rem; }
     footer.site .muted { color: #9FB0AD; }
@@ -365,15 +361,14 @@
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .btn, .media-card, .media-thumb img { transition: none; }
-      .btn:hover, .media-card:hover, .media-thumb img:hover { transform: none; }
+      .btn, .media-card, .media-thumb img, .plan-card { transition: none; }
+      .btn:hover, .media-card:hover, .media-thumb img:hover, .plan-card:hover { transform: none; }
     }
   </style>
 </head>
 <body>
   <a class="skip" href="#main">跳到主要內容</a>
 
-  <!-- 頂部導覽列 -->
   <header class="site">
     <div class="wrap">
       <a class="brand" href="../index.html" aria-label="返回水月道場全生態總覽">
@@ -389,17 +384,17 @@
           <path d="M15 32c3-2 6 2 9 0s6-2 9 0" fill="none" stroke="#2A9D8F" stroke-width="1.6" stroke-linecap="round"/>
           <circle cx="24" cy="16" r="4" fill="#D4AF37"/>
         </svg>
-        <span>寰宇無界 SeniorTravel<small>水月道場 Wonderland Center｜專屬預售頁</small></span>
+        <span>SeniorTravel 寰宇無界<small>水月道場 / Wonderland Center｜7 折嘗鮮預售頁</small></span>
       </a>
 
       <nav class="main" aria-label="本頁選單">
         <ul>
           <li><a href="../index.html#products">← 返回十大產品線</a></li>
-          <li><a href="#media-showcase">影音與視覺圖庫</a></li>
-          <li><a href="#dual-track">AI 與真人雙軌</a></li>
+          <li><a href="#dual-track">AI 帶路與真人陪伴</a></li>
+          <li><a href="#marketing-assets">影音與視覺素材</a></li>
           <li><a href="#accessibility">長者友善與隱私</a></li>
           <li><a href="#faq">常見問答</a></li>
-          <li><a href="#cta-form">預約諮詢</a></li>
+          <li><a href="#cta-form">7 折方案與結算</a></li>
           <li><button type="button" id="bigtext" class="btn-toggle" aria-pressed="false">長者友善大字</button></li>
         </ul>
       </nav>
@@ -407,39 +402,65 @@
   </header>
 
   <main id="main">
-    <!-- Hero 區 -->
     <section class="hero" aria-labelledby="page-title">
       <div class="wrap">
         <nav class="breadcrumb" aria-label="麵包屑導覽">
           <a href="../index.html">全生態總覽</a>
           <span>/</span>
-          <a href="../index.html#products">水月道場倡議</a>
+          <a href="../index.html#products">水月道場 Wonderland Center</a>
           <span>/</span>
           <span>10｜寰宇無界 SeniorTravel</span>
         </nav>
-        <span class="eyebrow">10｜水月道場 / Wonderland Center · 預售產品代碼 C2-WC-VST</span>
+        <span class="eyebrow">10｜水月道場 / Wonderland Center（C2-WC-VST）· 高齡長者雙軌虛擬旅遊陪伴服務</span>
         <h1 id="page-title">走不遠了，還是可以一起去看看：AI 帶路，真人陪伴。</h1>
-        <p class="lead">爸媽走不遠了，但還記得年輕時去過的地方。寰宇無界 SeniorTravel 是水月道場 / Wonderland Center 規劃中的高齡長者虛擬旅遊陪伴服務，讓行動不便的長者在家透過 XR 或 360° 場景「出遊」，由會說家鄉話的 AI 導遊帶路、遠端真人志工守護，外地子女也能用手機加入同遊。</p>
+        <p class="lead">寰宇無界（SeniorTravel）讓行動不便的長輩在家透過 XR 或 360° 場景重遊故地[cite: 13]，由多方言 AI 導遊親切導覽、遠端真人志工守護，外地子女也能用手機加入同遊並生成附語音祝福的漫遊手札[cite: 13]。</p>
         <div class="cta">
-          <a class="btn primary" href="#cta-form">登記長輩出遊、機構或志工諮詢</a>
-          <a class="btn ghost" href="#media-showcase">觀看理念短片與視覺圖庫</a>
+          <a class="btn primary" href="#cta-form">選擇 7 折預售方案與家庭體驗節點 →</a>
+          <a class="btn ghost" href="#marketing-assets">觀看宣傳影片與視覺圖</a>
         </div>
         <ul class="tags">
-          <li>台語 / 客語 / 粵語 / 國語導覽</li>
-          <li>一鍵求助 · 真人志工視訊接手</li>
-          <li>外地親友手機同步同遊</li>
-          <li>附語音祝福之數位漫遊手札</li>
+          <li>台語／客語／粵語／國語導覽</li>
+          <li>一鍵求助遠端真人志工接手</li>
+          <li>外地子女手機同遊包廂</li>
+          <li>早鳥嘗鮮預售全系列 7 折</li>
         </ul>
       </div>
     </section>
 
-    <!-- 宣傳短片與視覺圖庫（頁面文字不顯示任何檔案路徑） -->
-    <section id="media-showcase" class="alt" aria-labelledby="media-title">
+    <section id="dual-track" aria-labelledby="dual-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Visual &amp; Motion Showcase</span>
-          <h2 id="media-title">寰宇無界理念短片與雙軌陪伴視覺說明</h2>
-          <p class="muted">短片載入後自動循環播放，點擊下方任一視覺圖卡可開啟燈箱放大檢視細節。</p>
+          <span class="kicker">AI Guidance &amp; Human Companionship</span>
+          <h2 id="dual-title">雙軌協同模型：內容交給 AI，情感與安全交給真人志工</h2>
+          <p class="muted">爸媽走不遠了，但還記得年輕時去過的地方[cite: 13]。我們把多方言導覽與防暈眩場景交給 AI，把暖心對話與即時照應交給遠端志工[cite: 13]。</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card feature">
+            <span class="num">AI 軌道（個人化行程與沉浸式場景）</span>
+            <h3>多方言慢語速導遊＋老照片對照</h3>
+            <p style="margin:0">依長輩生命史與記憶偏好編排專屬路線，支援台語、客語、粵語與國語導覽（語速放慢至常人 70%–80%），並將歷史老車站或故居與現今 360° 全景對照呈現[cite: 13]。</p>
+          </div>
+
+          <div class="card feature">
+            <span class="num">真人軌道（一鍵求助與親友同遊）</span>
+            <h3>志工視訊接手＋外地家人手機共遊</h3>
+            <p style="margin:0">長輩按下求助時 AI 導遊立即靜音，由遠端真人志工以視訊陪伴；外地子女可用手機加入同一個虛擬景點，旅程結束自動生成附語音祝福的漫遊手札[cite: 13]。</p>
+          </div>
+        </div>
+
+        <div class="boundary-box" style="margin-top:1.8rem">
+          <strong>非醫療與設計目標聲明（必讀）：</strong>本系統的穿戴感知功能只用來動態調節體驗節奏（例如偵測到疲勞時自動進入休整模式），不提供醫療診斷，也不是醫療器材，亦不具備健康監測、認知評估或緊急醫療通報功能[cite: 13]。
+        </div>
+      </div>
+    </section>
+
+    <section id="marketing-assets" class="alt" aria-labelledby="assets-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="kicker">Marketing Showcase</span>
+          <h2 id="assets-title">寰宇無界 SeniorTravel 行銷短片與視覺圖庫</h2>
+          <p class="muted">透過動態概念短片與六張視覺圖解，了解多方言 AI 導遊、長者大字防暈眩設計與家人手機同遊體驗；點擊任一張圖片可放大檢視。</p>
         </div>
 
         <div id="promo-video-box" class="video-feature"></div>
@@ -447,106 +468,35 @@
       </div>
     </section>
 
-    <!-- 非醫療聲明與 AI / 真人雙軌協同模型 -->
-    <section id="dual-track" aria-labelledby="dual-title">
-      <div class="wrap">
-        <!-- 必附非醫療聲明 -->
-        <div class="non-medical-banner" role="region" aria-label="非醫療聲明">
-          <strong class="title">非醫療聲明（必讀）</strong>
-          本系統的穿戴感知只用來動態調節體驗節奏，<strong>不提供醫療診斷，也不是醫療器材</strong>。
-        </div>
-
-        <div class="sec-head">
-          <span class="kicker">Dual-Track Collaboration Model</span>
-          <h2 id="dual-title">內容交給 AI，情感與安全交給真人志工</h2>
-          <p class="muted">採「AI 負責內容與規模化效率、真人志工負責情感與身心安全」的雙軌協同設計（以下功能模組之實作完成度尚待正式發布確認）。</p>
-        </div>
-
-        <div class="grid two" style="margin-bottom:2rem">
-          <article class="card feature">
-            <span class="num">軌道 A｜AI 導覽核心（FEAT-AI-01 ～ FEAT-AI-06）</span>
-            <h3>說家鄉話、放慢語速的貼心導遊</h3>
-            <ul class="product-highlights">
-              <li><strong>個人化行程（FEAT-AI-01）：</strong>依生命史、體力量表與文化記憶偏好編排停留時間與動線。</li>
-              <li><strong>沉浸式場景（FEAT-AI-02）：</strong>360° 全景、歷史風貌與雙耳空間音訊；預留氣味與震動外設介面。</li>
-              <li><strong>多方言自適應導遊（FEAT-AI-03）：</strong>支援台語、客語、粵語與國語導覽，語速隨長者反應降速，並可拿舊車站等歷史風貌做對照解說。</li>
-              <li><strong>疲勞感知（FEAT-AI-04）：</strong>依語調停頓、注視點與手環心率偵測疲勞，自動進入「休整茶歇」模式<strong>（非醫療用途）</strong>。</li>
-              <li><strong>內容安全過濾（FEAT-AI-05）：</strong>主動過濾閃爍刺激、強烈墜落感與悲傷歷史創傷場景。</li>
-              <li><strong>數位漫遊手札（FEAT-AI-06）：</strong>自動彙整旅程片段，生成附語音祝福的圖文手札並同步家屬端。</li>
-            </ul>
-          </article>
-
-          <article class="card feature">
-            <span class="num">軌道 B｜真人護航模組（FEAT-HUM-01 ～ FEAT-HUM-04）</span>
-            <h3>一鍵求助即有志工視訊接手，外地家人隨時同遊</h3>
-            <ul class="product-highlights">
-              <li><strong>一鍵求助與主動降級（FEAT-HUM-01）：</strong>長輩按下求助或觸發警示時，AI 導遊立即退居靜音，由遠端志工以視訊切入陪伴。</li>
-              <li><strong>生命故事共同標註（FEAT-HUM-02）：</strong>志工可標記長者的情感禁區（例如戰亂記憶、逝親場景），自動修正後續內容編排。</li>
-              <li><strong>親友同遊虛擬包廂（FEAT-HUM-03）：</strong>外地子女可以用手機或平板連線加入同一個景點，陪長輩一起逛。</li>
-              <li><strong>志工公益點數（FEAT-HUM-04）：</strong>陪伴時數回傳資源點數轉換平台累積公益點數。</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="boundary-box" role="note" aria-label="預定交付期與範圍聲明">
-          <strong>預定交付期與範圍聲明：</strong>本專案預定交付期為 <strong>2027-02-15（Asia/Taipei）</strong>；<strong>交付範圍、驗收、履約量能與契約條件尚待確認，不得由此延伸額外服務承諾</strong>。方案、價格與服務區域目前尚未公布，支援 XR 硬體與設備租賃條件亦尚待確認。
-        </div>
-      </div>
-    </section>
-
-    <!-- 長者友善設計規格卡、隱私邊界與適用對象 -->
-    <section id="accessibility" class="alt" aria-labelledby="acc-title">
+    <section id="accessibility" aria-labelledby="acc-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Senior-Friendly Design &amp; Privacy</span>
-          <h2 id="acc-title">長者友善設計規格目標與居家隱私防護</h2>
-          <p class="muted">介面<strong>以 WCAG 2.1 AAA 準則為設計目標（尚未經第三方認證）</strong>，從視覺、聽覺、防暈眩與居家背景隱私全面守護長輩。</p>
+          <span class="kicker">Senior-Friendly Design &amp; Home Privacy</span>
+          <h2 id="acc-title">長者友善無障礙設計與居家隱私保護</h2>
+          <p class="muted">從視覺對比、防暈眩移動到志工視訊背景模糊，讓長輩與家屬都安心[cite: 13]。</p>
         </div>
 
-        <div class="grid" style="margin-bottom:2.2rem">
-          <article class="card feature">
-            <span class="num">設計目標 01｜高清晰視覺與大觸控區</span>
-            <h3>高對比、大字體、好點擊</h3>
-            <p style="margin:0">文字對比度 <strong>≥ 7.0:1</strong>、字體 <strong>≥ 24pt</strong>、觸控目標 <strong>≥ 64 × 64 px</strong>（以 WCAG 2.1 AAA 準則為設計目標，尚未經第三方認證）。</p>
-          </article>
-
-          <article class="card feature">
-            <span class="num">設計目標 02｜語音優先與防暈眩</span>
-            <h3>慢語速導覽與柔和瞬移過渡</h3>
-            <p style="margin:0">核心功能支援免觸控語音操作，導遊預設語速為<strong>常人 70%–80%</strong>；XR 移動採<strong>瞬移配柔和黑屏過渡</strong>防暈眩，禁止強制位移與劇烈旋轉，並限制單景點資訊密度。</p>
-          </article>
-
-          <article class="card feature">
-            <span class="num">隱私邊界 03｜本地抽象化與背景模糊</span>
-            <h3>志工視訊自動模糊居家環境</h3>
-            <p style="margin:0">生理訊號於本地轉為抽象數值；遠端志工接入視訊時，系統自動模糊長者的居家背景，並遮蔽病歷與私人物品。</p>
-          </article>
-        </div>
-
-        <div class="grid two">
+        <div class="grid">
           <div class="card">
-            <span class="num">服務對象</span>
-            <h3>家屬預約、高齡據點與陪伴志工</h3>
-            <ul class="product-highlights">
-              <li><strong>行動不便長者與家屬：</strong>長輩出門不便、思念過去去過的地方或故鄉，外地子女希望能一起同遊並有人安全陪伴。</li>
-              <li><strong>長照機構、日照中心與社區據點：</strong>規劃團體虛擬旅遊與懷舊活動（機構合作方案尚待確認）。</li>
-              <li><strong>陪伴志工與設備贊助者：</strong>參與遠端陪伴服務累積公益點數，或支持設備認領與高齡關懷倡議。</li>
-            </ul>
+            <span class="num">設計目標 01｜高對比與大字介面</span>
+            <h3>對比度 ≥ 7:1、字體 ≥ 24pt</h3>
+            <p style="margin:0;font-size:0.93rem">觸控目標 ≥ 64×64 px，支援免觸控自然語音操作；介面以 WCAG 2.1 AAA 準則為設計目標（尚未經第三方認證）[cite: 13]。</p>
           </div>
           <div class="card">
-            <span class="num">非對象（明確排除）</span>
-            <h3>不適用本服務的情境</h3>
-            <ul class="product-highlights">
-              <li>需要醫療監測、疾病診斷或緊急醫療服務者（本系統穿戴感知只調節體驗節奏，不是醫療器材）。</li>
-              <li>需要安寧緩和醫療意願決策教育者（請參考「09｜善終守護 AdvanceCare」）。</li>
-            </ul>
+            <span class="num">設計目標 02｜防暈眩與內容安全過濾</span>
+            <h3>瞬移過渡＋排除閃爍與創傷場景</h3>
+            <p style="margin:0;font-size:0.93rem">場景移動採用瞬移與柔和漸變降低暈眩感，並自動過濾閃爍刺激、強烈墜落感與可能勾起悲傷創傷的歷史畫面[cite: 13]。</p>
+          </div>
+          <div class="card">
+            <span class="num">設計目標 03｜居家背景自動模糊</span>
+            <h3>志工接入視訊時遮蔽居家環境</h3>
+            <p style="margin:0;font-size:0.93rem">遠端志工接手視訊陪伴時，系統自動模糊長輩居家背景並遮蔽病歷與私人物品，守護家庭隱私[cite: 13]。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 常見問答 FAQ -->
-    <section id="faq" aria-labelledby="faq-title">
+    <section id="faq" class="alt" aria-labelledby="faq-title">
       <div class="wrap">
         <div class="sec-head">
           <span class="kicker">Frequently Asked Questions</span>
@@ -556,99 +506,115 @@
         <div class="faq-list">
           <article class="faq-card">
             <h3>Q1：手環的心率資料會用來看病嗎？</h3>
-            <p>不會。穿戴感知只用來調整旅程節奏（例如偵測到疲勞時自動進入休整模式），系統不提供醫療診斷，也不是醫療器材。</p>
+            <p>不會[cite: 13]。穿戴感知只用來動態調節旅程節奏（例如偵測到疲勞時自動安排休息），系統不提供醫療診斷，也不是醫療器材[cite: 13]。</p>
           </article>
           <article class="faq-card">
-            <h3>Q2：志工看得到我家嗎？</h3>
-            <p>志工接入視訊時，系統會自動模糊居家背景、遮蔽病歷與私人物品。</p>
+            <h3>Q2：志工視訊時看得到我家裡嗎？</h3>
+            <p>志工接入視訊時，系統會自動模糊居家背景、遮蔽病歷與私人物品[cite: 13]。</p>
           </article>
           <article class="faq-card">
             <h3>Q3：符合無障礙標準嗎？需要買 VR 設備嗎？</h3>
-            <p>介面以 WCAG 2.1 AAA 準則為設計目標（例如對比度 ≥ 7:1、字體 ≥ 24pt），尚未經第三方認證；支援設備與租賃條件尚待確認。</p>
-          </article>
-          <article class="faq-card">
-            <h3>Q4：何時交付？費用如何計算？</h3>
-            <p>預定交付期為 <strong>2027-02-15（Asia/Taipei）</strong>；交付範圍、驗收、履約量能與契約條件尚待確認，不得由此延伸額外服務承諾。方案、價格與服務區域目前尚未公布，歡迎在下方留下您的需求。</p>
+            <p>介面以 WCAG 2.1 AAA 準則為設計目標（如對比度 ≥ 7:1、字體 ≥ 24pt），尚未經第三方認證[cite: 13]。家庭本地體驗節點可選購「兩槽 AI NAS 套組（原價 NT$ 48,900，7 折嘗鮮預售價 NT$ 34,230）」，至於 `XR／360° 終端` 加購或租賃條件則於結算頁洽談確認[cite: 1]。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 專屬預售諮詢表單 -->
-    <section id="cta-form" class="alt" aria-labelledby="cta-form-title">
+    <section id="cta-form" aria-labelledby="cta-form-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Call to Action · SeniorTravel</span>
-          <h2 id="cta-form-title">登記長輩出遊預約、機構或志工諮詢</h2>
-          <p class="muted">想讓家中長輩或機構住民體驗虛擬出遊嗎？請告訴我們您的情況；方案、設備與服務區域確認後，我們會再與您聯繫。</p>
+          <span class="kicker">70% Early-Bird Presale · SeniorTravel</span>
+          <h2 id="cta-form-title">選擇您的 7 折嘗鮮預售方案與家庭體驗節點</h2>
+          <p class="muted">全系列早鳥預售享 <strong>7 折優惠（現省 30%）</strong>[cite: 1]；點選居家孝親或長照據點方案並選擇是否搭配兩槽 AI NAS 套組，即可一鍵前往共用結算中心[cite: 1]。</p>
         </div>
 
-        <div class="non-medical-banner">
-          <strong class="title">非醫療聲明（必讀）</strong>
-          本系統的穿戴感知只用來動態調節體驗節奏，不提供醫療診斷，也不是醫療器材。
+        <div class="billing-switch-bar">
+          <strong style="color:var(--heading);font-size:0.95rem">步驟 ①：點選訂閱方案與計費週期</strong>
+          <div class="billing-pills" role="group" aria-label="計費週期切換">
+            <button type="button" id="bill-yearly" class="bill-pill active" onclick="setBilling('yearly')">年繳方案（再享 7 折）</button>
+            <button type="button" id="bill-monthly" class="bill-pill" onclick="setBilling('monthly')">月繳方案（享 7 折）</button>
+          </div>
+        </div>
+
+        <div id="plans-grid" class="plans-grid"></div>
+
+        <!-- 兩槽 AI NAS 硬體勾選框 -->
+        <div id="hw-bundle-container" class="hw-bundle-box">
+          <label class="hw-bundle-label" for="hw-nas-check">
+            <input type="checkbox" id="hw-nas-check" checked onchange="renderPlans()">
+            <div>
+              <strong style="color:var(--heading);font-size:0.98rem">搭配硬體一次購：兩槽 AI NAS 套組（2 槽個人型，不含硬碟）</strong>
+              <span style="display:block;font-size:0.84rem;color:var(--muted);margin-top:0.2rem">單一家庭本地體驗節點（含機殼與預裝，不含硬碟；至結算頁可洽談 XR／360° 終端加購或租賃）</span>
+            </div>
+          </label>
+          <div style="text-align:right;font-family:var(--font-mono)">
+            <span style="font-size:0.8rem;color:var(--muted);text-decoration:line-through;display:block">原價 NT$ 48,900</span>
+            <strong style="font-size:1.15rem;color:var(--kicker-dark)">7 折 NT$ 34,230</strong>
+          </div>
         </div>
 
         <div class="reserve-layout">
           <form id="product-cta-form" class="card form-card" novalidate>
+            <h3 style="margin-bottom:0.85rem">步驟 ②：預填聯絡與長輩導覽偏好（將自動帶入結算頁）</h3>
             <div class="grid two">
               <div class="form-group">
-                <label for="user-name">稱呼 / 家屬或機構名稱 <span class="req">*</span></label>
-                <input type="text" id="user-name" placeholder="例如：黃小姐 / 某某社區日照中心" required>
+                <label for="user-name">稱呼 / 家屬或長照機構名稱</label>
+                <input type="text" id="user-name" placeholder="例如：吳小姐 / 某某日照中心社工組">
               </div>
               <div class="form-group">
-                <label for="user-email">聯絡電子信箱 <span class="req">*</span></label>
-                <input type="email" id="user-email" placeholder="name@example.com" required>
+                <label for="user-email">聯絡電子信箱</label>
+                <input type="email" id="user-email" placeholder="name@example.com">
               </div>
             </div>
 
             <div class="grid two">
               <div class="form-group">
-                <label for="inquiry-role">您的參與身分 <span class="req">*</span></label>
-                <select id="inquiry-role">
-                  <option value="家屬預約（為家中行動不便長輩登記）">家屬預約（為家中行動不便長輩登記）</option>
-                  <option value="長照機構 / 日照中心 / 社區關懷據點洽談">長照機構 / 日照中心 / 社區關懷據點洽談</option>
-                  <option value="陪伴志工招募諮詢">陪伴志工招募諮詢</option>
-                  <option value="設備贊助與高齡關懷支持">設備贊助與高齡關懷支持</option>
+                <label for="dialect-pref">長輩慣用導覽方言</label>
+                <select id="dialect-pref">
+                  <option value="台語（放慢語速 70%–80%）">台語（放慢語速 70%–80%）</option>
+                  <option value="客語（放慢語速 70%–80%）">客語（放慢語速 70%–80%）</option>
+                  <option value="粵語（放慢語速 70%–80%）">粵語（放慢語速 70%–80%）</option>
+                  <option value="國語（放慢語速 70%–80%）">國語（放慢語速 70%–80%）</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="dialect-pref">偏好導覽語言</label>
-                <select id="dialect-pref">
-                  <option value="台語">台語</option>
-                  <option value="國語">國語</option>
-                  <option value="客語">客語</option>
-                  <option value="粵語">粵語</option>
-                  <option value="多語混合 / 視長輩習慣調整">多語混合 / 視長輩習慣調整</option>
+                <label for="xr-need">XR／360° 終端設備需求</label>
+                <select id="xr-need">
+                  <option value="已有平板／電腦 360° 螢幕觀看">已有平板／電腦 360° 螢幕觀看</option>
+                  <option value="希望洽談 XR 頭戴裝置加購或租賃">希望洽談 XR 頭戴裝置加購或租賃</option>
+                  <option value="機構多組終端同步活動配置">機構多組終端同步活動配置</option>
                 </select>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="user-notes">需求與希望重遊的地方簡述</label>
-              <textarea id="user-notes" rows="4" placeholder="例如：長輩年輕時曾在台南工作，希望能陪他重遊台南老街與火車站（請勿填入病歷或身分證號）"></textarea>
+              <label for="user-notes">長輩想重遊的故地或活動需求簡述（選填）</label>
+              <textarea id="user-notes" rows="3" placeholder="例如：長輩年輕時曾在台南與日本京都生活，希望安排家族同遊"></textarea>
             </div>
 
             <div class="form-actions">
-              <button type="submit" class="btn primary">開啟信箱寄送諮詢申請</button>
-              <button type="button" id="copy-btn" class="btn ghost-dark">複製登記摘要</button>
+              <button type="button" id="go-checkout-btn" class="btn primary">前往 7 折預售結算中心（../CTA） →</button>
+              <button type="button" id="mail-inquiry-btn" class="btn ghost-dark">僅先寄信諮詢（暫不結帳）</button>
             </div>
             <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
           </form>
 
-          <aside class="card info-aside">
-            <h3>專案識別與窗口資訊</h3>
+          <aside class="checkout-summary-box">
+            <h3>已選預售配置摘要</h3>
             <dl class="facts" style="margin:1rem 0">
-              <dt>產品名稱</dt><dd>10｜寰宇無界 SeniorTravel</dd>
-              <dt>預售產品代碼</dt><dd><code>C2-WC-VST</code></dd>
-              <dt>品牌事業體</dt><dd>水月道場 / Wonderland Center</dd>
-              <dt>預定交付期</dt><dd>2027-02-15（Asia/Taipei）</dd>
-              <dt>生態系總窗口</dt><dd><a id="direct-email" href="mailto:contact@wonderland.center">contact@wonderland.center</a></dd>
+              <dt>產品代碼</dt><dd>10｜C2-WC-VST（SeniorTravel）</dd>
+              <dt>所屬品牌</dt><dd>水月道場 / Wonderland Center</dd>
+              <dt>選定方案</dt><dd id="sum-plan-name">Family Plus（每月 20 場虛擬出遊場次）</dd>
+              <dt>計費週期</dt><dd id="sum-billing">年繳方案</dd>
+              <dt>硬體搭配</dt><dd id="sum-hw">兩槽 AI NAS 套組（7 折 NT$ 34,230）</dd>
+              <dt>標準原價合計</dt><dd id="sum-orig-price" style="text-decoration:line-through;color:#B8C7C5">NT$ 87,900</dd>
+              <dt>7 折預售總計</dt><dd id="sum-sale-price" style="color:#D4AF37;font-size:1.25rem">NT$ 61,530</dd>
             </dl>
-            <div class="note">
-              <strong>非醫療與隱私提醒：</strong>穿戴感知僅調節體驗節奏，非醫療器材；本頁不收集病歷或信用卡號，亦不刊載未簽約匯款帳號。
+            <div class="note" style="background:rgba(255,255,255,0.08);border-color:rgba(212,175,55,0.4);color:#E4ECEA">
+              <strong style="color:#D4AF37">跳轉說明：</strong>點擊「前往 7 折預售結算中心」將導向上層 <code>CTA/index.html</code>；依《代收預售款授權及合約書》，本預售款由全視界台灣分公司代收，並可加購「額外場次包（5 場 NT$ 693）」或洽談 XR 終端[cite: 1, 13]。
             </div>
             <p style="margin-top:1.2rem;margin-bottom:0">
-              <a class="btn ghost-dark" style="width:100%" href="../index.html#products">瀏覽其他生態系產品線</a>
+              <a class="btn ghost" style="width:100%" href="../index.html#products">回到全生態十大產品線總覽</a>
             </p>
           </aside>
         </div>
@@ -656,157 +622,247 @@
     </section>
   </main>
 
-  <!-- 圖片放大檢視燈箱 -->
-  <dialog id="img-lightbox" class="img-modal" aria-label="圖片放大檢視">
+  <dialog id="img-lightbox" class="img-modal" aria-label="視覺圖片放大檢視">
     <div class="img-modal-head">
       <strong id="img-modal-title">視覺素材檢視</strong>
       <button type="button" id="img-modal-close" class="modal-close" aria-label="關閉">✕</button>
     </div>
     <div class="img-modal-body">
       <img id="img-modal-src" src="" alt="">
-      <p id="img-modal-caption" class="muted" style="margin-top:0.85rem;margin-bottom:0"></p>
+      <p id="img-modal-caption" class="muted" style="margin-top:.85rem;margin-bottom:0"></p>
     </div>
   </dialog>
 
   <footer class="site">
     <div class="wrap">
       <p><strong>© 2026 水月道場 / Wonderland Center（wonderland.center）</strong>｜寰宇無界 SeniorTravel 專屬預售頁</p>
-      <p class="muted" style="font-size:0.84rem">非醫療聲明：本系統的穿戴感知只用來動態調節體驗節奏，不提供醫療診斷，也不是醫療器材。預定交付期 2027-02-15（Asia/Taipei）；交付範圍、驗收、履約量能與契約條件尚待確認，不得由此延伸額外服務承諾。</p>
+      <p class="muted" style="font-size:.84rem"><strong>非醫療聲明：</strong>本系統的穿戴感知只用來動態調節體驗節奏，不提供醫療診斷，也不是醫療器材；無障礙介面以 WCAG 2.1 AAA 為設計目標，尚未經第三方認證[cite: 13]。</p>
     </div>
   </footer>
 
   <script>
     /**
-     * 可調整參數：
-     * - CONTACT_EMAIL：預售諮詢收件信箱
-     * - MEDIA_CONFIG：背景靜默載入之影片與六張視覺圖檔設定（頁面可見文字與郵件摘要不顯示任何檔案路徑）
+     * ==========================================================================
+     * 可調整參數區：
+     * - PRODUCT_CODE：傳遞給 ../CTA/index.html 的產品編號（"10"）
+     * - CHECKOUT_PATH：共用結算頁相對路徑（"../CTA/index.html"）
+     * - DISCOUNT_RATE：7 折優惠率（0.7）
+     * - HW_NAS_ORIG：兩槽 AI NAS 套組原價（48,900）
+     * - PLANS_10：依據 Excel 總表之 10 寰宇無界方案數據
+     * ==========================================================================
      */
+    const PRODUCT_CODE = "10";
+    const CHECKOUT_PATH = "../CTA/index.html";
     const CONTACT_EMAIL = "contact@wonderland.center";
+    const DISCOUNT_RATE = 0.7;
+    const HW_NAS_ORIG = 48900;
+    const MEDIA_DIR = "./marketing";
 
-    const MEDIA_CONFIG = {
+    const PLANS_10 = [
+      { plan: "Home", target: "單一家庭", quota: "每月 8 場虛擬出遊場次", m: 1900, y: 19000 },
+      { plan: "Family Plus", target: "多位家人共用", quota: "每月 20 場虛擬出遊場次", m: 3900, y: 39000, recommended: true },
+      { plan: "Care Center", target: "長照／社區據點", quota: "每月 60 場虛擬出遊場次", m: 9900, y: 99000 },
+      { plan: "Custom", target: "特殊需求", quota: "客製（洽談）", custom: true }
+    ];
+
+    const MARKETING_MEDIA = {
       video: {
-        src: "./marketing/0.行銷短片.mp4",
-        poster: "./marketing/1.形象廣告.jpg",
-        title: "寰宇無界 SeniorTravel 雙軌虛擬旅遊陪伴短片",
-        caption: "呈現多方言 AI 導遊帶路、遠端真人志工一鍵接手陪伴，以及外地親友用手機同步同遊的溫暖體驗（穿戴感知僅調節節奏，非醫療器材）。"
+        file: "0.行銷短片.mp4",
+        poster: "1.形象廣告.jpg",
+        badge: "概念短片",
+        title: "寰宇無界 SeniorTravel 雙軌虛擬旅遊陪伴概念短片",
+        caption: "呈現多方言 AI 導遊帶路、遠端志工守護與外地子女手機同遊之溫馨體驗（非醫療器材，穿戴感知僅調節體驗節奏）。"
       },
       images: [
-        {
-          src: "./marketing/1.形象廣告.jpg",
-          title: "AI 帶路，真人陪伴",
-          caption: "長輩在家透過 XR 或 360° 場景重遊故地，外地子女也能用手機加入同一個景點。"
-        },
-        {
-          src: "./marketing/2.產品說明流程.jpg",
-          title: "多方言自適應導覽與懷舊對照",
-          caption: "支援台語、客語、粵語與國語導覽，語速放慢至常人 70%–80%，並以老車站等歷史風貌做對照解說。"
-        },
-        {
-          src: "./marketing/3.服務交付流程.jpg",
-          title: "一鍵求助與真人志工視訊接手",
-          caption: "長輩按下求助或觸發警示時，AI 導遊立即退居靜音，由遠端志工以視訊切入並自動模糊居家背景。"
-        },
-        {
-          src: "./marketing/4.行銷推廣圖片.jpg",
-          title: "疲勞感知自動休整（非醫療用途）",
-          caption: "偵測到疲勞時自動進入休整茶歇模式；穿戴感知只用來動態調節體驗節奏，不作醫療診斷。"
-        },
-        {
-          src: "./marketing/5.社群概念圖.jpg",
-          title: "長者友善視覺與防暈眩設計目標",
-          caption: "對比度 ≥ 7.0:1、字體 ≥ 24pt、觸控目標 ≥ 64 × 64 px，採瞬移與柔和黑屏過渡（以 WCAG 2.1 AAA 準則為設計目標，未經認證）。"
-        },
-        {
-          src: "./marketing/6.B2B 企業出海 EDM.jpg",
-          title: "附語音祝福的數位漫遊手札",
-          caption: "旅程結束後自動彙整片段生成漫遊手札同步給家屬，支持家庭跨世代情感連結與高齡據點交流。"
-        }
+        { file: "1.形象廣告.jpg", badge: "品牌形象", title: "走不遠了，還是可以一起去看看", caption: "AI 帶路、真人陪伴，讓行動不便的長輩在家透過 XR 或 360° 場景重遊記憶中的故地。" },
+        { file: "2.產品說明流程.jpg", badge: "雙軌協同", title: "AI 內容軌道＋真人志工安全軌道", caption: "AI 負責多方言導覽與老照片對照，真人志工負責情感交流與一鍵求助視訊接手。" },
+        { file: "3.服務交付流程.jpg", badge: "親友同遊", title: "外地子女手機同遊＋漫遊手札", caption: "外地家人可用手機加入同一個虛擬景點陪伴長輩，旅程結束自動生成附語音祝福的手札。" },
+        { file: "4.行銷推廣圖片.jpg", badge: "長者友善", title: "高對比大字、慢語速與防暈眩設計", caption: "以 WCAG 2.1 AAA 為設計目標（對比度 ≥ 7:1、字體 ≥ 24pt、語速放慢至 70%–80%，尚未經第三方認證）。" },
+        { file: "5.社群概念圖.jpg", badge: "隱私守護", title: "居家背景模糊與非醫療節奏調節", caption: "志工接入視訊時自動模糊居家背景與病歷；穿戴感知僅用來偵測疲勞並安排休整，不做醫療診斷。" },
+        { file: "6.B2B 企業出海 EDM.jpg", badge: "家庭與機構", title: "居家孝親與養生村／日照中心方案", caption: "提供 Home、Family Plus 與 Care Center 三級方案，可搭配兩槽本地體驗節點套組。" }
       ]
     };
 
-    /**
-     * 設定宣傳短片於載入時自動靜音循環播放
-     */
-    function setupAutoLoopVideo(videoEl) {
-      if (!videoEl) return;
-      videoEl.muted = true;
-      videoEl.loop = true;
-      videoEl.autoplay = true;
-      videoEl.playsInline = true;
+    let selectedPlanIdx = 1; // 預設選中 Family Plus
+    let billingCycle = "yearly";
 
-      const tryPlay = () => {
-        const p = videoEl.play();
-        if (p && typeof p.catch === "function") {
-          p.catch(() => {});
+    function renderPlans() {
+      const grid = document.getElementById("plans-grid");
+      const hwContainer = document.getElementById("hw-bundle-container");
+      const nasCheck = document.getElementById("hw-nas-check");
+      if (!grid) return;
+
+      document.getElementById("bill-yearly").classList.toggle("active", billingCycle === "yearly");
+      document.getElementById("bill-monthly").classList.toggle("active", billingCycle === "monthly");
+
+      grid.innerHTML = PLANS_10.map((p, idx) => {
+        const isSel = idx === selectedPlanIdx;
+        if (p.custom) {
+          return `
+            <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
+              <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">客製專案</span></div>
+              <div class="plan-quota">${p.quota}</div>
+              <div class="plan-target">${p.target}</div>
+              <div class="plan-pricing"><span class="plan-orig">依機構規模評估</span><span class="plan-sale">專人洽談報價</span></div>
+            </button>
+          `;
         }
+        const orig = billingCycle === "yearly" ? p.y : p.m;
+        const sale = Math.round(orig * DISCOUNT_RATE);
+        const unit = billingCycle === "yearly" ? "/ 年" : "/ 月";
+        return `
+          <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
+            <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">${p.recommended ? "★ 熱門推薦" : "7 折早鳥"}</span></div>
+            <div class="plan-quota">${p.quota}</div>
+            <div class="plan-target">${p.target}</div>
+            <div class="plan-pricing">
+              <span class="plan-orig">原價 NT$ ${orig.toLocaleString("zh-TW")} ${unit}</span>
+              <span class="plan-sale">NT$ ${sale.toLocaleString("zh-TW")} <small style="font-size:0.78rem">${unit}</small></span>
+            </div>
+          </button>
+        `;
+      }).join("");
+
+      const cur = PLANS_10[selectedPlanIdx];
+      document.getElementById("sum-plan-name").textContent = `${cur.plan}（${cur.quota}）`;
+      document.getElementById("sum-billing").textContent = cur.custom ? "客製專案（洽談）" : (billingCycle === "yearly" ? "年繳方案" : "月繳方案");
+
+      if (cur.custom) {
+        hwContainer.style.display = "none";
+        document.getElementById("sum-hw").textContent = "依客製需求評估";
+        document.getElementById("sum-orig-price").textContent = "專案報價";
+        document.getElementById("sum-sale-price").textContent = "專人洽談";
+      } else {
+        hwContainer.style.display = "flex";
+        const nasChecked = nasCheck.checked;
+        const hwSale = Math.round(HW_NAS_ORIG * DISCOUNT_RATE);
+        document.getElementById("sum-hw").textContent = nasChecked ? `兩槽 AI NAS 套組（7 折 NT$ ${hwSale.toLocaleString("zh-TW")}）` : "未加購（使用現有終端裝置）";
+
+        const subOrig = billingCycle === "yearly" ? cur.y : cur.m;
+        const hwOrig = nasChecked ? HW_NAS_ORIG : 0;
+        const totalOrig = subOrig + hwOrig;
+        const totalSale = Math.round(subOrig * DISCOUNT_RATE) + (nasChecked ? hwSale : 0);
+        document.getElementById("sum-orig-price").textContent = `NT$ ${totalOrig.toLocaleString("zh-TW")}`;
+        document.getElementById("sum-sale-price").textContent = `NT$ ${totalSale.toLocaleString("zh-TW")}`;
+      }
+    }
+
+    function selectPlan(idx) { selectedPlanIdx = idx; renderPlans(); }
+    function setBilling(mode) { billingCycle = mode; renderPlans(); }
+
+    function initCheckoutBridge() {
+      const goBtn = document.getElementById("go-checkout-btn");
+      const mailBtn = document.getElementById("mail-inquiry-btn");
+      const feedback = document.getElementById("form-feedback");
+
+      const collectFields = () => {
+        const cur = PLANS_10[selectedPlanIdx];
+        const nasChecked = !cur.custom && document.getElementById("hw-nas-check").checked;
+        const name = document.getElementById("user-name").value.trim();
+        const email = document.getElementById("user-email").value.trim();
+        const dialect = document.getElementById("dialect-pref").value;
+        const xrNeed = document.getElementById("xr-need").value;
+        const notes = document.getElementById("user-notes").value.trim();
+        return { cur, nasChecked, name, email, dialect, xrNeed, notes };
       };
 
-      tryPlay();
-      videoEl.addEventListener("canplay", tryPlay, { once: true });
-      videoEl.addEventListener("ended", () => {
-        videoEl.currentTime = 0;
-        tryPlay();
+      goBtn.addEventListener("click", () => {
+        const data = collectFields();
+        const params = new URLSearchParams();
+        params.set("product", PRODUCT_CODE);
+        params.set("plan", data.cur.plan);
+        params.set("billing", billingCycle);
+        params.set("bundle", data.nasChecked ? "1" : "0");
+        if (data.name) params.set("name", data.name);
+        if (data.email) params.set("email", data.email);
+        const combinedNotes = [data.dialect, data.xrNeed, data.notes].filter(Boolean).join("｜");
+        if (combinedNotes) params.set("notes", combinedNotes);
+
+        window.location.href = `${CHECKOUT_PATH}?${params.toString()}`;
+      });
+
+      mailBtn.addEventListener("click", () => {
+        const data = collectFields();
+        if (!data.name || !data.email) {
+          feedback.style.color = "#B42318";
+          feedback.textContent = "若要寄送郵件諮詢，請先填寫「稱呼 / 機構名稱」與「聯絡電子信箱」。";
+          return;
+        }
+        const subject = `[SeniorTravel 寰宇無界 預售諮詢] ${data.name}（${data.cur.plan}）`;
+        const body = [
+          "您好，我想諮詢「10｜寰宇無界 SeniorTravel」的 7 折預售方案：",
+          "",
+          `・稱呼 / 單位：${data.name}`,
+          `・聯絡信箱：${data.email}`,
+          `・感興趣方案：${data.cur.plan}（${billingCycle === "yearly" ? "年繳" : "月繳"}）`,
+          `・搭配硬體：${data.nasChecked ? "兩槽 AI NAS 套組" : "不加購 AI NAS"}`,
+          `・慣用方言與設備需求：${data.dialect}｜${data.xrNeed}`,
+          `・路線與需求簡述：${data.notes || "（尚未填寫）"}`
+        ].join("\n");
+        feedback.style.color = "#1E7A70";
+        feedback.textContent = "已為您開啟預設郵件程式寄送諮詢摘要。";
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       });
     }
 
-    /**
-     * 渲染宣傳短片與六張視覺圖卡，並綁定原生 <dialog> 放大檢視燈箱
-     */
-    function renderMediaGallery() {
+    function renderMarketingAssets() {
       const videoBox = document.getElementById("promo-video-box");
-      if (videoBox && MEDIA_CONFIG.video) {
-        const v = MEDIA_CONFIG.video;
+      if (videoBox && MARKETING_MEDIA.video) {
+        const v = MARKETING_MEDIA.video;
+        const videoSrc = `${MEDIA_DIR}/${encodeURIComponent(v.file)}`;
+        const posterSrc = v.poster ? `${MEDIA_DIR}/${encodeURIComponent(v.poster)}` : "";
+
         videoBox.innerHTML = `
           <div class="video-stage">
-            <video id="seniortravel-loop-video" autoplay muted loop playsinline controls preload="auto" poster="${v.poster}">
-              <source src="${v.src}" type="video/mp4">
-              您的瀏覽器不支援影片播放。
+            <video id="promo-video-player" autoplay muted loop playsinline controls preload="auto"${posterSrc ? ` poster="${posterSrc}"` : ""}>
+              <source src="${videoSrc}" type="video/mp4">
+              您的瀏覽器不支援 HTML5 影片播放。
             </video>
-            <div id="video-error-fallback" class="media-fallback" style="display:none">
-              理念短片載入中或暫時無法播放，請稍候重新整理檢視。
-            </div>
+            <div id="video-error-fallback" class="media-fallback" style="display:none">宣傳影片載入中或暫時無法播放，請重新整理頁面後再試。</div>
           </div>
           <div class="video-info">
-            <span class="num">理念短片 · 自動循環播放</span>
+            <span class="num">${v.badge}</span>
             <h3>${v.title}</h3>
             <p class="muted">${v.caption}</p>
-            <div style="margin-top:0.8rem">
-              <a class="btn primary" href="#cta-form">登記長輩出遊或志工諮詢</a>
-            </div>
+            <div style="margin-top:0.8rem"><a class="btn primary" href="#cta-form">查看 7 折預售方案 →</a></div>
           </div>
         `;
-        const videoEl = document.getElementById("seniortravel-loop-video");
-        const videoErrEl = document.getElementById("video-error-fallback");
-        setupAutoLoopVideo(videoEl);
 
-        if (videoEl && videoErrEl) {
-          const showFallback = () => {
-            videoEl.style.display = "none";
-            videoErrEl.style.display = "block";
-          };
-          videoEl.addEventListener("error", showFallback);
-          const srcNode = videoEl.querySelector("source");
-          if (srcNode) srcNode.addEventListener("error", showFallback);
+        const videoEl = document.getElementById("promo-video-player");
+        const videoErrEl = document.getElementById("video-error-fallback");
+        if (videoEl) {
+          videoEl.muted = true;
+          const playPromise = videoEl.play();
+          if (playPromise && typeof playPromise.catch === "function") playPromise.catch(() => {});
+          if (videoErrEl) {
+            const showFallback = () => { videoEl.style.display = "none"; videoErrEl.style.display = "block"; };
+            videoEl.addEventListener("error", showFallback);
+            const srcEl = videoEl.querySelector("source");
+            if (srcEl) srcEl.addEventListener("error", showFallback);
+          }
         }
       }
 
       const imgGrid = document.getElementById("promo-images-grid");
       if (imgGrid) {
-        imgGrid.innerHTML = (MEDIA_CONFIG.images || []).map((item, idx) => `
-          <article class="media-card">
-            <div class="media-thumb">
-              <img src="${item.src}" alt="${item.title}" loading="lazy" data-idx="${idx}"
-                   onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-              <div class="media-fallback" style="display:none">視覺素材載入中，請確認目錄檔案已就緒。</div>
-            </div>
-            <div class="media-body">
-              <span class="num" style="margin-bottom:0.25rem">視覺圖庫</span>
-              <h3>${item.title}</h3>
-              <p>${item.caption}</p>
-              <button type="button" class="btn ghost-dark media-zoom-btn" data-zoom-idx="${idx}">放大檢視圖片</button>
-            </div>
-          </article>
-        `).join("");
+        imgGrid.innerHTML = (MARKETING_MEDIA.images || []).map((item, idx) => {
+          const imgSrc = `${MEDIA_DIR}/${encodeURIComponent(item.file)}`;
+          return `
+            <article class="media-card">
+              <div class="media-thumb">
+                <img src="${imgSrc}" alt="${item.title}" loading="lazy" data-idx="${idx}"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <div class="media-fallback" style="display:none">視覺圖卡載入中，請稍候重新整理檢視。</div>
+              </div>
+              <div class="media-body">
+                <span class="num" style="margin-bottom:0.25rem">${item.badge}</span>
+                <h3>${item.title}</h3>
+                <p>${item.caption}</p>
+                <button type="button" class="btn ghost-dark media-zoom-btn" data-zoom-idx="${idx}">放大檢視圖片</button>
+              </div>
+            </article>
+          `;
+        }).join("");
 
         const dlg = document.getElementById("img-lightbox");
         const dlgImg = document.getElementById("img-modal-src");
@@ -815,37 +871,31 @@
         const dlgClose = document.getElementById("img-modal-close");
 
         const openLightbox = (idx) => {
-          const data = MEDIA_CONFIG.images[Number(idx)];
+          const data = MARKETING_MEDIA.images[Number(idx)];
           if (!data || !dlg) return;
-          dlgImg.src = data.src;
+          dlgImg.src = `${MEDIA_DIR}/${encodeURIComponent(data.file)}`;
           dlgImg.alt = data.title;
           dlgTitle.textContent = data.title;
           dlgCap.textContent = data.caption;
           dlg.showModal();
         };
 
-        imgGrid.querySelectorAll("[data-idx], [data-zoom-idx]").forEach((el) => {
-          el.addEventListener("click", () => {
-            const index = el.dataset.idx ?? el.dataset.zoomIdx;
-            openLightbox(index);
-          });
+        imgGrid.querySelectorAll("[data-idx], [data-zoom-idx]").forEach(el => {
+          el.addEventListener("click", () => openLightbox(el.dataset.idx ?? el.dataset.zoomIdx));
         });
 
         if (dlgClose && dlg) {
           dlgClose.addEventListener("click", () => dlg.close());
-          dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+          dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
         }
       }
     }
 
-    /**
-     * 122% 長者友善大字模式切換並記憶於 localStorage
-     */
     function initBigText() {
       const bigBtn = document.getElementById("bigtext");
       if (!bigBtn) return;
       const storageKey = "wc-bigtext";
-      const applyBigText = (on) => {
+      const applyBigText = on => {
         document.documentElement.style.fontSize = on ? "122%" : "";
         bigBtn.setAttribute("aria-pressed", on ? "true" : "false");
         try { localStorage.setItem(storageKey, on ? "1" : "0"); } catch (_) {}
@@ -854,94 +904,11 @@
       bigBtn.addEventListener("click", () => applyBigText(bigBtn.getAttribute("aria-pressed") !== "true"));
     }
 
-    /**
-     * 零後端預約諮詢表單（支援 mailto: 喚起與一鍵複製登記摘要）
-     */
-    function initInquiryForm() {
-      const form = document.getElementById("product-cta-form");
-      const copyBtn = document.getElementById("copy-btn");
-      const feedback = document.getElementById("form-feedback");
-      if (!form) return;
-
-      const buildPayload = () => {
-        const name = document.getElementById("user-name").value.trim();
-        const email = document.getElementById("user-email").value.trim();
-        const role = document.getElementById("inquiry-role").value;
-        const dialect = document.getElementById("dialect-pref").value;
-        const notes = document.getElementById("user-notes").value.trim();
-
-        if (!name || !email) {
-          return { error: "請填寫「稱呼 / 家屬或機構名稱」與「聯絡電子信箱」。" };
-        }
-
-        const subject = `[寰宇無界 SeniorTravel 諮詢申請] ${name}`;
-        const body = [
-          "您好，我想了解「10｜寰宇無界 SeniorTravel（C2-WC-VST）」的虛擬旅遊陪伴服務：",
-          "",
-          `・稱呼 / 單位：${name}`,
-          `・聯絡信箱：${email}`,
-          `・參與身分：${role}`,
-          `・偏好導覽語言：${dialect}`,
-          `・需求與情境簡述：${notes || "（尚未填寫）"}`,
-          "",
-          "---",
-          "非醫療聲明：本系統的穿戴感知只用來動態調節體驗節奏，不提供醫療診斷，也不是醫療器材。",
-          "此登記摘要由 寰宇無界 SeniorTravel 預售頁面產生"
-        ].join("\n");
-
-        return { subject, body };
-      };
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const res = buildPayload();
-        if (res.error) {
-          feedback.style.color = "#B42318";
-          feedback.textContent = res.error;
-          return;
-        }
-        feedback.style.color = "#1E7A70";
-        feedback.textContent = "已為您整理需求摘要並開啟預設郵件程式；若未自動開啟，請使用右側「複製登記摘要」。";
-        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(res.subject)}&body=${encodeURIComponent(res.body)}`;
-      });
-
-      if (copyBtn) {
-        copyBtn.addEventListener("click", async () => {
-          const res = buildPayload();
-          if (res.error) {
-            feedback.style.color = "#B42318";
-            feedback.textContent = res.error;
-            return;
-          }
-          const fullText = `${res.subject}\n\n${res.body}`;
-          try {
-            await navigator.clipboard.writeText(fullText);
-            feedback.style.color = "#1E7A70";
-            feedback.textContent = "✓ 登記摘要已複製到剪貼簿！";
-          } catch (_) {
-            const ta = document.createElement("textarea");
-            ta.value = fullText;
-            document.body.appendChild(ta);
-            ta.select();
-            try {
-              document.execCommand("copy");
-              feedback.style.color = "#1E7A70";
-              feedback.textContent = "✓ 登記摘要已複製到剪貼簿！";
-            } catch (__) {
-              feedback.style.color = "#B42318";
-              feedback.textContent = "瀏覽器限制自動複製，請改用「開啟信箱寄送諮詢申請」。";
-            } finally {
-              document.body.removeChild(ta);
-            }
-          }
-        });
-      }
-    }
-
     document.addEventListener("DOMContentLoaded", () => {
-      renderMediaGallery();
+      renderMarketingAssets();
+      renderPlans();
+      initCheckoutBridge();
       initBigText();
-      initInquiryForm();
     });
   </script>
 </body>

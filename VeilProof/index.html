@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
+<!-- 產品線：03｜隱證 VeilProof（所屬事業體：AllView / allview.today）｜檔案路徑：VeilProof/index.html -->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>隱證 VeilProof｜商務兵棋推演與談判沙盤訓練引擎 — 專屬預售諮詢</title>
-  <meta name="description" content="隱證 VeilProof 是 AllView 規劃中的多方商務沙盤推演與談判決策訓練引擎：底牌以密文參與比對，每次出價留下簽章紀錄，演練後可逐步回放。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>隱證 VeilProof｜多方商務沙盤推演與決策訓練引擎 — 7 折嘗鮮預售</title>
+  <meta name="description" content="隱證 VeilProof 涵蓋商戰對決、併購談判、供應鏈議價與危機公關演練。敏感底線數字在客戶端加密後以密文比對，每次出價皆簽章供覆盤。">
   <meta name="theme-color" content="#0B253A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* 水月道場 / Wonderland Center — CIS 設計系統（60% 底色 / 30% 結構 / 10% 點綴） */
     :root {
       --font-body: "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
       --font-display: "Cinzel", "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", serif;
@@ -19,22 +22,23 @@
       --text: #1A1E24;
       --heading: #0B253A;
       --muted: #46525C;
-      --line: rgba(11, 37, 58, .14);
-      --line-strong: rgba(11, 37, 58, .35);
+      --line: rgba(11, 37, 58, 0.14);
+      --line-strong: rgba(11, 37, 58, 0.35);
 
       --accent: #D4AF37;
       --on-accent: #1A1E24;
       --accent-2: #D4AF37;
       --link: #0B253A;
       --kicker: #1E7A70;
+      --kicker-dark: #145750;
 
-      --header-bg: rgba(244, 247, 246, .94);
-      --hero-bg: radial-gradient(520px 520px at 78% 30%, rgba(244, 247, 246, .16), transparent 62%), linear-gradient(180deg, #0B253A 0%, #0e3049 100%);
-      --hero-pattern: repeating-radial-gradient(circle at 78% 30%, transparent 0 34px, rgba(244, 247, 246, .05) 35px 36px);
+      --header-bg: rgba(244, 247, 246, 0.95);
+      --hero-bg: radial-gradient(520px 520px at 78% 30%, rgba(244, 247, 246, 0.16), transparent 62%), linear-gradient(180deg, #0B253A 0%, #0e3049 100%);
+      --hero-pattern: repeating-radial-gradient(circle at 78% 30%, transparent 0 34px, rgba(244, 247, 246, 0.05) 35px 36px);
       --hero-text: #E4ECEA;
       --hero-heading: #F4F7F6;
       --hero-muted: #D0DCDA;
-      --tag-bg: rgba(244, 247, 246, .08);
+      --tag-bg: rgba(244, 247, 246, 0.08);
 
       --notice-bg: #FBF6E8;
       --notice-border: #C59B27;
@@ -55,8 +59,9 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.75;
-      letter-spacing: .02em;
+      letter-spacing: 0.02em;
       font-size: 1.0625rem;
+      overflow-x: hidden;
     }
     img, svg { max-width: 100%; display: block; }
     a { color: var(--link); }
@@ -66,222 +71,302 @@
     .skip {
       position: absolute; left: -999px; top: 0;
       background: var(--accent); color: var(--on-accent);
-      padding: .5rem 1rem; z-index: 100;
+      font-weight: 700; padding: 0.55rem 1rem; z-index: 200;
+      border-radius: var(--radius);
     }
     .skip:focus { left: 1rem; top: 1rem; }
-
     .wrap { width: min(1160px, 100% - 2.5rem); margin-inline: auto; }
 
-    /* 頂部導覽列 */
     header.site {
       position: sticky; top: 0; z-index: 50;
       background: var(--header-bg);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
     header.site .wrap {
       display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; min-height: 70px; flex-wrap: wrap; padding-block: .4rem;
+      gap: 1rem; min-height: 70px; flex-wrap: wrap; padding-block: 0.45rem;
     }
     .brand {
-      display: flex; align-items: center; gap: .7rem;
+      display: flex; align-items: center; gap: 0.7rem;
       text-decoration: none; color: var(--heading);
-      font-weight: 700; font-family: var(--font-display); letter-spacing: .04em;
+      font-weight: 700; font-family: var(--font-display); letter-spacing: 0.04em;
     }
     .brand svg { width: 38px; height: 38px; flex: none; }
-    .brand small { display: block; font-weight: 400; font-size: .75rem; color: var(--muted); letter-spacing: .06em; }
+    .brand small {
+      display: block; font-family: var(--font-body); font-weight: 400;
+      font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em;
+    }
 
     nav.main ul {
       list-style: none; display: flex; align-items: center;
-      flex-wrap: wrap; gap: .3rem 1.1rem; margin: 0; padding: 0;
+      flex-wrap: wrap; gap: 0.3rem 1.05rem; margin: 0; padding: 0;
     }
-    nav.main a { color: var(--muted); text-decoration: none; font-size: .92rem; padding: .35rem 0; font-weight: 500; }
+    nav.main a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.92rem; padding: 0.4rem 0; font-weight: 500; display: inline-block;
+    }
     nav.main a:hover { color: var(--heading); }
 
     .btn-toggle {
-      padding: .3rem .85rem; font-size: .85rem; font-weight: 600;
+      padding: 0.4rem 0.9rem; font-family: inherit; font-size: 0.85rem; font-weight: 600;
       border: 1.5px solid var(--heading); color: var(--heading);
       background: transparent; border-radius: var(--radius);
-      cursor: pointer; transition: background .15s ease, color .15s ease;
+      cursor: pointer; min-height: 40px; transition: background 0.15s ease, color 0.15s ease;
     }
+    .btn-toggle:hover { background: rgba(11, 37, 58, 0.06); }
     .btn-toggle[aria-pressed="true"] { background: var(--heading); color: #FFFFFF; }
 
-    /* Hero 區塊 */
     .hero {
       position: relative; overflow: hidden;
-      padding: clamp(3.6rem, 8vw, 6rem) 0 clamp(3rem, 6vw, 4.8rem);
+      padding: clamp(3.5rem, 8vw, 6.2rem) 0 clamp(3rem, 6.5vw, 5rem);
       background: var(--hero-bg); color: var(--hero-text);
     }
     .hero::before {
       content: ""; position: absolute; inset: 0;
-      background: var(--hero-pattern); opacity: .55; pointer-events: none;
+      background: var(--hero-pattern); opacity: 0.55; pointer-events: none;
     }
     .hero .wrap { position: relative; }
-    .breadcrumb { font-size: .88rem; color: var(--hero-muted); margin-bottom: 1rem; display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+
+    .breadcrumb {
+      font-size: 0.88rem; color: var(--hero-muted); margin-bottom: 1rem;
+      display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center;
+    }
     .breadcrumb a { color: var(--accent-2); text-decoration: none; }
     .breadcrumb a:hover { text-decoration: underline; }
 
     .eyebrow {
-      display: inline-block; font-family: var(--font-mono); font-size: .78rem;
-      letter-spacing: .12em; color: var(--accent-2);
+      display: inline-block; font-family: var(--font-mono); font-size: 0.78rem;
+      letter-spacing: 0.12em; color: var(--accent-2);
       border: 1px solid currentColor; border-radius: 999px;
-      padding: .25rem .85rem; margin-bottom: 1.2rem;
+      padding: 0.25rem 0.85rem; margin-bottom: 1.2rem;
     }
     .hero h1 {
-      font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.22; margin: 0 0 1.1rem; color: var(--hero-heading);
-      letter-spacing: .03em; max-width: 22ch;
+      font-family: var(--font-display); font-size: clamp(1.9rem, 4.8vw, 3.35rem);
+      line-height: 1.22; margin: 0 0 1.15rem; color: var(--hero-heading);
+      letter-spacing: 0.03em; max-width: 24ch;
     }
     .hero .lead {
-      font-size: clamp(1.04rem, 1.9vw, 1.2rem); max-width: 48em;
-      color: var(--hero-muted); margin: 0 0 1.8rem;
+      font-size: clamp(1.03rem, 1.85vw, 1.2rem); max-width: 52em;
+      color: var(--hero-muted); margin: 0 0 1.9rem;
     }
-    .cta { display: flex; flex-wrap: wrap; gap: .9rem; }
+    .cta { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-      padding: .78rem 1.4rem; border-radius: var(--radius); font-weight: 700;
-      font-size: .95rem; text-decoration: none; border: 2px solid transparent;
-      cursor: pointer; transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.78rem 1.4rem; border-radius: var(--radius); font-family: inherit;
+      font-weight: 700; font-size: 0.95rem; text-decoration: none; border: 2px solid transparent;
+      cursor: pointer; min-height: 44px;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
     }
     .btn:hover { transform: translateY(-2px); }
     .btn.primary { background: var(--accent); color: var(--on-accent); }
     .btn.primary:hover { background: #e0bc44; }
+    .btn.teal { background: var(--kicker); color: #FFFFFF; }
+    .btn.teal:hover { background: var(--kicker-dark); }
     .btn.ghost { border-color: var(--accent-2); color: var(--accent-2); background: transparent; }
-    .btn.ghost:hover { background: rgba(212, 175, 55, .12); }
+    .btn.ghost:hover { background: rgba(212, 175, 55, 0.12); }
     .btn.ghost-dark { border-color: var(--heading); color: var(--heading); background: transparent; }
-    .btn.ghost-dark:hover { background: rgba(11, 37, 58, .06); }
+    .btn.ghost-dark:hover { background: rgba(11, 37, 58, 0.06); }
 
-    .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.8rem; padding: 0; list-style: none; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.9rem; padding: 0; list-style: none; }
     .tags li {
-      font-family: var(--font-mono); font-size: .8rem; padding: .3rem .75rem;
+      font-family: var(--font-mono); font-size: 0.8rem; padding: 0.3rem 0.75rem;
       border-radius: 6px; background: var(--tag-bg); color: var(--hero-muted);
-      border: 1px solid rgba(244, 247, 246, .18);
+      border: 1px solid rgba(244, 247, 246, 0.18);
     }
 
-    /* 通用區塊與卡片 */
-    section { padding: clamp(3.2rem, 6.5vw, 5rem) 0; border-bottom: 1px solid var(--line); }
+    section { padding: clamp(3.2rem, 6.5vw, 5.2rem) 0; border-bottom: 1px solid var(--line); }
     section.alt { background: var(--surface-2); }
-    .sec-head { max-width: 52em; margin-bottom: 2rem; }
+    .sec-head { max-width: 54em; margin-bottom: 2.1rem; }
     .sec-head .kicker {
-      font-family: var(--font-mono); font-size: .78rem; letter-spacing: .16em;
+      font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.16em;
       text-transform: uppercase; color: var(--kicker); font-weight: 700;
     }
     h2 {
-      font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.2rem);
-      line-height: 1.3; margin: .4rem 0 .75rem; color: var(--heading);
+      font-family: var(--font-display); font-size: clamp(1.5rem, 3.1vw, 2.2rem);
+      line-height: 1.3; margin: 0.4rem 0 0.8rem; color: var(--heading);
     }
-    h3 { font-family: var(--font-display); font-size: 1.15rem; margin: 0 0 .5rem; color: var(--heading); line-height: 1.45; }
+    h3 { font-family: var(--font-display); font-size: 1.16rem; margin: 0 0 0.55rem; color: var(--heading); line-height: 1.45; }
     p { margin: 0 0 1rem; }
     .muted { color: var(--muted); }
 
-    .grid { display: grid; gap: 1.3rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); }
+    .grid { display: grid; gap: 1.35rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
     .grid.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
 
     .card {
       background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg);
-      padding: 1.45rem; position: relative; display: flex; flex-direction: column;
+      padding: 1.5rem; position: relative; display: flex; flex-direction: column;
     }
     .card.feature { border-top: 4px solid var(--accent); }
     .card .num {
-      font-family: var(--font-mono); font-size: .78rem; color: var(--kicker);
-      letter-spacing: .1em; font-weight: 700; display: block; margin-bottom: .4rem;
+      font-family: var(--font-mono); font-size: 0.78rem; color: var(--kicker);
+      letter-spacing: 0.1em; font-weight: 700; display: block; margin-bottom: 0.45rem;
     }
-    .product-highlights { margin: .35rem 0 0; padding-left: 1.15rem; font-size: .94rem; color: var(--text); }
-    .product-highlights li { margin-bottom: .3rem; }
 
     .boundary-box {
-      margin-top: 1.5rem; padding: .85rem 1.05rem;
-      background: var(--notice-bg); border-left: 3px solid var(--notice-border);
-      color: var(--notice-text); font-size: .88rem; border-radius: 0 6px 6px 0;
+      padding: 0.85rem 1.05rem; background: var(--notice-bg);
+      border-left: 3px solid var(--notice-border); color: var(--notice-text);
+      font-size: 0.88rem; line-height: 1.65; border-radius: 0 6px 6px 0;
     }
-
-    /* 宣傳影片與視覺展示區 */
-    .video-feature {
-      background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--accent);
-      border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.8rem;
-      display: grid; grid-template-columns: 1.35fr 1fr; align-items: stretch;
-    }
-    @media (max-width: 820px) { .video-feature { grid-template-columns: 1fr; } }
-    .video-stage { background: #0B253A; display: flex; align-items: center; justify-content: center; min-height: 260px; }
-    .video-stage video { width: 100%; height: 100%; max-height: 430px; object-fit: contain; display: block; }
-    .video-info { padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }
-
-    .media-grid { display: grid; gap: 1.3rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
-    .media-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
-    .media-thumb { background: #0B253A; aspect-ratio: 16 / 10; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    .media-thumb img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform .2s ease; }
-    .media-thumb img:hover { transform: scale(1.03); }
-    .media-body { padding: 1.15rem 1.3rem; }
-    .media-body h3 { font-size: 1.05rem; margin-bottom: .35rem; }
-    .media-body p { margin: 0; font-size: .92rem; color: var(--muted); }
-    .media-missing { color: #E4ECEA; font-size: .86rem; padding: 1rem; text-align: center; }
-
-    /* 模組表格與 FAQ */
-    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--card); }
-    table { width: 100%; border-collapse: collapse; font-size: .94rem; }
-    th, td { text-align: left; padding: .8rem 1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
-    th { background: var(--surface-2); color: var(--heading); font-weight: 700; }
-    tr:last-child td { border-bottom: none; }
-
-    .faq-list { display: grid; gap: 1rem; }
-    .faq-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.35rem 1.5rem; }
-    .faq-card h3 { font-size: 1.08rem; margin-bottom: .45rem; }
-    .faq-card p { margin: 0; }
-
-    /* 預約表單區 */
-    .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.5fr 1fr; align-items: start; }
-    @media (max-width: 860px) { .reserve-layout { grid-template-columns: 1fr; } }
-    .form-group { margin-bottom: 1.15rem; }
-    .form-group label, .label-title { display: block; font-weight: 700; font-size: .93rem; color: var(--heading); margin-bottom: .45rem; }
-    .req { color: #B42318; }
-    input[type="text"], input[type="email"], select, textarea {
-      width: 100%; padding: .7rem .9rem; border: 1.5px solid var(--line-strong);
-      border-radius: var(--radius); font-family: inherit; font-size: 1rem;
-      color: var(--text); background: #FFFFFF;
-    }
-    input:focus, select:focus, textarea:focus { border-color: var(--heading); outline: 3px solid rgba(212, 175, 55, .35); }
-    .checkbox-grid { display: grid; gap: .55rem; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
-    .checkbox-item {
-      display: flex; align-items: flex-start; gap: .5rem; padding: .55rem .7rem;
-      border: 1px solid var(--line); border-radius: var(--radius);
-      background: var(--bg); font-size: .88rem; cursor: pointer;
-    }
-    .checkbox-item input { margin-top: .25rem; accent-color: var(--heading); }
-    .form-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.3rem; }
-    .form-feedback { margin-top: .9rem; font-size: .92rem; font-weight: 600; color: var(--kicker); min-height: 1.4em; }
-
-    dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: .55rem 1.2rem; margin: 0; font-size: .93rem; }
-    dl.facts dt { color: var(--muted); }
-    dl.facts dd { margin: 0; color: var(--heading); font-weight: 600; }
-
     .note {
       border: 1px dashed var(--line-strong); border-radius: var(--radius-lg);
-      padding: 1rem 1.2rem; font-size: .9rem; color: var(--muted); background: var(--surface-2);
+      padding: 1rem 1.2rem; font-size: 0.9rem; color: var(--muted); background: var(--surface-2);
     }
     .note strong { color: var(--heading); }
 
-    /* 圖片放大燈箱 */
-    dialog.img-modal { border: none; border-radius: var(--radius-lg); padding: 0; width: min(880px, calc(100% - 2rem)); background: var(--card); color: var(--text); box-shadow: 0 24px 48px rgba(11, 37, 58, .3); }
-    dialog.img-modal::backdrop { background: rgba(11, 37, 58, .72); backdrop-filter: blur(4px); }
-    .img-modal-head { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.4rem; background: var(--surface-2); border-bottom: 1px solid var(--line); }
-    .modal-close { background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius); width: 34px; height: 34px; font-size: 1rem; cursor: pointer; color: var(--heading); }
-    .img-modal-body { padding: 1.2rem 1.4rem; text-align: center; }
-    .img-modal-body img { max-height: 70vh; margin-inline: auto; border-radius: var(--radius); }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--card); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+    th, td { text-align: left; padding: 0.8rem 1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: var(--surface-2); color: var(--heading); font-weight: 700; }
+    tr:last-child td { border-bottom: none; }
 
-    footer.site { padding: 2.6rem 0 3rem; background: var(--footer-bg); color: var(--footer-text); font-size: .92rem; }
+    .video-feature {
+      background: var(--card); border: 1px solid var(--line);
+      border-top: 4px solid var(--accent); border-radius: var(--radius-lg);
+      overflow: hidden; margin-bottom: 1.8rem;
+      display: grid; grid-template-columns: 1.35fr 1fr; align-items: stretch;
+    }
+    @media (max-width: 820px) { .video-feature { grid-template-columns: 1fr; } }
+    .video-stage {
+      background: #0B253A; display: flex; align-items: center;
+      justify-content: center; min-height: 260px; position: relative;
+    }
+    .video-stage video { width: 100%; height: 100%; max-height: 440px; object-fit: contain; display: block; }
+    .video-info { padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }
+
+    .media-grid {
+      display: grid; gap: 1.35rem;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
+    }
+    .media-card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius-lg); overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .media-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(11, 37, 58, 0.08); }
+    .media-thumb {
+      background: #0B253A; aspect-ratio: 16 / 10;
+      overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative;
+    }
+    .media-thumb img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform 0.2s ease; }
+    .media-thumb img:hover { transform: scale(1.03); }
+    .media-body { padding: 1.15rem 1.3rem; flex: 1; display: flex; flex-direction: column; }
+    .media-body h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+    .media-body p { margin: 0 0 0.75rem; font-size: 0.92rem; color: var(--muted); }
+    .media-zoom-btn { margin-top: auto; align-self: flex-start; padding: 0.4rem 0.85rem; font-size: 0.84rem; min-height: 36px; }
+    .media-fallback { color: #E4ECEA; font-size: 0.86rem; padding: 1.1rem; text-align: center; line-height: 1.55; }
+
+    dialog.img-modal {
+      border: none; border-radius: var(--radius-lg); padding: 0;
+      width: min(900px, calc(100% - 2rem)); max-height: 90vh;
+      background: var(--card); color: var(--text);
+      box-shadow: 0 24px 48px rgba(11, 37, 58, 0.32);
+    }
+    dialog.img-modal::backdrop { background: rgba(11, 37, 58, 0.72); backdrop-filter: blur(4px); }
+    .img-modal-head {
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      padding: 1rem 1.4rem; background: var(--surface-2); border-bottom: 1px solid var(--line);
+    }
+    .modal-close {
+      background: transparent; border: 1px solid var(--line-strong);
+      border-radius: var(--radius); width: 40px; height: 40px;
+      font-size: 1rem; cursor: pointer; color: var(--heading); flex: none;
+    }
+    .modal-close:hover { background: var(--heading); color: #FFFFFF; }
+    .img-modal-body { padding: 1.2rem 1.4rem; text-align: center; overflow-y: auto; }
+    .img-modal-body img { max-height: 68vh; margin-inline: auto; border-radius: var(--radius); }
+
+    .faq-list { display: grid; gap: 1rem; }
+    .faq-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.35rem 1.5rem; }
+    .faq-card h3 { font-size: 1.08rem; margin-bottom: 0.45rem; }
+    .faq-card p { margin: 0; color: var(--text); }
+
+    .billing-switch-bar {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 0.8rem; margin-bottom: 1.2rem;
+    }
+    .billing-pills {
+      display: inline-flex; background: var(--surface-2); padding: 0.3rem;
+      border-radius: 10px; gap: 0.3rem;
+    }
+    .bill-pill {
+      border: none; background: transparent; padding: 0.45rem 1rem; border-radius: 8px;
+      font-family: inherit; font-size: 0.88rem; font-weight: 700; color: var(--muted); cursor: pointer;
+    }
+    .bill-pill.active { background: var(--heading); color: #FFFFFF; }
+
+    .plans-grid {
+      display: grid; gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      margin-bottom: 1.8rem;
+    }
+    .plan-card {
+      background: var(--card); border: 2px solid var(--line); border-radius: var(--radius-lg);
+      padding: 1.25rem; cursor: pointer; text-align: left; font-family: inherit;
+      display: flex; flex-direction: column; transition: all 0.15s ease;
+    }
+    .plan-card:hover { border-color: var(--heading); transform: translateY(-2px); }
+    .plan-card.selected {
+      border-color: var(--heading); background: #FFFFFF;
+      box-shadow: 0 10px 24px rgba(11, 37, 58, 0.1);
+    }
+    .plan-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
+    .plan-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--heading); }
+    .plan-badge {
+      font-size: 0.74rem; font-weight: 700; padding: 0.18rem 0.55rem;
+      border-radius: 999px; background: #E6F3F1; color: var(--kicker-dark);
+    }
+    .plan-quota { font-weight: 700; font-size: 0.92rem; color: var(--kicker); margin-bottom: 0.25rem; }
+    .plan-target { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.9rem; }
+    .plan-pricing { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--line); font-family: var(--font-mono); }
+    .plan-orig { font-size: 0.8rem; color: var(--muted); text-decoration: line-through; display: block; }
+    .plan-sale { font-size: 1.28rem; font-weight: 700; color: var(--heading); }
+
+    .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.5fr 1fr; align-items: start; }
+    @media (max-width: 860px) { .reserve-layout { grid-template-columns: 1fr; } }
+
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-weight: 700; font-size: 0.93rem; color: var(--heading); margin-bottom: 0.45rem; }
+    input[type="text"], input[type="email"], select, textarea {
+      width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--line-strong);
+      border-radius: var(--radius); font-family: inherit; font-size: 1rem;
+      color: var(--text); background: #FFFFFF; min-height: 44px;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--heading); outline: 3px solid rgba(212, 175, 55, 0.35); }
+
+    .form-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.4rem; }
+    .form-feedback { margin-top: 1rem; font-size: 0.92rem; font-weight: 600; color: var(--kicker); min-height: 1.4em; }
+
+    .checkout-summary-box {
+      background: linear-gradient(180deg, #0B253A 0%, #10324D 100%);
+      color: #F4F7F6; border-radius: var(--radius-lg); padding: 1.5rem;
+      border: 1.5px solid rgba(212, 175, 55, 0.45);
+    }
+    .checkout-summary-box h3 { color: #FFFFFF; margin-bottom: 0.75rem; }
+    dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1.1rem; margin: 0; font-size: 0.92rem; }
+    dl.facts dt { color: #B8C7C5; }
+    dl.facts dd { margin: 0; color: #FFFFFF; font-weight: 700; }
+
+    footer.site { padding: 2.8rem 0 3.2rem; background: var(--footer-bg); color: var(--footer-text); font-size: 0.92rem; }
     footer.site .muted { color: #9FB0AD; }
 
+    @media (max-width: 720px) {
+      dl.facts { grid-template-columns: 1fr; }
+      dl.facts dt { margin-top: 0.4rem; }
+    }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .btn, .media-thumb img { transition: none; }
-      .btn:hover, .media-thumb img:hover { transform: none; }
+      .btn, .media-card, .media-thumb img, .plan-card { transition: none; }
+      .btn:hover, .media-card:hover, .media-thumb img:hover, .plan-card:hover { transform: none; }
     }
   </style>
 </head>
 <body>
   <a class="skip" href="#main">跳到主要內容</a>
 
-  <!-- 頂部導覽列 -->
   <header class="site">
     <div class="wrap">
       <a class="brand" href="../index.html" aria-label="返回水月道場全生態總覽">
@@ -297,17 +382,17 @@
           <path d="M15 32c3-2 6 2 9 0s6-2 9 0" fill="none" stroke="#2A9D8F" stroke-width="1.6" stroke-linecap="round"/>
           <circle cx="24" cy="16" r="4" fill="#D4AF37"/>
         </svg>
-        <span>隱證 VeilProof<small>AllView 生態系｜專屬預售頁</small></span>
+        <span>VeilProof 隱證<small>AllView 生態系｜7 折嘗鮮預售頁</small></span>
       </a>
 
       <nav class="main" aria-label="本頁選單">
         <ul>
           <li><a href="../index.html#products">← 返回十大產品線</a></li>
-          <li><a href="#media-showcase">影音與視覺圖庫</a></li>
-          <li><a href="#principles">設計原則與邊界</a></li>
+          <li><a href="#principles">設計原則與密碼學邊界</a></li>
+          <li><a href="#marketing-assets">影音與視覺素材</a></li>
           <li><a href="#modules">八大沙盤模組</a></li>
           <li><a href="#faq">常見問答</a></li>
-          <li><a href="#cta-form">預約諮詢</a></li>
+          <li><a href="#cta-form">7 折方案與結算</a></li>
           <li><button type="button" id="bigtext" class="btn-toggle" aria-pressed="false">長者友善大字</button></li>
         </ul>
       </nav>
@@ -315,7 +400,6 @@
   </header>
 
   <main id="main">
-    <!-- Hero 區 -->
     <section class="hero" aria-labelledby="page-title">
       <div class="wrap">
         <nav class="breadcrumb" aria-label="麵包屑導覽">
@@ -327,27 +411,60 @@
         </nav>
         <span class="eyebrow">03｜AllView（allview.today）· 多方商務沙盤推演與決策訓練引擎</span>
         <h1 id="page-title">底牌不攤牌，動作可回放的商務沙盤推演。</h1>
-        <p class="lead">涵蓋商戰對決、併購談判、供應鏈博弈、反壟斷調查與危機公關演練。底線數字在您的裝置上先加密，以密文參與比對，系統只回報是否進入可成交區間等必要結果，每一次出價與施壓皆留下簽章紀錄供覆盤教學。</p>
+        <p class="lead">隱證（VeilProof）涵蓋商戰對決、併購談判、供應鏈議價、反壟斷調查與危機公關演練[cite: 6]。敏感底線數字在客戶端加密後以密文參與比對，僅揭露是否進入可成交區間等必要結果，每次出價皆簽章供覆盤[cite: 6]。</p>
         <div class="cta">
-          <a class="btn primary" href="#cta-form">登記演練情境與培訓諮詢</a>
-          <a class="btn ghost" href="#media-showcase">觀看宣傳短片與視覺圖</a>
+          <a class="btn primary" href="#cta-form">選擇 7 折預售方案並前往結算 →</a>
+          <a class="btn ghost" href="#marketing-assets">觀看宣傳影片與視覺圖</a>
         </div>
         <ul class="tags">
-          <li>策略不可知 · 底牌密文比對</li>
-          <li>行動不可否認 · 簽章狀態鏈</li>
-          <li>ZOPA / BATNA / What-if 分支</li>
-          <li>訓練與實戰模式隔離</li>
+          <li>客戶端底線加密（FHE 比對）</li>
+          <li>Merkle 動作狀態鏈回放</li>
+          <li>教練／觀察員／選手三角色</li>
+          <li>早鳥嘗鮮預售全系列 7 折</li>
         </ul>
       </div>
     </section>
 
-    <!-- 宣傳影片與視覺圖庫 -->
-    <section id="media-showcase" class="alt" aria-labelledby="media-title">
+    <section id="principles" aria-labelledby="prin-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Visual &amp; Motion Showcase</span>
-          <h2 id="media-title">隱證 VeilProof 宣傳短片與沙盤視覺說明</h2>
-          <p class="muted">短片載入後自動循環播放，點擊下方任一視覺圖卡可放大檢視細節。</p>
+          <span class="kicker">Design Principles &amp; Cryptographic Boundaries</span>
+          <h2 id="prin-title">三項核心原則與兩條密碼學紅線</h2>
+          <p class="muted">談判演練最難的是放進真實數字[cite: 6]。底線、預算上限與讓步階梯一旦外流，演練本身就成了風險[cite: 6]。</p>
+        </div>
+
+        <div class="grid">
+          <div class="card feature">
+            <span class="num">原則 01｜策略不可知</span>
+            <h3>敏感底線在客戶端加密</h3>
+            <p style="margin:0">底線成本、預算上限與讓步階梯於客戶端加密後送出，運算節點僅在密文上進行比對，嚴禁底牌以明文或僅靠傳輸加密上傳[cite: 6]。</p>
+          </div>
+
+          <div class="card feature">
+            <span class="num">原則 02｜行動不可否認</span>
+            <h3>每次出價皆留下數位簽章</h3>
+            <p style="margin:0">每次出價、施壓與查看皆產生數位簽章並串成 Merkle 狀態鏈，演練結束後可逐步時間軸回放，找出關鍵轉折[cite: 6]。</p>
+          </div>
+
+          <div class="card feature">
+            <span class="num">原則 03｜偽匿名互動</span>
+            <h3>訓練模式與實戰模式嚴格分離</h3>
+            <p style="margin:0">區分教練、觀察員、選手三種角色；訓練模式可開啟 AI 提示，實戰模式屏蔽提示並執行防作弊檢查[cite: 6]。</p>
+          </div>
+        </div>
+
+        <div class="boundary-box" style="margin-top:1.8rem">
+          <strong>免責與技術邊界聲明：</strong>AI 提示、勝率估算與策略建議僅供商務決策訓練與教育參考，不構成正式法律意見、投資建議或併購操作依據[cite: 6]。FHE 僅用於預先定義的比較、評分與加權電路；AI 對手的自然語言對話走隔離的受控推論[cite: 6]。
+        </div>
+      </div>
+    </section>
+
+    <section id="marketing-assets" class="alt" aria-labelledby="assets-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="kicker">Marketing Showcase</span>
+          <h2 id="assets-title">隱證 VeilProof 行銷短片與視覺圖庫</h2>
+          <p class="muted">透過動態概念短片與六張視覺圖解，了解底線密文比對、ZOPA／BATNA 沙盤與脫敏個案匯出流程；點擊任一張圖片可放大檢視。</p>
         </div>
 
         <div id="promo-video-box" class="video-feature"></div>
@@ -355,100 +472,39 @@
       </div>
     </section>
 
-    <!-- 三項設計原則與安全邊界 -->
-    <section id="principles" aria-labelledby="principles-title">
+    <section id="modules" aria-labelledby="mod-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Design Principles &amp; Boundaries</span>
-          <h2 id="principles-title">三項核心設計原則與兩條安全紅線</h2>
-          <p class="muted">支援自我推演、與 AI 對手對抗，或在偽匿名狀態下與真人多方配對（設計上支援回合制與即時制、1v1 與多方聯盟）。</p>
+          <span class="kicker">Eight Core Modules</span>
+          <h2 id="mod-title">八大沙盤推演模組（MOD-01 ～ MOD-08）</h2>
+          <p class="muted">整合談判理論框架、密文策略碰撞與教學個案覆盤工作室[cite: 6]。</p>
         </div>
 
-        <div class="grid" style="margin-bottom:1.8rem">
-          <div class="card feature">
-            <span class="num">原則 01｜策略不可知</span>
-            <h3>底牌在客戶端加密，運算節點不接觸明文</h3>
-            <p>底線成本、讓步階梯與預算上限於客戶端加密，在運算節點上進行密文比對，僅揭露成交／未成交等必要結果。</p>
-          </div>
-
-          <div class="card feature">
-            <span class="num">原則 02｜行動不可否認</span>
-            <h3>每次出價與施壓皆留下簽章紀錄</h3>
-            <p>每一次出價、施壓與查看動作皆留下數位簽章並串成狀態鏈，方便演練後逐步回放、覆盤與教學。</p>
-          </div>
-
-          <div class="card feature">
-            <span class="num">原則 03｜偽匿名互動</span>
-            <h3>隱藏身分進行高敏感博弈演練</h3>
-            <p>參與者可在偽匿名狀態下進行多方沙盤推演，降低演練過程中真實底線與身分外溢的顧慮。</p>
-          </div>
-        </div>
-
-        <div class="grid two">
-          <div class="card">
-            <h3>紅線一：嚴禁底牌明文上傳</h3>
-            <p>底線、預算上限與讓步順序等敏感底牌不得以明文或僅透過傳輸加密送達伺服器，必須先於客戶端加密。</p>
-          </div>
-          <div class="card">
-            <h3>紅線二：固定電路與隔離 AI 推論</h3>
-            <p>密文運算僅用於預先定義的比較、評分與加權電路；AI 對手的自然語言對話走隔離的受控推論，不做全量密文自然語言處理。</p>
-          </div>
-        </div>
-
-        <div class="boundary-box">
-          <strong>免責聲明：</strong>本系統提供之 AI 提示、勝率估算與策略建議僅供商務決策訓練與教育參考，不構成正式法律、投資或併購操作保證；價格、方案與上線時程目前尚未公布。
-        </div>
-      </div>
-    </section>
-
-    <!-- 八大功能模組與適用對象 -->
-    <section id="modules" class="alt" aria-labelledby="modules-title">
-      <div class="wrap">
-        <div class="sec-head">
-          <span class="kicker">Modules MOD-01 — MOD-08</span>
-          <h2 id="modules-title">八大沙盤推演與教學覆盤模組</h2>
-          <p class="muted">以下為隱證 VeilProof 之功能模組規格（目前處於早期預售階段，實作完成度、即時制延遲與人數上限以正式版為準）。</p>
-        </div>
-
-        <div class="table-wrap" style="margin-bottom:2.2rem">
+        <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th style="width:120px">模組代號</th>
-                <th style="width:200px">模組名稱</th>
-                <th>功能範圍說明</th>
+                <th style="width:130px">模組代碼</th>
+                <th style="width:210px">模組名稱</th>
+                <th>功能與治理說明</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td><code>MOD-01</code></td><td><strong>推演模式</strong></td><td>設計上支援回合制與即時制；1v1、多方聯盟、監管方加入；自我推演、AI＋真人或偽匿名多方配對。</td></tr>
-              <tr><td><code>MOD-02</code></td><td><strong>多層級沙盤</strong></td><td>提供戰略大盤、供應鏈拓撲、現金流曲線視圖，並支援 What-if 分支推演。</td></tr>
-              <tr><td><code>MOD-03</code></td><td><strong>談判核心</strong></td><td>整合 ZOPA、BATNA、施壓倒數與資訊不對稱情境設定。</td></tr>
-              <tr><td><code>MOD-04</code></td><td><strong>策略比對引擎</strong></td><td>於密文狀態下比對底線與區間，僅揭露成交／未成交等必要結果。</td></tr>
-              <tr><td><code>MOD-05</code></td><td><strong>證據鏈</strong></td><td>每次出價、施壓與查看皆簽章並寫入狀態鏈，支援演練後回放。</td></tr>
-              <tr><td><code>MOD-06</code></td><td><strong>AI 對手</strong></td><td>可設定激進、保守或欺敵風格對手；自然語言對話走隔離受控推論。</td></tr>
-              <tr><td><code>MOD-07</code></td><td><strong>覆盤與個案工作室</strong></td><td>逐步回放演練時間軸，並可將敏感資料脫敏後匯出為教學個案。</td></tr>
-              <tr><td><code>MOD-08</code></td><td><strong>角色與模式守衛</strong></td><td>提供教練、觀察員、選手三種角色；訓練模式可開 AI 提示，實戰模式屏蔽提示並防作弊。</td></tr>
+              <tr><td><code>MOD-01</code></td><td><strong>推演模式引擎</strong></td><td>支援自我推演、AI 對手演練與多方聯盟配對（回合制與即時制設計）[cite: 6]。</td></tr>
+              <tr><td><code>MOD-02</code></td><td><strong>視覺化沙盤</strong></td><td>整合資訊不對稱視角、施壓倒數計時器與 What-if 分支推演樹[cite: 6]。</td></tr>
+              <tr><td><code>MOD-03</code></td><td><strong>談判核心計算器</strong></td><td>動態追蹤可能達成協議區間（ZOPA）、最佳替代方案（BATNA）與讓步階梯[cite: 6]。</td></tr>
+              <tr><td><code>MOD-04</code></td><td><strong>FHE 策略引擎</strong></td><td>在密文狀態下執行固定比較、評分與加權電路，僅揭露必要布林狀態[cite: 6]。</td></tr>
+              <tr><td><code>MOD-05</code></td><td><strong>Merkle 狀態證據鏈</strong></td><td>將出價與施壓動作簽章串接成不可竄改狀態鏈，支援逐步覆盤回放[cite: 6]。</td></tr>
+              <tr><td><code>MOD-06</code></td><td><strong>AI 對手模擬器</strong></td><td>可設定激進、保守或欺敵風格；自然語言對話走隔離受控推論[cite: 6]。</td></tr>
+              <tr><td><code>MOD-07</code></td><td><strong>覆盤與個案工作室</strong></td><td>將推演時間軸脫敏後匯出為商學院或企業內訓教學個案（Case Studio）[cite: 6]。</td></tr>
+              <tr><td><code>MOD-08</code></td><td><strong>角色與模式守衛</strong></td><td>區隔教練／觀察員／選手權限，實戰模式下強制屏蔽 AI 提示並執行防作弊檢查[cite: 6]。</td></tr>
             </tbody>
           </table>
-        </div>
-
-        <div class="grid two">
-          <div class="card">
-            <span class="num">適用對象 A｜企業談判與策略團隊</span>
-            <h3>高敏感商業談判演練</h3>
-            <p>適合併購談判、供應鏈議價或危機公關演練團隊，讓底線數字參與比對而不外流。</p>
-          </div>
-          <div class="card">
-            <span class="num">適用對象 B｜商學院與企業內訓機構</span>
-            <h3>可控角色與可再利用的教學個案</h3>
-            <p>提供教練／觀察員／選手三種角色與訓練／實戰模式，演練紀錄可脫敏匯出為教學個案。</p>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- 常見問答 FAQ -->
-    <section id="faq" aria-labelledby="faq-title">
+    <section id="faq" class="alt" aria-labelledby="faq-title">
       <div class="wrap">
         <div class="sec-head">
           <span class="kicker">Frequently Asked Questions</span>
@@ -458,80 +514,93 @@
         <div class="faq-list">
           <article class="faq-card">
             <h3>Q1：平台看得到我們輸入的底線數字嗎？</h3>
-            <p>依設計不會。底牌在客戶端加密後才送出，運算節點只在密文上比對，且禁止底牌以明文或僅用傳輸加密的方式送到伺服器。</p>
+            <p>依設計不會[cite: 6]。底牌在客戶端加密後才送出，運算節點只在密文上比對，且嚴禁以明文或只用 TLS 加密的方式送到伺服器[cite: 6]。</p>
           </article>
           <article class="faq-card">
-            <h3>Q2：AI 對手的對話也是加密運算嗎？</h3>
-            <p>不是。密文運算僅用於預先定義的比較、評分與加權計算；AI 對手的自然語言對話走隔離的受控推論。</p>
+            <h3>Q2：AI 對手的對話也是同態加密運算嗎？</h3>
+            <p>不是[cite: 6]。密文運算僅用於預先定義的比較、評分與加權計算；AI 對手的自然語言對話走隔離的受控推論[cite: 6]。</p>
           </article>
           <article class="faq-card">
             <h3>Q3：推演紀錄可以拿來當法律證據嗎？</h3>
-            <p>不建議這樣主張。紀錄可用於覆盤與教學，但本產品聲明不構成正式法律、投資或併購操作依據。</p>
+            <p>不建議這樣主張[cite: 6]。紀錄可用於覆盤與教學，但本產品聲明不構成法律、投資或併購操作依據[cite: 6]。</p>
           </article>
           <article class="faq-card">
-            <h3>Q4：支援即時對戰嗎？可以幾個人一起推演？</h3>
-            <p>設計上支援回合制與即時制、1v1 與多方聯盟；實際延遲與人數上限尚未公布，目前暫不作定量承諾。</p>
+            <h3>Q4：若當月演練場次超過方案上限怎麼辦？</h3>
+            <p>可在結算中心加購「額外場次包」（5 場推演場次，原價 NT$ 9,900，7 折嘗鮮預售價 NT$ 6,930）[cite: 1]。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 專屬預售諮詢表單 -->
-    <section id="cta-form" class="alt" aria-labelledby="cta-form-title">
+    <section id="cta-form" aria-labelledby="cta-form-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Call to Action · VeilProof</span>
-          <h2 id="cta-form-title">告訴我們您想演練的情境</h2>
-          <p class="muted">請選擇您想演練的情境（併購、供應鏈議價、危機公關或教學）並簡述需求，方案確認後我們將與您聯繫。</p>
+          <span class="kicker">70% Early-Bird Presale · VeilProof</span>
+          <h2 id="cta-form-title">選擇您的 7 折嘗鮮預售方案並前往結算</h2>
+          <p class="muted">全系列早鳥預售享 <strong>7 折優惠（現省 30%）</strong>[cite: 1]；請先點選適合您團隊或教學單位的方案，再前往共用結算中心完成保留。</p>
         </div>
+
+        <div class="billing-switch-bar">
+          <strong style="color:var(--heading);font-size:0.95rem">步驟 ①：點選訂閱方案與計費週期</strong>
+          <div class="billing-pills" role="group" aria-label="計費週期切換">
+            <button type="button" id="bill-yearly" class="bill-pill active" onclick="setBilling('yearly')">年繳方案（再享 7 折）</button>
+            <button type="button" id="bill-monthly" class="bill-pill" onclick="setBilling('monthly')">月繳方案（享 7 折）</button>
+          </div>
+        </div>
+
+        <div id="plans-grid" class="plans-grid"></div>
 
         <div class="reserve-layout">
           <form id="product-cta-form" class="card form-card" novalidate>
+            <h3 style="margin-bottom:0.85rem">步驟 ②：預填聯絡與演練情境需求（將自動帶入結算頁）</h3>
             <div class="grid two">
               <div class="form-group">
-                <label for="user-name">稱呼 / 企業或院校名稱 <span class="req">*</span></label>
-                <input type="text" id="user-name" placeholder="例如：張總監 / 某某企業策略發展部" required>
+                <label for="user-name">稱呼 / 企業或院校單位名稱</label>
+                <input type="text" id="user-name" placeholder="例如：張教授 / 某某集團策略發展部">
               </div>
               <div class="form-group">
-                <label for="user-email">聯絡電子信箱 <span class="req">*</span></label>
-                <input type="email" id="user-email" placeholder="name@example.com" required>
+                <label for="user-email">聯絡電子信箱</label>
+                <input type="email" id="user-email" placeholder="name@example.com">
               </div>
             </div>
 
             <div class="form-group">
-              <span class="label-title">想演練的情境（可複選） <span class="req">*</span></span>
-              <div class="checkbox-grid">
-                <label class="checkbox-item"><input type="checkbox" name="scenarios" value="併購談判"><span>併購談判</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="scenarios" value="供應鏈議價"><span>供應鏈議價</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="scenarios" value="危機公關"><span>危機公關</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="scenarios" value="教學與內訓"><span>教學與內訓</span></label>
-              </div>
+              <label for="scenario-type">主要演練情境</label>
+              <select id="scenario-type">
+                <option value="併購談判與策略底線推演">併購談判與策略底線推演</option>
+                <option value="供應鏈議價與採購博弈演練">供應鏈議價與採購博弈演練</option>
+                <option value="危機公關與多方利害關係人攻防">危機公關與多方利害關係人攻防</option>
+                <option value="商學院／企業內訓教學個案演練">商學院／企業內訓教學個案演練</option>
+              </select>
             </div>
 
             <div class="form-group">
-              <label for="user-notes">演練需求與團隊背景簡述</label>
-              <textarea id="user-notes" rows="4" placeholder="請簡述您的推演或教學需求（請勿填入實際機密底線數字）"></textarea>
+              <label for="user-notes">演練規模與需求簡述（選填）</label>
+              <textarea id="user-notes" rows="3" placeholder="例如：預計用於 15 人策略團隊的跨國供應鏈議價演練"></textarea>
             </div>
 
             <div class="form-actions">
-              <button type="submit" class="btn primary">開啟信箱寄送預售諮詢</button>
-              <button type="button" id="copy-btn" class="btn ghost-dark">複製登記摘要</button>
+              <button type="button" id="go-checkout-btn" class="btn primary">前往 7 折預售結算中心（../CTA） →</button>
+              <button type="button" id="mail-inquiry-btn" class="btn ghost-dark">僅先寄信諮詢（暫不結帳）</button>
             </div>
             <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
           </form>
 
-          <aside class="card info-aside">
-            <h3>產品識別與窗口資訊</h3>
+          <aside class="checkout-summary-box">
+            <h3>已選預售配置摘要</h3>
             <dl class="facts" style="margin:1rem 0">
-              <dt>產品名稱</dt><dd>03｜隱證 VeilProof</dd>
+              <dt>產品代碼</dt><dd>03｜P03-VP（VeilProof）</dd>
               <dt>所屬事業體</dt><dd>AllView（allview.today）</dd>
-              <dt>生態系總窗口</dt><dd><a id="direct-email" href="mailto:contact@wonderland.center">contact@wonderland.center</a></dd>
+              <dt>選定方案</dt><dd id="sum-plan-name">Team（每月 20 場推演場次）</dd>
+              <dt>計費週期</dt><dd id="sum-billing">年繳方案</dd>
+              <dt>標準原價</dt><dd id="sum-orig-price" style="text-decoration:line-through;color:#B8C7C5">NT$ 229,000</dd>
+              <dt>7 折預售價</dt><dd id="sum-sale-price" style="color:#D4AF37;font-size:1.25rem">NT$ 160,300</dd>
             </dl>
-            <div class="note">
-              <strong>免責與隱私提醒：</strong>本系統僅供商務決策訓練與教育參考；諮詢表單請勿填入真實機密底線數字。
+            <div class="note" style="background:rgba(255,255,255,0.08);border-color:rgba(212,175,55,0.4);color:#E4ECEA">
+              <strong style="color:#D4AF37">跳轉說明：</strong>點擊「前往 7 折預售結算中心」將導向上層 <code>CTA/index.html</code>，結算頁支援銀行電匯、第三方刷卡與 USDT 入金，並可加購「額外場次包（5 場 NT$ 6,930）」[cite: 1, 3]。
             </div>
             <p style="margin-top:1.2rem;margin-bottom:0">
-              <a class="btn ghost-dark" style="width:100%" href="../index.html#products">瀏覽其他生態系產品線</a>
+              <a class="btn ghost" style="width:100%" href="../index.html#products">瀏覽其他 9 條生態系產品線</a>
             </p>
           </aside>
         </div>
@@ -539,131 +608,231 @@
     </section>
   </main>
 
-  <!-- 圖片放大檢視燈箱 -->
-  <dialog id="img-lightbox" class="img-modal" aria-label="圖片放大檢視">
+  <dialog id="img-lightbox" class="img-modal" aria-label="視覺圖片放大檢視">
     <div class="img-modal-head">
       <strong id="img-modal-title">視覺素材檢視</strong>
       <button type="button" id="img-modal-close" class="modal-close" aria-label="關閉">✕</button>
     </div>
     <div class="img-modal-body">
       <img id="img-modal-src" src="" alt="">
-      <p id="img-modal-caption" class="muted" style="margin-top:.8rem;margin-bottom:0"></p>
+      <p id="img-modal-caption" class="muted" style="margin-top:.85rem;margin-bottom:0"></p>
     </div>
   </dialog>
 
   <footer class="site">
     <div class="wrap">
       <p><strong>© 2026 AllView（allview.today）× 水月道場 / Wonderland Center</strong>｜隱證 VeilProof 專屬預售頁</p>
-      <p class="muted" style="font-size:.84rem">本頁內容依《隱證 VeilProof 產品說明與預售內容》編製，不構成正式法律、投資或併購操作依據。</p>
+      <p class="muted" style="font-size:.84rem">本頁內容依《隱證 VeilProof 產品說明與預售內容》及《產品定價與 7 折嘗鮮預售價總表》編製，AI 提示與推演結果僅供商務訓練與教育參考[cite: 1, 6]。</p>
     </div>
   </footer>
 
   <script>
+    /**
+     * ==========================================================================
+     * 可調整參數區：
+     * - PRODUCT_CODE：傳遞給 ../CTA/index.html 的產品編號（"03"）
+     * - CHECKOUT_PATH：共用結算頁相對路徑（"../CTA/index.html"）
+     * - DISCOUNT_RATE：7 折優惠率（0.7）
+     * - PLANS_03：依據 Excel 總表之 03 隱證 VeilProof 方案數據
+     * ==========================================================================
+     */
+    const PRODUCT_CODE = "03";
+    const CHECKOUT_PATH = "../CTA/index.html";
     const CONTACT_EMAIL = "contact@wonderland.center";
+    const DISCOUNT_RATE = 0.7;
+    const MEDIA_DIR = "./marketing";
 
-    // 背景靜默載入媒體設定（畫面上不顯示檔案路徑）
-    const MEDIA_CONFIG = {
+    const PLANS_03 = [
+      { plan: "Practice", target: "個人自我訓練、小型內訓", quota: "每月 6 場推演場次", m: 7900, y: 79000 },
+      { plan: "Team", target: "企業談判／策略團隊", quota: "每月 20 場推演場次", m: 22900, y: 229000, recommended: true },
+      { plan: "Academy", target: "商學院、培訓機構、較高頻率使用", quota: "每月 50 場推演場次", m: 49900, y: 499000 },
+      { plan: "Enterprise", target: "大型或需客製情境", quota: "客製（洽談）", custom: true }
+    ];
+
+    const MARKETING_MEDIA = {
       video: {
-        src: "./marketing/0.行銷短片.mp4",
-        poster: "./marketing/1.形象廣告.jpg",
-        title: "隱證 VeilProof 商務沙盤概念短片",
-        caption: "呈現底牌密文比對、動作簽章回放與多方沙盤推演的整體概念。"
+        file: "0.行銷短片.mp4",
+        poster: "1.形象廣告.jpg",
+        badge: "概念短片",
+        title: "隱證 VeilProof 底線密文比對與商務沙盤概念短片",
+        caption: "呈現多方談判沙盤中底線數字客戶端加密比對、ZOPA 動態計算與動作簽章狀態鏈回放機制。"
       },
       images: [
-        {
-          src: "./marketing/1.形象廣告.jpg",
-          title: "底牌不攤牌，只揭露必要結果",
-          caption: "敏感數字在客戶端加密比對，僅回報必要結果，每次動作留下簽章紀錄。"
-        },
-        {
-          src: "./marketing/2.產品說明流程.jpg",
-          title: "密文比對與簽章狀態鏈流程",
-          caption: "客戶端加密輸入 → 運算節點密文比對 → 揭露必要結果 → 簽章寫入狀態鏈。"
-        },
-        {
-          src: "./marketing/3.服務交付流程.jpg",
-          title: "沙盤推演與教學覆盤架構",
-          caption: "結合多層級沙盤、角色與模式守衛、AI 對手與時間軸脫敏個案匯出。"
-        },
-        {
-          src: "./marketing/4.行銷推廣圖片.jpg",
-          title: "策略不可知與行動不可否認",
-          caption: "兼顧底線保密與演練過程可回放，支援企業談判演練與商務教學培訓。"
-        },
-        {
-          src: "./marketing/5.社群概念圖.jpg",
-          title: "多方情境與 What-if 分支推演",
-          caption: "涵蓋併購談判、供應鏈議價、危機公關與教學情境，支援角色分級與模式切換。"
-        },
-        {
-          src: "./marketing/6.B2B 企業出海 EDM.jpg",
-          title: "企業策略與訓練應用願景",
-          caption: "協助企業與培訓單位在受控環境下進行高敏感談判演練與事後覆盤。"
-        }
+        { file: "1.形象廣告.jpg", badge: "品牌形象", title: "底牌不攤牌，動作可回放", caption: "敏感底線以 FHE 密文參與比對，僅揭露是否進入可成交區間等必要布林結果。" },
+        { file: "2.產品說明流程.jpg", badge: "運作流程", title: "密碼學邊界與狀態鏈", caption: "客戶端加密 → 密文策略碰撞 → 僅揭露必要結果 → 數位簽章寫入 Merkle Action Block。" },
+        { file: "3.服務交付流程.jpg", badge: "沙盤核心", title: "ZOPA、BATNA 與 What-if 分支", caption: "整合談判區間計算、施壓倒數計時器與多維度策略分支推演。" },
+        { file: "4.行銷推廣圖片.jpg", badge: "角色守衛", title: "教練、觀察員與選手三角色", caption: "訓練模式支援 AI 提示輔助，實戰模式嚴格屏蔽提示並執行防作弊檢查。" },
+        { file: "5.社群概念圖.jpg", badge: "覆盤教學", title: "脫敏教學個案工作室", caption: "支持將完整推演時間軸脫敏後匯出為商學院與企業內訓教學個案。" },
+        { file: "6.B2B 企業出海 EDM.jpg", badge: "企業方案", title: "併購、供應鏈與危機公關演練", caption: "提供 Practice、Team 與 Academy 三級年繳／月繳授權，保護企業核心議價底線。" }
       ]
     };
 
-    function setupAutoLoopVideo(videoEl) {
-      if (!videoEl) return;
-      videoEl.muted = true;
-      videoEl.loop = true;
-      videoEl.autoplay = true;
-      videoEl.playsInline = true;
+    let selectedPlanIdx = 1; // 預設選中 Team
+    let billingCycle = "yearly";
 
-      const tryPlay = () => {
-        const p = videoEl.play();
-        if (p && typeof p.catch === "function") {
-          p.catch(() => {});
+    function renderPlans() {
+      const grid = document.getElementById("plans-grid");
+      if (!grid) return;
+
+      document.getElementById("bill-yearly").classList.toggle("active", billingCycle === "yearly");
+      document.getElementById("bill-monthly").classList.toggle("active", billingCycle === "monthly");
+
+      grid.innerHTML = PLANS_03.map((p, idx) => {
+        const isSel = idx === selectedPlanIdx;
+        if (p.custom) {
+          return `
+            <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
+              <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">客製專案</span></div>
+              <div class="plan-quota">${p.quota}</div>
+              <div class="plan-target">${p.target}</div>
+              <div class="plan-pricing"><span class="plan-orig">依專案規模評估</span><span class="plan-sale">專人洽談報價</span></div>
+            </button>
+          `;
         }
+        const orig = billingCycle === "yearly" ? p.y : p.m;
+        const sale = Math.round(orig * DISCOUNT_RATE);
+        const unit = billingCycle === "yearly" ? "/ 年" : "/ 月";
+        return `
+          <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
+            <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">${p.recommended ? "★ 熱門推薦" : "7 折早鳥"}</span></div>
+            <div class="plan-quota">${p.quota}</div>
+            <div class="plan-target">${p.target}</div>
+            <div class="plan-pricing">
+              <span class="plan-orig">原價 NT$ ${orig.toLocaleString("zh-TW")} ${unit}</span>
+              <span class="plan-sale">NT$ ${sale.toLocaleString("zh-TW")} <small style="font-size:0.78rem">${unit}</small></span>
+            </div>
+          </button>
+        `;
+      }).join("");
+
+      const cur = PLANS_03[selectedPlanIdx];
+      document.getElementById("sum-plan-name").textContent = `${cur.plan}（${cur.quota}）`;
+      document.getElementById("sum-billing").textContent = cur.custom ? "客製專案（洽談）" : (billingCycle === "yearly" ? "年繳方案" : "月繳方案");
+
+      if (cur.custom) {
+        document.getElementById("sum-orig-price").textContent = "專案報價";
+        document.getElementById("sum-sale-price").textContent = "專人洽談";
+      } else {
+        const orig = billingCycle === "yearly" ? cur.y : cur.m;
+        const sale = Math.round(orig * DISCOUNT_RATE);
+        document.getElementById("sum-orig-price").textContent = `NT$ ${orig.toLocaleString("zh-TW")}`;
+        document.getElementById("sum-sale-price").textContent = `NT$ ${sale.toLocaleString("zh-TW")}`;
+      }
+    }
+
+    function selectPlan(idx) { selectedPlanIdx = idx; renderPlans(); }
+    function setBilling(mode) { billingCycle = mode; renderPlans(); }
+
+    function initCheckoutBridge() {
+      const goBtn = document.getElementById("go-checkout-btn");
+      const mailBtn = document.getElementById("mail-inquiry-btn");
+      const feedback = document.getElementById("form-feedback");
+
+      const collectFields = () => {
+        const cur = PLANS_03[selectedPlanIdx];
+        const name = document.getElementById("user-name").value.trim();
+        const email = document.getElementById("user-email").value.trim();
+        const scenType = document.getElementById("scenario-type").value;
+        const notes = document.getElementById("user-notes").value.trim();
+        return { cur, name, email, scenType, notes };
       };
 
-      tryPlay();
-      videoEl.addEventListener("canplay", tryPlay, { once: true });
-      videoEl.addEventListener("ended", () => {
-        videoEl.currentTime = 0;
-        tryPlay();
+      goBtn.addEventListener("click", () => {
+        const data = collectFields();
+        const params = new URLSearchParams();
+        params.set("product", PRODUCT_CODE);
+        params.set("plan", data.cur.plan);
+        params.set("billing", billingCycle);
+        params.set("bundle", "0");
+        if (data.name) params.set("name", data.name);
+        if (data.email) params.set("email", data.email);
+        const combinedNotes = [data.scenType, data.notes].filter(Boolean).join("｜");
+        if (combinedNotes) params.set("notes", combinedNotes);
+
+        window.location.href = `${CHECKOUT_PATH}?${params.toString()}`;
+      });
+
+      mailBtn.addEventListener("click", () => {
+        const data = collectFields();
+        if (!data.name || !data.email) {
+          feedback.style.color = "#B42318";
+          feedback.textContent = "若要寄送郵件諮詢，請先填寫「稱呼 / 單位名稱」與「聯絡電子信箱」。";
+          return;
+        }
+        const subject = `[VeilProof 隱證 預售諮詢] ${data.name}（${data.cur.plan}）`;
+        const body = [
+          "您好，我想諮詢「03｜隱證 VeilProof」的 7 折預售方案：",
+          "",
+          `・稱呼 / 單位：${data.name}`,
+          `・聯絡信箱：${data.email}`,
+          `・感興趣方案：${data.cur.plan}（${billingCycle === "yearly" ? "年繳" : "月繳"}）`,
+          `・演練情境：${data.scenType}`,
+          `・需求簡述：${data.notes || "（尚未填寫）"}`
+        ].join("\n");
+        feedback.style.color = "#1E7A70";
+        feedback.textContent = "已為您開啟預設郵件程式寄送諮詢摘要。";
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       });
     }
 
-    function renderMediaGallery() {
+    function renderMarketingAssets() {
       const videoBox = document.getElementById("promo-video-box");
-      if (videoBox && MEDIA_CONFIG.video) {
-        const v = MEDIA_CONFIG.video;
+      if (videoBox && MARKETING_MEDIA.video) {
+        const v = MARKETING_MEDIA.video;
+        const videoSrc = `${MEDIA_DIR}/${encodeURIComponent(v.file)}`;
+        const posterSrc = v.poster ? `${MEDIA_DIR}/${encodeURIComponent(v.poster)}` : "";
+
         videoBox.innerHTML = `
           <div class="video-stage">
-            <video id="veilproof-loop-video" autoplay muted loop playsinline controls preload="auto" poster="${v.poster}">
-              <source src="${v.src}" type="video/mp4">
-              您的瀏覽器不支援影片播放。
+            <video id="promo-video-player" autoplay muted loop playsinline controls preload="auto"${posterSrc ? ` poster="${posterSrc}"` : ""}>
+              <source src="${videoSrc}" type="video/mp4">
+              您的瀏覽器不支援 HTML5 影片播放。
             </video>
+            <div id="video-error-fallback" class="media-fallback" style="display:none">宣傳影片載入中或暫時無法播放，請重新整理頁面後再試。</div>
           </div>
           <div class="video-info">
-            <span class="num">宣傳短片 · 自動循環播放</span>
+            <span class="num">${v.badge}</span>
             <h3>${v.title}</h3>
             <p class="muted">${v.caption}</p>
-            <div style="margin-top:1rem">
-              <a class="btn primary" href="#cta-form">預約了解隱證 VeilProof 方案</a>
-            </div>
+            <div style="margin-top:0.8rem"><a class="btn primary" href="#cta-form">查看 7 折預售方案 →</a></div>
           </div>
         `;
-        setupAutoLoopVideo(document.getElementById("veilproof-loop-video"));
+
+        const videoEl = document.getElementById("promo-video-player");
+        const videoErrEl = document.getElementById("video-error-fallback");
+        if (videoEl) {
+          videoEl.muted = true;
+          const playPromise = videoEl.play();
+          if (playPromise && typeof playPromise.catch === "function") playPromise.catch(() => {});
+          if (videoErrEl) {
+            const showFallback = () => { videoEl.style.display = "none"; videoErrEl.style.display = "block"; };
+            videoEl.addEventListener("error", showFallback);
+            const srcEl = videoEl.querySelector("source");
+            if (srcEl) srcEl.addEventListener("error", showFallback);
+          }
+        }
       }
 
       const imgGrid = document.getElementById("promo-images-grid");
       if (imgGrid) {
-        imgGrid.innerHTML = (MEDIA_CONFIG.images || []).map((item, idx) => `
-          <article class="media-card">
-            <div class="media-thumb">
-              <img src="${item.src}" alt="${item.title}" loading="lazy" data-idx="${idx}"
-                   onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-              <div class="media-missing" style="display:none">視覺素材載入中，請確認目錄檔案已就緒。</div>
-            </div>
-            <div class="media-body">
-              <span class="num" style="margin-bottom:.25rem">視覺圖庫</span>
-              <h3>${item.title}</h3>
-              <p>${item.caption}</p>
-            </div>
-          </article>
-        `).join("");
+        imgGrid.innerHTML = (MARKETING_MEDIA.images || []).map((item, idx) => {
+          const imgSrc = `${MEDIA_DIR}/${encodeURIComponent(item.file)}`;
+          return `
+            <article class="media-card">
+              <div class="media-thumb">
+                <img src="${imgSrc}" alt="${item.title}" loading="lazy" data-idx="${idx}"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <div class="media-fallback" style="display:none">視覺圖卡載入中，請稍候重新整理檢視。</div>
+              </div>
+              <div class="media-body">
+                <span class="num" style="margin-bottom:0.25rem">${item.badge}</span>
+                <h3>${item.title}</h3>
+                <p>${item.caption}</p>
+                <button type="button" class="btn ghost-dark media-zoom-btn" data-zoom-idx="${idx}">放大檢視圖片</button>
+              </div>
+            </article>
+          `;
+        }).join("");
 
         const dlg = document.getElementById("img-lightbox");
         const dlgImg = document.getElementById("img-modal-src");
@@ -671,99 +840,45 @@
         const dlgCap = document.getElementById("img-modal-caption");
         const dlgClose = document.getElementById("img-modal-close");
 
-        imgGrid.querySelectorAll("img[data-idx]").forEach((imgEl) => {
-          imgEl.addEventListener("click", () => {
-            const data = MEDIA_CONFIG.images[Number(imgEl.dataset.idx)];
-            if (!data || !dlg) return;
-            dlgImg.src = data.src;
-            dlgImg.alt = data.title;
-            dlgTitle.textContent = data.title;
-            dlgCap.textContent = data.caption;
-            dlg.showModal();
-          });
+        const openLightbox = (idx) => {
+          const data = MARKETING_MEDIA.images[Number(idx)];
+          if (!data || !dlg) return;
+          dlgImg.src = `${MEDIA_DIR}/${encodeURIComponent(data.file)}`;
+          dlgImg.alt = data.title;
+          dlgTitle.textContent = data.title;
+          dlgCap.textContent = data.caption;
+          dlg.showModal();
+        };
+
+        imgGrid.querySelectorAll("[data-idx], [data-zoom-idx]").forEach(el => {
+          el.addEventListener("click", () => openLightbox(el.dataset.idx ?? el.dataset.zoomIdx));
         });
 
         if (dlgClose && dlg) {
           dlgClose.addEventListener("click", () => dlg.close());
-          dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+          dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
         }
       }
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      renderMediaGallery();
-
-      // 大字模式同步
+    function initBigText() {
       const bigBtn = document.getElementById("bigtext");
+      if (!bigBtn) return;
       const storageKey = "wc-bigtext";
-      const applyBigText = (on) => {
+      const applyBigText = on => {
         document.documentElement.style.fontSize = on ? "122%" : "";
         bigBtn.setAttribute("aria-pressed", on ? "true" : "false");
         try { localStorage.setItem(storageKey, on ? "1" : "0"); } catch (_) {}
       };
       try { if (localStorage.getItem(storageKey) === "1") applyBigText(true); } catch (_) {}
       bigBtn.addEventListener("click", () => applyBigText(bigBtn.getAttribute("aria-pressed") !== "true"));
+    }
 
-      // 表單處理
-      const form = document.getElementById("product-cta-form");
-      const copyBtn = document.getElementById("copy-btn");
-      const feedback = document.getElementById("form-feedback");
-
-      const buildPayload = () => {
-        const name = document.getElementById("user-name").value.trim();
-        const email = document.getElementById("user-email").value.trim();
-        const notes = document.getElementById("user-notes").value.trim();
-        const scenes = Array.from(document.querySelectorAll("input[name='scenarios']:checked")).map(el => el.value);
-
-        if (!name || !email) return { error: "請填寫「稱呼 / 企業或院校名稱」與「聯絡電子信箱」。" };
-        if (scenes.length === 0) return { error: "請至少勾選一項「想演練的情境」。" };
-
-        const subject = `[隱證 VeilProof 預售諮詢] ${name}（${scenes[0]}）`;
-        const body = [
-          "您好，我想諮詢「03｜隱證 VeilProof」的預售與演練導入方案：",
-          "",
-          `・稱呼 / 單位：${name}`,
-          `・聯絡信箱：${email}`,
-          `・想演練的情境：${scenes.join("、")}`,
-          `・需求與背景簡述：${notes || "（尚未填寫）"}`,
-          "",
-          "---",
-          "此登記摘要由 隱證 VeilProof 預售頁面產生"
-        ].join("\n");
-
-        return { subject, body };
-      };
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const res = buildPayload();
-        if (res.error) {
-          feedback.style.color = "#B42318";
-          feedback.textContent = res.error;
-          return;
-        }
-        feedback.style.color = "#1E7A70";
-        feedback.textContent = "已為您整理需求摘要並開啟預設郵件程式；若未自動開啟，請使用右側「複製登記摘要」。";
-        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(res.subject)}&body=${encodeURIComponent(res.body)}`;
-      });
-
-      copyBtn.addEventListener("click", async () => {
-        const res = buildPayload();
-        if (res.error) {
-          feedback.style.color = "#B42318";
-          feedback.textContent = res.error;
-          return;
-        }
-        const text = `${res.subject}\n\n${res.body}`;
-        try {
-          await navigator.clipboard.writeText(text);
-          feedback.style.color = "#1E7A70";
-          feedback.textContent = "✓ 登記摘要已複製到剪貼簿！";
-        } catch (_) {
-          feedback.style.color = "#B42318";
-          feedback.textContent = "瀏覽器限制自動複製，請改用「開啟信箱寄送預售諮詢」。";
-        }
-      });
+    document.addEventListener("DOMContentLoaded", () => {
+      renderMarketingAssets();
+      renderPlans();
+      initCheckoutBridge();
+      initBigText();
     });
   </script>
 </body>

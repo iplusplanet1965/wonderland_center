@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
-<!-- 水月道場 / Wonderland Center 全生態 10 條產品線（01 至 10）正式預售入口單頁 -->
+<!-- 水月道場 / Wonderland Center 全生態 10 條產品線（01 至 10）正式預售入口單頁（動態串接 CTA/serviceandpricing.md） -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>水月道場 / Wonderland Center｜全生態十大產品線預售入口</title>
-  <meta name="description" content="水月道場 / Wonderland Center（wonderland.ngo）攜手 AllView、AEGIS 與獨立授權平台，呈現 01 至 10 號全生態產品線之核心定位、法遵技術邊界與預售意向登記。">
+  <meta name="description" content="水月道場 / Wonderland Center（wonderland.center）攜手 AllView、AEGIS 與獨立授權平台，呈現 01 至 10 號全生態產品線之核心定位、7 折嘗鮮預售亮點、法遵技術邊界與預售意向登記。">
   <meta name="theme-color" content="#0B253A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +33,7 @@
       --accent-2: #D4AF37;
       --link: #0B253A;
       --kicker: #1E7A70;
+      --kicker-dark: #145750;
 
       --header-bg: rgba(244, 247, 246, 0.95);
       --hero-bg: radial-gradient(560px 560px at 80% 28%, rgba(244, 247, 246, 0.16), transparent 64%), linear-gradient(180deg, #0B253A 0%, #0e3049 100%);
@@ -170,7 +171,7 @@
     .btn.ghost-dark { border-color: var(--heading); color: var(--heading); background: transparent; }
     .btn.ghost-dark:hover { background: rgba(11, 37, 58, 0.06); }
     .btn.teal { background: var(--kicker); color: #FFFFFF; }
-    .btn.teal:hover { background: #18645b; }
+    .btn.teal:hover { background: var(--kicker-dark); }
 
     .tags { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 2rem; padding: 0; list-style: none; }
     .tags li {
@@ -212,7 +213,7 @@
 
     /* 事業體分類篩選按鈕列 */
     .filter-bar {
-      display: flex; flex-wrap: wrap; gap: 0.65rem; margin-bottom: 1.6rem;
+      display: flex; flex-wrap: wrap; gap: 0.65rem; margin-bottom: 1.4rem;
       align-items: center;
     }
     .filter-btn {
@@ -230,14 +231,20 @@
       padding: 0.9rem 1.15rem; background: var(--surface-2);
       border-left: 4px solid var(--kicker); border-radius: 0 8px 8px 0;
       font-size: 0.92rem; color: var(--text); margin-bottom: 1.8rem;
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.6rem;
+    }
+    .sync-pill {
+      font-family: var(--font-mono); font-size: 0.76rem; font-weight: 700;
+      padding: 0.2rem 0.65rem; border-radius: 999px;
+      background: #E6F3F1; color: var(--kicker-dark); border: 1px solid rgba(30, 122, 112, 0.3);
     }
 
     /* ==========================================================================
-       十大產品線卡片網格
+       十大產品線卡片網格與動態 7 折入門套裝亮點框
        ========================================================================== */
     .products-grid {
       display: grid; gap: 1.45rem;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
     }
     .product-card {
       background: var(--card); border: 1px solid var(--line);
@@ -277,6 +284,41 @@
     }
     .product-highlights li { margin-bottom: 0.32rem; }
 
+    /* 從 CTA/serviceandpricing.md 動態載入的 7 折入門亮點框 */
+    .starter-pricing-highlight {
+      background: linear-gradient(135deg, #0B253A 0%, #123957 100%);
+      color: #F4F7F6;
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+    }
+    .sph-top {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.3rem;
+    }
+    .sph-tag {
+      font-size: 0.74rem; font-weight: 700; padding: 0.14rem 0.55rem;
+      border-radius: 999px; background: var(--accent); color: var(--on-accent);
+    }
+    .sph-save {
+      font-family: var(--font-mono); font-size: 0.76rem; font-weight: 700;
+      color: #8CE2D7;
+    }
+    .sph-combo {
+      font-size: 0.85rem; color: #E4ECEA; margin-bottom: 0.35rem; font-weight: 500;
+    }
+    .sph-prices {
+      display: flex; align-items: baseline; gap: 0.55rem; flex-wrap: wrap;
+      font-family: var(--font-mono);
+    }
+    .sph-orig {
+      font-size: 0.8rem; color: #B8C7C5; text-decoration: line-through;
+    }
+    .sph-sale {
+      font-size: 1.15rem; font-weight: 700; color: var(--accent);
+    }
+
     .boundary-box {
       padding: 0.78rem 0.95rem; background: var(--notice-bg);
       border-left: 3px solid var(--notice-border); color: var(--notice-text);
@@ -285,9 +327,9 @@
     }
 
     .card-actions {
-      margin-top: auto; display: flex; flex-wrap: wrap; gap: 0.65rem;
+      margin-top: auto; display: flex; flex-wrap: wrap; gap: 0.55rem;
     }
-    .card-actions .btn { flex: 1 1 135px; padding: 0.65rem 0.95rem; font-size: 0.89rem; }
+    .card-actions .btn { flex: 1 1 115px; padding: 0.62rem 0.8rem; font-size: 0.86rem; }
 
     /* ==========================================================================
        原生 <dialog> 詳情與 FAQ 燈箱
@@ -398,13 +440,14 @@
           <path d="M15 32c3-2 6 2 9 0s6-2 9 0" fill="none" stroke="#2A9D8F" stroke-width="1.6" stroke-linecap="round"/>
           <circle cx="24" cy="16" r="4" fill="#D4AF37"/>
         </svg>
-        <span>水月道場 Wonderland Center<small>wonderland.ngo｜全生態十大產品線預售入口</small></span>
+        <span>水月道場 Wonderland Center<small>wonderland.center｜全生態十大產品線預售入口</small></span>
       </a>
 
       <nav class="main" aria-label="主導覽選單">
         <ul>
           <li><a href="#ecosystem">生態架構與獨立性</a></li>
           <li><a href="#products">十大產品線總覽</a></li>
+          <li><a href="CTA/index.html">全系列 7 折價目與結算</a></li>
           <li><a href="#governance">誠實邊界與隱私原則</a></li>
           <li><a href="#inquiry">預售意向登記</a></li>
           <li><button type="button" id="bigtext" class="btn-toggle" aria-pressed="false">長者友善大字</button></li>
@@ -422,13 +465,13 @@
         <p class="lead">整合「水月道場 / Wonderland Center」高齡關懷與生命教育倡議、「AllView」隱私社群與多語文化轉譯、「AEGIS」硬體金鑰與地端密文知識庫，以及獨立運作的專家與企業數位分身授權平台，為不同需求提供邊界清楚、可稽核、以人為本的數位服務。</p>
         <div class="cta">
           <a class="btn primary" href="#products">瀏覽全部 10 條產品線</a>
-          <a class="btn ghost" href="#inquiry">填寫預售意向登記</a>
+          <a class="btn ghost" href="CTA/index.html">前往 7 折預售結算與價目總表 →</a>
         </div>
         <ul class="tags">
           <li>01–10 全生態產品線導覽</li>
+          <li>早鳥嘗鮮預售全面 7 折</li>
           <li>嚴格區隔醫療與非醫療邊界</li>
           <li>金鑰與原始資料由持有者掌控</li>
-          <li>各產品線專屬預售頁直達</li>
         </ul>
       </div>
     </section>
@@ -446,7 +489,7 @@
           <article class="card feature">
             <span class="num">事業體 01｜水月道場 / Wonderland Center</span>
             <h3>高齡陪伴、生命教育與受控思念容器</h3>
-            <p style="margin:0">網域 <code>wonderland.ngo</code>，涵蓋 <strong>08｜永恆記憶 EternalMemory</strong>、<strong>09｜善終守護 AdvanceCare</strong> 與 <strong>10｜寰宇無界 SeniorTravel</strong>。採「AI 輔助＋真人把關」雙軌模型，嚴守非醫療與倫理紅線。</p>
+            <p style="margin:0">網域 <code>wonderland.center</code>，涵蓋 <strong>08｜永恆記憶 EternalMemory</strong>、<strong>09｜善終守護 AdvanceCare</strong> 與 <strong>10｜寰宇無界 SeniorTravel</strong>。採「AI 輔助＋真人把關」雙軌模型，嚴守非醫療與倫理紅線。</p>
           </article>
 
           <article class="card feature">
@@ -468,9 +511,9 @@
     <section id="products" aria-labelledby="products-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Product Lineup 01 — 10</span>
-          <h2 id="products-title">全生態 10 條產品線總覽與專屬預售入口</h2>
-          <p class="muted">可依事業體分類篩選檢視；點擊任一產品卡片的「詳情與 FAQ」可展開完整賣點與常見問答，或點擊「前往專屬預售頁」進入該產品獨立分頁。</p>
+          <span class="kicker">Product Lineup 01 — 10 · 70% Early-Bird Presale</span>
+          <h2 id="products-title">全生態 10 條產品線總覽與首年入門 7 折預售亮點</h2>
+          <p class="muted">每張產品卡片已自動同步《全產品定價與 7 折預售總表》之首年入門套裝優惠；可依事業體篩選檢視、展開「詳情與 FAQ」，或直接前往產品專屬介紹頁與共用結算中心。</p>
         </div>
 
         <!-- 分類篩選按鈕列 -->
@@ -481,8 +524,11 @@
           <button type="button" class="filter-btn" data-filter="aegis_indep" aria-pressed="false">AEGIS / 獨立平台（04–07）</button>
         </div>
 
-        <div id="filter-context-banner" class="corp-banner">
-          目前顯示：<strong>全部 10 條產品線</strong>（涵蓋水月道場 Wonderland Center、AllView、AEGIS 及獨立法人授權平台）。
+        <div class="corp-banner">
+          <div id="filter-context-text">
+            目前顯示：<strong>全部 10 條產品線</strong>（涵蓋水月道場 Wonderland Center、AllView、AEGIS 及獨立法人授權平台）。
+          </div>
+          <span id="pricing-sync-badge" class="sync-pill">正在同步 7 折預售價目表...</span>
         </div>
 
         <!-- 產品卡片容器 -->
@@ -520,8 +566,8 @@
 
           <div class="card">
             <span class="num">原則 04｜誠信預售揭露與隱私保護</span>
-            <h3>不承諾未公布價格與 SLA，不刊載匯款帳號</h3>
-            <p style="margin:0">各產品線之正式定價、方案細則與上線時程以正式簽署合約或官方公告為準。本公開入口頁不收集信用卡號或機密原稿，亦不刊載任何匯款帳號。</p>
+            <h3>7 折嘗鮮預售基準透明，正式條款以簽約為準</h3>
+            <p style="margin:0">各產品線之早鳥 7 折預售價係依《全產品定價與 7 折預售總表》估算，正式商業方案細則與交付時程以簽署合約為準。本公開入口頁不收集信用卡號或機密原稿。</p>
           </div>
         </div>
       </div>
@@ -532,8 +578,8 @@
       <div class="wrap">
         <div class="sec-head">
           <span class="kicker">Presale Interest Registration</span>
-          <h2 id="inquiry-title">全生態預售意向與需求登記</h2>
-          <p class="muted">請勾選您或貴單位感興趣的產品線（可複選）並留下聯絡資訊；系統將自動彙整登記摘要，您可一鍵開啟信箱寄送至 <code>contact@wonderland.ngo</code> 或複製摘要保存。</p>
+          <h2 id="inquiry-title">全生態預售意向與多產品線採購登記</h2>
+          <p class="muted">若貴單位預計同時導入多條產品線或需要企業專案報價，請勾選感興趣的項目並留下聯絡資訊；系統將自動彙整摘要寄送至 <code>contact@wonderland.center</code>。</p>
         </div>
 
         <div class="reserve-layout">
@@ -580,16 +626,16 @@
           <aside class="card">
             <h3>全生態總窗口與使用說明</h3>
             <dl class="facts" style="margin:1rem 0">
-              <dt>核心入口網域</dt><dd>wonderland.ngo</dd>
-              <dt>生態系總窗口</dt><dd><a href="mailto:contact@wonderland.ngo">contact@wonderland.ngo</a></dd>
-              <dt>產品線涵蓋</dt><dd>01 至 10 號全生態產品線</dd>
-              <dt>登記方式</dt><dd>零後端即時生成摘要與郵件喚起</dd>
+              <dt>核心入口網域</dt><dd>wonderland.center</dd>
+              <dt>生態系總窗口</dt><dd><a href="mailto:contact@wonderland.center">contact@wonderland.center</a></dd>
+              <dt>價目單一來源</dt><dd><code>CTA/serviceandpricing.md</code></dd>
+              <dt>直接結算中心</dt><dd><a href="CTA/index.html">CTA/index.html（支援 7 折試算）</a></dd>
             </dl>
             <div class="note">
-              <strong>隱私與誠信聲明：</strong>本網頁為純前端靜態頁面，不會在瀏覽器外儲存您的表單輸入，亦不收集信用卡號、身分證件或機密文件，且不刊載任何匯款帳號。
+              <strong>隱私與誠信聲明：</strong>本網頁為純前端靜態頁面，不會在瀏覽器外儲存您的表單輸入，亦不收集信用卡號、身分證件或機密文件。
             </div>
             <p style="margin-top:1.2rem;margin-bottom:0">
-              <a class="btn ghost-dark" style="width:100%" href="#products">回到上方挑選產品線</a>
+              <a class="btn teal" style="width:100%" href="CTA/index.html">前往全系列 7 折預售結算中心 →</a>
             </p>
           </aside>
         </div>
@@ -611,18 +657,41 @@
 
   <footer class="site">
     <div class="wrap">
-      <p><strong>© 2026 水月道場 / Wonderland Center（wonderland.ngo）× AllView（allview.today）× AEGIS（aegis.expert）</strong></p>
-      <p class="muted" style="font-size:0.84rem">斜槓一二三 / Slash123（slash1to3.com）與斜槓104 / Slash104（slash1ofours.com）各為獨立法人機構，與 AEGIS 無從屬關係，皆由水月道場有限合夥支持成立。本頁內容依各產品線審定之行銷與預售說明編製，正式規格與服務條款以簽署合約為準。</p>
+      <p><strong>© 2026 水月道場 / Wonderland Center（wonderland.center）× AllView（allview.today）× AEGIS（aegis.expert）</strong></p>
+      <p class="muted" style="font-size:0.84rem">斜槓一二三 / Slash123（slash1to3.com）與斜槓104 / Slash104（slash1ofours.com）各為獨立法人機構，與 AEGIS 無從屬關係，皆由水月道場有限合夥支持成立。本頁價目動態讀取自 <code>CTA/serviceandpricing.md</code>，正式規格與服務條款以簽署合約為準。</p>
     </div>
   </footer>
 
   <script>
     /**
-     * 可調整參數：
+     * ==========================================================================
+     * 可調整參數區：
+     * - PRICING_MD_PATH：共用價目 Markdown 檔相對路徑（"CTA/serviceandpricing.md"）
+     * - CHECKOUT_BASE_URL：共用結算頁相對路徑（"CTA/index.html"）
      * - CONTACT_EMAIL：全生態預售意向登記收件信箱
-     * - PRODUCTS：01 至 10 號全生態產品線結構化資料與專屬 CTA 路徑
+     * ==========================================================================
      */
-    const CONTACT_EMAIL = "contact@wonderland.ngo";
+    const PRICING_MD_PATH = "CTA/serviceandpricing.md";
+    const CHECKOUT_BASE_URL = "CTA/index.html";
+    const CONTACT_EMAIL = "contact@wonderland.center";
+
+    // 離線雙擊 (file://) 環境下無法 fetch 本機 .md 時的內建備援資料（與 CTA/serviceandpricing.md 一致）
+    const FALLBACK_STARTER_PRICING = {
+      "01": { combo: "Starter 年繳（純軟體）", origTotal: 49000, saleTotal: 34300, saved: 14700, defaultPlan: "Starter", defaultBundle: "0" },
+      "02": { combo: "Community 年繳（純軟體）", origTotal: 69000, saleTotal: 48300, saved: 20700, defaultPlan: "Community", defaultBundle: "0" },
+      "03": { combo: "Practice 年繳（純軟體）", origTotal: 79000, saleTotal: 55300, saved: 23700, defaultPlan: "Practice", defaultBundle: "0" },
+      "04": { combo: "USB 金鑰 + Starter 年繳", origTotal: 31900, saleTotal: 22330, saved: 9570, defaultPlan: "Starter", defaultBundle: "1" },
+      "05": { combo: "2槽 AI NAS + Basic 年繳", origTotal: 77900, saleTotal: 54530, saved: 23370, defaultPlan: "Basic", defaultBundle: "1" },
+      "06": { combo: "2槽 AI NAS + Expert Starter 年繳", origTotal: 67900, saleTotal: 47530, saved: 20370, defaultPlan: "Expert Starter", defaultBundle: "1" },
+      "07": { combo: "8槽 AI NAS + Team 年繳", origTotal: 267900, saleTotal: 187530, saved: 80370, defaultPlan: "Team", defaultBundle: "1" },
+      "08": { combo: "4槽 AI NAS + Family 年繳", origTotal: 138900, saleTotal: 97230, saved: 41670, defaultPlan: "Family", defaultBundle: "1" },
+      "09": { combo: "Personal 年繳（純軟體）", origTotal: 19000, saleTotal: 13300, saved: 5700, defaultPlan: "Personal", defaultBundle: "0" },
+      "10": { combo: "2槽 AI NAS + Home 年繳", origTotal: 67900, saleTotal: 47530, saved: 20370, defaultPlan: "Home", defaultBundle: "1" }
+    };
+
+    let activeStarterPricing = { ...FALLBACK_STARTER_PRICING };
+    let activeDiscountLabel = "7 折";
+    let currentFilter = "all";
 
     const PRODUCTS = [
       {
@@ -641,20 +710,11 @@
           "影音三軌同步交付：產出口白稿（VO）、字幕稿（SRT/VTT）與畫面動態字稿（OSG）。",
           "每語系獨立封裝並附上在地法規與文化敏感點人工複核清單。"
         ],
-        boundary: "範圍邊界：僅支援 8 種封閉白名單語系，不處理白名單外語系或純逐字直譯需求；不新增來源未提及之認證或功效宣稱；價格與交期尚未公布。",
+        boundary: "範圍邊界：僅支援 8 種封閉白名單語系，不處理白名單外語系或純逐字直譯需求；不新增來源未提及之認證或功效宣稱。",
         faqs: [
-          {
-            q: "跟一般機器翻譯工具有什麼不同？",
-            a: "一般工具只做字面語言轉換。OrbiLocale 會先萃取不可變更的事實表（鎖定規格、數據與免責聲明），再依目標市場重排賣點、改寫置入廣告利益點，並同步產出 VO、字幕與 OSG 三軌稿件與建議剪輯點。"
-          },
-          {
-            q: "重寫過程會改動產品數據、規格或價格嗎？",
-            a: "依設計原則不會。所有物理規格、數據、認證與價格皆寫入不可變更事實表；當地市場標示細節（如稅制用語）則列入人工複核註記提醒團隊確認。"
-          },
-          {
-            q: "產出後的交付包可以直接上架嗎？",
-            a: "系統交付的是可上架用的在地化內容包與一份人工複核註記清單，建議由貴團隊檢視複核清單確認無誤後再正式發布。"
-          }
+          { q: "跟一般機器翻譯工具有什麼不同？", a: "一般工具只做字面語言轉換。OrbiLocale 會先萃取不可變更的事實表（鎖定規格、數據與免責聲明），再依目標市場重排賣點、改寫置入廣告利益點，並同步產出 VO、字幕與 OSG 三軌稿件與建議剪輯點。" },
+          { q: "重寫過程會改動產品數據、規格或價格嗎？", a: "依設計原則不會。所有物理規格、數據、認證與價格皆寫入不可變更事實表；當地市場標示細節則列入人工複核註記提醒團隊確認。" },
+          { q: "產出後的交付包可以直接上架嗎？", a: "系統交付的是可上架用的在地化內容包與一份人工複核註記清單，建議由貴團隊檢視複核清單確認無誤後再正式發布。" }
         ]
       },
       {
@@ -673,20 +733,11 @@
           "FHE 密文運算：密文狀態下執行推薦匹配與同態加法匿名投票。",
           "簽章收據與條件式舉證：收據寫入 Merkle 證據鏈，僅在司法仲裁或授權門檻湊齊時檢驗。"
         ],
-        boundary: "誠實設計邊界：密圈定位為「公開偽匿名＋條件式舉證」，並非「誰都查不到」的絕對匿名承諾；本頁不宣稱已通過司法認證或達到外部通訊軟體同等完成度；價格與上線時程尚未公布。",
+        boundary: "誠實設計邊界：密圈定位為「公開偽匿名＋條件式舉證」，並非「誰都查不到」的絕對匿名承諾；本頁不宣稱已通過司法認證。",
         faqs: [
-          {
-            q: "密圈是匿名到誰都查不到的平台嗎？",
-            a: "不是。密圈的設計是公開環境下的偽匿名：一般公開場合不暴露真實身分；但若授權或司法仲裁門檻滿足，特定發表或閱讀紀錄可以被驗證。"
-          },
-          {
-            q: "誰來保管可以調閱證據的金鑰？",
-            a: "系統設計為僅在「司法仲裁或授權門檻金鑰湊齊時」方可檢視特定紀錄；具體門檻金鑰持有者配置將依組織部署方案定案。"
-          },
-          {
-            q: "平台看得到我的內容與投票選擇嗎？",
-            a: "通訊以端對端加密為預設方向，推薦匹配與匿名投票以 FHE 密文運算為設計目標，避免計票方或平台在未解密前看到個別選擇。"
-          }
+          { q: "密圈是匿名到誰都查不到的平台嗎？", a: "不是。密圈的設計是公開環境下的偽匿名：一般公開場合不暴露真實身分；但若授權或司法仲裁門檻滿足，特定發表或閱讀紀錄可以被驗證。" },
+          { q: "誰來保管可以調閱證據的金鑰？", a: "系統設計為僅在「司法仲裁或授權門檻金鑰湊齊時」方可檢視特定紀錄；具體門檻金鑰持有者配置將依組織部署方案定案。" },
+          { q: "平台看得到我的內容與投票選擇嗎？", a: "通訊以端對端加密為預設方向，推薦匹配與匿名投票以 FHE 密文運算為設計目標，避免計票方或平台在未解密前看到個別選擇。" }
         ]
       },
       {
@@ -705,20 +756,11 @@
           "八大模組（MOD-01～08）：整合 ZOPA、BATNA、What-if 分支、AI 對手與脫敏個案匯出。",
           "角色與模式守衛：區分教練、觀察員、選手三種角色，訓練與實戰模式嚴格分離。"
         ],
-        boundary: "免責與技術邊界：AI 提示、勝率估算與策略建議僅供商務決策訓練與教育參考，不構成正式法律、投資或併購操作依據；FHE 僅用於固定比較評分電路，AI 對話走隔離受控推論。",
+        boundary: "免責與技術邊界：AI 提示、勝率估算與策略建議僅供商務決策訓練與教育參考，不構成正式法律、投資或併購操作依據；FHE 僅用於固定比較評分電路。",
         faqs: [
-          {
-            q: "平台看得到我們輸入的底線數字嗎？",
-            a: "依設計不會。底牌在客戶端加密後才送出，運算節點只在密文上比對，且嚴禁底牌以明文或僅用傳輸加密的方式送到伺服器。"
-          },
-          {
-            q: "AI 對手的對話也是同態加密運算嗎？",
-            a: "不是。密文運算僅用於預先定義的比較、評分與加權計算；AI 對手的自然語言對話走隔離的受控推論。"
-          },
-          {
-            q: "推演紀錄可以拿來當法律證據嗎？",
-            a: "不建議這樣主張。紀錄可用於覆盤與教學，但本產品聲明不構成正式法律、投資或併購操作依據。"
-          }
+          { q: "平台看得到我們輸入的底線數字嗎？", a: "依設計不會。底牌在客戶端加密後才送出，運算節點只在密文上比對，且嚴禁底牌以明文或僅用傳輸加密的方式送到伺服器。" },
+          { q: "AI 對手的對話也是同態加密運算嗎？", a: "不是。密文運算僅用於預先定義的比較、評分與加權計算；AI 對手的自然語言對話走隔離的受控推論。" },
+          { q: "推演紀錄可以拿來當法律證據嗎？", a: "不建議這樣主張。紀錄可用於覆盤與教學，但本產品聲明不構成正式法律、投資或併購操作依據。" }
         ]
       },
       {
@@ -735,22 +777,13 @@
           "FAIL-CLOSED 路由：檢查端點經簽章的 L1／L2 能力宣告，不支援密文即拒絕，絕不改送明文。",
           "複合金鑰與 USB 邊界：私鑰於本機組合存於 USB（不做雲端備份），伺服器端不持有解密金鑰。",
           "拔除即清除與記憶體鎖定：拔除 USB 即中止傳輸、白屏並抹除記憶體明文，防止寫入 Swap。",
-          "四段階段指示器與零明文日誌：誠實呈現批次等待階段，不假裝逐字串流。"
+          "五段階段指示器與零明文日誌：誠實呈現批次等待階段，不假裝逐字串流。"
         ],
-        boundary: "能力分級與回傳邊界：L0（僅 TLS）非本產品；L1（固定電路密文運算）本期交付；L2（端點密文推論）條件交付；L3（任意閉源商用 LLM 直接處理密文）非現行科技不承諾。加密範圍為使用者輸入，結果以明文回傳。",
+        boundary: "能力分級與回傳邊界：L0（僅 TLS）非本產品；L1（固定電路密文運算）本期交付；L2（端點密文推論）條件交付；L3（任意閉源商用 LLM 直接處理密文）非現行科技不承諾。",
         faqs: [
-          {
-            q: "可以用 HEShell 加密我們現在用的雲端 AI 聊天服務嗎？",
-            a: "不行。一般商用 LLM API 不能直接處理密文（L3 不是現行技術）；HEShell 只會把請求送往有明確密文能力宣告的端點，其餘一律拒絕。"
-          },
-          {
-            q: "明文會送到外部 HE Provider 嗎？結果也是加密的嗎？",
-            a: "提問明文不會送到外部 HE Provider，伺服器端也不持有解密金鑰；HEShell 的加密範圍為送出的使用者輸入，運算結果以明文回傳。"
-          },
-          {
-            q: "USB 遺失怎麼辦？系統會訓練我們的資料嗎？",
-            a: "USB 位於虛擬機的 USB 埠，可自行備份、遺失不補發、不做雲端備份；HEShell 不訓練也不微調任何模型。"
-          }
+          { q: "可以用 HEShell 加密我們現在用的雲端 AI 聊天服務嗎？", a: "不行。一般商用 LLM API 不能直接處理密文（L3 不是現行技術）；HEShell 只會把請求送往有明確密文能力宣告的端點，其餘一律拒絕。" },
+          { q: "明文會送到外部 HE Provider 嗎？結果也是加密的嗎？", a: "提問明文不會送到外部 HE Provider，伺服器端也不持有解密金鑰；HEShell 的加密範圍為送出的使用者輸入，運算結果以明文回傳。" },
+          { q: "USB 遺失怎麼辦？系統會訓練我們的資料嗎？", a: "USB 位於虛擬機的 USB 埠，可自行備份、遺失不補發、不做雲端備份；HEShell 不訓練也不微調任何模型。" }
         ]
       },
       {
@@ -769,20 +802,11 @@
           "USB 在位解密與命名空間授權：USB 在位才解密顯示，拔除即清除前端明文，依命名空間切分權限。",
           "六項強制行為規範與零原文日誌：正式服務模式封鎖明文匯出，日誌僅記識別碼與密文雜湊。"
         ],
-        boundary: "必揭露 S1 邊界聲明：密文智庫 v1 為 S1「地端受控執行＋雙向密文封裝」，模型在設備隔離環境內推論，過程中有受控的短暫解密點（非全程密文運算）；S2 密文域同態推論為實驗模組；S3 雲端大模型排除；S0 單向輸入加密架構嚴格廢棄。",
+        boundary: "必揭露 S1 邊界聲明：密文智庫 v1 為 S1「地端受控執行＋雙向密文封裝」，模型在設備隔離環境內推論，過程中有受控的短暫解密點（非全程密文運算）；S3 雲端大模型排除。",
         faqs: [
-          {
-            q: "密文智庫 v1 是全程同態加密推論嗎？",
-            a: "v1 不是。v1 為 S1「地端受控執行」：模型在設備的隔離環境內推論，過程中有受控的短暫解密點，回答再以同一把會話金鑰封裝成密文送出；S2 僅為研發／實驗模組。"
-          },
-          {
-            q: "可以連接外部雲端的大模型嗎？",
-            a: "不行。S3 明確排除任意雲端大模型的雙向密文互動，系統也不保留任何改送雲端明文的後路。"
-          },
-          {
-            q: "密文智庫與神盾殼 HEShell 有什麼不同？",
-            a: "密文智庫自帶本地模型、RAG、儲存與回吐層，是地端運算與知識庫節點（回答以密文回傳至地端模型端）；HEShell 是本機安全殼層與路由中繼（結果以明文回傳），兩者安全分級體系亦不同。"
-          }
+          { q: "密文智庫 v1 是全程同態加密推論嗎？", a: "v1 不是。v1 為 S1「地端受控執行」：模型在設備的隔離環境內推論，過程中有受控的短暫解密點，回答再以同一把會話金鑰封裝成密文送出；S2 僅為研發／實驗模組。" },
+          { q: "可以連接外部雲端的大模型嗎？", a: "不行。S3 明確排除任意雲端大模型的雙向密文互動，系統也不保留任何改送雲端明文的後路。" },
+          { q: "密文智庫與神盾殼 HEShell 有什麼不同？", a: "密文智庫自帶本地模型、RAG、儲存與回吐層，是地端運算與知識庫節點（回答以密文回傳至地端模型端）；HEShell 是本機安全殼層與路由中繼（結果以明文回傳）。" }
         ]
       },
       {
@@ -801,20 +825,11 @@
           "四級權限分級：支援僅問答（QNA_ONLY）、附引用索引（WITH_CITATION）等，再授權預設停用且嚴禁轉售。",
           "試問不洩底與收據對帳：未購前僅提供合成示範，每次調用留下授權收據供雙方對帳。"
         ],
-        boundary: "法人獨立與邊界聲明：斜槓一二三 / Slash123 為獨立法人機構，與 AEGIS 無從屬關係，由水月道場有限合夥支持成立。平台不訓練模型、不收存明文知識包；價格、抽成與上線時程尚未公布。",
+        boundary: "法人獨立與邊界聲明：斜槓一二三 / Slash123 為獨立法人機構，與 AEGIS 無從屬關係，由水月道場有限合夥支持成立。平台不訓練模型、不收存明文知識包。",
         faqs: [
-          {
-            q: "平台會拿專家的知識去訓練模型嗎？",
-            a: "不會。平台不訓練模型、不收存明文知識包；分身能力在專家自己的地端設備上形成。"
-          },
-          {
-            q: "購買的授權可以轉賣給其他人嗎？",
-            a: "不可以。再授權權限（REAUTHORIZE）預設停用，而且嚴禁轉售；撤銷後新的提問請求會立即失敗。"
-          },
-          {
-            q: "交易方式有哪些？",
-            a: "規劃包含公開定價訂閱、次數包與限額競標三種方式，交易標的是可計量的權利物件（Grant），不是資料集。"
-          }
+          { q: "平台會拿專家的知識去訓練模型嗎？", a: "不會。平台不訓練模型、不收存明文知識包；分身能力在專家自己的地端設備上形成。" },
+          { q: "購買的授權可以轉賣給其他人嗎？", a: "不可以。再授權權限（REAUTHORIZE）預設停用，而且嚴禁轉售；撤銷後新的提問請求會立即失敗。" },
+          { q: "交易方式有哪些？", a: "規劃包含公開定價訂閱、次數包與限額競標三種方式，交易標的是可計量的權利物件（Grant），不是資料集。" }
         ]
       },
       {
@@ -833,20 +848,11 @@
           "智財標籤隔離與五階 RBAC：以 IP_INTERNAL_ONLY 隔離內部機密，對外分身無法檢索。",
           "對內治理＋對外雙層授權：管理層只看用量與成功率，不能調閱員工或買方問答明文。"
         ],
-        boundary: "法人獨立與邊界聲明：斜槓104 / Slash104 為獨立法人機構，與 AEGIS 無從屬關係，由水月道場有限合夥支持成立。不適用於跨公司共編分身或需要下載原始資料庫者；企業方案與價格尚未公布。",
+        boundary: "法人獨立與邊界聲明：斜槓104 / Slash104 為獨立法人機構，與 AEGIS 無從屬關係，由水月道場有限合夥支持成立。不適用於跨公司共編分身或需要下載原始資料庫者。",
         faqs: [
-          {
-            q: "斜槓104 跟斜槓一二三有什麼不同？",
-            a: "斜槓一二三是個人專家授權自己的能力；斜槓104 的主體是公司或團隊，知識由多位成員貢獻並經過審核，資產歸公司，並同時處理對內治理與對外授權。"
-          },
-          {
-            q: "主管或管理層可以看員工問了 AI 什麼嗎？",
-            a: "不行。依設計，管理層只能看用量與成功率，不能調閱員工或買方的問答明文。"
-          },
-          {
-            q: "員工離職後，知識與權限會如何處理？",
-            a: "人員異動時權限標記失效並同步至地端設備側，新請求立即阻斷；已併入的知識留在公司，不會以明文被帶走。"
-          }
+          { q: "斜槓104 跟斜槓一二三有什麼不同？", a: "斜槓一二三是個人專家授權自己的能力；斜槓104 的主體是公司或團隊，知識由多位成員貢獻並經過審核，資產歸公司，並同時處理對內治理與對外授權。" },
+          { q: "主管或管理層可以看員工問了 AI 什麼嗎？", a: "不行。依設計，管理層只能看用量與成功率，不能調閱員工或買方的問答明文。" },
+          { q: "員工離職後，知識與權限會如何處理？", a: "人員異動時權限標記失效並同步至地端設備側，新請求立即阻斷；已併入的知識留在公司，不會以明文被帶走。" }
         ]
       },
       {
@@ -865,20 +871,11 @@
           "紅線三｜資料來源白名單：未經著作權人或法定繼承人書面授權之私密通訊嚴禁匯入。",
           "真人把關（HITL）：家屬同意、心理衝擊評估、敏感立場審查與即時熔斷（Kill-Switch）。"
         ],
-        boundary: "核心免責與時程聲明：重現的數位形象只是「回聲」，不代表已故者在現世法律、政治或商業上的實質代理人。方案與價格尚未公布，交付範圍、驗收、履約量能與契約條件尚待確認。",
+        boundary: "核心免責聲明：重現的數位形象只是「回聲」，不代表已故者在現世法律、政治或商業上的實質代理人；預售款依授權代收合約由全視界台灣分公司代收。",
         faqs: [
-          {
-            q: "AI 會說出他沒說過的話嗎？",
-            a: "系統以其公開著作與授權語料回應；對他生前未表態的議題，只能以其思想框架提出推演，並明確標示為假設，不會以「本人立場」作確定性回答。"
-          },
-          {
-            q: "可以用家人的 LINE 對話或私人信件嗎？",
-            a: "未經著作權人、出版機構或法定遺產繼承人書面授權的私密通訊，不得匯入；具體授權流程尚待確認。"
-          },
-          {
-            q: "如果 AI 說了不恰當的話怎麼辦？",
-            a: "爭議言論由真人以即時熔斷機制（Kill-Switch）中斷，並進行事後覆盤。"
-          }
+          { q: "AI 會說出他沒說過的話嗎？", a: "系統以其公開著作與授權語料回應；對他生前未表態的議題，只能以其思想框架提出推演，並明確標示為假設，不會以「本人立場」作確定性回答。" },
+          { q: "可以用家人的 LINE 對話或私人信件嗎？", a: "未經著作權人、出版機構或法定遺產繼承人書面授權的私密通訊，不得匯入；具體授權流程尚待確認。" },
+          { q: "如果 AI 說了不恰當的話怎麼辦？", a: "爭議言論由真人以即時熔斷機制（Kill-Switch）中斷，並進行事後覆盤。" }
         ]
       },
       {
@@ -897,20 +894,11 @@
           "不替你簽署：AI 只協助條例問答與預填表單，正式健保卡註記須至法定醫療機構見證完成。",
           "隱私與零訓練：肖像與生成影片加密保存，自上傳起 90 天自動永久銷毀（可隨時立即刪除）。"
         ],
-        boundary: "核心聲明（必讀）：善終守護 AdvanceCare 嚴格定位為「教育與決策輔助工具」，絕非醫療行為本身，亦不替代醫師臨床說明。所有正式健保卡預立意願註記（不施行心肺復甦術、不施行維生醫療）均須導引至法定合法醫療機構完成。",
+        boundary: "核心聲明（必讀）：善終守護 AdvanceCare 嚴格定位為「教育與決策輔助工具」，絕非醫療行為本身，亦不替代醫師臨床說明。正式健保卡預立意願註記均須導引至法定合法醫療機構完成。",
         faqs: [
-          {
-            q: "這是醫療諮詢嗎？可以在這裡完成健保卡註記嗎？",
-            a: "不是醫療諮詢，也不替代醫師臨床說明。系統只產出預填表單，所有正式健保卡預立意願註記均須導引至法定合法醫療機構由專人見證完成。"
-          },
-          {
-            q: "影片裡的情況會真的發生在我身上嗎？",
-            a: "不一定。影片與指標是經安寧緩和專科醫師審核的情境模擬，屬非絕對預測，僅供教育決策輔助參考。"
-          },
-          {
-            q: "我和家人的照片會怎麼處理？",
-            a: "加密儲存，自上傳起 90 天自動永久刪除，也可以隨時手動立即銷毀；不會用來訓練或微調任何 AI 模型。"
-          }
+          { q: "這是醫療諮詢嗎？可以在這裡完成健保卡註記嗎？", a: "不是醫療諮詢，也不替代醫師臨床說明。系統只產出預填表單，所有正式健保卡預立意願註記均須導引至法定合法醫療機構由專人見證完成。" },
+          { q: "影片裡的情況會真的發生在我身上嗎？", a: "不一定。影片與指標是經安寧緩和專科醫師審核的情境模擬，屬非絕對預測，僅供教育決策輔助參考。" },
+          { q: "我和家人的照片會怎麼處理？", a: "加密儲存，自上傳起 90 天自動永久刪除，也可以隨時手動立即銷毀；不會用來訓練或微調任何 AI 模型。" }
         ]
       },
       {
@@ -929,20 +917,11 @@
           "親友同遊與漫遊手札：外地子女可用手機加入同一個景點，旅程結束生成附語音祝福的手札。",
           "長者友善設計目標：對比度 ≥ 7:1、字體 ≥ 24pt、觸控目標 ≥ 64×64 px，瞬移過渡防暈眩。"
         ],
-        boundary: "非醫療與設計目標聲明：本系統的穿戴感知只用來動態調節體驗節奏，不提供醫療診斷，也不是醫療器材。無障礙規格以 WCAG 2.1 AAA 準則為設計目標，尚未經第三方認證；方案與價格尚未公布。",
+        boundary: "非醫療與設計目標聲明：本系統的穿戴感知只用來動態調節體驗節奏，不提供醫療診斷，也不是醫療器材。無障礙規格以 WCAG 2.1 AAA 準則為設計目標，尚未經第三方認證。",
         faqs: [
-          {
-            q: "手環的心率資料會用來看病嗎？",
-            a: "不會。穿戴感知只用來動態調節旅程體驗節奏（例如偵測到疲勞時自動進入休整模式），系統不提供醫療診斷，也不是醫療器材。"
-          },
-          {
-            q: "志工看得到我家嗎？",
-            a: "志工接入視訊時，系統會自動模糊居家背景、遮蔽病歷與私人物品。"
-          },
-          {
-            q: "符合無障礙標準嗎？需要買 VR 設備嗎？",
-            a: "介面以 WCAG 2.1 AAA 準則為設計目標（如對比度 ≥ 7:1、字體 ≥ 24pt），尚未經第三方認證；支援設備與租賃條件尚待確認。"
-          }
+          { q: "手環的心率資料會用來看病嗎？", a: "不會。穿戴感知只用來動態調節旅程體驗節奏（例如偵測到疲勞時自動進入休整模式），系統不提供醫療診斷，也不是醫療器材。" },
+          { q: "志工看得到我家嗎？", a: "志工接入視訊時，系統會自動模糊居家背景、遮蔽病歷與私人物品。" },
+          { q: "符合無障礙標準嗎？需要買 VR 設備嗎？", a: "介面以 WCAG 2.1 AAA 準則為設計目標（如對比度 ≥ 7:1、字體 ≥ 24pt），尚未經第三方認證；支援設備與租賃條件可於結算頁洽談確認。" }
         ]
       }
     ];
@@ -955,40 +934,136 @@
     };
 
     /**
-     * 渲染產品卡片網格
+     * 解析 CTA/serviceandpricing.md 內的「首年入門套裝預售對比」表格與折扣率
+     */
+    function parseStarterPricingFromMarkdown(mdText) {
+      let discountRate = 0.7;
+      const rateMatch = mdText.match(/discount_rate:\s*([0-9.]+)/i);
+      if (rateMatch) {
+        const parsedRate = parseFloat(rateMatch[1]);
+        if (!isNaN(parsedRate) && parsedRate > 0 && parsedRate <= 1) {
+          discountRate = parsedRate;
+        }
+      }
+
+      const sectionMatch = mdText.match(/##\s*首年入門套裝預售對比([\s\S]*?)(?=\n---|\n##\s*\[)/);
+      if (!sectionMatch) return { discountRate, starterMap: null };
+
+      const lines = sectionMatch[1].trim().split("\n");
+      const starterMap = {};
+
+      lines.forEach((line) => {
+        const trimmed = line.trim();
+        if (!trimmed.startsWith("|") || trimmed.includes("---")) return;
+        const cells = trimmed.split("|").map(c => c.trim()).filter((_, idx, arr) => idx > 0 && idx < arr.length - 1);
+        if (cells.length < 11) return;
+
+        const id = cells[0].padStart(2, "0");
+        if (!/^\d{2}$/.test(id)) return;
+
+        const combo = cells[3];
+        const origTotal = Number(cells[6].replace(/,/g, "")) || 0;
+        const saleTotal = Number(cells[9].replace(/,/g, "")) || 0;
+        const saved = Number(cells[10].replace(/,/g, "")) || (origTotal - saleTotal);
+
+        const base = FALLBACK_STARTER_PRICING[id] || { defaultPlan: "Starter", defaultBundle: "0" };
+        starterMap[id] = {
+          combo,
+          origTotal,
+          saleTotal,
+          saved,
+          defaultPlan: base.defaultPlan,
+          defaultBundle: base.defaultBundle
+        };
+      });
+
+      return { discountRate, starterMap: Object.keys(starterMap).length > 0 ? starterMap : null };
+    }
+
+    /**
+     * 非同步載入 CTA/serviceandpricing.md 並更新卡片價格亮點
+     */
+    async function loadPricingFromMarkdown() {
+      const syncBadge = document.getElementById("pricing-sync-badge");
+      try {
+        const resp = await fetch(PRICING_MD_PATH, { cache: "no-cache" });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const mdText = await resp.text();
+        const { discountRate, starterMap } = parseStarterPricingFromMarkdown(mdText);
+
+        if (starterMap) {
+          activeStarterPricing = { ...FALLBACK_STARTER_PRICING, ...starterMap };
+          const fold = Math.round(discountRate * 100);
+          activeDiscountLabel = fold % 10 === 0 ? `${fold / 10} 折` : `${fold} 折`;
+          if (syncBadge) {
+            syncBadge.textContent = `✓ 已即時同步 CTA/serviceandpricing.md（${activeDiscountLabel}嘗鮮預售）`;
+          }
+          renderProducts(currentFilter);
+        }
+      } catch (_) {
+        if (syncBadge) {
+          syncBadge.textContent = `✓ 7 折嘗鮮預售基準（與 CTA/serviceandpricing.md 同步）`;
+        }
+      }
+    }
+
+    /**
+     * 渲染產品卡片網格（內含從 CTA/serviceandpricing.md 讀取的首年入門 7 折亮點）
      */
     function renderProducts(filterKey = "all") {
+      currentFilter = filterKey;
       const grid = document.getElementById("products-grid");
-      const banner = document.getElementById("filter-context-banner");
+      const bannerText = document.getElementById("filter-context-text");
       if (!grid) return;
 
-      if (banner && FILTER_DESCRIPTIONS[filterKey]) {
-        banner.innerHTML = FILTER_DESCRIPTIONS[filterKey];
+      if (bannerText && FILTER_DESCRIPTIONS[filterKey]) {
+        bannerText.innerHTML = FILTER_DESCRIPTIONS[filterKey];
       }
 
       const list = filterKey === "all"
         ? PRODUCTS
         : PRODUCTS.filter((item) => item.category === filterKey);
 
-      grid.innerHTML = list.map((p) => `
-        <article class="product-card" data-category="${p.category}">
-          <div class="product-meta">
-            <span class="product-code">${p.code}</span>
-            <span class="entity-badge ${p.entityBadgeClass}">${p.entityLabel}</span>
+      grid.innerHTML = list.map((p) => {
+        const sp = activeStarterPricing[p.id];
+        const checkoutHref = `${CHECKOUT_BASE_URL}?product=${p.id}&plan=${encodeURIComponent(sp.defaultPlan)}&billing=yearly&bundle=${sp.defaultBundle}`;
+
+        const pricingBoxHtml = sp ? `
+          <div class="starter-pricing-highlight">
+            <div class="sph-top">
+              <span class="sph-tag">★ 入門首年 ${activeDiscountLabel} 嘗鮮套裝</span>
+              <span class="sph-save">現省 NT$ ${sp.saved.toLocaleString("zh-TW")}</span>
+            </div>
+            <div class="sph-combo">${sp.combo}</div>
+            <div class="sph-prices">
+              <span class="sph-orig">原價 NT$ ${sp.origTotal.toLocaleString("zh-TW")}</span>
+              <span class="sph-sale">NT$ ${sp.saleTotal.toLocaleString("zh-TW")}</span>
+            </div>
           </div>
-          <h3>${p.name}</h3>
-          <p class="product-tagline">${p.tagline}</p>
-          <p class="product-summary">${p.summary}</p>
-          <ul class="product-highlights">
-            ${p.highlights.map((h) => `<li>${h}</li>`).join("")}
-          </ul>
-          <div class="boundary-box">${p.boundary}</div>
-          <div class="card-actions">
-            <button type="button" class="btn ghost-dark" data-detail-id="${p.id}">詳情與 FAQ</button>
-            <a class="btn primary" href="${p.ctaUrl}">前往專屬預售頁 →</a>
-          </div>
-        </article>
-      `).join("");
+        ` : "";
+
+        return `
+          <article class="product-card" data-category="${p.category}">
+            <div class="product-meta">
+              <span class="product-code">${p.code}</span>
+              <span class="entity-badge ${p.entityBadgeClass}">${p.entityLabel}</span>
+            </div>
+            <h3>${p.name}</h3>
+            <p class="product-tagline">${p.tagline}</p>
+            <p class="product-summary">${p.summary}</p>
+            <ul class="product-highlights">
+              ${p.highlights.map((h) => `<li>${h}</li>`).join("")}
+            </ul>
+            ${pricingBoxHtml}
+            <div class="boundary-box">${p.boundary}</div>
+            <div class="card-actions">
+              <button type="button" class="btn ghost-dark" data-detail-id="${p.id}">詳情與 FAQ</button>
+              <a class="btn teal" href="${p.ctaUrl}">產品介紹 →</a>
+              <a class="btn primary" href="${checkoutHref}">${activeDiscountLabel} 預售結算</a>
+            </div>
+          </article>
+        `;
+      }).join("");
 
       grid.querySelectorAll("button[data-detail-id]").forEach((btn) => {
         btn.addEventListener("click", () => openProductModal(btn.dataset.detailId));
@@ -1000,6 +1075,7 @@
      */
     function openProductModal(productId) {
       const product = PRODUCTS.find((item) => item.id === productId);
+      const sp = activeStarterPricing[productId];
       const dlg = document.getElementById("product-modal");
       const codeEl = document.getElementById("modal-code");
       const titleEl = document.getElementById("modal-title");
@@ -1007,12 +1083,30 @@
 
       if (!product || !dlg || !bodyEl) return;
 
+      const checkoutHref = sp
+        ? `${CHECKOUT_BASE_URL}?product=${product.id}&plan=${encodeURIComponent(sp.defaultPlan)}&billing=yearly&bundle=${sp.defaultBundle}`
+        : `${CHECKOUT_BASE_URL}?product=${product.id}`;
+
       codeEl.textContent = `${product.code} · ${product.entityLabel}`;
       titleEl.textContent = product.name;
 
       bodyEl.innerHTML = `
         <p style="font-weight:700;color:var(--heading);font-size:1.05rem">${product.tagline}</p>
         <p>${product.summary}</p>
+
+        ${sp ? `
+          <div class="starter-pricing-highlight">
+            <div class="sph-top">
+              <span class="sph-tag">★ 入門首年 ${activeDiscountLabel} 嘗鮮套裝</span>
+              <span class="sph-save">現省 NT$ ${sp.saved.toLocaleString("zh-TW")}</span>
+            </div>
+            <div class="sph-combo">${sp.combo}</div>
+            <div class="sph-prices">
+              <span class="sph-orig">標準首年總原價 NT$ ${sp.origTotal.toLocaleString("zh-TW")}</span>
+              <span class="sph-sale">NT$ ${sp.saleTotal.toLocaleString("zh-TW")}</span>
+            </div>
+          </div>
+        ` : ""}
 
         <div class="modal-section">
           <h4>核心設計重點與交付價值</h4>
@@ -1037,8 +1131,9 @@
         </div>
 
         <div class="modal-footer-actions">
-          <a class="btn primary" href="${product.ctaUrl}">進入「${product.name}」專屬預售頁 →</a>
-          <button type="button" class="btn teal" data-select-product="${product.name}">勾選此產品並前往登記意向</button>
+          <a class="btn teal" href="${product.ctaUrl}">進入「${product.name}」產品介紹頁 →</a>
+          <a class="btn primary" href="${checkoutHref}">前往 ${activeDiscountLabel} 預售結算中心 →</a>
+          <button type="button" class="btn ghost-dark" data-select-product="${product.name}">勾選至多產品諮詢單</button>
         </div>
       `;
 
@@ -1103,7 +1198,7 @@
     }
 
     /**
-     * 渲染並初始化無後端全生態預售意向登記表單（支援 mailto: 喚起與一鍵複製登記摘要）
+     * 渲染並初始化無後端全生態預售意向登記表單
      */
     function initInquirySystem() {
       const boxContainer = document.getElementById("product-checkboxes");
@@ -1138,7 +1233,7 @@
 
         const subject = `[水月道場 / 全生態預售意向登記] ${name}（共 ${selected.length} 項產品線）`;
         const body = [
-          "您好，我想登記諮詢以下生態系產品線的正式方案與後續進度：",
+          "您好，我想登記諮詢以下生態系產品線的 7 折預售方案與導入規劃：",
           "",
           `・稱呼 / 機構：${name}`,
           `・聯絡信箱：${email}`,
@@ -1201,6 +1296,7 @@
 
     document.addEventListener("DOMContentLoaded", () => {
       renderProducts("all");
+      loadPricingFromMarkdown();
       initCategoryFilters();
       initModalControls();
       initBigText();

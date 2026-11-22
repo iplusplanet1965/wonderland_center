@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
+<!-- 產品線：07｜斜槓104 / Slash104（獨立法人：slash1ofours.com）｜檔案路徑：Slash104/index.html -->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>斜槓104 / Slash104｜企業級領域知識與智慧財產數位分身授權平台 — 專屬預售諮詢</title>
-  <meta name="description" content="斜槓104 / Slash104 讓分身歸公司、知識不跟著離職走。支援審核閘門、智財標籤隔離、五階 RBAC 與對內對外雙層授權，原始資料不離開企業設備。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>斜槓104 / Slash104｜企業級領域知識與智慧財產數位分身授權平台 — 7 折嘗鮮預售</title>
+  <meta name="description" content="斜槓104 / Slash104（slash1ofours.com）專為公司與團隊設計：成員知識經審核才併入企業分身，離職撤權不帶走明文，智財標籤隔離對內治理與對外授權。">
   <meta name="theme-color" content="#0B253A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* 水月道場 / Wonderland Center — CIS 設計系統（60% 底色 / 30% 結構 / 10% 點綴） */
     :root {
       --font-body: "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
       --font-display: "Cinzel", "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", serif;
@@ -19,22 +22,23 @@
       --text: #1A1E24;
       --heading: #0B253A;
       --muted: #46525C;
-      --line: rgba(11, 37, 58, .14);
-      --line-strong: rgba(11, 37, 58, .35);
+      --line: rgba(11, 37, 58, 0.14);
+      --line-strong: rgba(11, 37, 58, 0.35);
 
       --accent: #D4AF37;
       --on-accent: #1A1E24;
       --accent-2: #D4AF37;
       --link: #0B253A;
       --kicker: #1E7A70;
+      --kicker-dark: #145750;
 
-      --header-bg: rgba(244, 247, 246, .94);
-      --hero-bg: radial-gradient(520px 520px at 78% 30%, rgba(244, 247, 246, .16), transparent 62%), linear-gradient(180deg, #0B253A 0%, #0e3049 100%);
-      --hero-pattern: repeating-radial-gradient(circle at 78% 30%, transparent 0 34px, rgba(244, 247, 246, .05) 35px 36px);
+      --header-bg: rgba(244, 247, 246, 0.95);
+      --hero-bg: radial-gradient(520px 520px at 78% 30%, rgba(244, 247, 246, 0.16), transparent 62%), linear-gradient(180deg, #0B253A 0%, #0e3049 100%);
+      --hero-pattern: repeating-radial-gradient(circle at 78% 30%, transparent 0 34px, rgba(244, 247, 246, 0.05) 35px 36px);
       --hero-text: #E4ECEA;
       --hero-heading: #F4F7F6;
       --hero-muted: #D0DCDA;
-      --tag-bg: rgba(244, 247, 246, .08);
+      --tag-bg: rgba(244, 247, 246, 0.08);
 
       --notice-bg: #FBF6E8;
       --notice-border: #C59B27;
@@ -55,8 +59,9 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.75;
-      letter-spacing: .02em;
+      letter-spacing: 0.02em;
       font-size: 1.0625rem;
+      overflow-x: hidden;
     }
     img, svg { max-width: 100%; display: block; }
     a { color: var(--link); }
@@ -66,222 +71,310 @@
     .skip {
       position: absolute; left: -999px; top: 0;
       background: var(--accent); color: var(--on-accent);
-      padding: .5rem 1rem; z-index: 100;
+      font-weight: 700; padding: 0.55rem 1rem; z-index: 200;
+      border-radius: var(--radius);
     }
     .skip:focus { left: 1rem; top: 1rem; }
-
     .wrap { width: min(1160px, 100% - 2.5rem); margin-inline: auto; }
 
-    /* 頂部導覽列 */
     header.site {
       position: sticky; top: 0; z-index: 50;
       background: var(--header-bg);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
     header.site .wrap {
       display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; min-height: 70px; flex-wrap: wrap; padding-block: .4rem;
+      gap: 1rem; min-height: 70px; flex-wrap: wrap; padding-block: 0.45rem;
     }
     .brand {
-      display: flex; align-items: center; gap: .7rem;
+      display: flex; align-items: center; gap: 0.7rem;
       text-decoration: none; color: var(--heading);
-      font-weight: 700; font-family: var(--font-display); letter-spacing: .04em;
+      font-weight: 700; font-family: var(--font-display); letter-spacing: 0.04em;
     }
     .brand svg { width: 38px; height: 38px; flex: none; }
-    .brand small { display: block; font-weight: 400; font-size: .75rem; color: var(--muted); letter-spacing: .06em; }
+    .brand small {
+      display: block; font-family: var(--font-body); font-weight: 400;
+      font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em;
+    }
 
     nav.main ul {
       list-style: none; display: flex; align-items: center;
-      flex-wrap: wrap; gap: .3rem 1.1rem; margin: 0; padding: 0;
+      flex-wrap: wrap; gap: 0.3rem 1.05rem; margin: 0; padding: 0;
     }
-    nav.main a { color: var(--muted); text-decoration: none; font-size: .92rem; padding: .35rem 0; font-weight: 500; }
+    nav.main a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.92rem; padding: 0.4rem 0; font-weight: 500; display: inline-block;
+    }
     nav.main a:hover { color: var(--heading); }
 
     .btn-toggle {
-      padding: .3rem .85rem; font-size: .85rem; font-weight: 600;
+      padding: 0.4rem 0.9rem; font-family: inherit; font-size: 0.85rem; font-weight: 600;
       border: 1.5px solid var(--heading); color: var(--heading);
       background: transparent; border-radius: var(--radius);
-      cursor: pointer; transition: background .15s ease, color .15s ease;
+      cursor: pointer; min-height: 40px; transition: background 0.15s ease, color 0.15s ease;
     }
+    .btn-toggle:hover { background: rgba(11, 37, 58, 0.06); }
     .btn-toggle[aria-pressed="true"] { background: var(--heading); color: #FFFFFF; }
 
-    /* Hero 區塊 */
     .hero {
       position: relative; overflow: hidden;
-      padding: clamp(3.6rem, 8vw, 6rem) 0 clamp(3rem, 6vw, 4.8rem);
+      padding: clamp(3.5rem, 8vw, 6.2rem) 0 clamp(3rem, 6.5vw, 5rem);
       background: var(--hero-bg); color: var(--hero-text);
     }
     .hero::before {
       content: ""; position: absolute; inset: 0;
-      background: var(--hero-pattern); opacity: .55; pointer-events: none;
+      background: var(--hero-pattern); opacity: 0.55; pointer-events: none;
     }
     .hero .wrap { position: relative; }
-    .breadcrumb { font-size: .88rem; color: var(--hero-muted); margin-bottom: 1rem; display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+
+    .breadcrumb {
+      font-size: 0.88rem; color: var(--hero-muted); margin-bottom: 1rem;
+      display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center;
+    }
     .breadcrumb a { color: var(--accent-2); text-decoration: none; }
     .breadcrumb a:hover { text-decoration: underline; }
 
     .eyebrow {
-      display: inline-block; font-family: var(--font-mono); font-size: .78rem;
-      letter-spacing: .12em; color: var(--accent-2);
+      display: inline-block; font-family: var(--font-mono); font-size: 0.78rem;
+      letter-spacing: 0.12em; color: var(--accent-2);
       border: 1px solid currentColor; border-radius: 999px;
-      padding: .25rem .85rem; margin-bottom: 1.2rem;
+      padding: 0.25rem 0.85rem; margin-bottom: 1.2rem;
     }
     .hero h1 {
-      font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.22; margin: 0 0 1.1rem; color: var(--hero-heading);
-      letter-spacing: .03em; max-width: 22ch;
+      font-family: var(--font-display); font-size: clamp(1.9rem, 4.8vw, 3.35rem);
+      line-height: 1.22; margin: 0 0 1.15rem; color: var(--hero-heading);
+      letter-spacing: 0.03em; max-width: 24ch;
     }
     .hero .lead {
-      font-size: clamp(1.04rem, 1.9vw, 1.2rem); max-width: 48em;
-      color: var(--hero-muted); margin: 0 0 1.8rem;
+      font-size: clamp(1.03rem, 1.85vw, 1.2rem); max-width: 52em;
+      color: var(--hero-muted); margin: 0 0 1.9rem;
     }
-    .cta { display: flex; flex-wrap: wrap; gap: .9rem; }
+    .cta { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-      padding: .78rem 1.4rem; border-radius: var(--radius); font-weight: 700;
-      font-size: .95rem; text-decoration: none; border: 2px solid transparent;
-      cursor: pointer; transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.78rem 1.4rem; border-radius: var(--radius); font-family: inherit;
+      font-weight: 700; font-size: 0.95rem; text-decoration: none; border: 2px solid transparent;
+      cursor: pointer; min-height: 44px;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
     }
     .btn:hover { transform: translateY(-2px); }
     .btn.primary { background: var(--accent); color: var(--on-accent); }
     .btn.primary:hover { background: #e0bc44; }
+    .btn.teal { background: var(--kicker); color: #FFFFFF; }
+    .btn.teal:hover { background: var(--kicker-dark); }
     .btn.ghost { border-color: var(--accent-2); color: var(--accent-2); background: transparent; }
-    .btn.ghost:hover { background: rgba(212, 175, 55, .12); }
+    .btn.ghost:hover { background: rgba(212, 175, 55, 0.12); }
     .btn.ghost-dark { border-color: var(--heading); color: var(--heading); background: transparent; }
-    .btn.ghost-dark:hover { background: rgba(11, 37, 58, .06); }
+    .btn.ghost-dark:hover { background: rgba(11, 37, 58, 0.06); }
 
-    .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.8rem; padding: 0; list-style: none; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.9rem; padding: 0; list-style: none; }
     .tags li {
-      font-family: var(--font-mono); font-size: .8rem; padding: .3rem .75rem;
+      font-family: var(--font-mono); font-size: 0.8rem; padding: 0.3rem 0.75rem;
       border-radius: 6px; background: var(--tag-bg); color: var(--hero-muted);
-      border: 1px solid rgba(244, 247, 246, .18);
+      border: 1px solid rgba(244, 247, 246, 0.18);
     }
 
-    /* 通用區塊與卡片 */
-    section { padding: clamp(3.2rem, 6.5vw, 5rem) 0; border-bottom: 1px solid var(--line); }
+    section { padding: clamp(3.2rem, 6.5vw, 5.2rem) 0; border-bottom: 1px solid var(--line); }
     section.alt { background: var(--surface-2); }
-    .sec-head { max-width: 52em; margin-bottom: 2rem; }
+    .sec-head { max-width: 54em; margin-bottom: 2.1rem; }
     .sec-head .kicker {
-      font-family: var(--font-mono); font-size: .78rem; letter-spacing: .16em;
+      font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.16em;
       text-transform: uppercase; color: var(--kicker); font-weight: 700;
     }
     h2 {
-      font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.2rem);
-      line-height: 1.3; margin: .4rem 0 .75rem; color: var(--heading);
+      font-family: var(--font-display); font-size: clamp(1.5rem, 3.1vw, 2.2rem);
+      line-height: 1.3; margin: 0.4rem 0 0.8rem; color: var(--heading);
     }
-    h3 { font-family: var(--font-display); font-size: 1.15rem; margin: 0 0 .5rem; color: var(--heading); line-height: 1.45; }
+    h3 { font-family: var(--font-display); font-size: 1.16rem; margin: 0 0 0.55rem; color: var(--heading); line-height: 1.45; }
     p { margin: 0 0 1rem; }
     .muted { color: var(--muted); }
 
-    .grid { display: grid; gap: 1.3rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); }
+    .grid { display: grid; gap: 1.35rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
     .grid.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
 
     .card {
       background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg);
-      padding: 1.45rem; position: relative; display: flex; flex-direction: column;
+      padding: 1.5rem; position: relative; display: flex; flex-direction: column;
     }
     .card.feature { border-top: 4px solid var(--accent); }
     .card .num {
-      font-family: var(--font-mono); font-size: .78rem; color: var(--kicker);
-      letter-spacing: .1em; font-weight: 700; display: block; margin-bottom: .4rem;
+      font-family: var(--font-mono); font-size: 0.78rem; color: var(--kicker);
+      letter-spacing: 0.1em; font-weight: 700; display: block; margin-bottom: 0.45rem;
     }
-    .product-highlights { margin: .35rem 0 0; padding-left: 1.15rem; font-size: .94rem; color: var(--text); }
-    .product-highlights li { margin-bottom: .3rem; }
 
     .boundary-box {
-      margin-top: 1.5rem; padding: .85rem 1.05rem;
-      background: var(--notice-bg); border-left: 3px solid var(--notice-border);
-      color: var(--notice-text); font-size: .88rem; border-radius: 0 6px 6px 0;
+      padding: 0.85rem 1.05rem; background: var(--notice-bg);
+      border-left: 3px solid var(--notice-border); color: var(--notice-text);
+      font-size: 0.88rem; line-height: 1.65; border-radius: 0 6px 6px 0;
     }
-
-    /* 宣傳影片與視覺展示區 */
-    .video-feature {
-      background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--accent);
-      border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.8rem;
-      display: grid; grid-template-columns: 1.35fr 1fr; align-items: stretch;
-    }
-    @media (max-width: 820px) { .video-feature { grid-template-columns: 1fr; } }
-    .video-stage { background: #0B253A; display: flex; align-items: center; justify-content: center; min-height: 260px; }
-    .video-stage video { width: 100%; height: 100%; max-height: 430px; object-fit: contain; display: block; }
-    .video-info { padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }
-
-    .media-grid { display: grid; gap: 1.3rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
-    .media-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
-    .media-thumb { background: #0B253A; aspect-ratio: 16 / 10; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    .media-thumb img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform .2s ease; }
-    .media-thumb img:hover { transform: scale(1.03); }
-    .media-body { padding: 1.15rem 1.3rem; }
-    .media-body h3 { font-size: 1.05rem; margin-bottom: .35rem; }
-    .media-body p { margin: 0; font-size: .92rem; color: var(--muted); }
-    .media-missing { color: #E4ECEA; font-size: .86rem; padding: 1rem; text-align: center; }
-
-    /* 表格與 FAQ */
-    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--card); }
-    table { width: 100%; border-collapse: collapse; font-size: .94rem; }
-    th, td { text-align: left; padding: .8rem 1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
-    th { background: var(--surface-2); color: var(--heading); font-weight: 700; }
-    tr:last-child td { border-bottom: none; }
-
-    .faq-list { display: grid; gap: 1rem; }
-    .faq-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.35rem 1.5rem; }
-    .faq-card h3 { font-size: 1.08rem; margin-bottom: .45rem; }
-    .faq-card p { margin: 0; }
-
-    /* 預約表單區 */
-    .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.5fr 1fr; align-items: start; }
-    @media (max-width: 860px) { .reserve-layout { grid-template-columns: 1fr; } }
-    .form-group { margin-bottom: 1.15rem; }
-    .form-group label, .label-title { display: block; font-weight: 700; font-size: .93rem; color: var(--heading); margin-bottom: .45rem; }
-    .req { color: #B42318; }
-    input[type="text"], input[type="email"], select, textarea {
-      width: 100%; padding: .7rem .9rem; border: 1.5px solid var(--line-strong);
-      border-radius: var(--radius); font-family: inherit; font-size: 1rem;
-      color: var(--text); background: #FFFFFF;
-    }
-    input:focus, select:focus, textarea:focus { border-color: var(--heading); outline: 3px solid rgba(212, 175, 55, .35); }
-    .checkbox-grid { display: grid; gap: .55rem; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
-    .checkbox-item {
-      display: flex; align-items: flex-start; gap: .5rem; padding: .55rem .7rem;
-      border: 1px solid var(--line); border-radius: var(--radius);
-      background: var(--bg); font-size: .88rem; cursor: pointer;
-    }
-    .checkbox-item input { margin-top: .25rem; accent-color: var(--heading); }
-    .form-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.3rem; }
-    .form-feedback { margin-top: .9rem; font-size: .92rem; font-weight: 600; color: var(--kicker); min-height: 1.4em; }
-
-    dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: .55rem 1.2rem; margin: 0; font-size: .93rem; }
-    dl.facts dt { color: var(--muted); }
-    dl.facts dd { margin: 0; color: var(--heading); font-weight: 600; }
-
     .note {
       border: 1px dashed var(--line-strong); border-radius: var(--radius-lg);
-      padding: 1rem 1.2rem; font-size: .9rem; color: var(--muted); background: var(--surface-2);
+      padding: 1rem 1.2rem; font-size: 0.9rem; color: var(--muted); background: var(--surface-2);
     }
     .note strong { color: var(--heading); }
 
-    /* 圖片放大燈箱 */
-    dialog.img-modal { border: none; border-radius: var(--radius-lg); padding: 0; width: min(880px, calc(100% - 2rem)); background: var(--card); color: var(--text); box-shadow: 0 24px 48px rgba(11, 37, 58, .3); }
-    dialog.img-modal::backdrop { background: rgba(11, 37, 58, .72); backdrop-filter: blur(4px); }
-    .img-modal-head { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.4rem; background: var(--surface-2); border-bottom: 1px solid var(--line); }
-    .modal-close { background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius); width: 34px; height: 34px; font-size: 1rem; cursor: pointer; color: var(--heading); }
-    .img-modal-body { padding: 1.2rem 1.4rem; text-align: center; }
-    .img-modal-body img { max-height: 70vh; margin-inline: auto; border-radius: var(--radius); }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--card); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+    th, td { text-align: left; padding: 0.8rem 1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: var(--surface-2); color: var(--heading); font-weight: 700; }
+    tr:last-child td { border-bottom: none; }
 
-    footer.site { padding: 2.6rem 0 3rem; background: var(--footer-bg); color: var(--footer-text); font-size: .92rem; }
+    .video-feature {
+      background: var(--card); border: 1px solid var(--line);
+      border-top: 4px solid var(--accent); border-radius: var(--radius-lg);
+      overflow: hidden; margin-bottom: 1.8rem;
+      display: grid; grid-template-columns: 1.35fr 1fr; align-items: stretch;
+    }
+    @media (max-width: 820px) { .video-feature { grid-template-columns: 1fr; } }
+    .video-stage {
+      background: #0B253A; display: flex; align-items: center;
+      justify-content: center; min-height: 260px; position: relative;
+    }
+    .video-stage video { width: 100%; height: 100%; max-height: 440px; object-fit: contain; display: block; }
+    .video-info { padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }
+
+    .media-grid {
+      display: grid; gap: 1.35rem;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
+    }
+    .media-card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius-lg); overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .media-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(11, 37, 58, 0.08); }
+    .media-thumb {
+      background: #0B253A; aspect-ratio: 16 / 10;
+      overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative;
+    }
+    .media-thumb img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform 0.2s ease; }
+    .media-thumb img:hover { transform: scale(1.03); }
+    .media-body { padding: 1.15rem 1.3rem; flex: 1; display: flex; flex-direction: column; }
+    .media-body h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+    .media-body p { margin: 0 0 0.75rem; font-size: 0.92rem; color: var(--muted); }
+    .media-zoom-btn { margin-top: auto; align-self: flex-start; padding: 0.4rem 0.85rem; font-size: 0.84rem; min-height: 36px; }
+    .media-fallback { color: #E4ECEA; font-size: 0.86rem; padding: 1.1rem; text-align: center; line-height: 1.55; }
+
+    dialog.img-modal {
+      border: none; border-radius: var(--radius-lg); padding: 0;
+      width: min(900px, calc(100% - 2rem)); max-height: 90vh;
+      background: var(--card); color: var(--text);
+      box-shadow: 0 24px 48px rgba(11, 37, 58, 0.32);
+    }
+    dialog.img-modal::backdrop { background: rgba(11, 37, 58, 0.72); backdrop-filter: blur(4px); }
+    .img-modal-head {
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      padding: 1rem 1.4rem; background: var(--surface-2); border-bottom: 1px solid var(--line);
+    }
+    .modal-close {
+      background: transparent; border: 1px solid var(--line-strong);
+      border-radius: var(--radius); width: 40px; height: 40px;
+      font-size: 1rem; cursor: pointer; color: var(--heading); flex: none;
+    }
+    .modal-close:hover { background: var(--heading); color: #FFFFFF; }
+    .img-modal-body { padding: 1.2rem 1.4rem; text-align: center; overflow-y: auto; }
+    .img-modal-body img { max-height: 68vh; margin-inline: auto; border-radius: var(--radius); }
+
+    .faq-list { display: grid; gap: 1rem; }
+    .faq-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.35rem 1.5rem; }
+    .faq-card h3 { font-size: 1.08rem; margin-bottom: 0.45rem; }
+    .faq-card p { margin: 0; color: var(--text); }
+
+    .billing-switch-bar {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 0.8rem; margin-bottom: 1.2rem;
+    }
+    .billing-pills {
+      display: inline-flex; background: var(--surface-2); padding: 0.3rem;
+      border-radius: 10px; gap: 0.3rem;
+    }
+    .bill-pill {
+      border: none; background: transparent; padding: 0.45rem 1rem; border-radius: 8px;
+      font-family: inherit; font-size: 0.88rem; font-weight: 700; color: var(--muted); cursor: pointer;
+    }
+    .bill-pill.active { background: var(--heading); color: #FFFFFF; }
+
+    .plans-grid {
+      display: grid; gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      margin-bottom: 1.2rem;
+    }
+    .plan-card {
+      background: var(--card); border: 2px solid var(--line); border-radius: var(--radius-lg);
+      padding: 1.25rem; cursor: pointer; text-align: left; font-family: inherit;
+      display: flex; flex-direction: column; transition: all 0.15s ease;
+    }
+    .plan-card:hover { border-color: var(--heading); transform: translateY(-2px); }
+    .plan-card.selected {
+      border-color: var(--heading); background: #FFFFFF;
+      box-shadow: 0 10px 24px rgba(11, 37, 58, 0.1);
+    }
+    .plan-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
+    .plan-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--heading); }
+    .plan-badge {
+      font-size: 0.74rem; font-weight: 700; padding: 0.18rem 0.55rem;
+      border-radius: 999px; background: #E6F3F1; color: var(--kicker-dark);
+    }
+    .plan-quota { font-weight: 700; font-size: 0.92rem; color: var(--kicker); margin-bottom: 0.25rem; }
+    .plan-target { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.9rem; }
+    .plan-pricing { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--line); font-family: var(--font-mono); }
+    .plan-orig { font-size: 0.8rem; color: var(--muted); text-decoration: line-through; display: block; }
+    .plan-sale { font-size: 1.28rem; font-weight: 700; color: var(--heading); }
+
+    .hw-bundle-box {
+      background: var(--surface-2); border: 1.5px solid var(--line-strong);
+      border-radius: var(--radius-lg); padding: 1.15rem 1.35rem; margin-bottom: 1.8rem;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .hw-bundle-label { display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; flex: 1; min-width: 240px; }
+    .hw-bundle-label input { width: 22px; height: 22px; margin-top: 0.2rem; accent-color: var(--heading); flex: none; cursor: pointer; }
+
+    .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.5fr 1fr; align-items: start; }
+    @media (max-width: 860px) { .reserve-layout { grid-template-columns: 1fr; } }
+
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-weight: 700; font-size: 0.93rem; color: var(--heading); margin-bottom: 0.45rem; }
+    input[type="text"], input[type="email"], select, textarea {
+      width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--line-strong);
+      border-radius: var(--radius); font-family: inherit; font-size: 1rem;
+      color: var(--text); background: #FFFFFF; min-height: 44px;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--heading); outline: 3px solid rgba(212, 175, 55, 0.35); }
+
+    .form-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.4rem; }
+    .form-feedback { margin-top: 1rem; font-size: 0.92rem; font-weight: 600; color: var(--kicker); min-height: 1.4em; }
+
+    .checkout-summary-box {
+      background: linear-gradient(180deg, #0B253A 0%, #10324D 100%);
+      color: #F4F7F6; border-radius: var(--radius-lg); padding: 1.5rem;
+      border: 1.5px solid rgba(212, 175, 55, 0.45);
+    }
+    .checkout-summary-box h3 { color: #FFFFFF; margin-bottom: 0.75rem; }
+    dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1.1rem; margin: 0; font-size: 0.92rem; }
+    dl.facts dt { color: #B8C7C5; }
+    dl.facts dd { margin: 0; color: #FFFFFF; font-weight: 700; }
+
+    footer.site { padding: 2.8rem 0 3.2rem; background: var(--footer-bg); color: var(--footer-text); font-size: 0.92rem; }
     footer.site .muted { color: #9FB0AD; }
 
+    @media (max-width: 720px) {
+      dl.facts { grid-template-columns: 1fr; }
+      dl.facts dt { margin-top: 0.4rem; }
+    }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .btn, .media-thumb img { transition: none; }
-      .btn:hover, .media-thumb img:hover { transform: none; }
+      .btn, .media-card, .media-thumb img, .plan-card { transition: none; }
+      .btn:hover, .media-card:hover, .media-thumb img:hover, .plan-card:hover { transform: none; }
     }
   </style>
 </head>
 <body>
   <a class="skip" href="#main">跳到主要內容</a>
 
-  <!-- 頂部導覽列 -->
   <header class="site">
     <div class="wrap">
       <a class="brand" href="../index.html" aria-label="返回水月道場全生態總覽">
@@ -297,17 +390,17 @@
           <path d="M15 32c3-2 6 2 9 0s6-2 9 0" fill="none" stroke="#2A9D8F" stroke-width="1.6" stroke-linecap="round"/>
           <circle cx="24" cy="16" r="4" fill="#D4AF37"/>
         </svg>
-        <span>斜槓104 Slash104<small>slash1ofours.com｜專屬預售頁</small></span>
+        <span>Slash104 斜槓104<small>slash1ofours.com｜企業知識與智財數位分身平台</small></span>
       </a>
 
       <nav class="main" aria-label="本頁選單">
         <ul>
           <li><a href="../index.html#products">← 返回十大產品線</a></li>
-          <li><a href="#media-showcase">影音與視覺圖庫</a></li>
-          <li><a href="#governance">組織治理與審核</a></li>
-          <li><a href="#ip-rbac">智財標籤與 RBAC</a></li>
+          <li><a href="#governance">四大企業治理核心</a></li>
+          <li><a href="#marketing-assets">影音與視覺素材</a></li>
+          <li><a href="#ip-rbac">智財標籤與五階 RBAC</a></li>
           <li><a href="#faq">常見問答</a></li>
-          <li><a href="#cta-form">預約諮詢</a></li>
+          <li><a href="#cta-form">7 折方案與結算</a></li>
           <li><button type="button" id="bigtext" class="btn-toggle" aria-pressed="false">長者友善大字</button></li>
         </ul>
       </nav>
@@ -315,39 +408,77 @@
   </header>
 
   <main id="main">
-    <!-- Hero 區 -->
     <section class="hero" aria-labelledby="page-title">
       <div class="wrap">
         <nav class="breadcrumb" aria-label="麵包屑導覽">
           <a href="../index.html">全生態總覽</a>
           <span>/</span>
-          <a href="../index.html#products">授權交易平台</a>
+          <a href="../index.html#products">獨立授權平台</a>
           <span>/</span>
           <span>07｜斜槓104 / Slash104</span>
         </nav>
-        <span class="eyebrow">07｜Slash104（slash1ofours.com）· 企業級領域知識與智慧財產數位分身授權平台</span>
+        <span class="eyebrow">07｜獨立法人（slash1ofours.com）· 企業級領域知識與智慧財產數位分身平台</span>
         <h1 id="page-title">分身歸公司，知識不跟著離職走。</h1>
-        <p class="lead">資深工程師離職，帶走的常常是最難補回來的判斷力。斜槓104 / Slash104 將知識主體從個人專家改為公司、法人與團隊：成員貢獻的知識餵入公司地端儲存設備，經審核者核可後才併入企業數位分身，透過智財標籤隔離內部機密與對外授權，平台不訓練模型、不收存明文知識包。</p>
+        <p class="lead">斜槓104 / Slash104 專為公司、法人與團隊設計[cite: 10]：成員餵入的知識經 Reviewer 審核核可後才併入公司數位分身，人員離職即同步設備側撤銷權限，並透過智財標籤嚴格隔離內部機密與對外 B2B 授權[cite: 10]。</p>
         <div class="cta">
-          <a class="btn primary" href="#cta-form">登記企業知識傳承與夥伴授權諮詢</a>
-          <a class="btn ghost" href="#media-showcase">觀看宣傳短片與視覺圖</a>
+          <a class="btn primary" href="#cta-form">選擇 7 折預售方案與八槽企業套組 →</a>
+          <a class="btn ghost" href="#marketing-assets">觀看宣傳影片與視覺圖</a>
         </div>
         <ul class="tags">
-          <li>分身歸公司 · 人員異動即撤權</li>
-          <li>審核才併入 · 智財標籤隔離</li>
-          <li>對內治理＋對外授權雙層架構</li>
-          <li>管理層看用量，不看問答明文</li>
+          <li>Reviewer 審核才併入分身</li>
+          <li>離職撤權不帶走知識明文</li>
+          <li>IP_INTERNAL_ONLY 內外隔離</li>
+          <li>早鳥嘗鮮預售全系列 7 折</li>
         </ul>
       </div>
     </section>
 
-    <!-- 宣傳影片與視覺圖庫 -->
-    <section id="media-showcase" class="alt" aria-labelledby="media-title">
+    <section id="governance" aria-labelledby="gov-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Visual &amp; Motion Showcase</span>
-          <h2 id="media-title">斜槓104 宣傳短片與企業治理視覺說明</h2>
-          <p class="muted">短片載入後自動循環播放，點擊下方任一視覺圖卡可放大檢視細節。</p>
+          <span class="kicker">Enterprise Knowledge Governance</span>
+          <h2 id="gov-title">四大企業治理機制：知識留在公司，授權由公司決定</h2>
+          <p class="muted">資深工程師或業務主管離職，帶走的常常是最難補回來的判斷力[cite: 10]。斜槓104 讓團隊知識沉澱為公司資產，並安全對外授權[cite: 10]。</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card feature">
+            <span class="num">機制 01｜Reviewer 審核閘門</span>
+            <h3>未經核可的片段不索引、不對外回答</h3>
+            <p style="margin:0">團隊成員餵入負責範疇的知識片段後，先留置於暫存區；必須經過 <code>REVIEWER</code> 審核核可後，才會併入企業數位分身[cite: 10]。</p>
+          </div>
+
+          <div class="card feature">
+            <span class="num">機制 02｜人員異動連動撤權</span>
+            <h3>離職即失效並同步至 NAS，知識留存公司</h3>
+            <p style="margin:0">成員離職或調組時，權限標記立即失效並同步至地端 NAS 側阻斷新請求；已併入的知識資產完整留存公司，不會以明文被帶走[cite: 10]。</p>
+          </div>
+
+          <div class="card feature">
+            <span class="num">機制 03｜對內治理＋對外雙層授權</span>
+            <h3>多金鑰並行，多家夥伴紀錄各自獨立</h3>
+            <p style="margin:0">對內依五階 RBAC 治理，對外由公司簽發 B2B 合約與 USB 綁定憑證，可同時授權多家供應鏈夥伴並獨立計算額度與稽核[cite: 10]。</p>
+          </div>
+
+          <div class="card feature">
+            <span class="num">機制 04｜管理層看用量、不看問答明文</span>
+            <h3>保護員工提問隱私，日誌僅留稽核收據</h3>
+            <p style="margin:0">平台不訓練模型、不收存明文知識包；管理層只能檢視用量與成功率統計，不能調閱員工或外部買方的問答明文[cite: 10]。</p>
+          </div>
+        </div>
+
+        <div class="boundary-box" style="margin-top:1.8rem">
+          <strong>法人獨立與合規邊界聲明：</strong>斜槓104 / Slash104 為獨立法人機構，與 AEGIS 無從屬關係，由水月道場有限合夥支持成立。不適用於個人名義授權、跨公司共編分身或需要下載原始資料庫者；個資法（PDPA/GDPR）與營業秘密法已列為上線前審查閘門，現階段預售不作「已法規合規」宣稱[cite: 10]。
+        </div>
+      </div>
+    </section>
+
+    <section id="marketing-assets" class="alt" aria-labelledby="assets-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="kicker">Marketing Showcase</span>
+          <h2 id="assets-title">斜槓104 / Slash104 行銷短片與視覺圖庫</h2>
+          <p class="muted">透過動態概念短片與六張視覺圖解，了解 Reviewer 審核閘門、智財標籤隔離與八槽企業級地端知識節點；點擊任一張圖片可放大檢視。</p>
         </div>
 
         <div id="promo-video-box" class="video-feature"></div>
@@ -355,117 +486,64 @@
       </div>
     </section>
 
-    <!-- 組織治理與雙層授權 -->
-    <section id="governance" aria-labelledby="gov-title">
+    <section id="ip-rbac" aria-labelledby="ip-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Enterprise Governance &amp; Dual-Layer Licensing</span>
-          <h2 id="gov-title">把分散的團隊經驗沉澱為公司資產，安全對外授權</h2>
-          <p class="muted">延伸自斜槓一二三，但知識主體升級為公司、法人、團隊與專案組；平台不訓練模型、不收存明文知識包，只留下不含問答內容的審計收據。</p>
+          <span class="kicker">IP Labels &amp; Five-Tier RBAC</span>
+          <h2 id="ip-title">三種智財標籤隔離與五階組織角色（RBAC）</h2>
+          <p class="muted">確保標記為「僅限內部」的機密文件與對外授權分身在邏輯上徹底隔離[cite: 10]。</p>
         </div>
 
-        <div class="grid" style="margin-bottom:2rem">
-          <article class="card feature">
-            <span class="num">機制 01｜分身與智財歸公司</span>
-            <h3>成員離職或調組不帶走知識明文</h3>
-            <p>分身與授權收益歸屬公司；人員離職、調組或撤權時，權限標記失效並同步至地端設備側阻斷新請求，已核可併入的知識留在公司。</p>
-          </article>
-
-          <article class="card feature">
-            <span class="num">機制 02｜審核閘門</span>
-            <h3>未經核可的資料不會對外回答</h3>
-            <p>團隊成員餵入的知識片段先留置於暫存區，必須經審核者核可後，才會被索引或納入正式分身能力範圍。</p>
-          </article>
-
-          <article class="card feature">
-            <span class="num">機制 03｜對內治理＋對外授權</span>
-            <h3>一個企業分身可同時授權多家夥伴</h3>
-            <p>對內依角色與團隊治理；對外由公司簽發授權合約與硬體綁定憑證，限制次數、期限與領域，預設禁止再授權，多家外部夥伴額度與紀錄各自獨立。</p>
-          </article>
-
-          <article class="card feature">
-            <span class="num">機制 04｜隱私與審計邊界</span>
-            <h3>管理層看用量與成功率，不看問答明文</h3>
-            <p>企業分身卡片不公開內部成員名冊與原始技術文件；依設計，管理層只能看用量與成功率，不能調閱員工或買方的問答明文。</p>
-          </article>
+        <div class="table-wrap" style="margin-bottom:2rem">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:210px">智財標籤代碼</th>
+                <th style="width:180px">資產屬性</th>
+                <th>對內／對外授權邊界</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>IP_PROPRIETARY</code></td>
+                <td><strong>公司自有智慧財產</strong></td>
+                <td>經審核後可同時用於對內員工查詢與對外 B2B 授權分身[cite: 10]。</td>
+              </tr>
+              <tr>
+                <td><code>IP_LICENSED</code></td>
+                <td><strong>第三方授權資料</strong></td>
+                <td>依外部授權合約條款限定使用範圍與授權對象[cite: 10]。</td>
+              </tr>
+              <tr>
+                <td><code>IP_INTERNAL_ONLY</code></td>
+                <td><strong>公司最高機密／僅限內部</strong></td>
+                <td><strong>嚴禁對外授權</strong>，對外分身在檢索層完全無法觸及此類片段[cite: 10]。</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div class="boundary-box">
-          <strong>法人獨立與適用邊界聲明：</strong>斜槓104 / Slash104 為獨立法人機構（與 AEGIS 無從屬關係，由水月道場有限合夥支持成立）。本平台不適用於跨公司共同編輯分身或需要下載原始資料庫者；企業方案、席位計價與上線時程目前尚未公布，亦不作法規合規認證宣稱。
+        <div class="grid">
+          <div class="card">
+            <span class="num">角色 01–02</span>
+            <h3>OWNER / ADMIN</h3>
+            <p style="margin:0;font-size:0.92rem">負責企業分身建立、B2B 對外合約簽發、USB 金鑰核發與離職撤權管理（不可調閱員工問答明文）[cite: 10]。</p>
+          </div>
+          <div class="card">
+            <span class="num">角色 03</span>
+            <h3>REVIEWER（審核者）</h3>
+            <p style="margin:0;font-size:0.92rem">把關所有成員提交的知識片段與智財標籤分類，審核通過才併入正式分身[cite: 10]。</p>
+          </div>
+          <div class="card">
+            <span class="num">角色 04–05</span>
+            <h3>CONTRIBUTOR / CONSUMER</h3>
+            <p style="margin:0;font-size:0.92rem">貢獻者上傳專業經驗至暫存區；內部使用者持權限向企業分身提問輔助日常作業[cite: 10]。</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 智財標籤、五階 RBAC 與斜槓一二三對照 -->
-    <section id="ip-rbac" class="alt" aria-labelledby="ip-rbac-title">
-      <div class="wrap">
-        <div class="sec-head">
-          <span class="kicker">IP Labels, RBAC &amp; Comparison</span>
-          <h2 id="ip-rbac-title">智財分級標籤、五階 RBAC 與平台差異對照</h2>
-          <p class="muted">透過智財標籤與角色權限控管，確保內部機密不會流入對外分身，並清楚區隔個人與企業主體。</p>
-        </div>
-
-        <h3 style="margin-bottom:1rem">三種智慧財產分級標籤</h3>
-        <div class="table-wrap" style="margin-bottom:2.2rem">
-          <table>
-            <thead>
-              <tr>
-                <th style="width:210px">智財標籤</th>
-                <th style="width:180px">流通範圍</th>
-                <th>隔離與使用規則說明</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><code>IP_PROPRIETARY</code></td><td><strong>企業自有（可對內外）</strong></td><td>企業自有知識資產，經審核後可配置於內部或對外授權分身。</td></tr>
-              <tr><td><code>IP_LICENSED</code></td><td><strong>依第三方授權條款</strong></td><td>須遵循第三方授權條款範圍使用（系統檢查細節待確認）。</td></tr>
-              <tr><td><code>IP_INTERNAL_ONLY</code></td><td><strong>嚴禁外授權</strong></td><td>僅限內部使用，與對外分身邏輯隔離，對外分身無法檢索。</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3 style="margin-bottom:1rem">五階組織角色權限（RBAC）</h3>
-        <div class="table-wrap" style="margin-bottom:2.2rem">
-          <table>
-            <thead>
-              <tr>
-                <th style="width:180px">角色名稱</th>
-                <th>核心權責說明</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><code>OWNER</code></td><td>代表公司掌握分身所有權、定價、移轉與下架。</td></tr>
-              <tr><td><code>ADMIN</code></td><td>管理成員調配、地端節點綁定與對內外授權憑證簽發。</td></tr>
-              <tr><td><code>REVIEWER</code></td><td>審核成員餵入的知識片段，核可後才併入正式分身。</td></tr>
-              <tr><td><code>CONTRIBUTOR</code></td><td>將負責業務線的製程、研發或客服知識餵入暫存區。</td></tr>
-              <tr><td><code>CONSUMER</code></td><td>持授權與硬體憑證向企業分身提問查詢。</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3 style="margin-bottom:1rem">與「斜槓一二三 / Slash123」核心差異對照</h3>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th style="width:160px">比較構面</th>
-                <th>06｜斜槓一二三 / Slash123</th>
-                <th>07｜斜槓104 / Slash104</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>知識主體</strong></td><td>個人專家</td><td>公司、法人、團隊、專案組</td></tr>
-              <tr><td><strong>知識餵入</strong></td><td>專家本人匯入</td><td>多位成員餵入，須經 Reviewer 核可</td></tr>
-              <tr><td><strong>資產所有權</strong></td><td>專家個人持有</td><td>公司實體持有（成員離職不帶走知識）</td></tr>
-              <tr><td><strong>授權架構</strong></td><td>個人直接授權外部買方</td><td>雙層授權：對內角色治理＋對外合約授權</td></tr>
-              <tr><td><strong>卡片展示</strong></td><td>個人分身卡（顯示履約紀錄）</td><td>企業分身卡（不公開內部成員名冊與原稿）</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- 常見問答 FAQ -->
-    <section id="faq" aria-labelledby="faq-title">
+    <section id="faq" class="alt" aria-labelledby="faq-title">
       <div class="wrap">
         <div class="sec-head">
           <span class="kicker">Frequently Asked Questions</span>
@@ -475,79 +553,105 @@
         <div class="faq-list">
           <article class="faq-card">
             <h3>Q1：斜槓104 跟斜槓一二三有什麼不同？</h3>
-            <p>斜槓一二三是個人專家授權自己的能力；斜槓104 的主體是公司或團隊，知識由多位成員貢獻並經過審核，資產歸公司，並同時處理對內治理與對外授權。</p>
+            <p>斜槓一二三是個人專家授權自己的能力；斜槓104 的主體是公司或團隊，知識由多位成員貢獻並經過 Reviewer 審核，資產歸公司，同時處理對內治理與對外授權[cite: 10]。</p>
           </article>
           <article class="faq-card">
-            <h3>Q2：主管或管理層可以看員工問了 AI 什麼嗎？</h3>
-            <p>不行。依設計，管理層只能看用量與成功率，不能調閱員工或買方的問答明文。</p>
+            <h3>Q2：主管可以看員工問了 AI 什麼嗎？</h3>
+            <p>不行。依設計，管理層只能看用量與成功率，不能調閱員工或外部買方的問答明文[cite: 10]。</p>
           </article>
           <article class="faq-card">
-            <h3>Q3：員工離職後，知識與權限會如何處理？</h3>
-            <p>人員異動時權限標記失效並同步至地端設備側，新請求立即阻斷；已併入的知識留在公司，不會以明文被帶走。</p>
-          </article>
-          <article class="faq-card">
-            <h3>Q4：符合個資法與營業秘密法嗎？企業方案怎麼計價？</h3>
-            <p>相關法規遵循已列為上線前審查閘門，是否已通過尚待確認，目前不對外宣稱合規；企業方案、席位與價格亦尚未公布，歡迎在下方說明團隊領域與規模。</p>
+            <h3>Q3：八槽 AI NAS 套組包含硬碟嗎？</h3>
+            <p>八槽 AI NAS 套組（8 槽全公司型，含機殼與預裝，<strong>不含硬碟</strong>，原價 NT$ 168,900，7 折嘗鮮預售價 NT$ 118,230），方便企業 IT 部門依稽核標準自行配置企業級硬碟；至結算頁亦可依部門人數加購多把 USB 授權金鑰（7 折 NT$ 2,730/把）。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 專屬預售諮詢表單 -->
-    <section id="cta-form" class="alt" aria-labelledby="cta-form-title">
+    <section id="cta-form" aria-labelledby="cta-form-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Call to Action · Slash104</span>
-          <h2 id="cta-form-title">登記企業知識傳承與外部夥伴授權諮詢</h2>
-          <p class="muted">如果貴公司正在規劃知識傳承，或想把團隊能力授權給外部夥伴，請說明團隊領域與規模；正式方案確認後我們將與您聯繫。</p>
+          <span class="kicker">70% Early-Bird Presale · Slash104</span>
+          <h2 id="cta-form-title">選擇您的 7 折嘗鮮預售方案與八槽企業套組</h2>
+          <p class="muted">全系列早鳥預售享 <strong>7 折優惠（現省 30%）</strong>；點選企業年繳／月繳方案並勾選八槽 AI NAS 套組後，即可一鍵帶入參數前往共用結算中心。</p>
+        </div>
+
+        <div class="billing-switch-bar">
+          <strong style="color:var(--heading);font-size:0.95rem">步驟 ①：點選企業訂閱方案與計費週期</strong>
+          <div class="billing-pills" role="group" aria-label="計費週期切換">
+            <button type="button" id="bill-yearly" class="bill-pill active" onclick="setBilling('yearly')">年繳方案（再享 7 折）</button>
+            <button type="button" id="bill-monthly" class="bill-pill" onclick="setBilling('monthly')">月繳方案（享 7 折）</button>
+          </div>
+        </div>
+
+        <div id="plans-grid" class="plans-grid"></div>
+
+        <!-- 八槽 AI NAS 硬體勾選框 -->
+        <div id="hw-bundle-container" class="hw-bundle-box">
+          <label class="hw-bundle-label" for="hw-nas-check">
+            <input type="checkbox" id="hw-nas-check" checked onchange="renderPlans()">
+            <div>
+              <strong style="color:var(--heading);font-size:0.98rem">搭配硬體一次購：八槽 AI NAS 套組（8 槽全公司型，不含硬碟）</strong>
+              <span style="display:block;font-size:0.84rem;color:var(--muted);margin-top:0.2rem">公司級知識庫與多部門共用節點（含機殼與預裝，不含硬碟；至結算頁可加購多把 USB 金鑰）</span>
+            </div>
+          </label>
+          <div style="text-align:right;font-family:var(--font-mono)">
+            <span style="font-size:0.8rem;color:var(--muted);text-decoration:line-through;display:block">原價 NT$ 168,900</span>
+            <strong style="font-size:1.15rem;color:var(--kicker-dark)">7 折 NT$ 118,230</strong>
+          </div>
         </div>
 
         <div class="reserve-layout">
           <form id="product-cta-form" class="card form-card" novalidate>
+            <h3 style="margin-bottom:0.85rem">步驟 ②：預填企業資訊與部署規模（將自動帶入結算頁）</h3>
             <div class="grid two">
               <div class="form-group">
-                <label for="user-name">稱呼 / 企業與部門名稱 <span class="req">*</span></label>
-                <input type="text" id="user-name" placeholder="例如：李技術長 / 某某製造研發與製程處" required>
+                <label for="user-name">稱呼 / 公司或事業部名稱</label>
+                <input type="text" id="user-name" placeholder="例如：陳營運長 / 某某半導體設備製造部">
               </div>
               <div class="form-group">
-                <label for="user-email">聯絡電子信箱 <span class="req">*</span></label>
-                <input type="email" id="user-email" placeholder="name@example.com" required>
+                <label for="user-email">聯絡電子信箱</label>
+                <input type="email" id="user-email" placeholder="name@example.com">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="corp-goal">主要導入情境 <span class="req">*</span></label>
+              <label for="corp-goal">主要企業導入目標</label>
               <select id="corp-goal">
-                <option value="企業內部知識傳承與跨部門 AI 查詢治理">企業內部知識傳承與跨部門 AI 查詢治理</option>
-                <option value="對外授權（提供供應鏈夥伴或客戶查詢團隊專業判斷）">對外授權（提供供應鏈夥伴或客戶查詢團隊專業判斷）</option>
-                <option value="同時規劃對內治理與對外夥伴授權">同時規劃對內治理與對外夥伴授權</option>
+                <option value="對內知識傳承：防止資深員工離職帶走判斷力">對內知識傳承：防止資深員工離職帶走判斷力</option>
+                <option value="對外 B2B 授權：授權供應鏈或客戶查詢專業分身">對外 B2B 授權：授權供應鏈或客戶查詢專業分身</option>
+                <option value="雙層治理：同時建置對內知識庫與對外授權分身">雙層治理：同時建置對內知識庫與對外授權分身</option>
+                <option value="Custom 客製企業治理規則與多節點部署">Custom 客製企業治理規則與多節點部署</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="user-notes">團隊領域、規模與需求簡述</label>
-              <textarea id="user-notes" rows="4" placeholder="請簡述貴公司的團隊領域（如製程、研發、客服等）與預計參與規模（請勿填入實際機密文件）"></textarea>
+              <label for="user-notes">部門數量與外部夥伴規模簡述（選填）</label>
+              <textarea id="user-notes" rows="3" placeholder="例如：預計導入 3 個研發團隊、約 80 名內部成員，並對外授權 5 家供應商"></textarea>
             </div>
 
             <div class="form-actions">
-              <button type="submit" class="btn primary">開啟信箱寄送預售諮詢</button>
-              <button type="button" id="copy-btn" class="btn ghost-dark">複製登記摘要</button>
+              <button type="button" id="go-checkout-btn" class="btn primary">前往 7 折預售結算中心（../CTA） →</button>
+              <button type="button" id="mail-inquiry-btn" class="btn ghost-dark">僅先寄信諮詢（暫不結帳）</button>
             </div>
             <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
           </form>
 
-          <aside class="card info-aside">
-            <h3>產品識別與窗口資訊</h3>
+          <aside class="checkout-summary-box">
+            <h3>已選預售配置摘要</h3>
             <dl class="facts" style="margin:1rem 0">
-              <dt>產品名稱</dt><dd>07｜斜槓104 / Slash104</dd>
-              <dt>官方網域</dt><dd>slash1ofours.com</dd>
-              <dt>生態系總窗口</dt><dd><a id="direct-email" href="mailto:contact@wonderland.center">contact@wonderland.center</a></dd>
+              <dt>產品代碼</dt><dd>07｜P07-S104（Slash104）</dd>
+              <dt>所屬法人</dt><dd>獨立法人（slash1ofours.com）</dd>
+              <dt>選定方案</dt><dd id="sum-plan-name">Company（每月 4,000 次提問額度）</dd>
+              <dt>計費週期</dt><dd id="sum-billing">年繳方案</dd>
+              <dt>硬體搭配</dt><dd id="sum-hw">八槽 AI NAS 套組（7 折 NT$ 118,230）</dd>
+              <dt>標準原價合計</dt><dd id="sum-orig-price" style="text-decoration:line-through;color:#B8C7C5">NT$ 417,900</dd>
+              <dt>7 折預售總計</dt><dd id="sum-sale-price" style="color:#D4AF37;font-size:1.25rem">NT$ 292,530</dd>
             </dl>
-            <div class="note">
-              <strong>誠信與隱私提醒：</strong>平台不收存明文知識包；本頁不收集機密文件或信用卡號，亦不刊載未簽約匯款帳號。
+            <div class="note" style="background:rgba(255,255,255,0.08);border-color:rgba(212,175,55,0.4);color:#E4ECEA">
+              <strong style="color:#D4AF37">跳轉說明：</strong>點擊「前往 7 折預售結算中心」將導向上層 <code>CTA/index.html</code>，結算頁支援企業銀行電匯、刷卡與 <code>slash1ofours.com</code> 專屬 USDT 通道，並可依角色加購多把 USB 金鑰（7 折 NT$ 2,730/把）。
             </div>
             <p style="margin-top:1.2rem;margin-bottom:0">
-              <a class="btn ghost-dark" style="width:100%" href="../index.html#products">瀏覽其他生態系產品線</a>
+              <a class="btn ghost" style="width:100%" href="../index.html#products">瀏覽其他 9 條生態系產品線</a>
             </p>
           </aside>
         </div>
@@ -555,131 +659,246 @@
     </section>
   </main>
 
-  <!-- 圖片放大檢視燈箱 -->
-  <dialog id="img-lightbox" class="img-modal" aria-label="圖片放大檢視">
+  <dialog id="img-lightbox" class="img-modal" aria-label="視覺圖片放大檢視">
     <div class="img-modal-head">
       <strong id="img-modal-title">視覺素材檢視</strong>
       <button type="button" id="img-modal-close" class="modal-close" aria-label="關閉">✕</button>
     </div>
     <div class="img-modal-body">
       <img id="img-modal-src" src="" alt="">
-      <p id="img-modal-caption" class="muted" style="margin-top:.8rem;margin-bottom:0"></p>
+      <p id="img-modal-caption" class="muted" style="margin-top:.85rem;margin-bottom:0"></p>
     </div>
   </dialog>
 
   <footer class="site">
     <div class="wrap">
-      <p><strong>© 2026 斜槓104 / Slash104（slash1ofours.com）× 水月道場 / Wonderland Center</strong></p>
-      <p class="muted" style="font-size:.84rem">斜槓104 為獨立法人機構，由水月道場有限合夥支持成立；本頁內容依《斜槓104 行銷內容》編製。</p>
+      <p><strong>© 2026 斜槓104 / Slash104（slash1ofours.com）</strong>｜獨立法人機構，由水月道場有限合夥支持成立</p>
+      <p class="muted" style="font-size:.84rem">本頁內容依《斜槓104 產品說明與預售內容》及《產品定價與 7 折嘗鮮預售價總表》編製，分身歸公司、知識不跟著離職走[cite: 10]。</p>
     </div>
   </footer>
 
   <script>
+    /**
+     * ==========================================================================
+     * 可調整參數區：
+     * - PRODUCT_CODE：傳遞給 ../CTA/index.html 的產品編號（"07"）
+     * - CHECKOUT_PATH：共用結算頁相對路徑（"../CTA/index.html"）
+     * - DISCOUNT_RATE：7 折優惠率（0.7）
+     * - HW_NAS_ORIG：八槽 AI NAS 套組原價（168,900）
+     * - PLANS_07：依據 Excel 總表之 07 斜槓104 方案數據
+     * ==========================================================================
+     */
+    const PRODUCT_CODE = "07";
+    const CHECKOUT_PATH = "../CTA/index.html";
     const CONTACT_EMAIL = "contact@wonderland.center";
+    const DISCOUNT_RATE = 0.7;
+    const HW_NAS_ORIG = 168900;
+    const MEDIA_DIR = "./marketing";
 
-    // 背景靜默載入媒體設定（畫面上不顯示檔案路徑）
-    const MEDIA_CONFIG = {
+    const PLANS_07 = [
+      { plan: "Team", target: "單一團隊或專案組", quota: "每月 1,000 次提問額度", m: 9900, y: 99000 },
+      { plan: "Company", target: "多部門公司", quota: "每月 4,000 次提問額度", m: 24900, y: 249000, recommended: true },
+      { plan: "Enterprise", target: "大型或高頻使用", quota: "每月 12,000 次提問額度", m: 49900, y: 499000 },
+      { plan: "Custom", target: "需客製規則", quota: "客製（洽談）", custom: true }
+    ];
+
+    const MARKETING_MEDIA = {
       video: {
-        src: "./marketing/0.行銷短片.mp4",
-        poster: "./marketing/1.形象廣告.jpg",
-        title: "斜槓104 / Slash104 企業知識治理短片",
-        caption: "呈現分身歸公司、審核才併入與對內對外雙層授權的整體概念。"
+        file: "0.行銷短片.mp4",
+        poster: "1.形象廣告.jpg",
+        badge: "概念短片",
+        title: "斜槓104 / Slash104 企業知識沉澱與雙層授權概念短片",
+        caption: "呈現團隊成員知識經 Reviewer 審核併入公司分身、離職同步撤權，以及 IP_INTERNAL_ONLY 內外隔離治理機制。"
       },
       images: [
-        {
-          src: "./marketing/1.形象廣告.jpg",
-          title: "分身歸公司，知識不跟著離職走",
-          caption: "團隊知識經審核併入公司數位分身，人員異動不帶走知識明文。"
-        },
-        {
-          src: "./marketing/2.產品說明流程.jpg",
-          title: "審核閘門與分身併入流程",
-          caption: "成員餵入知識片段後，須經審核者核可才併入公司數位分身。"
-        },
-        {
-          src: "./marketing/3.服務交付流程.jpg",
-          title: "對內治理與對外夥伴授權",
-          caption: "兼顧內部角色治理與外部夥伴合約授權，一家分身可同時授權多家夥伴。"
-        },
-        {
-          src: "./marketing/4.行銷推廣圖片.jpg",
-          title: "智財標籤隔離與內外分流",
-          caption: "僅限內部資料與對外分身邏輯隔離，未經許可之資料不會對外檢索。"
-        },
-        {
-          src: "./marketing/5.社群概念圖.jpg",
-          title: "五階角色權限與零明文查閱",
-          caption: "管理層看用量與成功率，不調閱員工或買方問答明文。"
-        },
-        {
-          src: "./marketing/6.B2B 企業出海 EDM.jpg",
-          title: "跨職能知識傳承與夥伴協作",
-          caption: "協助企業集中製程、研發與客服經驗，安全授權給外部夥伴查詢。"
-        }
+        { file: "1.形象廣告.jpg", badge: "品牌形象", title: "分身歸公司，知識不跟著離職走", caption: "將分散在資深員工身上的判斷力沉澱為企業智慧財產分身，人員異動不帶走知識明文。" },
+        { file: "2.產品說明流程.jpg", badge: "審核閘門", title: "Reviewer 審核才併入分身", caption: "成員提交的知識片段先留置暫存區，經審核者核可後才納入索引並對外服務。" },
+        { file: "3.服務交付流程.jpg", badge: "智財隔離", title: "三種智財標籤內外分流", caption: "標記為 IP_INTERNAL_ONLY 之內部機密與對外 B2B 分身邏輯隔離，對外無法檢索。" },
+        { file: "4.行銷推廣圖片.jpg", badge: "雙層授權", title: "對內五階 RBAC＋對外多金鑰並行", caption: "支援多家外部合作夥伴同時持綁定 USB 金鑰調用，額度與審計收據各自獨立。" },
+        { file: "5.社群概念圖.jpg", badge: "員工隱私", title: "管理層看用量，不看問答明文", caption: "稽核報表僅呈現用量與成功率統計，不能調閱員工或外部買方的問答對話內容。" },
+        { file: "6.B2B 企業出海 EDM.jpg", badge: "八槽機房", title: "八槽企業級全公司部署套組", caption: "提供 Team、Company 與 Enterprise 三級企業授權，可搭配八槽地端 AI NAS 套組。" }
       ]
     };
 
-    function setupAutoLoopVideo(videoEl) {
-      if (!videoEl) return;
-      videoEl.muted = true;
-      videoEl.loop = true;
-      videoEl.autoplay = true;
-      videoEl.playsInline = true;
+    let selectedPlanIdx = 1; // 預設選中 Company
+    let billingCycle = "yearly";
 
-      const tryPlay = () => {
-        const p = videoEl.play();
-        if (p && typeof p.catch === "function") {
-          p.catch(() => {});
+    function renderPlans() {
+      const grid = document.getElementById("plans-grid");
+      const hwContainer = document.getElementById("hw-bundle-container");
+      const nasCheck = document.getElementById("hw-nas-check");
+      if (!grid) return;
+
+      document.getElementById("bill-yearly").classList.toggle("active", billingCycle === "yearly");
+      document.getElementById("bill-monthly").classList.toggle("active", billingCycle === "monthly");
+
+      grid.innerHTML = PLANS_07.map((p, idx) => {
+        const isSel = idx === selectedPlanIdx;
+        if (p.custom) {
+          return `
+            <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
+              <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">客製專案</span></div>
+              <div class="plan-quota">${p.quota}</div>
+              <div class="plan-target">${p.target}</div>
+              <div class="plan-pricing"><span class="plan-orig">依規則需求評估</span><span class="plan-sale">專人洽談報價</span></div>
+            </button>
+          `;
         }
+        const orig = billingCycle === "yearly" ? p.y : p.m;
+        const sale = Math.round(orig * DISCOUNT_RATE);
+        const unit = billingCycle === "yearly" ? "/ 年" : "/ 月";
+        return `
+          <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
+            <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">${p.recommended ? "★ 熱門推薦" : "7 折早鳥"}</span></div>
+            <div class="plan-quota">${p.quota}</div>
+            <div class="plan-target">${p.target}</div>
+            <div class="plan-pricing">
+              <span class="plan-orig">原價 NT$ ${orig.toLocaleString("zh-TW")} ${unit}</span>
+              <span class="plan-sale">NT$ ${sale.toLocaleString("zh-TW")} <small style="font-size:0.78rem">${unit}</small></span>
+            </div>
+          </button>
+        `;
+      }).join("");
+
+      const cur = PLANS_07[selectedPlanIdx];
+      document.getElementById("sum-plan-name").textContent = `${cur.plan}（${cur.quota}）`;
+      document.getElementById("sum-billing").textContent = cur.custom ? "客製專案（洽談）" : (billingCycle === "yearly" ? "年繳方案" : "月繳方案");
+
+      if (cur.custom) {
+        hwContainer.style.display = "none";
+        document.getElementById("sum-hw").textContent = "依客製規則評估";
+        document.getElementById("sum-orig-price").textContent = "專案報價";
+        document.getElementById("sum-sale-price").textContent = "專人洽談";
+      } else {
+        hwContainer.style.display = "flex";
+        const nasChecked = nasCheck.checked;
+        const hwSale = Math.round(HW_NAS_ORIG * DISCOUNT_RATE);
+        document.getElementById("sum-hw").textContent = nasChecked ? `八槽 AI NAS 套組（7 折 NT$ ${hwSale.toLocaleString("zh-TW")}）` : "未加購（已有相容企業地端節點）";
+
+        const subOrig = billingCycle === "yearly" ? cur.y : cur.m;
+        const hwOrig = nasChecked ? HW_NAS_ORIG : 0;
+        const totalOrig = subOrig + hwOrig;
+        const totalSale = Math.round(subOrig * DISCOUNT_RATE) + (nasChecked ? hwSale : 0);
+        document.getElementById("sum-orig-price").textContent = `NT$ ${totalOrig.toLocaleString("zh-TW")}`;
+        document.getElementById("sum-sale-price").textContent = `NT$ ${totalSale.toLocaleString("zh-TW")}`;
+      }
+    }
+
+    function selectPlan(idx) { selectedPlanIdx = idx; renderPlans(); }
+    function setBilling(mode) { billingCycle = mode; renderPlans(); }
+
+    function initCheckoutBridge() {
+      const goBtn = document.getElementById("go-checkout-btn");
+      const mailBtn = document.getElementById("mail-inquiry-btn");
+      const feedback = document.getElementById("form-feedback");
+
+      const collectFields = () => {
+        const cur = PLANS_07[selectedPlanIdx];
+        const nasChecked = !cur.custom && document.getElementById("hw-nas-check").checked;
+        const name = document.getElementById("user-name").value.trim();
+        const email = document.getElementById("user-email").value.trim();
+        const corpGoal = document.getElementById("corp-goal").value;
+        const notes = document.getElementById("user-notes").value.trim();
+        return { cur, nasChecked, name, email, corpGoal, notes };
       };
 
-      tryPlay();
-      videoEl.addEventListener("canplay", tryPlay, { once: true });
-      videoEl.addEventListener("ended", () => {
-        videoEl.currentTime = 0;
-        tryPlay();
+      goBtn.addEventListener("click", () => {
+        const data = collectFields();
+        const params = new URLSearchParams();
+        params.set("product", PRODUCT_CODE);
+        params.set("plan", data.cur.plan);
+        params.set("billing", billingCycle);
+        params.set("bundle", data.nasChecked ? "1" : "0");
+        if (data.name) params.set("name", data.name);
+        if (data.email) params.set("email", data.email);
+        const combinedNotes = [data.corpGoal, data.notes].filter(Boolean).join("｜");
+        if (combinedNotes) params.set("notes", combinedNotes);
+
+        window.location.href = `${CHECKOUT_PATH}?${params.toString()}`;
+      });
+
+      mailBtn.addEventListener("click", () => {
+        const data = collectFields();
+        if (!data.name || !data.email) {
+          feedback.style.color = "#B42318";
+          feedback.textContent = "若要寄送郵件諮詢，請先填寫「稱呼 / 公司名稱」與「聯絡電子信箱」。";
+          return;
+        }
+        const subject = `[Slash104 斜槓104 企業預售諮詢] ${data.name}（${data.cur.plan}）`;
+        const body = [
+          "您好，我想諮詢「07｜斜槓104 / Slash104」的 7 折預售方案：",
+          "",
+          `・稱呼 / 企業：${data.name}`,
+          `・聯絡信箱：${data.email}`,
+          `・感興趣方案：${data.cur.plan}（${billingCycle === "yearly" ? "年繳" : "月繳"}）`,
+          `・搭配硬體：${data.nasChecked ? "八槽 AI NAS 套組" : "不加購 AI NAS"}`,
+          `・導入目標：${data.corpGoal}`,
+          `・規模簡述：${data.notes || "（尚未填寫）"}`
+        ].join("\n");
+        feedback.style.color = "#1E7A70";
+        feedback.textContent = "已為您開啟預設郵件程式寄送諮詢摘要。";
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       });
     }
 
-    function renderMediaGallery() {
+    function renderMarketingAssets() {
       const videoBox = document.getElementById("promo-video-box");
-      if (videoBox && MEDIA_CONFIG.video) {
-        const v = MEDIA_CONFIG.video;
+      if (videoBox && MARKETING_MEDIA.video) {
+        const v = MARKETING_MEDIA.video;
+        const videoSrc = `${MEDIA_DIR}/${encodeURIComponent(v.file)}`;
+        const posterSrc = v.poster ? `${MEDIA_DIR}/${encodeURIComponent(v.poster)}` : "";
+
         videoBox.innerHTML = `
           <div class="video-stage">
-            <video id="slash104-loop-video" autoplay muted loop playsinline controls preload="auto" poster="${v.poster}">
-              <source src="${v.src}" type="video/mp4">
-              您的瀏覽器不支援影片播放。
+            <video id="promo-video-player" autoplay muted loop playsinline controls preload="auto"${posterSrc ? ` poster="${posterSrc}"` : ""}>
+              <source src="${videoSrc}" type="video/mp4">
+              您的瀏覽器不支援 HTML5 影片播放。
             </video>
+            <div id="video-error-fallback" class="media-fallback" style="display:none">宣傳影片載入中或暫時無法播放，請重新整理頁面後再試。</div>
           </div>
           <div class="video-info">
-            <span class="num">宣傳短片 · 自動循環播放</span>
+            <span class="num">${v.badge}</span>
             <h3>${v.title}</h3>
             <p class="muted">${v.caption}</p>
-            <div style="margin-top:1rem">
-              <a class="btn primary" href="#cta-form">預約了解斜槓104 企業方案</a>
-            </div>
+            <div style="margin-top:0.8rem"><a class="btn primary" href="#cta-form">查看 7 折預售方案 →</a></div>
           </div>
         `;
-        setupAutoLoopVideo(document.getElementById("slash104-loop-video"));
+
+        const videoEl = document.getElementById("promo-video-player");
+        const videoErrEl = document.getElementById("video-error-fallback");
+        if (videoEl) {
+          videoEl.muted = true;
+          const playPromise = videoEl.play();
+          if (playPromise && typeof playPromise.catch === "function") playPromise.catch(() => {});
+          if (videoErrEl) {
+            const showFallback = () => { videoEl.style.display = "none"; videoErrEl.style.display = "block"; };
+            videoEl.addEventListener("error", showFallback);
+            const srcEl = videoEl.querySelector("source");
+            if (srcEl) srcEl.addEventListener("error", showFallback);
+          }
+        }
       }
 
       const imgGrid = document.getElementById("promo-images-grid");
       if (imgGrid) {
-        imgGrid.innerHTML = (MEDIA_CONFIG.images || []).map((item, idx) => `
-          <article class="media-card">
-            <div class="media-thumb">
-              <img src="${item.src}" alt="${item.title}" loading="lazy" data-idx="${idx}"
-                   onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-              <div class="media-missing" style="display:none">視覺素材載入中，請確認目錄檔案已就緒。</div>
-            </div>
-            <div class="media-body">
-              <span class="num" style="margin-bottom:.25rem">視覺圖庫</span>
-              <h3>${item.title}</h3>
-              <p>${item.caption}</p>
-            </div>
-          </article>
-        `).join("");
+        imgGrid.innerHTML = (MARKETING_MEDIA.images || []).map((item, idx) => {
+          const imgSrc = `${MEDIA_DIR}/${encodeURIComponent(item.file)}`;
+          return `
+            <article class="media-card">
+              <div class="media-thumb">
+                <img src="${imgSrc}" alt="${item.title}" loading="lazy" data-idx="${idx}"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <div class="media-fallback" style="display:none">視覺圖卡載入中，請稍候重新整理檢視。</div>
+              </div>
+              <div class="media-body">
+                <span class="num" style="margin-bottom:0.25rem">${item.badge}</span>
+                <h3>${item.title}</h3>
+                <p>${item.caption}</p>
+                <button type="button" class="btn ghost-dark media-zoom-btn" data-zoom-idx="${idx}">放大檢視圖片</button>
+              </div>
+            </article>
+          `;
+        }).join("");
 
         const dlg = document.getElementById("img-lightbox");
         const dlgImg = document.getElementById("img-modal-src");
@@ -687,98 +906,45 @@
         const dlgCap = document.getElementById("img-modal-caption");
         const dlgClose = document.getElementById("img-modal-close");
 
-        imgGrid.querySelectorAll("img[data-idx]").forEach((imgEl) => {
-          imgEl.addEventListener("click", () => {
-            const data = MEDIA_CONFIG.images[Number(imgEl.dataset.idx)];
-            if (!data || !dlg) return;
-            dlgImg.src = data.src;
-            dlgImg.alt = data.title;
-            dlgTitle.textContent = data.title;
-            dlgCap.textContent = data.caption;
-            dlg.showModal();
-          });
+        const openLightbox = (idx) => {
+          const data = MARKETING_MEDIA.images[Number(idx)];
+          if (!data || !dlg) return;
+          dlgImg.src = `${MEDIA_DIR}/${encodeURIComponent(data.file)}`;
+          dlgImg.alt = data.title;
+          dlgTitle.textContent = data.title;
+          dlgCap.textContent = data.caption;
+          dlg.showModal();
+        };
+
+        imgGrid.querySelectorAll("[data-idx], [data-zoom-idx]").forEach(el => {
+          el.addEventListener("click", () => openLightbox(el.dataset.idx ?? el.dataset.zoomIdx));
         });
 
         if (dlgClose && dlg) {
           dlgClose.addEventListener("click", () => dlg.close());
-          dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+          dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
         }
       }
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      renderMediaGallery();
-
-      // 大字模式同步
+    function initBigText() {
       const bigBtn = document.getElementById("bigtext");
+      if (!bigBtn) return;
       const storageKey = "wc-bigtext";
-      const applyBigText = (on) => {
+      const applyBigText = on => {
         document.documentElement.style.fontSize = on ? "122%" : "";
         bigBtn.setAttribute("aria-pressed", on ? "true" : "false");
         try { localStorage.setItem(storageKey, on ? "1" : "0"); } catch (_) {}
       };
       try { if (localStorage.getItem(storageKey) === "1") applyBigText(true); } catch (_) {}
       bigBtn.addEventListener("click", () => applyBigText(bigBtn.getAttribute("aria-pressed") !== "true"));
+    }
 
-      // 表單處理
-      const form = document.getElementById("product-cta-form");
-      const copyBtn = document.getElementById("copy-btn");
-      const feedback = document.getElementById("form-feedback");
-
-      const buildPayload = () => {
-        const name = document.getElementById("user-name").value.trim();
-        const email = document.getElementById("user-email").value.trim();
-        const corpGoal = document.getElementById("corp-goal").value;
-        const notes = document.getElementById("user-notes").value.trim();
-
-        if (!name || !email) return { error: "請填寫「稱呼 / 企業與部門名稱」與「聯絡電子信箱」。" };
-
-        const subject = `[斜槓104 Slash104 企業預售諮詢] ${name}`;
-        const body = [
-          "您好，我想諮詢「07｜斜槓104 / Slash104」的企業預售與導入方案：",
-          "",
-          `・稱呼 / 企業與部門：${name}`,
-          `・聯絡電子信箱：${email}`,
-          `・主要導入情境：${corpGoal}`,
-          `・團隊領域與需求簡述：${notes || "（尚未填寫）"}`,
-          "",
-          "---",
-          "此登記摘要由 斜槓104 / Slash104 預售頁面產生"
-        ].join("\n");
-
-        return { subject, body };
-      };
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const res = buildPayload();
-        if (res.error) {
-          feedback.style.color = "#B42318";
-          feedback.textContent = res.error;
-          return;
-        }
-        feedback.style.color = "#1E7A70";
-        feedback.textContent = "已為您整理需求摘要並開啟預設郵件程式；若未自動開啟，請使用右側「複製登記摘要」。";
-        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(res.subject)}&body=${encodeURIComponent(res.body)}`;
-      });
-
-      copyBtn.addEventListener("click", async () => {
-        const res = buildPayload();
-        if (res.error) {
-          feedback.style.color = "#B42318";
-          feedback.textContent = res.error;
-          return;
-        }
-        const text = `${res.subject}\n\n${res.body}`;
-        try {
-          await navigator.clipboard.writeText(text);
-          feedback.style.color = "#1E7A70";
-          feedback.textContent = "✓ 登記摘要已複製到剪貼簿！";
-        } catch (_) {
-          feedback.style.color = "#B42318";
-          feedback.textContent = "瀏覽器限制自動複製，請改用「開啟信箱寄送預售諮詢」。";
-        }
-      });
+    document.addEventListener("DOMContentLoaded", () => {
+      renderMarketingAssets();
+      renderPlans();
+      initCheckoutBridge();
+      initBigText();
     });
   </script>
 </body>

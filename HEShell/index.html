@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
+<!-- 產品線：04｜神盾殼 HEShell（所屬事業體：AEGIS / aegis.expert）｜檔案路徑：HEShell/index.html -->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>神盾殼 HEShell｜具備 USB 硬體金鑰邊界之密文路由殼層 — 專屬預售諮詢</title>
-  <meta name="description" content="神盾殼 HEShell 是 AEGIS 規劃中的本機 AI 安全殼層：不支援密文就不送，沒有明文後備。複合金鑰存於 USB，提問明文不送往外部 HE Provider。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>神盾殼 HEShell｜USB 硬體金鑰邊界與 FAIL-CLOSED 本機安全殼層 — 7 折嘗鮮預售</title>
+  <meta name="description" content="神盾殼 HEShell 是具備 USB 硬體金鑰邊界與 FAIL-CLOSED 路由原則的本機 AI 安全殼層：不支援密文就不送，沒有明文後備。">
   <meta name="theme-color" content="#0B253A">
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap](https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap)" rel="stylesheet">
   <style>
-    /* 水月道場 / Wonderland Center — CIS 設計系統（60% 底色 / 30% 結構 / 10% 點綴） */
     :root {
       --font-body: "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
       --font-display: "Cinzel", "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", serif;
@@ -19,22 +22,23 @@
       --text: #1A1E24;
       --heading: #0B253A;
       --muted: #46525C;
-      --line: rgba(11, 37, 58, .14);
-      --line-strong: rgba(11, 37, 58, .35);
+      --line: rgba(11, 37, 58, 0.14);
+      --line-strong: rgba(11, 37, 58, 0.35);
 
       --accent: #D4AF37;
       --on-accent: #1A1E24;
       --accent-2: #D4AF37;
       --link: #0B253A;
       --kicker: #1E7A70;
+      --kicker-dark: #145750;
 
-      --header-bg: rgba(244, 247, 246, .94);
-      --hero-bg: radial-gradient(520px 520px at 78% 30%, rgba(244, 247, 246, .16), transparent 62%), linear-gradient(180deg, #0B253A 0%, #0e3049 100%);
-      --hero-pattern: repeating-radial-gradient(circle at 78% 30%, transparent 0 34px, rgba(244, 247, 246, .05) 35px 36px);
+      --header-bg: rgba(244, 247, 246, 0.95);
+      --hero-bg: radial-gradient(520px 520px at 78% 30%, rgba(244, 247, 246, 0.16), transparent 62%), linear-gradient(180deg, #0B253A 0%, #0e3049 100%);
+      --hero-pattern: repeating-radial-gradient(circle at 78% 30%, transparent 0 34px, rgba(244, 247, 246, 0.05) 35px 36px);
       --hero-text: #E4ECEA;
       --hero-heading: #F4F7F6;
       --hero-muted: #D0DCDA;
-      --tag-bg: rgba(244, 247, 246, .08);
+      --tag-bg: rgba(244, 247, 246, 0.08);
 
       --notice-bg: #FBF6E8;
       --notice-border: #C59B27;
@@ -55,8 +59,9 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.75;
-      letter-spacing: .02em;
+      letter-spacing: 0.02em;
       font-size: 1.0625rem;
+      overflow-x: hidden;
     }
     img, svg { max-width: 100%; display: block; }
     a { color: var(--link); }
@@ -66,219 +71,311 @@
     .skip {
       position: absolute; left: -999px; top: 0;
       background: var(--accent); color: var(--on-accent);
-      padding: .5rem 1rem; z-index: 100;
+      font-weight: 700; padding: 0.55rem 1rem; z-index: 200;
+      border-radius: var(--radius);
     }
     .skip:focus { left: 1rem; top: 1rem; }
-
     .wrap { width: min(1160px, 100% - 2.5rem); margin-inline: auto; }
 
-    /* 頂部導覽列 */
     header.site {
       position: sticky; top: 0; z-index: 50;
       background: var(--header-bg);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
     header.site .wrap {
       display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; min-height: 70px; flex-wrap: wrap; padding-block: .4rem;
+      gap: 1rem; min-height: 70px; flex-wrap: wrap; padding-block: 0.45rem;
     }
     .brand {
-      display: flex; align-items: center; gap: .7rem;
+      display: flex; align-items: center; gap: 0.7rem;
       text-decoration: none; color: var(--heading);
-      font-weight: 700; font-family: var(--font-display); letter-spacing: .04em;
+      font-weight: 700; font-family: var(--font-display); letter-spacing: 0.04em;
     }
     .brand svg { width: 38px; height: 38px; flex: none; }
-    .brand small { display: block; font-weight: 400; font-size: .75rem; color: var(--muted); letter-spacing: .06em; }
+    .brand small {
+      display: block; font-family: var(--font-body); font-weight: 400;
+      font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em;
+    }
 
     nav.main ul {
       list-style: none; display: flex; align-items: center;
-      flex-wrap: wrap; gap: .3rem 1.1rem; margin: 0; padding: 0;
+      flex-wrap: wrap; gap: 0.3rem 1.05rem; margin: 0; padding: 0;
     }
-    nav.main a { color: var(--muted); text-decoration: none; font-size: .92rem; padding: .35rem 0; font-weight: 500; }
+    nav.main a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.92rem; padding: 0.4rem 0; font-weight: 500; display: inline-block;
+    }
     nav.main a:hover { color: var(--heading); }
 
     .btn-toggle {
-      padding: .3rem .85rem; font-size: .85rem; font-weight: 600;
+      padding: 0.4rem 0.9rem; font-family: inherit; font-size: 0.85rem; font-weight: 600;
       border: 1.5px solid var(--heading); color: var(--heading);
       background: transparent; border-radius: var(--radius);
-      cursor: pointer; transition: background .15s ease, color .15s ease;
+      cursor: pointer; min-height: 40px; transition: background 0.15s ease, color 0.15s ease;
     }
+    .btn-toggle:hover { background: rgba(11, 37, 58, 0.06); }
     .btn-toggle[aria-pressed="true"] { background: var(--heading); color: #FFFFFF; }
 
-    /* Hero 區塊 */
     .hero {
       position: relative; overflow: hidden;
-      padding: clamp(3.6rem, 8vw, 6rem) 0 clamp(3rem, 6vw, 4.8rem);
+      padding: clamp(3.5rem, 8vw, 6.2rem) 0 clamp(3rem, 6.5vw, 5rem);
       background: var(--hero-bg); color: var(--hero-text);
     }
     .hero::before {
       content: ""; position: absolute; inset: 0;
-      background: var(--hero-pattern); opacity: .55; pointer-events: none;
+      background: var(--hero-pattern); opacity: 0.55; pointer-events: none;
     }
     .hero .wrap { position: relative; }
-    .breadcrumb { font-size: .88rem; color: var(--hero-muted); margin-bottom: 1rem; display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+
+    .breadcrumb {
+      font-size: 0.88rem; color: var(--hero-muted); margin-bottom: 1rem;
+      display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center;
+    }
     .breadcrumb a { color: var(--accent-2); text-decoration: none; }
     .breadcrumb a:hover { text-decoration: underline; }
 
     .eyebrow {
-      display: inline-block; font-family: var(--font-mono); font-size: .78rem;
-      letter-spacing: .12em; color: var(--accent-2);
+      display: inline-block; font-family: var(--font-mono); font-size: 0.78rem;
+      letter-spacing: 0.12em; color: var(--accent-2);
       border: 1px solid currentColor; border-radius: 999px;
-      padding: .25rem .85rem; margin-bottom: 1.2rem;
+      padding: 0.25rem 0.85rem; margin-bottom: 1.2rem;
     }
     .hero h1 {
-      font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.22; margin: 0 0 1.1rem; color: var(--hero-heading);
-      letter-spacing: .03em; max-width: 22ch;
+      font-family: var(--font-display); font-size: clamp(1.9rem, 4.8vw, 3.35rem);
+      line-height: 1.22; margin: 0 0 1.15rem; color: var(--hero-heading);
+      letter-spacing: 0.03em; max-width: 24ch;
     }
     .hero .lead {
-      font-size: clamp(1.04rem, 1.9vw, 1.2rem); max-width: 48em;
-      color: var(--hero-muted); margin: 0 0 1.8rem;
+      font-size: clamp(1.03rem, 1.85vw, 1.2rem); max-width: 52em;
+      color: var(--hero-muted); margin: 0 0 1.9rem;
     }
-    .cta { display: flex; flex-wrap: wrap; gap: .9rem; }
+    .cta { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-      padding: .78rem 1.4rem; border-radius: var(--radius); font-weight: 700;
-      font-size: .95rem; text-decoration: none; border: 2px solid transparent;
-      cursor: pointer; transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.78rem 1.4rem; border-radius: var(--radius); font-family: inherit;
+      font-weight: 700; font-size: 0.95rem; text-decoration: none; border: 2px solid transparent;
+      cursor: pointer; min-height: 44px;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
     }
     .btn:hover { transform: translateY(-2px); }
     .btn.primary { background: var(--accent); color: var(--on-accent); }
     .btn.primary:hover { background: #e0bc44; }
+    .btn.teal { background: var(--kicker); color: #FFFFFF; }
+    .btn.teal:hover { background: var(--kicker-dark); }
     .btn.ghost { border-color: var(--accent-2); color: var(--accent-2); background: transparent; }
-    .btn.ghost:hover { background: rgba(212, 175, 55, .12); }
+    .btn.ghost:hover { background: rgba(212, 175, 55, 0.12); }
     .btn.ghost-dark { border-color: var(--heading); color: var(--heading); background: transparent; }
-    .btn.ghost-dark:hover { background: rgba(11, 37, 58, .06); }
+    .btn.ghost-dark:hover { background: rgba(11, 37, 58, 0.06); }
 
-    .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.8rem; padding: 0; list-style: none; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.9rem; padding: 0; list-style: none; }
     .tags li {
-      font-family: var(--font-mono); font-size: .8rem; padding: .3rem .75rem;
+      font-family: var(--font-mono); font-size: 0.8rem; padding: 0.3rem 0.75rem;
       border-radius: 6px; background: var(--tag-bg); color: var(--hero-muted);
-      border: 1px solid rgba(244, 247, 246, .18);
+      border: 1px solid rgba(244, 247, 246, 0.18);
     }
 
-    /* 通用區塊與卡片 */
-    section { padding: clamp(3.2rem, 6.5vw, 5rem) 0; border-bottom: 1px solid var(--line); }
+    section { padding: clamp(3.2rem, 6.5vw, 5.2rem) 0; border-bottom: 1px solid var(--line); }
     section.alt { background: var(--surface-2); }
-    .sec-head { max-width: 52em; margin-bottom: 2rem; }
+    .sec-head { max-width: 54em; margin-bottom: 2.1rem; }
     .sec-head .kicker {
-      font-family: var(--font-mono); font-size: .78rem; letter-spacing: .16em;
+      font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.16em;
       text-transform: uppercase; color: var(--kicker); font-weight: 700;
     }
     h2 {
-      font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.2rem);
-      line-height: 1.3; margin: .4rem 0 .75rem; color: var(--heading);
+      font-family: var(--font-display); font-size: clamp(1.5rem, 3.1vw, 2.2rem);
+      line-height: 1.3; margin: 0.4rem 0 0.8rem; color: var(--heading);
     }
-    h3 { font-family: var(--font-display); font-size: 1.15rem; margin: 0 0 .5rem; color: var(--heading); line-height: 1.45; }
+    h3 { font-family: var(--font-display); font-size: 1.16rem; margin: 0 0 0.55rem; color: var(--heading); line-height: 1.45; }
     p { margin: 0 0 1rem; }
     .muted { color: var(--muted); }
 
-    .grid { display: grid; gap: 1.3rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); }
+    .grid { display: grid; gap: 1.35rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
     .grid.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
 
     .card {
       background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg);
-      padding: 1.45rem; position: relative; display: flex; flex-direction: column;
+      padding: 1.5rem; position: relative; display: flex; flex-direction: column;
     }
     .card.feature { border-top: 4px solid var(--accent); }
     .card .num {
-      font-family: var(--font-mono); font-size: .78rem; color: var(--kicker);
-      letter-spacing: .1em; font-weight: 700; display: block; margin-bottom: .4rem;
+      font-family: var(--font-mono); font-size: 0.78rem; color: var(--kicker);
+      letter-spacing: 0.1em; font-weight: 700; display: block; margin-bottom: 0.45rem;
     }
-    .product-highlights { margin: .35rem 0 0; padding-left: 1.15rem; font-size: .94rem; color: var(--text); }
-    .product-highlights li { margin-bottom: .3rem; }
 
     .boundary-box {
-      margin-top: 1.5rem; padding: .85rem 1.05rem;
-      background: var(--notice-bg); border-left: 3px solid var(--notice-border);
-      color: var(--notice-text); font-size: .88rem; border-radius: 0 6px 6px 0;
+      padding: 0.85rem 1.05rem; background: var(--notice-bg);
+      border-left: 3px solid var(--notice-border); color: var(--notice-text);
+      font-size: 0.88rem; line-height: 1.65; border-radius: 0 6px 6px 0;
     }
-
-    /* 宣傳影片與視覺展示區 */
-    .video-feature {
-      background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--accent);
-      border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.8rem;
-      display: grid; grid-template-columns: 1.35fr 1fr; align-items: stretch;
-    }
-    @media (max-width: 820px) { .video-feature { grid-template-columns: 1fr; } }
-    .video-stage { background: #0B253A; display: flex; align-items: center; justify-content: center; min-height: 260px; }
-    .video-stage video { width: 100%; height: 100%; max-height: 430px; object-fit: contain; display: block; }
-    .video-info { padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }
-
-    .media-grid { display: grid; gap: 1.3rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
-    .media-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
-    .media-thumb { background: #0B253A; aspect-ratio: 16 / 10; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    .media-thumb img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform .2s ease; }
-    .media-thumb img:hover { transform: scale(1.03); }
-    .media-body { padding: 1.15rem 1.3rem; }
-    .media-body h3 { font-size: 1.05rem; margin-bottom: .35rem; }
-    .media-body p { margin: 0; font-size: .92rem; color: var(--muted); }
-    .media-missing { color: #E4ECEA; font-size: .86rem; padding: 1rem; text-align: center; }
-
-    /* 階段指示器、表格與 FAQ */
-    .stage-bar { counter-reset: stg; display: grid; gap: .9rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); list-style: none; padding: 0; margin: 0; }
-    .stage-bar li { counter-increment: stg; background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--kicker); border-radius: var(--radius-lg); padding: 1.2rem; }
-    .stage-bar li::before { content: "STAGE " counter(stg, decimal-leading-zero); display: block; font-family: var(--font-mono); font-size: .76rem; font-weight: 700; color: var(--kicker); margin-bottom: .35rem; }
-
-    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--card); }
-    table { width: 100%; border-collapse: collapse; font-size: .94rem; }
-    th, td { text-align: left; padding: .8rem 1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
-    th { background: var(--surface-2); color: var(--heading); font-weight: 700; }
-    tr:last-child td { border-bottom: none; }
-
-    .faq-list { display: grid; gap: 1rem; }
-    .faq-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.35rem 1.5rem; }
-    .faq-card h3 { font-size: 1.08rem; margin-bottom: .45rem; }
-    .faq-card p { margin: 0; }
-
-    /* 預約表單區 */
-    .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.5fr 1fr; align-items: start; }
-    @media (max-width: 860px) { .reserve-layout { grid-template-columns: 1fr; } }
-    .form-group { margin-bottom: 1.15rem; }
-    .form-group label, .label-title { display: block; font-weight: 700; font-size: .93rem; color: var(--heading); margin-bottom: .45rem; }
-    .req { color: #B42318; }
-    input[type="text"], input[type="email"], select, textarea {
-      width: 100%; padding: .7rem .9rem; border: 1.5px solid var(--line-strong);
-      border-radius: var(--radius); font-family: inherit; font-size: 1rem;
-      color: var(--text); background: #FFFFFF;
-    }
-    input:focus, select:focus, textarea:focus { border-color: var(--heading); outline: 3px solid rgba(212, 175, 55, .35); }
-    .form-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.3rem; }
-    .form-feedback { margin-top: .9rem; font-size: .92rem; font-weight: 600; color: var(--kicker); min-height: 1.4em; }
-
-    dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: .55rem 1.2rem; margin: 0; font-size: .93rem; }
-    dl.facts dt { color: var(--muted); }
-    dl.facts dd { margin: 0; color: var(--heading); font-weight: 600; }
-
     .note {
       border: 1px dashed var(--line-strong); border-radius: var(--radius-lg);
-      padding: 1rem 1.2rem; font-size: .9rem; color: var(--muted); background: var(--surface-2);
+      padding: 1rem 1.2rem; font-size: 0.9rem; color: var(--muted); background: var(--surface-2);
     }
     .note strong { color: var(--heading); }
 
-    /* 圖片放大燈箱 */
-    dialog.img-modal { border: none; border-radius: var(--radius-lg); padding: 0; width: min(880px, calc(100% - 2rem)); background: var(--card); color: var(--text); box-shadow: 0 24px 48px rgba(11, 37, 58, .3); }
-    dialog.img-modal::backdrop { background: rgba(11, 37, 58, .72); backdrop-filter: blur(4px); }
-    .img-modal-head { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.4rem; background: var(--surface-2); border-bottom: 1px solid var(--line); }
-    .modal-close { background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius); width: 34px; height: 34px; font-size: 1rem; cursor: pointer; color: var(--heading); }
-    .img-modal-body { padding: 1.2rem 1.4rem; text-align: center; }
-    .img-modal-body img { max-height: 70vh; margin-inline: auto; border-radius: var(--radius); }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--card); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+    th, td { text-align: left; padding: 0.8rem 1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: var(--surface-2); color: var(--heading); font-weight: 700; }
+    tr:last-child td { border-bottom: none; }
 
-    footer.site { padding: 2.6rem 0 3rem; background: var(--footer-bg); color: var(--footer-text); font-size: .92rem; }
+    .video-feature {
+      background: var(--card); border: 1px solid var(--line);
+      border-top: 4px solid var(--accent); border-radius: var(--radius-lg);
+      overflow: hidden; margin-bottom: 1.8rem;
+      display: grid; grid-template-columns: 1.35fr 1fr; align-items: stretch;
+    }
+    @media (max-width: 820px) { .video-feature { grid-template-columns: 1fr; } }
+    .video-stage {
+      background: #0B253A; display: flex; align-items: center;
+      justify-content: center; min-height: 260px; position: relative;
+    }
+    .video-stage video { width: 100%; height: 100%; max-height: 440px; object-fit: contain; display: block; }
+    .video-info { padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }
+
+    .media-grid {
+      display: grid; gap: 1.35rem;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
+    }
+    .media-card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius-lg); overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .media-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(11, 37, 58, 0.08); }
+    .media-thumb {
+      background: #0B253A; aspect-ratio: 16 / 10;
+      overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative;
+    }
+    .media-thumb img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform 0.2s ease; }
+    .media-thumb img:hover { transform: scale(1.03); }
+    .media-body { padding: 1.15rem 1.3rem; flex: 1; display: flex; flex-direction: column; }
+    .media-body h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+    .media-body p { margin: 0 0 0.75rem; font-size: 0.92rem; color: var(--muted); }
+    .media-zoom-btn { margin-top: auto; align-self: flex-start; padding: 0.4rem 0.85rem; font-size: 0.84rem; min-height: 36px; }
+    .media-fallback { color: #E4ECEA; font-size: 0.86rem; padding: 1.1rem; text-align: center; line-height: 1.55; }
+
+    dialog.img-modal {
+      border: none; border-radius: var(--radius-lg); padding: 0;
+      width: min(900px, calc(100% - 2rem)); max-height: 90vh;
+      background: var(--card); color: var(--text);
+      box-shadow: 0 24px 48px rgba(11, 37, 58, 0.32);
+    }
+    dialog.img-modal::backdrop { background: rgba(11, 37, 58, 0.72); backdrop-filter: blur(4px); }
+    .img-modal-head {
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      padding: 1rem 1.4rem; background: var(--surface-2); border-bottom: 1px solid var(--line);
+    }
+    .modal-close {
+      background: transparent; border: 1px solid var(--line-strong);
+      border-radius: var(--radius); width: 40px; height: 40px;
+      font-size: 1rem; cursor: pointer; color: var(--heading); flex: none;
+    }
+    .modal-close:hover { background: var(--heading); color: #FFFFFF; }
+    .img-modal-body { padding: 1.2rem 1.4rem; text-align: center; overflow-y: auto; }
+    .img-modal-body img { max-height: 68vh; margin-inline: auto; border-radius: var(--radius); }
+
+    .faq-list { display: grid; gap: 1rem; }
+    .faq-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.35rem 1.5rem; }
+    .faq-card h3 { font-size: 1.08rem; margin-bottom: 0.45rem; }
+    .faq-card p { margin: 0; color: var(--text); }
+
+    .billing-switch-bar {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 0.8rem; margin-bottom: 1.2rem;
+    }
+    .billing-pills {
+      display: inline-flex; background: var(--surface-2); padding: 0.3rem;
+      border-radius: 10px; gap: 0.3rem;
+    }
+    .bill-pill {
+      border: none; background: transparent; padding: 0.45rem 1rem; border-radius: 8px;
+      font-family: inherit; font-size: 0.88rem; font-weight: 700; color: var(--muted); cursor: pointer;
+    }
+    .bill-pill.active { background: var(--heading); color: #FFFFFF; }
+
+    .plans-grid {
+      display: grid; gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      margin-bottom: 1.2rem;
+    }
+    .plan-card {
+      background: var(--card); border: 2px solid var(--line); border-radius: var(--radius-lg);
+      padding: 1.25rem; cursor: pointer; text-align: left; font-family: inherit;
+      display: flex; flex-direction: column; transition: all 0.15s ease;
+    }
+    .plan-card:hover { border-color: var(--heading); transform: translateY(-2px); }
+    .plan-card.selected {
+      border-color: var(--heading); background: #FFFFFF;
+      box-shadow: 0 10px 24px rgba(11, 37, 58, 0.1);
+    }
+    .plan-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
+    .plan-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--heading); }
+    .plan-badge {
+      font-size: 0.74rem; font-weight: 700; padding: 0.18rem 0.55rem;
+      border-radius: 999px; background: #E6F3F1; color: var(--kicker-dark);
+    }
+    .plan-quota { font-weight: 700; font-size: 0.92rem; color: var(--kicker); margin-bottom: 0.25rem; }
+    .plan-target { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.9rem; }
+    .plan-pricing { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--line); font-family: var(--font-mono); }
+    .plan-orig { font-size: 0.8rem; color: var(--muted); text-decoration: line-through; display: block; }
+    .plan-sale { font-size: 1.28rem; font-weight: 700; color: var(--heading); }
+
+    /* 硬體搭配勾選卡 */
+    .hw-bundle-box {
+      background: var(--surface-2); border: 1.5px solid var(--line-strong);
+      border-radius: var(--radius-lg); padding: 1.15rem 1.35rem; margin-bottom: 1.8rem;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .hw-bundle-label { display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; flex: 1; min-width: 240px; }
+    .hw-bundle-label input { width: 22px; height: 22px; margin-top: 0.2rem; accent-color: var(--heading); flex: none; cursor: pointer; }
+
+    .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.5fr 1fr; align-items: start; }
+    @media (max-width: 860px) { .reserve-layout { grid-template-columns: 1fr; } }
+
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-weight: 700; font-size: 0.93rem; color: var(--heading); margin-bottom: 0.45rem; }
+    input[type="text"], input[type="email"], select, textarea {
+      width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--line-strong);
+      border-radius: var(--radius); font-family: inherit; font-size: 1rem;
+      color: var(--text); background: #FFFFFF; min-height: 44px;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--heading); outline: 3px solid rgba(212, 175, 55, 0.35); }
+
+    .form-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.4rem; }
+    .form-feedback { margin-top: 1rem; font-size: 0.92rem; font-weight: 600; color: var(--kicker); min-height: 1.4em; }
+
+    .checkout-summary-box {
+      background: linear-gradient(180deg, #0B253A 0%, #10324D 100%);
+      color: #F4F7F6; border-radius: var(--radius-lg); padding: 1.5rem;
+      border: 1.5px solid rgba(212, 175, 55, 0.45);
+    }
+    .checkout-summary-box h3 { color: #FFFFFF; margin-bottom: 0.75rem; }
+    dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1.1rem; margin: 0; font-size: 0.92rem; }
+    dl.facts dt { color: #B8C7C5; }
+    dl.facts dd { margin: 0; color: #FFFFFF; font-weight: 700; }
+
+    footer.site { padding: 2.8rem 0 3.2rem; background: var(--footer-bg); color: var(--footer-text); font-size: 0.92rem; }
     footer.site .muted { color: #9FB0AD; }
 
+    @media (max-width: 720px) {
+      dl.facts { grid-template-columns: 1fr; }
+      dl.facts dt { margin-top: 0.4rem; }
+    }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .btn, .media-thumb img { transition: none; }
-      .btn:hover, .media-thumb img:hover { transform: none; }
+      .btn, .media-card, .media-thumb img, .plan-card { transition: none; }
+      .btn:hover, .media-card:hover, .media-thumb img:hover, .plan-card:hover { transform: none; }
     }
   </style>
 </head>
 <body>
   <a class="skip" href="#main">跳到主要內容</a>
 
-  <!-- 頂部導覽列 -->
   <header class="site">
     <div class="wrap">
       <a class="brand" href="../index.html" aria-label="返回水月道場全生態總覽">
@@ -294,17 +391,17 @@
           <path d="M15 32c3-2 6 2 9 0s6-2 9 0" fill="none" stroke="#2A9D8F" stroke-width="1.6" stroke-linecap="round"/>
           <circle cx="24" cy="16" r="4" fill="#D4AF37"/>
         </svg>
-        <span>神盾殼 HEShell<small>AEGIS 事業體｜專屬預售頁</small></span>
+        <span>HEShell 神盾殼<small>AEGIS 生態系｜7 折嘗鮮預售頁</small></span>
       </a>
 
       <nav class="main" aria-label="本頁選單">
         <ul>
           <li><a href="../index.html#products">← 返回十大產品線</a></li>
-          <li><a href="#media-showcase">影音與視覺圖庫</a></li>
-          <li><a href="#core">金鑰與防護</a></li>
-          <li><a href="#levels">L0–L3 分級</a></li>
+          <li><a href="#grading">L0–L3 能力分級</a></li>
+          <li><a href="#marketing-assets">影音與視覺素材</a></li>
+          <li><a href="#protections">四大防護機制</a></li>
           <li><a href="#faq">常見問答</a></li>
-          <li><a href="#cta-form">預約諮詢</a></li>
+          <li><a href="#cta-form">7 折方案與結算</a></li>
           <li><button type="button" id="bigtext" class="btn-toggle" aria-pressed="false">長者友善大字</button></li>
         </ul>
       </nav>
@@ -312,7 +409,6 @@
   </header>
 
   <main id="main">
-    <!-- Hero 區 -->
     <section class="hero" aria-labelledby="page-title">
       <div class="wrap">
         <nav class="breadcrumb" aria-label="麵包屑導覽">
@@ -322,29 +418,76 @@
           <span>/</span>
           <span>04｜神盾殼 HEShell</span>
         </nav>
-        <span class="eyebrow">04｜AEGIS（aegis.expert）· 本機安全殼層與密文路由中繼</span>
+        <span class="eyebrow">04｜AEGIS（aegis.expert）· USB 硬體金鑰邊界與 FAIL-CLOSED 安全殼層</span>
         <h1 id="page-title">不支援密文就不送，沒有明文後備。</h1>
-        <p class="lead">多數「加密 AI」只加密了傳輸線路，伺服器端仍然看得到明文。神盾殼 HEShell 負責金鑰邊界、FAIL-CLOSED 密文路由與本機明文防護：私鑰於本機當場組合為複合金鑰存放在 USB，您的提問明文不會送往外部 HE Provider，伺服器端不持有解密金鑰，結果以明文回傳。</p>
+        <p class="lead">神盾殼（HEShell）是本機 AI 安全殼層與密文路由中繼[cite: 7]：檢查目標端點經簽章的 L1／L2 能力宣告，不支援密文即直接拒絕；拔除 USB 立即中止傳輸、白屏並抹除記憶體明文[cite: 7]。</p>
         <div class="cta">
-          <a class="btn primary" href="#cta-form">登記 L1 / L2 密文運算評估諮詢</a>
-          <a class="btn ghost" href="#media-showcase">觀看宣傳短片與視覺圖</a>
+          <a class="btn primary" href="#cta-form">選擇 7 折預售方案並前往結算 →</a>
+          <a class="btn ghost" href="#marketing-assets">觀看宣傳影片與視覺圖</a>
         </div>
         <ul class="tags">
-          <li>FAIL-CLOSED · 嚴禁明文降級</li>
-          <li>複合金鑰存於 USB · 不做雲端備份</li>
-          <li>拔除即中止傳輸並抹除記憶體</li>
-          <li>四段階段指示器 · 不假裝即時</li>
+          <li>FAIL-CLOSED 零明文後備</li>
+          <li>USB 硬體金鑰拔除即清除</li>
+          <li>L1 本期交付 / L3 不承諾</li>
+          <li>早鳥嘗鮮預售全系列 7 折</li>
         </ul>
       </div>
     </section>
 
-    <!-- 宣傳影片與視覺圖庫 -->
-    <section id="media-showcase" class="alt" aria-labelledby="media-title">
+    <section id="grading" aria-labelledby="grad-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Visual &amp; Motion Showcase</span>
-          <h2 id="media-title">神盾殼 HEShell 宣傳短片與架構視覺說明</h2>
-          <p class="muted">短片載入後自動循環播放，點擊下方任一視覺圖卡可放大檢視細節。</p>
+          <span class="kicker">L0–L3 Capability Grading</span>
+          <h2 id="grad-title">能力分級說清楚：L1 本期交付、L2 條件交付、L3 不承諾</h2>
+          <p class="muted">許多「加密 AI」只加密了傳輸線路（TLS/HTTPS），伺服器端仍看得到明文[cite: 7]。在 HEShell 分級中，傳輸層加密（L0）不屬於本產品，也不列為隱私賣點[cite: 7]。</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:120px">分級</th>
+                <th style="width:240px">技術定義</th>
+                <th>HEShell 交付與邊界狀態</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>L0</code></td>
+                <td>僅傳輸層加密（TLS / HTTPS）</td>
+                <td>伺服器端仍看得到明文，<strong>非本產品，不列為隱私賣點</strong>[cite: 7]。</td>
+              </tr>
+              <tr>
+                <td><code>L1</code></td>
+                <td>指定 HE API 固定電路密文運算</td>
+                <td><strong>本期交付基準</strong>（如 Embedding 比對、距離計算、數值評分與分類）[cite: 7]。</td>
+              </tr>
+              <tr>
+                <td><code>L2</code></td>
+                <td>端點密文模型推論</td>
+                <td><strong>條件交付</strong>，僅限具備經簽章 Capability Manifest 之端點[cite: 7]。</td>
+              </tr>
+              <tr>
+                <td><code>L3</code></td>
+                <td>任意閉源商用 LLM 直接處理密文</td>
+                <td><strong>非現行科技，明確不承諾</strong>；無能力宣告即阻斷（<code>HE_002</code>）[cite: 7]。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="boundary-box" style="margin-top:1.8rem">
+          <strong>回傳與金鑰邊界聲明：</strong>HEShell 不訓練也不微調任何模型，提問明文不會送到外部 HE Provider，伺服器端也不持有解密金鑰[cite: 7]。加密範圍為送出的使用者輸入，運算結果以明文回傳[cite: 7]。USB 金鑰不做雲端備份，遺失不補發[cite: 7]。
+        </div>
+      </div>
+    </section>
+
+    <section id="marketing-assets" class="alt" aria-labelledby="assets-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="kicker">Marketing Showcase</span>
+          <h2 id="assets-title">神盾殼 HEShell 行銷短片與視覺圖庫</h2>
+          <p class="muted">透過動態概念短片與六張視覺圖解，了解 FAIL-CLOSED 路由閘門、USB 拔除清除與五段階段指示器；點擊任一張圖片可放大檢視。</p>
         </div>
 
         <div id="promo-video-box" class="video-feature"></div>
@@ -352,126 +495,43 @@
       </div>
     </section>
 
-    <!-- 金鑰邊界與核心防護設計 -->
-    <section id="core" aria-labelledby="core-title">
+    <section id="protections" aria-labelledby="prot-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Key Boundary &amp; FAIL-CLOSED Architecture</span>
-          <h2 id="core-title">金鑰邊界、密文路由與本機明文防護</h2>
-          <p class="muted">HEShell 是客戶端安全殼層與外部模型路由中繼——它<strong>不訓練、不微調模型</strong>，也<strong>不自行實作密碼學基元</strong>，而是把關金鑰邊界、路由規則與本機記憶體防護。</p>
-        </div>
-
-        <div class="grid" style="margin-bottom:2rem">
-          <article class="card feature">
-            <span class="num">核心 01｜FAIL-CLOSED 路由</span>
-            <h3>不支援密文就拒絕，絕不改送明文</h3>
-            <p>檢查目標端點經簽章的密文能力宣告；若無合法 L1／L2 能力宣告，請求直接阻斷，沒有「改送明文」的後備路徑，出境封包若含自然語言明文字元即強制關閉連線。</p>
-          </article>
-
-          <article class="card feature">
-            <span class="num">核心 02｜複合金鑰與 USB 邊界</span>
-            <h3>HE Provider 不能接觸到這把私鑰</h3>
-            <p>HEShell 會從 HE Provider 取回一把加密過的私鑰，在您的電腦上當場組合成「複合金鑰」，存放在您手上的 USB 裡；HE Provider 不能接觸到這把私鑰，伺服器端不持有解密金鑰，您的提問明文也不會送往 HE Provider。</p>
-          </article>
-
-          <article class="card feature">
-            <span class="num">核心 03｜拔除即清除與記憶體鎖定</span>
-            <h3>中止傳輸、白屏並抹除記憶體明文</h3>
-            <p>USB 位於虛擬機的 USB 埠，可自行備份、遺失不補發、不做雲端備份（對外傳輸的是複合金鑰的組件，而非提問文字）。拔除 USB 即中止傳輸與運算、白屏並抹除記憶體明文；本機亦透過記憶體鎖定防止明文寫入交換區。</p>
-          </article>
-
-          <article class="card feature">
-            <span class="num">核心 04｜零明文日誌與誠實等待</span>
-            <h3>四段階段指示器取代虛假串流</h3>
-            <p>日誌僅記錄延遲、位元組數、錯誤碼與金鑰識別雜湊，並封鎖完整記憶體傾印。介面嚴禁假裝即時的逐字打字機串流，改以明確的四段階段指示器呈現批次等待。</p>
-          </article>
-        </div>
-
-        <h3 style="margin-bottom:1rem">介面階段指示器（四段階段）</h3>
-        <ol class="stage-bar" style="margin-bottom:1.8rem">
-          <li><strong>金鑰封裝中</strong><br><span class="muted" style="font-size:.9rem">於本機組合複合金鑰並加密使用者輸入。</span></li>
-          <li><strong>密文傳輸中</strong><br><span class="muted" style="font-size:.9rem">確認端點能力宣告後送出密文封包。</span></li>
-          <li><strong>密文同態運算中</strong><br><span class="muted" style="font-size:.9rem">端點於密文狀態下執行固定電路或模型運算。</span></li>
-          <li><strong>接收結果</strong><br><span class="muted" style="font-size:.9rem">取回運算結果並呈現於受保護畫面（結果以明文回傳）。</span></li>
-        </ol>
-
-        <div class="boundary-box">
-          <strong>重要邊界與回傳路徑揭露：</strong>HEShell 的加密範圍為送出的使用者輸入，<strong>結果以明文回傳</strong>（與地端知識庫節點「密文智庫 EncryMind」以密文回傳至地端模型端不同）。S0 單向輸入加密架構（Legacy）是密文智庫文件裡的一種架構類型，非指特定產品且維持「嚴格廢棄」；HEShell 是已與 S0 不同的改版並繼續預售，採用 L0–L3 分級，不以 S0–S3 評級。
-        </div>
-      </div>
-    </section>
-
-    <!-- L0-L3 能力分級與適用對象 -->
-    <section id="levels" class="alt" aria-labelledby="levels-title">
-      <div class="wrap">
-        <div class="sec-head">
-          <span class="kicker">Capability Levels L0 — L3</span>
-          <h2 id="levels-title">L0–L3 能力分級（對外說明嚴格依此）</h2>
-          <p class="muted">我們拒絕把「傳輸層加密」包裝成隱私賣點，亦不承諾超越現行密碼學技術限制的功能。</p>
-        </div>
-
-        <div class="table-wrap" style="margin-bottom:2.2rem">
-          <table>
-            <thead>
-              <tr>
-                <th style="width:100px">級別</th>
-                <th style="width:240px">技術定義</th>
-                <th style="width:160px">v1 產品狀態</th>
-                <th>說明與交付範圍</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>L0</strong></td>
-                <td>傳輸層加密（TLS／HTTPS）</td>
-                <td><strong>非本產品</strong></td>
-                <td>伺服器端仍接觸明文，不列為 HEShell 的隱私賣點。</td>
-              </tr>
-              <tr>
-                <td><strong>L1</strong></td>
-                <td>指定 HE API 固定電路密文運算</td>
-                <td><strong>本期交付</strong></td>
-                <td>支援固定電路密文運算，例如 Embedding 比對、距離計算、數值評分與分類。</td>
-              </tr>
-              <tr>
-                <td><strong>L2</strong></td>
-                <td>端點密文模型推論</td>
-                <td><strong>條件交付</strong></td>
-                <td>端點密文推論，對使用者以明文回傳結果；僅限具備明確能力宣告之端點。</td>
-              </tr>
-              <tr>
-                <td><strong>L3</strong></td>
-                <td>任意閉源商用 LLM 直接處理密文即時生成</td>
-                <td><strong>非現行科技</strong></td>
-                <td>嚴禁承諾，不列入 v1 驗收與 Roadmap。</td>
-              </tr>
-            </tbody>
-          </table>
+          <span class="kicker">Four Defense Mechanisms</span>
+          <h2 id="prot-title">四項本機與路由防護設計</h2>
+          <p class="muted">從出境封包檢查到本機記憶體鎖定，確保不留明文後備路徑[cite: 7]。</p>
         </div>
 
         <div class="grid two">
-          <div class="card">
-            <span class="num">適用對象</span>
-            <h3>高資安敏感團隊與 L2 端點持有者</h3>
-            <ul class="product-highlights">
-              <li>需要讓敏感輸入在運算端保持密文，執行比對、評分、分類等固定電路運算（L1）之組織與部門。</li>
-              <li>已取得或自建具備能力宣告之 L2 密文推論端點，需要本機殼層統一處理金鑰、路由與拔除清除的技術團隊。</li>
-            </ul>
+          <div class="card feature">
+            <span class="num">防護 01｜FAIL-CLOSED 零明文後備</span>
+            <h3>無能力宣告即阻斷，出境檢查明文字元</h3>
+            <p style="margin:0">檢查經簽章的 Capability Manifest，非 L1/L2 一律阻斷；出境封包若偵測到自然語言明文字元，立即強制關閉連線（<code>HE_003</code>）[cite: 7]。</p>
           </div>
-          <div class="card">
-            <span class="num">非對象（明確排除）</span>
-            <h3>不適合使用 HEShell 的情境</h3>
-            <ul class="product-highlights">
-              <li>期待任意公有商用 LLM「全程加密、秒回」者（屬 L3 非現行科技，HEShell 會拒絕路由）。</li>
-              <li>只需要傳輸層加密者（L0 非本產品），或需要地端私有知識庫與本地模型者（請參考「密文智庫 EncryMind」）。</li>
-            </ul>
+
+          <div class="card feature">
+            <span class="num">防護 02｜USB 硬體金鑰邊界</span>
+            <h3>秘密金鑰不經 API 上傳、禁止雲端備份</h3>
+            <p style="margin:0">私鑰於本機組合成複合金鑰存於 USB，每次對話產生獨立 Session；拔除 USB 立即中止傳輸、白屏並抹除記憶體明文[cite: 7]。</p>
+          </div>
+
+          <div class="card feature">
+            <span class="num">防護 03｜本機記憶體防護</span>
+            <h3>鎖定實體記憶體，防止寫入 Swap</h3>
+            <p style="margin:0">透過 <code>mlock</code> / <code>VirtualLock</code> 鎖定敏感記憶體區段，防止明文資料被作業系統換頁寫入硬碟 Swap/Pagefile[cite: 7]。</p>
+          </div>
+
+          <div class="card feature">
+            <span class="num">防護 04｜誠實等待與零明文日誌</span>
+            <h3>五段階段指示器，不假裝逐字串流</h3>
+            <p style="margin:0">誠實呈現「金鑰封裝 → 密文傳輸 → 密文同態運算 → 密文下載 → 本機解密驗證」五階段；日誌僅記延遲、位元組數與錯誤碼[cite: 7]。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 常見問答 FAQ -->
-    <section id="faq" aria-labelledby="faq-title">
+    <section id="faq" class="alt" aria-labelledby="faq-title">
       <div class="wrap">
         <div class="sec-head">
           <span class="kicker">Frequently Asked Questions</span>
@@ -481,88 +541,105 @@
         <div class="faq-list">
           <article class="faq-card">
             <h3>Q1：可以用 HEShell 加密我們現在用的雲端 AI 聊天服務嗎？</h3>
-            <p>不行。一般商用 LLM API 不能直接處理密文（L3 不是現行技術）；HEShell 只會把請求送往有明確密文能力宣告的端點，其餘一律拒絕。</p>
+            <p>不行[cite: 7]。一般商用 LLM API 不能直接處理密文（L3 不是現行技術）；HEShell 只會把請求送往有明確密文能力宣告的端點，其餘一律拒絕[cite: 7]。</p>
           </article>
           <article class="faq-card">
-            <h3>Q2：v1 能做什麼？</h3>
-            <p>L1 為指定 HE API 上的固定電路密文運算，例如 Embedding 比對、距離計算、數值評分與分類；L2 端點密文模型推論為條件交付，取決於端點是否具備並宣告此能力。</p>
+            <h3>Q2：v1 目前能做哪些運算？</h3>
+            <p>L1 為本期交付：指定 HE API 上的固定電路密文運算，例如 Embedding 比對、距離計算、數值評分與分類；L2 為條件交付，取決於端點能力[cite: 7]。</p>
           </article>
           <article class="faq-card">
-            <h3>Q3：明文會送到外部 HE Provider 嗎？金鑰如何保存？</h3>
-            <p>明文不會送到外部的 HE Provider。私鑰於本機當場組合為複合金鑰後存放於 USB，HE Provider 不能接觸到這把私鑰，伺服器端不持有解密金鑰。</p>
-          </article>
-          <article class="faq-card">
-            <h3>Q4：回傳的結果也是加密的嗎？</h3>
-            <p>不是。HEShell 的結果以明文回傳，加密範圍為送出的使用者輸入。</p>
-          </article>
-          <article class="faq-card">
-            <h3>Q5：USB 遺失怎麼辦？系統會做雲端備份嗎？</h3>
-            <p>可以自行備份 USB，但遺失不補發；不做雲端備份（對外傳輸的是複合金鑰的組件，而非提問文字）。USB 位於虛擬機的 USB 埠。</p>
-          </article>
-          <article class="faq-card">
-            <h3>Q6：多少錢、何時可以用？</h3>
-            <p>價格、硬體規格與上線時程目前尚未公布，暫不對外陳述；歡迎在下方留下您的情境需求。</p>
+            <h3>Q3：USB 金鑰需要另外購買嗎？</h3>
+            <p>需要[cite: 1]。Starter／Pro／Team 通用單把 USB 硬體金鑰（原價 NT$ 12,900，7 折嘗鮮預售價 NT$ 9,030，隨貨交付、遺失不補發），可在下方一併勾選搭配結算[cite: 1]。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 專屬預售諮詢表單 -->
-    <section id="cta-form" class="alt" aria-labelledby="cta-form-title">
+    <section id="cta-form" aria-labelledby="cta-form-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Call to Action · HEShell</span>
-          <h2 id="cta-form-title">登記神盾殼 HEShell 技術評估與預售諮詢</h2>
-          <p class="muted">如果您的團隊需要做固定電路化的密文運算（比對、評分、分類），或已經有 L2 密文推論端點，請說明您的情境；方案確認後我們將與您聯繫。</p>
+          <span class="kicker">70% Early-Bird Presale · HEShell</span>
+          <h2 id="cta-form-title">選擇您的 7 折嘗鮮預售方案與 USB 金鑰配置</h2>
+          <p class="muted">全系列早鳥預售享 <strong>7 折優惠（現省 30%）</strong>[cite: 1]；點選軟體訂閱方案並勾選 USB 硬體金鑰後，即可一鍵帶入參數前往共用結算中心。</p>
+        </div>
+
+        <div class="billing-switch-bar">
+          <strong style="color:var(--heading);font-size:0.95rem">步驟 ①：點選軟體訂閱方案與計費週期</strong>
+          <div class="billing-pills" role="group" aria-label="計費週期切換">
+            <button type="button" id="bill-yearly" class="bill-pill active" onclick="setBilling('yearly')">年繳方案（再享 7 折）</button>
+            <button type="button" id="bill-monthly" class="bill-pill" onclick="setBilling('monthly')">月繳方案（享 7 折）</button>
+          </div>
+        </div>
+
+        <div id="plans-grid" class="plans-grid"></div>
+
+        <!-- 硬體一次購勾選框 -->
+        <div class="hw-bundle-box">
+          <label class="hw-bundle-label" for="hw-usb-check">
+            <input type="checkbox" id="hw-usb-check" checked onchange="renderPlans()">
+            <div>
+              <strong style="color:var(--heading);font-size:0.98rem">搭配硬體一次購：USB 硬體安全金鑰（Starter／Pro／Team 通用）</strong>
+              <span style="display:block;font-size:0.84rem;color:var(--muted);margin-top:0.2rem">隨貨交付（不做雲端備份、遺失不補發；Team 方案至結算頁可調整多把數量）[cite: 1, 7]</span>
+            </div>
+          </label>
+          <div style="text-align:right;font-family:var(--font-mono)">
+            <span style="font-size:0.8rem;color:var(--muted);text-decoration:line-through;display:block">原價 NT$ 12,900</span>
+            <strong style="font-size:1.15rem;color:var(--kicker-dark)">7 折 NT$ 9,030</strong>
+          </div>
         </div>
 
         <div class="reserve-layout">
           <form id="product-cta-form" class="card form-card" novalidate>
+            <h3 style="margin-bottom:0.85rem">步驟 ②：預填聯絡與端點需求（將自動帶入結算頁）</h3>
             <div class="grid two">
               <div class="form-group">
-                <label for="user-name">稱呼 / 單位名稱 <span class="req">*</span></label>
-                <input type="text" id="user-name" placeholder="例如：林資安長 / 某某單位資安部門" required>
+                <label for="user-name">稱呼 / 公司或資安團隊名稱</label>
+                <input type="text" id="user-name" placeholder="例如：李資安長 / 某某科技資安架構組">
               </div>
               <div class="form-group">
-                <label for="user-email">聯絡電子信箱 <span class="req">*</span></label>
-                <input type="email" id="user-email" placeholder="name@example.com" required>
+                <label for="user-email">聯絡電子信箱</label>
+                <input type="email" id="user-email" placeholder="name@example.com">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="use-case">預計導入運算分級與情境 <span class="req">*</span></label>
+              <label for="use-case">主要運算與路由場景</label>
               <select id="use-case">
-                <option value="L1 固定電路密文運算（Embedding 比對 / 距離計算 / 評分分類）">L1 固定電路密文運算（Embedding 比對 / 距離計算 / 評分分類）</option>
-                <option value="L2 端點密文模型推論（已有或規劃對接具能力宣告之端點）">L2 端點密文模型推論（已有或規劃對接具能力宣告之端點）</option>
-                <option value="搭配斜槓一二三（Slash123）整合評估">搭配斜槓一二三（Slash123）整合評估</option>
-                <option value="高資安團隊客戶端 FAIL-CLOSED 安全殼層評估">高資安團隊客戶端 FAIL-CLOSED 安全殼層評估</option>
+                <option value="L1 固定電路密文比對／Embedding 距離計算">L1 固定電路密文比對／Embedding 距離計算</option>
+                <option value="L1 密文數值評分與風控分類">L1 密文數值評分與風控分類</option>
+                <option value="L2 自建密文推論端點對接">L2 自建密文推論端點對接</option>
+                <option value="Enterprise 客製電路與多金鑰部署">Enterprise 客製電路與多金鑰部署</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="user-notes">技術環境與需求簡述</label>
-              <textarea id="user-notes" rows="4" placeholder="請簡述您的運算需求、目標端點類型或資安評估方向"></textarea>
+              <label for="user-notes">作業系統與端點需求簡述（選填）</label>
+              <textarea id="user-notes" rows="3" placeholder="例如：預計部署於 Linux / Windows 工作站，對接內部 L1 HE API"></textarea>
             </div>
 
             <div class="form-actions">
-              <button type="submit" class="btn primary">開啟信箱寄送預售諮詢</button>
-              <button type="button" id="copy-btn" class="btn ghost-dark">複製登記摘要</button>
+              <button type="button" id="go-checkout-btn" class="btn primary">前往 7 折預售結算中心（../CTA） →</button>
+              <button type="button" id="mail-inquiry-btn" class="btn ghost-dark">僅先寄信諮詢（暫不結帳）</button>
             </div>
             <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
           </form>
 
-          <aside class="card info-aside">
-            <h3>產品識別與窗口資訊</h3>
+          <aside class="checkout-summary-box">
+            <h3>已選預售配置摘要</h3>
             <dl class="facts" style="margin:1rem 0">
-              <dt>產品名稱</dt><dd>04｜神盾殼 HEShell</dd>
+              <dt>產品代碼</dt><dd>04｜P04-HS（HEShell）</dd>
               <dt>所屬事業體</dt><dd>AEGIS（aegis.expert）</dd>
-              <dt>生態系總窗口</dt><dd><a id="direct-email" href="mailto:contact@wonderland.center">contact@wonderland.center</a></dd>
+              <dt>選定方案</dt><dd id="sum-plan-name">Professional（每月 500 次密文運算請求）</dd>
+              <dt>計費週期</dt><dd id="sum-billing">年繳方案</dd>
+              <dt>硬體搭配</dt><dd id="sum-hw">USB 金鑰 × 1（NT$ 9,030）</dd>
+              <dt>標準原價合計</dt><dd id="sum-orig-price" style="text-decoration:line-through;color:#B8C7C5">NT$ 61,900</dd>
+              <dt>7 折預售總計</dt><dd id="sum-sale-price" style="color:#D4AF37;font-size:1.25rem">NT$ 43,330</dd>
             </dl>
-            <div class="note">
-              <strong>誠信與隱私提醒：</strong>HEShell 不訓練模型；本頁不收集任何金鑰、信用卡號或機密資料，亦不刊載匯款帳號。
+            <div class="note" style="background:rgba(255,255,255,0.08);border-color:rgba(212,175,55,0.4);color:#E4ECEA">
+              <strong style="color:#D4AF37">跳轉說明：</strong>點擊「前往 7 折預售結算中心」將導向上層 <code>CTA/index.html</code>，結算頁支援銀行電匯、第三方刷卡與 <code>aegis.expert</code> USDT 入金，並可加購額外請求包[cite: 1, 3]。
             </div>
             <p style="margin-top:1.2rem;margin-bottom:0">
-              <a class="btn ghost-dark" style="width:100%" href="../index.html#products">瀏覽其他生態系產品線</a>
+              <a class="btn ghost" style="width:100%" href="../index.html#products">瀏覽其他 9 條生態系產品線</a>
             </p>
           </aside>
         </div>
@@ -570,131 +647,229 @@
     </section>
   </main>
 
-  <!-- 圖片放大檢視燈箱 -->
-  <dialog id="img-lightbox" class="img-modal" aria-label="圖片放大檢視">
+  <dialog id="img-lightbox" class="img-modal" aria-label="視覺圖片放大檢視">
     <div class="img-modal-head">
       <strong id="img-modal-title">視覺素材檢視</strong>
       <button type="button" id="img-modal-close" class="modal-close" aria-label="關閉">✕</button>
     </div>
     <div class="img-modal-body">
       <img id="img-modal-src" src="" alt="">
-      <p id="img-modal-caption" class="muted" style="margin-top:.8rem;margin-bottom:0"></p>
+      <p id="img-modal-caption" class="muted" style="margin-top:.85rem;margin-bottom:0"></p>
     </div>
   </dialog>
 
   <footer class="site">
     <div class="wrap">
       <p><strong>© 2026 AEGIS（aegis.expert）× 水月道場 / Wonderland Center</strong>｜神盾殼 HEShell 專屬預售頁</p>
-      <p class="muted" style="font-size:.84rem">本頁內容依《HEShell 產品說明與預售內容》編製，採 L0–L3 能力分級，正式規格以簽署合約為準。</p>
+      <p class="muted" style="font-size:.84rem">本頁內容依《神盾殼 HEShell 產品說明與預售內容》及《產品定價與 7 折嘗鮮預售價總表》編製，L3 非現行技術不承諾[cite: 1, 7]。</p>
     </div>
   </footer>
 
   <script>
+    const PRODUCT_CODE = "04";
+    const CHECKOUT_PATH = "../CTA/index.html";
     const CONTACT_EMAIL = "contact@wonderland.center";
+    const DISCOUNT_RATE = 0.7;
+    const HW_USB_ORIG = 12900;
+    const MEDIA_DIR = "./marketing";
 
-    // 背景靜默載入媒體設定（畫面上不顯示檔案路徑）
-    const MEDIA_CONFIG = {
+    const PLANS_04 = [
+      { plan: "Starter", target: "個人或小團隊試用", quota: "每月 100 次密文運算請求", m: 1900, y: 19000 },
+      { plan: "Professional", target: "資安或研發團隊日常使用", quota: "每月 500 次密文運算請求", m: 4900, y: 49000, recommended: true },
+      { plan: "Team", target: "多人共用或較高頻率", quota: "每月 2,000 次密文運算請求", m: 12900, y: 129000 },
+      { plan: "Enterprise", target: "需客製或大量使用", quota: "客製（洽談）", custom: true }
+    ];
+
+    const MARKETING_MEDIA = {
       video: {
-        src: "./marketing/0.行銷短片.mp4",
-        poster: "./marketing/1.形象廣告.jpg",
-        title: "神盾殼 HEShell 核心概念短片",
-        caption: "呈現 FAIL-CLOSED 路由閘門、複合金鑰邊界與四段階段指示器的運作概念。"
+        file: "0.行銷短片.mp4",
+        poster: "1.形象廣告.jpg",
+        badge: "概念短片",
+        title: "神盾殼 HEShell FAIL-CLOSED 與 USB 金鑰邊界概念短片",
+        caption: "呈現無能力宣告即阻斷、拔除 USB 立即抹除記憶體明文與五段階段誠實進度指示器之安全機制。"
       },
       images: [
-        {
-          src: "./marketing/1.形象廣告.jpg",
-          title: "不支援密文，就不送出",
-          caption: "目標端點無經簽章密文能力宣告即拒絕送出，沒有明文後備路徑。"
-        },
-        {
-          src: "./marketing/2.產品說明流程.jpg",
-          title: "複合金鑰與本機加密流程",
-          caption: "私鑰於本機當場組合為複合金鑰存於 USB，提問明文不送往外部 HE Provider。"
-        },
-        {
-          src: "./marketing/3.服務交付流程.jpg",
-          title: "四段階段指示器與路由架構",
-          caption: "金鑰封裝中 → 密文傳輸中 → 密文同態運算中 → 接收結果，不模擬逐字串流。"
-        },
-        {
-          src: "./marketing/4.行銷推廣圖片.jpg",
-          title: "L0–L3 能力分級與安全邊界",
-          caption: "L1 本期交付、L2 條件交付、L3 非現行科技不承諾；結果以明文回傳。"
-        },
-        {
-          src: "./marketing/5.社群概念圖.jpg",
-          title: "拔除即清除與零明文日誌",
-          caption: "USB 拔除即中止傳輸、白屏並抹除記憶體明文；日誌僅記必要指標與雜湊。"
-        },
-        {
-          src: "./marketing/6.B2B 企業出海 EDM.jpg",
-          title: "高資安組織密文運算應用",
-          caption: "支援固定電路密文運算與具能力宣告之 L2 端點路由評估。"
-        }
+        { file: "1.形象廣告.jpg", badge: "品牌形象", title: "不支援密文就不送，沒有明文後備", caption: "本機 AI 安全殼層與密文路由中繼，嚴格阻斷未具備密文能力宣告的外部端點。" },
+        { file: "2.產品說明流程.jpg", badge: "能力分級", title: "L0–L3 能力分級表", caption: "L0（僅 TLS）非本產品；L1 固定電路密文運算本期交付；L2 條件交付；L3 不承諾。" },
+        { file: "3.服務交付流程.jpg", badge: "硬體邊界", title: "USB 金鑰在位與拔除即清除", caption: "私鑰於本機組合存於 USB，拔除立即中止傳輸、白屏並抹除記憶體明文。" },
+        { file: "4.行銷推廣圖片.jpg", badge: "路由守衛", title: "FAIL-CLOSED 雙重出境檢查", caption: "驗證簽章 Capability Manifest，並於出境封包偵測自然語言明文時強制斷線。" },
+        { file: "5.社群概念圖.jpg", badge: "誠實等待", title: "五段階段指示器", caption: "不模擬虛假逐字串流，誠實呈現封裝、傳輸、同態運算、下載與解密五階段。" },
+        { file: "6.B2B 企業出海 EDM.jpg", badge: "企業方案", title: "資安與研發團隊密文運算方案", caption: "支援每月 100 至 2,000 次固定電路密文請求，可搭配多把通用 USB 硬體金鑰。" }
       ]
     };
 
-    function setupAutoLoopVideo(videoEl) {
-      if (!videoEl) return;
-      videoEl.muted = true;
-      videoEl.loop = true;
-      videoEl.autoplay = true;
-      videoEl.playsInline = true;
+    let selectedPlanIdx = 1;
+    let billingCycle = "yearly";
 
-      const tryPlay = () => {
-        const p = videoEl.play();
-        if (p && typeof p.catch === "function") {
-          p.catch(() => {});
+    function renderPlans() {
+      const grid = document.getElementById("plans-grid");
+      const usbChecked = document.getElementById("hw-usb-check").checked;
+      if (!grid) return;
+
+      document.getElementById("bill-yearly").classList.toggle("active", billingCycle === "yearly");
+      document.getElementById("bill-monthly").classList.toggle("active", billingCycle === "monthly");
+
+      grid.innerHTML = PLANS_04.map((p, idx) => {
+        const isSel = idx === selectedPlanIdx;
+        if (p.custom) {
+          return `
+            <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
+              <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">客製專案</span></div>
+              <div class="plan-quota">${p.quota}</div>
+              <div class="plan-target">${p.target}</div>
+              <div class="plan-pricing"><span class="plan-orig">依專案規模評估</span><span class="plan-sale">專人洽談報價</span></div>
+            </button>
+          `;
         }
+        const orig = billingCycle === "yearly" ? p.y : p.m;
+        const sale = Math.round(orig * DISCOUNT_RATE);
+        const unit = billingCycle === "yearly" ? "/ 年" : "/ 月";
+        return `
+          <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
+            <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">${p.recommended ? "★ 熱門推薦" : "7 折早鳥"}</span></div>
+            <div class="plan-quota">${p.quota}</div>
+            <div class="plan-target">${p.target}</div>
+            <div class="plan-pricing">
+              <span class="plan-orig">原價 NT$ ${orig.toLocaleString("zh-TW")} ${unit}</span>
+              <span class="plan-sale">NT$ ${sale.toLocaleString("zh-TW")} <small style="font-size:0.78rem">${unit}</small></span>
+            </div>
+          </button>
+        `;
+      }).join("");
+
+      const cur = PLANS_04[selectedPlanIdx];
+      document.getElementById("sum-plan-name").textContent = `${cur.plan}（${cur.quota}）`;
+      document.getElementById("sum-billing").textContent = cur.custom ? "客製專案（洽談）" : (billingCycle === "yearly" ? "年繳方案" : "月繳方案");
+      document.getElementById("sum-hw").textContent = usbChecked ? "USB 金鑰 × 1（7 折 NT$ 9,030）" : "未加購（僅軟體訂閱）";
+
+      if (cur.custom) {
+        document.getElementById("sum-orig-price").textContent = "專案報價";
+        document.getElementById("sum-sale-price").textContent = "專人洽談";
+      } else {
+        const subOrig = billingCycle === "yearly" ? cur.y : cur.m;
+        const hwOrig = usbChecked ? HW_USB_ORIG : 0;
+        const totalOrig = subOrig + hwOrig;
+        const totalSale = Math.round(subOrig * DISCOUNT_RATE) + Math.round(hwOrig * DISCOUNT_RATE);
+        document.getElementById("sum-orig-price").textContent = `NT$ ${totalOrig.toLocaleString("zh-TW")}`;
+        document.getElementById("sum-sale-price").textContent = `NT$ ${totalSale.toLocaleString("zh-TW")}`;
+      }
+    }
+
+    function selectPlan(idx) { selectedPlanIdx = idx; renderPlans(); }
+    function setBilling(mode) { billingCycle = mode; renderPlans(); }
+
+    function initCheckoutBridge() {
+      const goBtn = document.getElementById("go-checkout-btn");
+      const mailBtn = document.getElementById("mail-inquiry-btn");
+      const feedback = document.getElementById("form-feedback");
+
+      const collectFields = () => {
+        const cur = PLANS_04[selectedPlanIdx];
+        const usbChecked = document.getElementById("hw-usb-check").checked;
+        const name = document.getElementById("user-name").value.trim();
+        const email = document.getElementById("user-email").value.trim();
+        const useCase = document.getElementById("use-case").value;
+        const notes = document.getElementById("user-notes").value.trim();
+        return { cur, usbChecked, name, email, useCase, notes };
       };
 
-      tryPlay();
-      videoEl.addEventListener("canplay", tryPlay, { once: true });
-      videoEl.addEventListener("ended", () => {
-        videoEl.currentTime = 0;
-        tryPlay();
+      goBtn.addEventListener("click", () => {
+        const data = collectFields();
+        const params = new URLSearchParams();
+        params.set("product", PRODUCT_CODE);
+        params.set("plan", data.cur.plan);
+        params.set("billing", billingCycle);
+        params.set("bundle", data.usbChecked ? "1" : "0");
+        if (data.name) params.set("name", data.name);
+        if (data.email) params.set("email", data.email);
+        const combinedNotes = [data.useCase, data.notes].filter(Boolean).join("｜");
+        if (combinedNotes) params.set("notes", combinedNotes);
+
+        window.location.href = `${CHECKOUT_PATH}?${params.toString()}`;
+      });
+
+      mailBtn.addEventListener("click", () => {
+        const data = collectFields();
+        if (!data.name || !data.email) {
+          feedback.style.color = "#B42318";
+          feedback.textContent = "若要寄送郵件諮詢，請先填寫「稱呼 / 單位名稱」與「聯絡電子信箱」。";
+          return;
+        }
+        const subject = `[HEShell 神盾殼 預售諮詢] ${data.name}（${data.cur.plan}）`;
+        const body = [
+          "您好，我想諮詢「04｜神盾殼 HEShell」的 7 折預售方案：",
+          "",
+          `・稱呼 / 單位：${data.name}`,
+          `・聯絡信箱：${data.email}`,
+          `・感興趣方案：${data.cur.plan}（${billingCycle === "yearly" ? "年繳" : "月繳"}）`,
+          `・搭配硬體：${data.usbChecked ? "USB 硬體金鑰 × 1" : "不加購 USB 金鑰"}`,
+          `・運算場景：${data.useCase}`,
+          `・需求簡述：${data.notes || "（尚未填寫）"}`
+        ].join("\n");
+        feedback.style.color = "#1E7A70";
+        feedback.textContent = "已為您開啟預設郵件程式寄送諮詢摘要。";
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       });
     }
 
-    function renderMediaGallery() {
+    function renderMarketingAssets() {
       const videoBox = document.getElementById("promo-video-box");
-      if (videoBox && MEDIA_CONFIG.video) {
-        const v = MEDIA_CONFIG.video;
+      if (videoBox && MARKETING_MEDIA.video) {
+        const v = MARKETING_MEDIA.video;
+        const videoSrc = `${MEDIA_DIR}/${encodeURIComponent(v.file)}`;
+        const posterSrc = v.poster ? `${MEDIA_DIR}/${encodeURIComponent(v.poster)}` : "";
+
         videoBox.innerHTML = `
           <div class="video-stage">
-            <video id="heshell-loop-video" autoplay muted loop playsinline controls preload="auto" poster="${v.poster}">
-              <source src="${v.src}" type="video/mp4">
-              您的瀏覽器不支援影片播放。
+            <video id="promo-video-player" autoplay muted loop playsinline controls preload="auto"${posterSrc ? ` poster="${posterSrc}"` : ""}>
+              <source src="${videoSrc}" type="video/mp4">
+              您的瀏覽器不支援 HTML5 影片播放。
             </video>
+            <div id="video-error-fallback" class="media-fallback" style="display:none">宣傳影片載入中或暫時無法播放，請重新整理頁面後再試。</div>
           </div>
           <div class="video-info">
-            <span class="num">宣傳短片 · 自動循環播放</span>
+            <span class="num">${v.badge}</span>
             <h3>${v.title}</h3>
             <p class="muted">${v.caption}</p>
-            <div style="margin-top:1rem">
-              <a class="btn primary" href="#cta-form">預約了解神盾殼 HEShell 方案</a>
-            </div>
+            <div style="margin-top:0.8rem"><a class="btn primary" href="#cta-form">查看 7 折預售方案 →</a></div>
           </div>
         `;
-        setupAutoLoopVideo(document.getElementById("heshell-loop-video"));
+
+        const videoEl = document.getElementById("promo-video-player");
+        const videoErrEl = document.getElementById("video-error-fallback");
+        if (videoEl) {
+          videoEl.muted = true;
+          const playPromise = videoEl.play();
+          if (playPromise && typeof playPromise.catch === "function") playPromise.catch(() => {});
+          if (videoErrEl) {
+            const showFallback = () => { videoEl.style.display = "none"; videoErrEl.style.display = "block"; };
+            videoEl.addEventListener("error", showFallback);
+            const srcEl = videoEl.querySelector("source");
+            if (srcEl) srcEl.addEventListener("error", showFallback);
+          }
+        }
       }
 
       const imgGrid = document.getElementById("promo-images-grid");
       if (imgGrid) {
-        imgGrid.innerHTML = (MEDIA_CONFIG.images || []).map((item, idx) => `
-          <article class="media-card">
-            <div class="media-thumb">
-              <img src="${item.src}" alt="${item.title}" loading="lazy" data-idx="${idx}"
-                   onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-              <div class="media-missing" style="display:none">視覺素材載入中，請確認目錄檔案已就緒。</div>
-            </div>
-            <div class="media-body">
-              <span class="num" style="margin-bottom:.25rem">視覺圖庫</span>
-              <h3>${item.title}</h3>
-              <p>${item.caption}</p>
-            </div>
-          </article>
-        `).join("");
+        imgGrid.innerHTML = (MARKETING_MEDIA.images || []).map((item, idx) => {
+          const imgSrc = `${MEDIA_DIR}/${encodeURIComponent(item.file)}`;
+          return `
+            <article class="media-card">
+              <div class="media-thumb">
+                <img src="${imgSrc}" alt="${item.title}" loading="lazy" data-idx="${idx}"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <div class="media-fallback" style="display:none">視覺圖卡載入中，請稍候重新整理檢視。</div>
+              </div>
+              <div class="media-body">
+                <span class="num" style="margin-bottom:0.25rem">${item.badge}</span>
+                <h3>${item.title}</h3>
+                <p>${item.caption}</p>
+                <button type="button" class="btn ghost-dark media-zoom-btn" data-zoom-idx="${idx}">放大檢視圖片</button>
+              </div>
+            </article>
+          `;
+        }).join("");
 
         const dlg = document.getElementById("img-lightbox");
         const dlgImg = document.getElementById("img-modal-src");
@@ -702,98 +877,45 @@
         const dlgCap = document.getElementById("img-modal-caption");
         const dlgClose = document.getElementById("img-modal-close");
 
-        imgGrid.querySelectorAll("img[data-idx]").forEach((imgEl) => {
-          imgEl.addEventListener("click", () => {
-            const data = MEDIA_CONFIG.images[Number(imgEl.dataset.idx)];
-            if (!data || !dlg) return;
-            dlgImg.src = data.src;
-            dlgImg.alt = data.title;
-            dlgTitle.textContent = data.title;
-            dlgCap.textContent = data.caption;
-            dlg.showModal();
-          });
+        const openLightbox = (idx) => {
+          const data = MARKETING_MEDIA.images[Number(idx)];
+          if (!data || !dlg) return;
+          dlgImg.src = `${MEDIA_DIR}/${encodeURIComponent(data.file)}`;
+          dlgImg.alt = data.title;
+          dlgTitle.textContent = data.title;
+          dlgCap.textContent = data.caption;
+          dlg.showModal();
+        };
+
+        imgGrid.querySelectorAll("[data-idx], [data-zoom-idx]").forEach(el => {
+          el.addEventListener("click", () => openLightbox(el.dataset.idx ?? el.dataset.zoomIdx));
         });
 
         if (dlgClose && dlg) {
           dlgClose.addEventListener("click", () => dlg.close());
-          dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+          dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
         }
       }
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      renderMediaGallery();
-
-      // 大字模式同步
+    function initBigText() {
       const bigBtn = document.getElementById("bigtext");
+      if (!bigBtn) return;
       const storageKey = "wc-bigtext";
-      const applyBigText = (on) => {
+      const applyBigText = on => {
         document.documentElement.style.fontSize = on ? "122%" : "";
         bigBtn.setAttribute("aria-pressed", on ? "true" : "false");
         try { localStorage.setItem(storageKey, on ? "1" : "0"); } catch (_) {}
       };
       try { if (localStorage.getItem(storageKey) === "1") applyBigText(true); } catch (_) {}
       bigBtn.addEventListener("click", () => applyBigText(bigBtn.getAttribute("aria-pressed") !== "true"));
+    }
 
-      // 表單處理
-      const form = document.getElementById("product-cta-form");
-      const copyBtn = document.getElementById("copy-btn");
-      const feedback = document.getElementById("form-feedback");
-
-      const buildPayload = () => {
-        const name = document.getElementById("user-name").value.trim();
-        const email = document.getElementById("user-email").value.trim();
-        const useCase = document.getElementById("use-case").value;
-        const notes = document.getElementById("user-notes").value.trim();
-
-        if (!name || !email) return { error: "請填寫「稱呼 / 單位名稱」與「聯絡電子信箱」。" };
-
-        const subject = `[神盾殼 HEShell 預售諮詢] ${name}`;
-        const body = [
-          "您好，我想諮詢「04｜神盾殼 HEShell」的預售與技術評估方案：",
-          "",
-          `・稱呼 / 單位：${name}`,
-          `・聯絡信箱：${email}`,
-          `・預計導入情境：${useCase}`,
-          `・技術環境與需求簡述：${notes || "（尚未填寫）"}`,
-          "",
-          "---",
-          "此登記摘要由 神盾殼 HEShell 預售頁面產生"
-        ].join("\n");
-
-        return { subject, body };
-      };
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const res = buildPayload();
-        if (res.error) {
-          feedback.style.color = "#B42318";
-          feedback.textContent = res.error;
-          return;
-        }
-        feedback.style.color = "#1E7A70";
-        feedback.textContent = "已為您整理需求摘要並開啟預設郵件程式；若未自動開啟，請使用右側「複製登記摘要」。";
-        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(res.subject)}&body=${encodeURIComponent(res.body)}`;
-      });
-
-      copyBtn.addEventListener("click", async () => {
-        const res = buildPayload();
-        if (res.error) {
-          feedback.style.color = "#B42318";
-          feedback.textContent = res.error;
-          return;
-        }
-        const text = `${res.subject}\n\n${res.body}`;
-        try {
-          await navigator.clipboard.writeText(text);
-          feedback.style.color = "#1E7A70";
-          feedback.textContent = "✓ 登記摘要已複製到剪貼簿！";
-        } catch (_) {
-          feedback.style.color = "#B42318";
-          feedback.textContent = "瀏覽器限制自動複製，請改用「開啟信箱寄送預售諮詢」。";
-        }
-      });
+    document.addEventListener("DOMContentLoaded", () => {
+      renderMarketingAssets();
+      renderPlans();
+      initCheckoutBridge();
+      initBigText();
     });
   </script>
 </body>

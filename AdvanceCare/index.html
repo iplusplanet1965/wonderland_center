@@ -1,19 +1,16 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
-<!-- 產品線：09｜善終守護 AdvanceCare（水月道場 / Wonderland Center · C2-WC-ACP）｜檔案層級：cta/AdvanceCare.html -->
+<!-- 產品線：09｜善終守護 AdvanceCare（水月道場 / Wonderland Center）｜檔案路徑：AdvanceCare/index.html -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>善終守護 AdvanceCare｜安寧緩和醫療意願教育與決策輔助工具 — 專屬預售諮詢</title>
-  <meta name="description" content="善終守護 AdvanceCare 嚴格定位為教育與決策輔助工具，絕非醫療行為本身，亦不替代醫師臨床說明。所有正式健保卡預立意願註記均須導引至法定合法醫療機構完成。">
+  <title>善終守護 AdvanceCare｜安寧緩和醫療意願教育與決策輔助工具 — 7 折嘗鮮預售</title>
+  <meta name="description" content="善終守護 AdvanceCare 嚴格定位為教育與決策輔助工具，絕非醫療行為本身，亦不替代醫師臨床說明。在沒有壓力的時候，先看見兩條路。">
   <meta name="theme-color" content="#0B253A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* ==========================================================================
-       水月道場 / Wonderland Center — CIS 設計系統（60% 底色 / 30% 結構 / 10% 點綴）
-       ========================================================================== */
     :root {
       --font-body: "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
       --font-display: "Cinzel", "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", serif;
@@ -33,6 +30,7 @@
       --accent-2: #D4AF37;
       --link: #0B253A;
       --kicker: #1E7A70;
+      --kicker-dark: #145750;
 
       --header-bg: rgba(244, 247, 246, 0.95);
       --hero-bg: radial-gradient(520px 520px at 78% 30%, rgba(244, 247, 246, 0.16), transparent 62%), linear-gradient(180deg, #0B253A 0%, #0e3049 100%);
@@ -44,7 +42,7 @@
 
       --notice-bg: #FBF6E8;
       --notice-border: #C59B27;
-      --notice-text: #4A3806;
+      --notice-text: #5E480A;
 
       --footer-bg: #1A1E24;
       --footer-text: #C9D2D0;
@@ -77,12 +75,8 @@
       border-radius: var(--radius);
     }
     .skip:focus { left: 1rem; top: 1rem; }
-
     .wrap { width: min(1160px, 100% - 2.5rem); margin-inline: auto; }
 
-    /* ==========================================================================
-       頂部黏性導覽列與無障礙大字切換
-       ========================================================================== */
     header.site {
       position: sticky; top: 0; z-index: 50;
       background: var(--header-bg);
@@ -124,9 +118,6 @@
     .btn-toggle:hover { background: rgba(11, 37, 58, 0.06); }
     .btn-toggle[aria-pressed="true"] { background: var(--heading); color: #FFFFFF; }
 
-    /* ==========================================================================
-       Hero 主視覺區
-       ========================================================================== */
     .hero {
       position: relative; overflow: hidden;
       padding: clamp(3.5rem, 8vw, 6.2rem) 0 clamp(3rem, 6.5vw, 5rem);
@@ -158,7 +149,17 @@
     }
     .hero .lead {
       font-size: clamp(1.03rem, 1.85vw, 1.2rem); max-width: 52em;
-      color: var(--hero-muted); margin: 0 0 1.9rem;
+      color: var(--hero-muted); margin: 0 0 1.6rem;
+    }
+    .hero-core-notice {
+      background: rgba(251, 246, 232, 0.12);
+      border-left: 4px solid var(--accent);
+      padding: 0.9rem 1.15rem;
+      border-radius: 0 8px 8px 0;
+      color: #FBF6E8;
+      font-size: 0.92rem;
+      margin-bottom: 1.8rem;
+      max-width: 54em;
     }
     .cta { display: flex; flex-wrap: wrap; gap: 0.9rem; }
 
@@ -172,6 +173,8 @@
     .btn:hover { transform: translateY(-2px); }
     .btn.primary { background: var(--accent); color: var(--on-accent); }
     .btn.primary:hover { background: #e0bc44; }
+    .btn.teal { background: var(--kicker); color: #FFFFFF; }
+    .btn.teal:hover { background: var(--kicker-dark); }
     .btn.ghost { border-color: var(--accent-2); color: var(--accent-2); background: transparent; }
     .btn.ghost:hover { background: rgba(212, 175, 55, 0.12); }
     .btn.ghost-dark { border-color: var(--heading); color: var(--heading); background: transparent; }
@@ -184,9 +187,6 @@
       border: 1px solid rgba(244, 247, 246, 0.18);
     }
 
-    /* ==========================================================================
-       通用區塊、核心聲明框與表格樣式
-       ========================================================================== */
     section { padding: clamp(3.2rem, 6.5vw, 5.2rem) 0; border-bottom: 1px solid var(--line); }
     section.alt { background: var(--surface-2); }
     .sec-head { max-width: 54em; margin-bottom: 2.1rem; }
@@ -202,23 +202,6 @@
     p { margin: 0 0 1rem; }
     .muted { color: var(--muted); }
 
-    .core-disclaimer {
-      background: var(--notice-bg);
-      border: 2px solid var(--notice-border);
-      border-radius: var(--radius-lg);
-      padding: 1.3rem 1.55rem;
-      color: var(--notice-text);
-      margin-bottom: 2.2rem;
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-    .core-disclaimer strong.title {
-      color: var(--heading);
-      display: block;
-      margin-bottom: 0.35rem;
-      font-size: 1.08rem;
-    }
-
     .grid { display: grid; gap: 1.35rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
     .grid.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
 
@@ -232,15 +215,11 @@
       letter-spacing: 0.1em; font-weight: 700; display: block; margin-bottom: 0.45rem;
     }
 
-    .product-highlights { margin: 0.35rem 0 0; padding-left: 1.15rem; font-size: 0.94rem; color: var(--text); }
-    .product-highlights li { margin-bottom: 0.4rem; }
-
     .boundary-box {
       padding: 0.95rem 1.15rem; background: var(--notice-bg);
-      border-left: 3px solid var(--notice-border); color: var(--notice-text);
+      border-left: 4px solid var(--notice-border); color: var(--notice-text);
       font-size: 0.9rem; line-height: 1.65; border-radius: 0 6px 6px 0;
     }
-
     .note {
       border: 1px dashed var(--line-strong); border-radius: var(--radius-lg);
       padding: 1rem 1.2rem; font-size: 0.9rem; color: var(--muted); background: var(--surface-2);
@@ -249,13 +228,10 @@
 
     .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--card); }
     table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
-    th, td { text-align: left; padding: 0.85rem 1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th, td { text-align: left; padding: 0.8rem 1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
     th { background: var(--surface-2); color: var(--heading); font-weight: 700; }
     tr:last-child td { border-bottom: none; }
 
-    /* ==========================================================================
-       宣傳短片（自動靜音循環播放）與六張視覺圖庫樣式
-       ========================================================================== */
     .video-feature {
       background: var(--card); border: 1px solid var(--line);
       border-top: 4px solid var(--accent); border-radius: var(--radius-lg);
@@ -263,18 +239,12 @@
       display: grid; grid-template-columns: 1.35fr 1fr; align-items: stretch;
     }
     @media (max-width: 820px) { .video-feature { grid-template-columns: 1fr; } }
-
     .video-stage {
       background: #0B253A; display: flex; align-items: center;
       justify-content: center; min-height: 260px; position: relative;
     }
-    .video-stage video {
-      width: 100%; height: 100%; max-height: 440px;
-      object-fit: contain; display: block;
-    }
-    .video-info {
-      padding: 1.5rem; display: flex; flex-direction: column; justify-content: center;
-    }
+    .video-stage video { width: 100%; height: 100%; max-height: 440px; object-fit: contain; display: block; }
+    .video-info { padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }
 
     .media-grid {
       display: grid; gap: 1.35rem;
@@ -286,34 +256,19 @@
       display: flex; flex-direction: column;
       transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
-    .media-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(11, 37, 58, 0.08);
-    }
+    .media-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(11, 37, 58, 0.08); }
     .media-thumb {
       background: #0B253A; aspect-ratio: 16 / 10;
-      overflow: hidden; display: flex; align-items: center; justify-content: center;
-      position: relative;
+      overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative;
     }
-    .media-thumb img {
-      width: 100%; height: 100%; object-fit: cover;
-      cursor: zoom-in; transition: transform 0.2s ease;
-    }
+    .media-thumb img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform 0.2s ease; }
     .media-thumb img:hover { transform: scale(1.03); }
     .media-body { padding: 1.15rem 1.3rem; flex: 1; display: flex; flex-direction: column; }
     .media-body h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
     .media-body p { margin: 0 0 0.75rem; font-size: 0.92rem; color: var(--muted); }
-    .media-zoom-btn {
-      margin-top: auto; align-self: flex-start;
-      padding: 0.4rem 0.85rem; font-size: 0.84rem; min-height: 36px;
-    }
+    .media-zoom-btn { margin-top: auto; align-self: flex-start; padding: 0.4rem 0.85rem; font-size: 0.84rem; min-height: 36px; }
+    .media-fallback { color: #E4ECEA; font-size: 0.86rem; padding: 1.1rem; text-align: center; line-height: 1.55; }
 
-    .media-fallback {
-      color: #E4ECEA; font-size: 0.86rem; padding: 1.1rem;
-      text-align: center; line-height: 1.55;
-    }
-
-    /* 原生 <dialog> 圖片放大燈箱 */
     dialog.img-modal {
       border: none; border-radius: var(--radius-lg); padding: 0;
       width: min(900px, calc(100% - 2rem)); max-height: 90vh;
@@ -334,20 +289,57 @@
     .img-modal-body { padding: 1.2rem 1.4rem; text-align: center; overflow-y: auto; }
     .img-modal-body img { max-height: 68vh; margin-inline: auto; border-radius: var(--radius); }
 
-    /* ==========================================================================
-       FAQ 與零後端專屬預售諮詢表單
-       ========================================================================== */
     .faq-list { display: grid; gap: 1rem; }
     .faq-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.35rem 1.5rem; }
     .faq-card h3 { font-size: 1.08rem; margin-bottom: 0.45rem; }
     .faq-card p { margin: 0; color: var(--text); }
+
+    .billing-switch-bar {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 0.8rem; margin-bottom: 1.2rem;
+    }
+    .billing-pills {
+      display: inline-flex; background: var(--surface-2); padding: 0.3rem;
+      border-radius: 10px; gap: 0.3rem;
+    }
+    .bill-pill {
+      border: none; background: transparent; padding: 0.45rem 1rem; border-radius: 8px;
+      font-family: inherit; font-size: 0.88rem; font-weight: 700; color: var(--muted); cursor: pointer;
+    }
+    .bill-pill.active { background: var(--heading); color: #FFFFFF; }
+
+    .plans-grid {
+      display: grid; gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      margin-bottom: 1.8rem;
+    }
+    .plan-card {
+      background: var(--card); border: 2px solid var(--line); border-radius: var(--radius-lg);
+      padding: 1.25rem; cursor: pointer; text-align: left; font-family: inherit;
+      display: flex; flex-direction: column; transition: all 0.15s ease;
+    }
+    .plan-card:hover { border-color: var(--heading); transform: translateY(-2px); }
+    .plan-card.selected {
+      border-color: var(--heading); background: #FFFFFF;
+      box-shadow: 0 10px 24px rgba(11, 37, 58, 0.1);
+    }
+    .plan-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
+    .plan-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--heading); }
+    .plan-badge {
+      font-size: 0.74rem; font-weight: 700; padding: 0.18rem 0.55rem;
+      border-radius: 999px; background: #E6F3F1; color: var(--kicker-dark);
+    }
+    .plan-quota { font-weight: 700; font-size: 0.92rem; color: var(--kicker); margin-bottom: 0.25rem; }
+    .plan-target { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.9rem; }
+    .plan-pricing { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--line); font-family: var(--font-mono); }
+    .plan-orig { font-size: 0.8rem; color: var(--muted); text-decoration: line-through; display: block; }
+    .plan-sale { font-size: 1.28rem; font-weight: 700; color: var(--heading); }
 
     .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.5fr 1fr; align-items: start; }
     @media (max-width: 860px) { .reserve-layout { grid-template-columns: 1fr; } }
 
     .form-group { margin-bottom: 1.2rem; }
     .form-group label { display: block; font-weight: 700; font-size: 0.93rem; color: var(--heading); margin-bottom: 0.45rem; }
-    .req { color: #B42318; }
     input[type="text"], input[type="email"], select, textarea {
       width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--line-strong);
       border-radius: var(--radius); font-family: inherit; font-size: 1rem;
@@ -358,9 +350,15 @@
     .form-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.4rem; }
     .form-feedback { margin-top: 1rem; font-size: 0.92rem; font-weight: 600; color: var(--kicker); min-height: 1.4em; }
 
-    dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1.2rem; margin: 0; font-size: 0.93rem; }
-    dl.facts dt { color: var(--muted); }
-    dl.facts dd { margin: 0; color: var(--heading); font-weight: 600; }
+    .checkout-summary-box {
+      background: linear-gradient(180deg, #0B253A 0%, #10324D 100%);
+      color: #F4F7F6; border-radius: var(--radius-lg); padding: 1.5rem;
+      border: 1.5px solid rgba(212, 175, 55, 0.45);
+    }
+    .checkout-summary-box h3 { color: #FFFFFF; margin-bottom: 0.75rem; }
+    dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1.1rem; margin: 0; font-size: 0.92rem; }
+    dl.facts dt { color: #B8C7C5; }
+    dl.facts dd { margin: 0; color: #FFFFFF; font-weight: 700; }
 
     footer.site { padding: 2.8rem 0 3.2rem; background: var(--footer-bg); color: var(--footer-text); font-size: 0.92rem; }
     footer.site .muted { color: #9FB0AD; }
@@ -371,15 +369,14 @@
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .btn, .media-card, .media-thumb img { transition: none; }
-      .btn:hover, .media-card:hover, .media-thumb img:hover { transform: none; }
+      .btn, .media-card, .media-thumb img, .plan-card { transition: none; }
+      .btn:hover, .media-card:hover, .media-thumb img:hover, .plan-card:hover { transform: none; }
     }
   </style>
 </head>
 <body>
   <a class="skip" href="#main">跳到主要內容</a>
 
-  <!-- 頂部導覽列 -->
   <header class="site">
     <div class="wrap">
       <a class="brand" href="../index.html" aria-label="返回水月道場全生態總覽">
@@ -395,17 +392,17 @@
           <path d="M15 32c3-2 6 2 9 0s6-2 9 0" fill="none" stroke="#2A9D8F" stroke-width="1.6" stroke-linecap="round"/>
           <circle cx="24" cy="16" r="4" fill="#D4AF37"/>
         </svg>
-        <span>善終守護 AdvanceCare<small>水月道場 Wonderland Center｜專屬預售頁</small></span>
+        <span>AdvanceCare 善終守護<small>水月道場 / Wonderland Center｜7 折嘗鮮預售頁</small></span>
       </a>
 
       <nav class="main" aria-label="本頁選單">
         <ul>
           <li><a href="../index.html#products">← 返回十大產品線</a></li>
-          <li><a href="#media-showcase">影音與視覺圖庫</a></li>
-          <li><a href="#boundary">AI 與真人服務邊界</a></li>
-          <li><a href="#privacy">隱私與90天銷毀</a></li>
+          <li><a href="#dual-layer">AI 輔助與真人服務</a></li>
+          <li><a href="#marketing-assets">影音與視覺素材</a></li>
+          <li><a href="#privacy">隱私與醫學審查</a></li>
           <li><a href="#faq">常見問答</a></li>
-          <li><a href="#cta-form">預約諮詢</a></li>
+          <li><a href="#cta-form">7 折方案與結算</a></li>
           <li><button type="button" id="bigtext" class="btn-toggle" aria-pressed="false">長者友善大字</button></li>
         </ul>
       </nav>
@@ -413,39 +410,68 @@
   </header>
 
   <main id="main">
-    <!-- Hero 區 -->
     <section class="hero" aria-labelledby="page-title">
       <div class="wrap">
         <nav class="breadcrumb" aria-label="麵包屑導覽">
           <a href="../index.html">全生態總覽</a>
           <span>/</span>
-          <a href="../index.html#products">水月道場倡議</a>
+          <a href="../index.html#products">水月道場 Wonderland Center</a>
           <span>/</span>
           <span>09｜善終守護 AdvanceCare</span>
         </nav>
-        <span class="eyebrow">09｜水月道場 / Wonderland Center · 預售產品代碼 C2-WC-ACP</span>
+        <span class="eyebrow">09｜水月道場 / Wonderland Center（C2-WC-ACP）· 安寧緩和醫療意願教育與決策輔助工具</span>
         <h1 id="page-title">「安寧」不等於「放棄治療」：在沒有壓力的時候，先看見兩條路。</h1>
-        <p class="lead">善終守護 AdvanceCare 是水月道場 / Wonderland Center 規劃中的安寧緩和醫療意願教育與決策輔助工具，以經安寧緩和專科醫師審核的情境、個人化對照影片與互動沙盤推演，陪伴當事人與家屬在低壓力的環境下先理解不同選擇對生活品質與照顧負荷的影響。</p>
+        <p class="lead">善終守護（AdvanceCare）以經安寧緩和專科醫師審核過的情境、個人化對照影片與互動沙盤推演，陪伴當事人與家屬在低壓力的環境下，先理解不同選擇對生活品質與照顧負荷可能帶來的影響[cite: 12]。</p>
+        <div class="hero-core-notice">
+          <strong>🩺 核心聲明（必讀）：</strong>善終守護 AdvanceCare 嚴格定位為「教育與決策輔助工具」，絕非醫療行為本身，亦不替代醫師臨床說明[cite: 12]。所有正式健保卡預立意願註記（不施行心肺復甦術、不施行維生醫療）均須導引至法定合法醫療機構完成[cite: 12]。
+        </div>
         <div class="cta">
-          <a class="btn primary" href="#cta-form">登記教育與決策輔助工具諮詢</a>
-          <a class="btn ghost" href="#media-showcase">觀看理念短片與視覺圖庫</a>
+          <a class="btn primary" href="#cta-form">選擇 7 折預售方案並前往結算 →</a>
+          <a class="btn ghost" href="#marketing-assets">觀看宣傳影片與視覺圖</a>
         </div>
         <ul class="tags">
-          <li>教育與決策輔助 · 非醫療行為</li>
-          <li>安寧專科醫師簽審劇本</li>
-          <li>隨時一鍵中止 · 心理師與社工支持</li>
-          <li>影像 90 天自動永久銷毀</li>
+          <li>安寧緩和專科醫師審核劇本</li>
+          <li>教育決策輔助，非醫療行為</li>
+          <li>影像 90 天自動銷毀零訓練</li>
+          <li>早鳥嘗鮮預售全系列 7 折</li>
         </ul>
       </div>
     </section>
 
-    <!-- 宣傳短片與視覺圖庫（頁面文字不顯示任何檔案路徑） -->
-    <section id="media-showcase" class="alt" aria-labelledby="media-title">
+    <section id="dual-layer" aria-labelledby="dual-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Visual &amp; Motion Showcase</span>
-          <h2 id="media-title">善終守護理念短片與家庭對話視覺說明</h2>
-          <p class="muted">短片載入後自動循環播放，點擊下方任一視覺圖卡可開啟燈箱放大檢視細節。</p>
+          <span class="kicker">AI Assistance &amp; Human Care Boundary</span>
+          <h2 id="dual-title">AI 輔助層與真人服務層：先看見，再決定</h2>
+          <p class="muted">面對無效 CPR、插管與安寧緩和醫療等抽象選項時，我們把條文轉化為容易理解的對照情境，並由真人專業人員全程守護[cite: 12]。</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card feature">
+            <span class="num">AI 輔助層（教育與沙盤模擬）</span>
+            <h3>個人化兩路徑對照影片與條例問答</h3>
+            <p style="margin:0">使用當事人與至多 4 位親友照片，生成「積極無效搶救路徑」與「安寧緩和路徑」之多視角情境模擬；整合互動決策樹、《安寧緩和醫療條例》問答與一頁式家庭討論對照報告[cite: 12]。</p>
+          </div>
+
+          <div class="card feature">
+            <span class="num">真人服務層（醫學審查與情感支持）</span>
+            <h3>醫師審核、情緒轉介與醫療院所正式註記</h3>
+            <p style="margin:0">每個新劇本均須經安寧緩和專科醫師電子簽章審核才上線；偵測高風險情緒時暫停 AI 並轉接心理師或受訓社工主持家庭會議；AI 僅協助預填表單，正式健保卡註記須導引至法定醫療機構見證完成[cite: 12]。</p>
+          </div>
+        </div>
+
+        <div class="boundary-box" style="margin-top:1.8rem">
+          <strong>核心聲明（所有公開資訊必附）：</strong>善終守護 AdvanceCare 嚴格定位為「教育與決策輔助工具」，絕非醫療行為本身，亦不替代醫師臨床說明[cite: 12]。所有正式健保卡預立意願註記（不施行心肺復甦術、不施行維生醫療）均須導引至法定合法醫療機構完成[cite: 12]。
+        </div>
+      </div>
+    </section>
+
+    <section id="marketing-assets" class="alt" aria-labelledby="assets-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="kicker">Marketing Showcase</span>
+          <h2 id="assets-title">善終守護 AdvanceCare 行銷短片與視覺圖庫</h2>
+          <p class="muted">透過動態概念短片與六張視覺圖解，了解兩條路徑對照模擬、醫學審查閘門與 90 天隱私自動銷毀保護；點擊任一張圖片可放大檢視。</p>
         </div>
 
         <div id="promo-video-box" class="video-feature"></div>
@@ -453,109 +479,35 @@
       </div>
     </section>
 
-    <!-- 核心聲明與 AI vs. 真人服務邊界 -->
-    <section id="boundary" aria-labelledby="boundary-title">
-      <div class="wrap">
-        <!-- 必附核心聲明 -->
-        <div class="core-disclaimer" role="region" aria-label="本產品核心聲明">
-          <strong class="title">本產品核心聲明（必讀）</strong>
-          善終守護 AdvanceCare 嚴格定位為「教育與決策輔助工具」，<strong>絕非醫療行為本身，亦不替代醫師臨床說明</strong>。所有正式健保卡預立意願註記（不施行心肺復甦術、不施行維生醫療）均須導引至法定合法醫療機構完成。
-        </div>
-
-        <div class="sec-head">
-          <span class="kicker">System Boundaries · AI vs. Human Care</span>
-          <h2 id="boundary-title">AI 輔助模擬先行，真人專業服務護航</h2>
-          <p class="muted">我們嚴格區分「AI 可提供的情境對照輔助」與「必須由專科醫師、心理師及社工執行的真人服務」，正式註記始終回到法定醫療機構完成。</p>
-        </div>
-
-        <div class="table-wrap" style="margin-bottom:2rem">
-          <table>
-            <thead>
-              <tr>
-                <th style="width:50%">AI 輔助層（教育與情境對照）</th>
-                <th style="width:50%">必須由真人服務（臨床、倫理與見證）</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>個人化對照影片：</strong>使用當事人與至多 4 位親友照片（上傳親友照片前須取得本人同意），生成「積極無效搶救路徑」與「安寧緩和路徑」的多視角教育模擬影片（第一人稱／家屬／醫療團隊）。</td>
-                <td><strong>醫學審查閘門：</strong>每個新模擬劇本與臨床情境，均須經安寧緩和專科醫師電子簽章審核後方可上線。</td>
-              </tr>
-              <tr>
-                <td><strong>決策沙盤推演：</strong>依年齡、共病與家庭照護結構展開決策樹，模擬不同選擇對生活品質與照護負荷的相對影響。</td>
-                <td><strong>心理諮商與情緒防護：</strong>觀看時可隨時一鍵中止；偵測到高風險情緒時立即暫停 AI 模擬，提供心理支持預約與真人求助通道。</td>
-              </tr>
-              <tr>
-                <td><strong>條例知識問答（RAG＋語音朗讀）：</strong>依《安寧緩和醫療條例》知識庫解答常見迷思，並提供語音朗讀摘要。</td>
-                <td><strong>家庭會議協調：</strong>由受訓社工師主持家庭會議，協助家人溝通與理解彼此期待。</td>
-              </tr>
-              <tr>
-                <td><strong>一頁式對照摘要與表單預填：</strong>整理討論重點並產出參考預填表單，減輕家屬文書準備負擔。</td>
-                <td><strong>正式健保卡註記見證：</strong>AI 不得執行法定註記簽署；轉介合作醫療院所由專人見證完成正式註記。</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="boundary-box" role="note" aria-label="模擬指標與範圍聲明">
-          <strong>模擬指標與範圍聲明：</strong>本模擬僅供教育決策輔助參考，<strong>非正式醫療預測或臨床診斷依據</strong>。方案、價格與合作院所名單目前尚未公布，亦不宣稱任何醫療或個資法規已合規或已獲第三方認證。
-        </div>
-      </div>
-    </section>
-
-    <!-- 隱私保護與適用對象 -->
-    <section id="privacy" class="alt" aria-labelledby="privacy-title">
+    <section id="privacy" aria-labelledby="priv-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Privacy &amp; Ethical Safeguards</span>
-          <h2 id="privacy-title">高規格肖像隱私保護與零訓練承諾</h2>
-          <p class="muted">涉及家人肖像與生命教育對話的資料，我們以加密暫存、自動永久銷毀與去識別化機制守護。</p>
+          <span class="kicker">Privacy &amp; Safety Safeguards</span>
+          <h2 id="priv-title">隱私零訓練承諾與高風險情緒防護</h2>
+          <p class="muted">尊重每一位當事人與家屬的肖像隱私與情緒節奏[cite: 12]。</p>
         </div>
 
-        <div class="grid" style="margin-bottom:2.2rem">
-          <article class="card feature">
+        <div class="grid">
+          <div class="card">
             <span class="num">防護 01｜90 天自動永久銷毀</span>
-            <h3>加密儲存，亦可隨時立即銷毀</h3>
-            <p style="margin:0">肖像與生成影片以 AES-256 物件信封加密保存，自上傳起 90 天自動永久刪除（Crypto-shredding），當事人亦可隨時手動一鍵立即銷毀。</p>
-          </article>
-
-          <article class="card feature">
-            <span class="num">防護 02｜零基礎模型訓練承諾</span>
-            <h3>肖像與對話絕不用於 AI 訓練</h3>
-            <p style="margin:0">當事人與親友之肖像照片及互動對話紀錄，嚴禁用于任何基礎模型訓練或微調。</p>
-          </article>
-
-          <article class="card feature">
-            <span class="num">防護 03｜動態水印警語與去識別化日誌</span>
-            <h3>全程壓印教育參考警語</h3>
-            <p style="margin:0">每秒畫面壓印使用者數位指紋與「本模擬僅供教育決策輔助參考，非正式醫療預測」警語；資料庫與日誌去識別化，日誌不留存真實姓名、身分證字號與原始病歷。</p>
-          </article>
-        </div>
-
-        <div class="grid two">
-          <div class="card">
-            <span class="num">適用對象</span>
-            <h3>考慮預立意願的家庭與生命教育推廣機構</h3>
-            <ul class="product-highlights">
-              <li><strong>當事人與家屬：</strong>想理解不同選擇的實際影響，又希望在沒有醫院緊迫壓力的環境下與家人討論的民眾。</li>
-              <li><strong>推廣安寧緩和觀念的機構：</strong>醫院社服室或安寧團隊、長照機構、社區關懷據點、宗教或公益團體之教育說明輔助。</li>
-            </ul>
+            <h3>加密儲存，可隨時一鍵立即刪除</h3>
+            <p style="margin:0;font-size:0.93rem">肖像與生成影片均以 AES-256 加密保存，自上傳起 90 天自動永久刪除，使用者亦可隨時手動立即銷毀[cite: 12]。</p>
           </div>
           <div class="card">
-            <span class="num">非對象（明確排除）</span>
-            <h3>不適用本工具的情境</h3>
-            <ul class="product-highlights">
-              <li>需要醫療診斷、疾病預後預測或臨床建議者（不提供，應直接由主治醫師說明）。</li>
-              <li>想在線上直接完成健保卡預立意願註記者（必須前往法定合法醫療機構完成）。</li>
-              <li>處於急性醫療決策當下、需要即時臨床判斷者（應優先由現場醫療團隊處理）。</li>
-            </ul>
+            <span class="num">防護 02｜零基礎模型訓練</span>
+            <h3>絕不用於模型訓練或微調</h3>
+            <p style="margin:0;font-size:0.93rem">上傳之親友肖像（須取得本人同意）與對話紀錄，絕不用於任何基礎 AI 模型訓練或微調[cite: 12]。</p>
+          </div>
+          <div class="card">
+            <span class="num">防護 03｜隨時可以停</span>
+            <h3>一鍵中止並轉接真人支持</h3>
+            <p style="margin:0;font-size:0.93rem">觀看與推演過程隨時可一鍵中止；系統偵測到高風險情緒反應時立即暫停模擬，提供真人支持轉介[cite: 12]。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 常見問答 FAQ -->
-    <section id="faq" aria-labelledby="faq-title">
+    <section id="faq" class="alt" aria-labelledby="faq-title">
       <div class="wrap">
         <div class="sec-head">
           <span class="kicker">Frequently Asked Questions</span>
@@ -564,90 +516,94 @@
 
         <div class="faq-list">
           <article class="faq-card">
-            <h3>Q1：這是醫療諮詢嗎？</h3>
-            <p>不是。善終守護 AdvanceCare 嚴格定位為「教育與決策輔助工具」，絕非醫療行為本身，亦不替代醫師的臨床說明。</p>
+            <h3>Q1：這是醫療諮詢嗎？可以在這裡直接完成健保卡註記嗎？</h3>
+            <p>不是醫療諮詢，也不替代醫師臨床說明[cite: 12]。善終守護 AdvanceCare 是教育與決策輔助工具，AI 只協助預填表單，所有正式健保卡預立意願註記均須導引至法定合法醫療機構由專人見證完成[cite: 12]。</p>
           </article>
           <article class="faq-card">
-            <h3>Q2：在這裡可以直接完成健保卡註記嗎？</h3>
-            <p>不行。系統只協助理解《安寧緩和醫療條例》並產出預填表單，所有正式健保卡預立意願註記（不施行心肺復甦術、不施行維生醫療）均須導引至法定合法醫療機構，由專人見證簽署完成。</p>
+            <h3>Q2：影片裡的情況會真的發生在我身上嗎？</h3>
+            <p>不一定[cite: 12]。影片與指標是經安寧緩和專科醫師審核的情境模擬，屬非絕對預測，僅供教育決策輔助參考[cite: 12]。</p>
           </article>
           <article class="faq-card">
-            <h3>Q3：影片裡的情況會真的發生在我身上嗎？</h3>
-            <p>不一定。影片與指標是經安寧緩和專科醫師審核的情境模擬，屬非絕對預測，僅供教育決策輔助參考。</p>
+            <h3>Q3：我和家人的照片會怎麼處理？</h3>
+            <p>加密儲存，自上傳起 90 天自動永久刪除，也可以隨時手動立即銷毀；不會用來訓練或微調任何 AI 模型[cite: 12]。</p>
           </article>
           <article class="faq-card">
-            <h3>Q4：我和家人的照片會怎麼處理？</h3>
-            <p>加密儲存，自上傳起 90 天自動永久刪除，也可以隨時手動立即銷毀；不會用來訓練或微調任何 AI 模型。上傳親友照片前須取得其本人同意。</p>
-          </article>
-          <article class="faq-card">
-            <h3>Q5：看了很難過怎麼辦？目前費用與方案為何？</h3>
-            <p>觀看過程中可以隨時一鍵中止；系統偵測到高風險情緒時會暫停模擬，提供真人求助通道與心理支持預約（服務時段尚待確認）。方案與價格目前尚未公布，歡迎在下方留下您的需求。</p>
+            <h3>Q4：若機構當月場次超過方案上限怎麼辦？</h3>
+            <p>可在結算中心加購「額外場次包」（3 場決策輔助場次，原價 NT$ 1,490，7 折嘗鮮預售價 NT$ 1,043）[cite: 1]。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 專屬預售諮詢表單 -->
-    <section id="cta-form" class="alt" aria-labelledby="cta-form-title">
+    <section id="cta-form" aria-labelledby="cta-form-title">
       <div class="wrap">
         <div class="sec-head">
-          <span class="kicker">Call to Action · AdvanceCare</span>
-          <h2 id="cta-form-title">登記教育與決策輔助工具諮詢</h2>
-          <p class="muted">如果您或您服務的機構希望了解這套教育與決策輔助工具，請留下您的聯絡資訊，正式方案與合作院所確認後，我們會再與您聯繫。</p>
+          <span class="kicker">70% Early-Bird Presale · AdvanceCare</span>
+          <h2 id="cta-form-title">選擇您的 7 折嘗鮮預售方案並前往結算</h2>
+          <p class="muted">全系列早鳥預售享 <strong>7 折優惠（現省 30%）</strong>[cite: 1]；請先點選適合家庭溝通或醫療社福機構推廣的方案，再前往共用結算中心。</p>
         </div>
 
-        <div class="core-disclaimer">
-          <strong class="title">本產品核心聲明（必讀）</strong>
-          善終守護 AdvanceCare 嚴格定位為「教育與決策輔助工具」，絕非醫療行為本身，亦不替代醫師臨床說明。所有正式健保卡預立意願註記（不施行心肺復甦術、不施行維生醫療）均須導引至法定合法醫療機構完成。
+        <div class="billing-switch-bar">
+          <strong style="color:var(--heading);font-size:0.95rem">步驟 ①：點選訂閱方案與計費週期</strong>
+          <div class="billing-pills" role="group" aria-label="計費週期切換">
+            <button type="button" id="bill-yearly" class="bill-pill active" onclick="setBilling('yearly')">年繳方案（再享 7 折）</button>
+            <button type="button" id="bill-monthly" class="bill-pill" onclick="setBilling('monthly')">月繳方案（享 7 折）</button>
+          </div>
         </div>
+
+        <div id="plans-grid" class="plans-grid"></div>
 
         <div class="reserve-layout">
           <form id="product-cta-form" class="card form-card" novalidate>
+            <h3 style="margin-bottom:0.85rem">步驟 ②：預填聯絡與家庭／機構推廣需求（將自動帶入結算頁）</h3>
             <div class="grid two">
               <div class="form-group">
-                <label for="user-name">稱呼 / 單位或家屬代表 <span class="req">*</span></label>
-                <input type="text" id="user-name" placeholder="例如：陳社工師 / 某某醫院社服室或家屬" required>
+                <label for="user-name">稱呼 / 醫療院所或社福機構名稱</label>
+                <input type="text" id="user-name" placeholder="例如：陳社工師 / 某某醫院社服室或家庭代表">
               </div>
               <div class="form-group">
-                <label for="user-email">聯絡電子信箱 <span class="req">*</span></label>
-                <input type="email" id="user-email" placeholder="name@example.com" required>
+                <label for="user-email">聯絡電子信箱</label>
+                <input type="email" id="user-email" placeholder="name@example.com">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="user-type">諮詢身分 <span class="req">*</span></label>
-              <select id="user-type">
-                <option value="當事人與家屬（希望了解家庭對話與預立意願教育）">當事人與家屬（希望了解家庭對話與預立意願教育）</option>
-                <option value="醫療院所 / 安寧團隊 / 社服室推廣合作">醫療院所 / 安寧團隊 / 社服室推廣合作</option>
-                <option value="長照機構 / 社區關懷據點 / 公益團體推廣">長照機構 / 社區關懷據點 / 公益團體推廣</option>
+              <label for="care-role">使用身分與情境</label>
+              <select id="care-role">
+                <option value="當事人與家屬：家庭預立醫療意願溝通">當事人與家屬：家庭預立醫療意願溝通</option>
+                <option value="醫院社服室／安寧團隊教育輔助推廣">醫院社服室／安寧團隊教育輔助推廣</option>
+                <option value="長照機構／社區據點生命教育講座">長照機構／社區據點生命教育講座</option>
+                <option value="Custom 公益團體或跨院所專案合作">Custom 公益團體或跨院所專案合作</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="user-notes">需求與推廣情境簡述</label>
-              <textarea id="user-notes" rows="4" placeholder="請簡述您的生命教育推廣或家庭溝通需求（請勿在此填寫個人病歷、照片或身分證件資訊）"></textarea>
+              <label for="user-notes">參與家庭人數或機構場次需求簡述（選填）</label>
+              <textarea id="user-notes" rows="3" placeholder="例如：預計用於社區長者關懷據點的安寧條例衛教與家庭會議"></textarea>
             </div>
 
             <div class="form-actions">
-              <button type="submit" class="btn primary">開啟信箱寄送諮詢申請</button>
-              <button type="button" id="copy-btn" class="btn ghost-dark">複製登記摘要</button>
+              <button type="button" id="go-checkout-btn" class="btn primary">前往 7 折預售結算中心（../CTA） →</button>
+              <button type="button" id="mail-inquiry-btn" class="btn ghost-dark">僅先寄信諮詢（暫不結帳）</button>
             </div>
             <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
           </form>
 
-          <aside class="card info-aside">
-            <h3>專案識別與窗口資訊</h3>
+          <aside class="checkout-summary-box">
+            <h3>已選預售配置摘要</h3>
             <dl class="facts" style="margin:1rem 0">
-              <dt>產品名稱</dt><dd>09｜善終守護 AdvanceCare</dd>
-              <dt>預售產品代碼</dt><dd><code>C2-WC-ACP</code></dd>
-              <dt>品牌事業體</dt><dd>水月道場 / Wonderland Center</dd>
-              <dt>生態系總窗口</dt><dd><a id="direct-email" href="mailto:contact@wonderland.center">contact@wonderland.center</a></dd>
+              <dt>產品代碼</dt><dd>09｜C2-WC-ACP（AdvanceCare）</dd>
+              <dt>所屬品牌</dt><dd>水月道場 / Wonderland Center</dd>
+              <dt>選定方案</dt><dd id="sum-plan-name">Family（每月 8 場決策輔助場次）</dd>
+              <dt>計費週期</dt><dd id="sum-billing">年繳方案</dd>
+              <dt>標準原價</dt><dd id="sum-orig-price" style="text-decoration:line-through;color:#B8C7C5">NT$ 39,000</dd>
+              <dt>7 折預售價</dt><dd id="sum-sale-price" style="color:#D4AF37;font-size:1.25rem">NT$ 27,300</dd>
             </dl>
-            <div class="note">
-              <strong>隱私與合規提醒：</strong>本工具非醫療行為，亦不替代醫師臨床說明；本頁不收集任何病歷、照片或信用卡號，亦不刊載未簽約匯款帳號。
+            <div class="note" style="background:rgba(255,255,255,0.08);border-color:rgba(212,175,55,0.4);color:#E4ECEA">
+              <strong style="color:#D4AF37">跳轉說明：</strong>點擊「前往 7 折預售結算中心」將導向上層 <code>CTA/index.html</code>；依《代收預售款授權及合約書》，本預售款由全視界台灣分公司代收，並可加購「額外場次包（3 場 NT$ 1,043）」[cite: 1, 12]。
             </div>
             <p style="margin-top:1.2rem;margin-bottom:0">
-              <a class="btn ghost-dark" style="width:100%" href="../index.html#products">瀏覽其他生態系產品線</a>
+              <a class="btn ghost" style="width:100%" href="../index.html#products">瀏覽其他 9 條生態系產品線</a>
             </p>
           </aside>
         </div>
@@ -655,157 +611,231 @@
     </section>
   </main>
 
-  <!-- 圖片放大檢視燈箱 -->
-  <dialog id="img-lightbox" class="img-modal" aria-label="圖片放大檢視">
+  <dialog id="img-lightbox" class="img-modal" aria-label="視覺圖片放大檢視">
     <div class="img-modal-head">
       <strong id="img-modal-title">視覺素材檢視</strong>
       <button type="button" id="img-modal-close" class="modal-close" aria-label="關閉">✕</button>
     </div>
     <div class="img-modal-body">
       <img id="img-modal-src" src="" alt="">
-      <p id="img-modal-caption" class="muted" style="margin-top:0.85rem;margin-bottom:0"></p>
+      <p id="img-modal-caption" class="muted" style="margin-top:.85rem;margin-bottom:0"></p>
     </div>
   </dialog>
 
   <footer class="site">
     <div class="wrap">
       <p><strong>© 2026 水月道場 / Wonderland Center（wonderland.center）</strong>｜善終守護 AdvanceCare 專屬預售頁</p>
-      <p class="muted" style="font-size:0.84rem">核心聲明：善終守護 AdvanceCare 嚴格定位為「教育與決策輔助工具」，絕非醫療行為本身，亦不替代醫師臨床說明；正式健保卡預立意願註記須至法定合法醫療機構完成。</p>
+      <p class="muted" style="font-size:.84rem"><strong>核心聲明：</strong>善終守護 AdvanceCare 嚴格定位為教育與決策輔助工具，絕非醫療行為本身，亦不替代醫師臨床說明；正式健保卡預立意願註記須至法定合法醫療機構完成[cite: 12]。</p>
     </div>
   </footer>
 
   <script>
     /**
-     * 可調整參數：
-     * - CONTACT_EMAIL：預售諮詢收件信箱
-     * - MEDIA_CONFIG：背景靜默載入之影片與六張視覺圖檔設定（頁面可見文字與郵件摘要不顯示任何檔案路徑）
+     * ==========================================================================
+     * 可調整參數區：
+     * - PRODUCT_CODE：傳遞給 ../CTA/index.html 的產品編號（"09"）
+     * - CHECKOUT_PATH：共用結算頁相對路徑（"../CTA/index.html"）
+     * - DISCOUNT_RATE：7 折優惠率（0.7）
+     * - PLANS_09：依據 Excel 總表之 09 善終守護方案數據
+     * ==========================================================================
      */
+    const PRODUCT_CODE = "09";
+    const CHECKOUT_PATH = "../CTA/index.html";
     const CONTACT_EMAIL = "contact@wonderland.center";
+    const DISCOUNT_RATE = 0.7;
+    const MEDIA_DIR = "./marketing";
 
-    const MEDIA_CONFIG = {
+    const PLANS_09 = [
+      { plan: "Personal", target: "當事人與家人", quota: "每月 3 場決策輔助場次", m: 1900, y: 19000 },
+      { plan: "Family", target: "多位家屬共同使用", quota: "每月 8 場決策輔助場次", m: 3900, y: 39000, recommended: true },
+      { plan: "Institution", target: "醫院社服、長照機構、社區據點", quota: "每月 40 場決策輔助場次", m: 12900, y: 129000 },
+      { plan: "Custom", target: "特殊合作", quota: "客製（洽談）", custom: true }
+    ];
+
+    const MARKETING_MEDIA = {
       video: {
-        src: "./marketing/0.行銷短片.mp4",
-        poster: "./marketing/1.形象廣告.jpg",
-        title: "善終守護 AdvanceCare 家庭對話與教育輔助概念短片",
-        caption: "呈現以柔和情境對照取代誤解、專科醫師簽審把關，以及正式註記回到法定醫療機構完成的整體理念（本模擬僅供教育決策輔助參考，非正式醫療預測）。"
+        file: "0.行銷短片.mp4",
+        poster: "1.形象廣告.jpg",
+        badge: "概念短片",
+        title: "善終守護 AdvanceCare 兩路徑對照與決策輔助概念短片",
+        caption: "呈現低壓力環境下兩條選擇對生活品質與照顧負荷的對照模擬（教育與決策輔助工具，非醫療行為）。"
       },
       images: [
-        {
-          src: "./marketing/1.形象廣告.jpg",
-          title: "先看見，再決定",
-          caption: "在沒有壓力的時候與家人先看見兩條路；本工具為教育與決策輔助工具，非醫療行為。"
-        },
-        {
-          src: "./marketing/2.產品說明流程.jpg",
-          title: "醫師審過才上線，正式註記在醫療機構完成",
-          caption: "每個新劇本須經安寧緩和專科醫師簽審；AI 只預填表單，正式健保卡註記須至法定醫療機構完成。"
-        },
-        {
-          src: "./marketing/3.服務交付流程.jpg",
-          title: "AI 輔助層與真人服務層雙軌守護",
-          caption: "AI 協助情境對照與條例問答；專科醫師、心理師、社工師與合作醫療院所守護關鍵環節。"
-        },
-        {
-          src: "./marketing/4.行銷推廣圖片.jpg",
-          title: "隨時可以停下來的情緒防護機制",
-          caption: "觀看過程可隨時一鍵中止；偵測到高風險情緒時暫停 AI 模擬並提供真人支持通道。"
-        },
-        {
-          src: "./marketing/5.社群概念圖.jpg",
-          title: "影像 90 天自動永久銷毀與零訓練承諾",
-          caption: "肖像與生成影片加密保存並於 90 天自動銷毀（亦可隨時立即刪除），嚴禁用於 AI 模型訓練。"
-        },
-        {
-          src: "./marketing/6.B2B 企業出海 EDM.jpg",
-          title: "支持家庭溝通與生命教育推廣機構",
-          caption: "協助當事人與家屬、社服團隊及社區據點在低壓力環境下展開安寧緩和意願對話。"
-        }
+        { file: "1.形象廣告.jpg", badge: "品牌形象", title: "「安寧」不等於「放棄治療」", caption: "在沒有壓力的時候先看見兩條路，協助當事人與家屬展開溫暖理性的家庭對話。" },
+        { file: "2.產品說明流程.jpg", badge: "醫學審查", title: "安寧緩和專科醫師審查閘門", caption: "每個新模擬劇本與臨床情境均須經安寧緩和專科醫師電子簽章審核才上線。" },
+        { file: "3.服務交付流程.jpg", badge: "情緒守護", title: "隨時可以停＋真人支持轉介", caption: "觀看過程可隨時一鍵中止；偵測高風險情緒時暫停 AI 並轉接心理師或受訓社工。" },
+        { file: "4.行銷推廣圖片.jpg", badge: "法定註記", title: "AI 預填表單，醫療機構見證完成", caption: "嚴格定位為教育與決策輔助工具，正式健保卡預立意願註記須導引至法定合法醫療機構完成。" },
+        { file: "5.社群概念圖.jpg", badge: "隱私銷毀", title: "AES-256 加密，90 天自動永久銷毀", caption: "肖像與影片可隨時一鍵立即刪除，絕不用於任何基礎 AI 模型訓練或微調。" },
+        { file: "6.B2B 企業出海 EDM.jpg", badge: "機構推廣", title: "醫院社服、長照與社區據點方案", caption: "提供 Personal、Family 與 Institution 三級方案，協助機構推動安寧緩和生命教育。" }
       ]
     };
 
-    /**
-     * 設定宣傳短片於載入時自動靜音循環播放
-     */
-    function setupAutoLoopVideo(videoEl) {
-      if (!videoEl) return;
-      videoEl.muted = true;
-      videoEl.loop = true;
-      videoEl.autoplay = true;
-      videoEl.playsInline = true;
+    let selectedPlanIdx = 1; // 預設選中 Family
+    let billingCycle = "yearly";
 
-      const tryPlay = () => {
-        const p = videoEl.play();
-        if (p && typeof p.catch === "function") {
-          p.catch(() => {});
+    function renderPlans() {
+      const grid = document.getElementById("plans-grid");
+      if (!grid) return;
+
+      document.getElementById("bill-yearly").classList.toggle("active", billingCycle === "yearly");
+      document.getElementById("bill-monthly").classList.toggle("active", billingCycle === "monthly");
+
+      grid.innerHTML = PLANS_09.map((p, idx) => {
+        const isSel = idx === selectedPlanIdx;
+        if (p.custom) {
+          return `
+            <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
+              <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">客製專案</span></div>
+              <div class="plan-quota">${p.quota}</div>
+              <div class="plan-target">${p.target}</div>
+              <div class="plan-pricing"><span class="plan-orig">依合作規模評估</span><span class="plan-sale">專人洽談報價</span></div>
+            </button>
+          `;
         }
+        const orig = billingCycle === "yearly" ? p.y : p.m;
+        const sale = Math.round(orig * DISCOUNT_RATE);
+        const unit = billingCycle === "yearly" ? "/ 年" : "/ 月";
+        return `
+          <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
+            <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">${p.recommended ? "★ 熱門推薦" : "7 折早鳥"}</span></div>
+            <div class="plan-quota">${p.quota}</div>
+            <div class="plan-target">${p.target}</div>
+            <div class="plan-pricing">
+              <span class="plan-orig">原價 NT$ ${orig.toLocaleString("zh-TW")} ${unit}</span>
+              <span class="plan-sale">NT$ ${sale.toLocaleString("zh-TW")} <small style="font-size:0.78rem">${unit}</small></span>
+            </div>
+          </button>
+        `;
+      }).join("");
+
+      const cur = PLANS_09[selectedPlanIdx];
+      document.getElementById("sum-plan-name").textContent = `${cur.plan}（${cur.quota}）`;
+      document.getElementById("sum-billing").textContent = cur.custom ? "客製專案（洽談）" : (billingCycle === "yearly" ? "年繳方案" : "月繳方案");
+
+      if (cur.custom) {
+        document.getElementById("sum-orig-price").textContent = "專案報價";
+        document.getElementById("sum-sale-price").textContent = "專人洽談";
+      } else {
+        const orig = billingCycle === "yearly" ? cur.y : cur.m;
+        const sale = Math.round(orig * DISCOUNT_RATE);
+        document.getElementById("sum-orig-price").textContent = `NT$ ${orig.toLocaleString("zh-TW")}`;
+        document.getElementById("sum-sale-price").textContent = `NT$ ${sale.toLocaleString("zh-TW")}`;
+      }
+    }
+
+    function selectPlan(idx) { selectedPlanIdx = idx; renderPlans(); }
+    function setBilling(mode) { billingCycle = mode; renderPlans(); }
+
+    function initCheckoutBridge() {
+      const goBtn = document.getElementById("go-checkout-btn");
+      const mailBtn = document.getElementById("mail-inquiry-btn");
+      const feedback = document.getElementById("form-feedback");
+
+      const collectFields = () => {
+        const cur = PLANS_09[selectedPlanIdx];
+        const name = document.getElementById("user-name").value.trim();
+        const email = document.getElementById("user-email").value.trim();
+        const careRole = document.getElementById("care-role").value;
+        const notes = document.getElementById("user-notes").value.trim();
+        return { cur, name, email, careRole, notes };
       };
 
-      tryPlay();
-      videoEl.addEventListener("canplay", tryPlay, { once: true });
-      videoEl.addEventListener("ended", () => {
-        videoEl.currentTime = 0;
-        tryPlay();
+      goBtn.addEventListener("click", () => {
+        const data = collectFields();
+        const params = new URLSearchParams();
+        params.set("product", PRODUCT_CODE);
+        params.set("plan", data.cur.plan);
+        params.set("billing", billingCycle);
+        params.set("bundle", "0");
+        if (data.name) params.set("name", data.name);
+        if (data.email) params.set("email", data.email);
+        const combinedNotes = [data.careRole, data.notes].filter(Boolean).join("｜");
+        if (combinedNotes) params.set("notes", combinedNotes);
+
+        window.location.href = `${CHECKOUT_PATH}?${params.toString()}`;
+      });
+
+      mailBtn.addEventListener("click", () => {
+        const data = collectFields();
+        if (!data.name || !data.email) {
+          feedback.style.color = "#B42318";
+          feedback.textContent = "若要寄送郵件諮詢，請先填寫「稱呼 / 機構名稱」與「聯絡電子信箱」。";
+          return;
+        }
+        const subject = `[AdvanceCare 善終守護 預售諮詢] ${data.name}（${data.cur.plan}）`;
+        const body = [
+          "您好，我想諮詢「09｜善終守護 AdvanceCare」的 7 折預售方案：",
+          "",
+          `・稱呼 / 單位：${data.name}`,
+          `・聯絡信箱：${data.email}`,
+          `・感興趣方案：${data.cur.plan}（${billingCycle === "yearly" ? "年繳" : "月繳"}）`,
+          `・使用身分：${data.careRole}`,
+          `・需求簡述：${data.notes || "（尚未填寫）"}`
+        ].join("\n");
+        feedback.style.color = "#1E7A70";
+        feedback.textContent = "已為您開啟預設郵件程式寄送諮詢摘要。";
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       });
     }
 
-    /**
-     * 渲染宣傳短片與六張視覺圖卡，並綁定原生 <dialog> 放大檢視燈箱
-     */
-    function renderMediaGallery() {
+    function renderMarketingAssets() {
       const videoBox = document.getElementById("promo-video-box");
-      if (videoBox && MEDIA_CONFIG.video) {
-        const v = MEDIA_CONFIG.video;
+      if (videoBox && MARKETING_MEDIA.video) {
+        const v = MARKETING_MEDIA.video;
+        const videoSrc = `${MEDIA_DIR}/${encodeURIComponent(v.file)}`;
+        const posterSrc = v.poster ? `${MEDIA_DIR}/${encodeURIComponent(v.poster)}` : "";
+
         videoBox.innerHTML = `
           <div class="video-stage">
-            <video id="advancecare-loop-video" autoplay muted loop playsinline controls preload="auto" poster="${v.poster}">
-              <source src="${v.src}" type="video/mp4">
-              您的瀏覽器不支援影片播放。
+            <video id="promo-video-player" autoplay muted loop playsinline controls preload="auto"${posterSrc ? ` poster="${posterSrc}"` : ""}>
+              <source src="${videoSrc}" type="video/mp4">
+              您的瀏覽器不支援 HTML5 影片播放。
             </video>
-            <div id="video-error-fallback" class="media-fallback" style="display:none">
-              理念短片載入中或暫時無法播放，請稍候重新整理檢視。
-            </div>
+            <div id="video-error-fallback" class="media-fallback" style="display:none">宣傳影片載入中或暫時無法播放，請重新整理頁面後再試。</div>
           </div>
           <div class="video-info">
-            <span class="num">理念短片 · 自動循環播放</span>
+            <span class="num">${v.badge}</span>
             <h3>${v.title}</h3>
             <p class="muted">${v.caption}</p>
-            <div style="margin-top:0.8rem">
-              <a class="btn primary" href="#cta-form">登記教育與輔助工具諮詢</a>
-            </div>
+            <div style="margin-top:0.8rem"><a class="btn primary" href="#cta-form">查看 7 折預售方案 →</a></div>
           </div>
         `;
-        const videoEl = document.getElementById("advancecare-loop-video");
-        const videoErrEl = document.getElementById("video-error-fallback");
-        setupAutoLoopVideo(videoEl);
 
-        if (videoEl && videoErrEl) {
-          const showFallback = () => {
-            videoEl.style.display = "none";
-            videoErrEl.style.display = "block";
-          };
-          videoEl.addEventListener("error", showFallback);
-          const srcNode = videoEl.querySelector("source");
-          if (srcNode) srcNode.addEventListener("error", showFallback);
+        const videoEl = document.getElementById("promo-video-player");
+        const videoErrEl = document.getElementById("video-error-fallback");
+        if (videoEl) {
+          videoEl.muted = true;
+          const playPromise = videoEl.play();
+          if (playPromise && typeof playPromise.catch === "function") playPromise.catch(() => {});
+          if (videoErrEl) {
+            const showFallback = () => { videoEl.style.display = "none"; videoErrEl.style.display = "block"; };
+            videoEl.addEventListener("error", showFallback);
+            const srcEl = videoEl.querySelector("source");
+            if (srcEl) srcEl.addEventListener("error", showFallback);
+          }
         }
       }
 
       const imgGrid = document.getElementById("promo-images-grid");
       if (imgGrid) {
-        imgGrid.innerHTML = (MEDIA_CONFIG.images || []).map((item, idx) => `
-          <article class="media-card">
-            <div class="media-thumb">
-              <img src="${item.src}" alt="${item.title}" loading="lazy" data-idx="${idx}"
-                   onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-              <div class="media-fallback" style="display:none">視覺素材載入中，請確認目錄檔案已就緒。</div>
-            </div>
-            <div class="media-body">
-              <span class="num" style="margin-bottom:0.25rem">視覺圖庫</span>
-              <h3>${item.title}</h3>
-              <p>${item.caption}</p>
-              <button type="button" class="btn ghost-dark media-zoom-btn" data-zoom-idx="${idx}">放大檢視圖片</button>
-            </div>
-          </article>
-        `).join("");
+        imgGrid.innerHTML = (MARKETING_MEDIA.images || []).map((item, idx) => {
+          const imgSrc = `${MEDIA_DIR}/${encodeURIComponent(item.file)}`;
+          return `
+            <article class="media-card">
+              <div class="media-thumb">
+                <img src="${imgSrc}" alt="${item.title}" loading="lazy" data-idx="${idx}"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <div class="media-fallback" style="display:none">視覺圖卡載入中，請稍候重新整理檢視。</div>
+              </div>
+              <div class="media-body">
+                <span class="num" style="margin-bottom:0.25rem">${item.badge}</span>
+                <h3>${item.title}</h3>
+                <p>${item.caption}</p>
+                <button type="button" class="btn ghost-dark media-zoom-btn" data-zoom-idx="${idx}">放大檢視圖片</button>
+              </div>
+            </article>
+          `;
+        }).join("");
 
         const dlg = document.getElementById("img-lightbox");
         const dlgImg = document.getElementById("img-modal-src");
@@ -814,37 +844,31 @@
         const dlgClose = document.getElementById("img-modal-close");
 
         const openLightbox = (idx) => {
-          const data = MEDIA_CONFIG.images[Number(idx)];
+          const data = MARKETING_MEDIA.images[Number(idx)];
           if (!data || !dlg) return;
-          dlgImg.src = data.src;
+          dlgImg.src = `${MEDIA_DIR}/${encodeURIComponent(data.file)}`;
           dlgImg.alt = data.title;
           dlgTitle.textContent = data.title;
           dlgCap.textContent = data.caption;
           dlg.showModal();
         };
 
-        imgGrid.querySelectorAll("[data-idx], [data-zoom-idx]").forEach((el) => {
-          el.addEventListener("click", () => {
-            const index = el.dataset.idx ?? el.dataset.zoomIdx;
-            openLightbox(index);
-          });
+        imgGrid.querySelectorAll("[data-idx], [data-zoom-idx]").forEach(el => {
+          el.addEventListener("click", () => openLightbox(el.dataset.idx ?? el.dataset.zoomIdx));
         });
 
         if (dlgClose && dlg) {
           dlgClose.addEventListener("click", () => dlg.close());
-          dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+          dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
         }
       }
     }
 
-    /**
-     * 122% 長者友善大字模式切換並記憶於 localStorage
-     */
     function initBigText() {
       const bigBtn = document.getElementById("bigtext");
       if (!bigBtn) return;
       const storageKey = "wc-bigtext";
-      const applyBigText = (on) => {
+      const applyBigText = on => {
         document.documentElement.style.fontSize = on ? "122%" : "";
         bigBtn.setAttribute("aria-pressed", on ? "true" : "false");
         try { localStorage.setItem(storageKey, on ? "1" : "0"); } catch (_) {}
@@ -853,92 +877,11 @@
       bigBtn.addEventListener("click", () => applyBigText(bigBtn.getAttribute("aria-pressed") !== "true"));
     }
 
-    /**
-     * 零後端預約諮詢表單（支援 mailto: 喚起與一鍵複製登記摘要）
-     */
-    function initInquiryForm() {
-      const form = document.getElementById("product-cta-form");
-      const copyBtn = document.getElementById("copy-btn");
-      const feedback = document.getElementById("form-feedback");
-      if (!form) return;
-
-      const buildPayload = () => {
-        const name = document.getElementById("user-name").value.trim();
-        const email = document.getElementById("user-email").value.trim();
-        const userType = document.getElementById("user-type").value;
-        const notes = document.getElementById("user-notes").value.trim();
-
-        if (!name || !email) {
-          return { error: "請填寫「稱呼 / 單位或家屬代表」與「聯絡電子信箱」。" };
-        }
-
-        const subject = `[善終守護 AdvanceCare 諮詢申請] ${name}`;
-        const body = [
-          "您好，我想了解「09｜善終守護 AdvanceCare（C2-WC-ACP）」的教育與決策輔助工具：",
-          "",
-          `・稱呼 / 單位：${name}`,
-          `・聯絡信箱：${email}`,
-          `・諮詢身分：${userType}`,
-          `・需求與推廣情境簡述：${notes || "（尚未填寫）"}`,
-          "",
-          "---",
-          "核心聲明：本工具嚴格定位為教育與決策輔助工具，非醫療行為，亦不替代醫師臨床說明。",
-          "此登記摘要由 善終守護 AdvanceCare 預售頁面產生"
-        ].join("\n");
-
-        return { subject, body };
-      };
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const res = buildPayload();
-        if (res.error) {
-          feedback.style.color = "#B42318";
-          feedback.textContent = res.error;
-          return;
-        }
-        feedback.style.color = "#1E7A70";
-        feedback.textContent = "已為您整理需求摘要並開啟預設郵件程式；若未自動開啟，請使用右側「複製登記摘要」。";
-        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(res.subject)}&body=${encodeURIComponent(res.body)}`;
-      });
-
-      if (copyBtn) {
-        copyBtn.addEventListener("click", async () => {
-          const res = buildPayload();
-          if (res.error) {
-            feedback.style.color = "#B42318";
-            feedback.textContent = res.error;
-            return;
-          }
-          const fullText = `${res.subject}\n\n${res.body}`;
-          try {
-            await navigator.clipboard.writeText(fullText);
-            feedback.style.color = "#1E7A70";
-            feedback.textContent = "✓ 登記摘要已複製到剪貼簿！";
-          } catch (_) {
-            const ta = document.createElement("textarea");
-            ta.value = fullText;
-            document.body.appendChild(ta);
-            ta.select();
-            try {
-              document.execCommand("copy");
-              feedback.style.color = "#1E7A70";
-              feedback.textContent = "✓ 登記摘要已複製到剪貼簿！";
-            } catch (__) {
-              feedback.style.color = "#B42318";
-              feedback.textContent = "瀏覽器限制自動複製，請改用「開啟信箱寄送諮詢申請」。";
-            } finally {
-              document.body.removeChild(ta);
-            }
-          }
-        });
-      }
-    }
-
     document.addEventListener("DOMContentLoaded", () => {
-      renderMediaGallery();
+      renderMarketingAssets();
+      renderPlans();
+      initCheckoutBridge();
       initBigText();
-      initInquiryForm();
     });
   </script>
 </body>

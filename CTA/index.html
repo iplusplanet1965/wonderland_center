@@ -1,11 +1,19 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
-<!-- 共用預售結算與席次核銷工作台｜檔案路徑：CTA/index.html -->
+<!--
+  ============================================================================
+  可調整參數區（請依需求修改下方 JS 常數）：
+  - PRICING_MD_PATH：共用價目單一事實來源相對路徑（"./serviceandpricing.md"）
+  - CONTACT_EMAIL：聯絡與財務核銷通知信箱（"contact@wonderland.ngo"）
+  - USDT_WALLETS：指定之 Ethereum (ERC20) 入金錢包地址（aegis.expert / slash1to3.com）
+  ============================================================================
+  共用預售結算與席次核銷工作台｜檔案路徑：CTA/index.html
+-->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>預售安心核銷工作台｜全生態 7 折嘗鮮預售結帳中心</title>
-  <meta name="description" content="水月道場 / Wonderland Center × AllView × AEGIS × Slash 聯合預售結算與席次保留憑證核銷工作台，支援 7 折早鳥方案試算、銀行電匯、第三方刷卡與 USDT 入金。">
+  <meta name="description" content="水月道場 / Wonderland Center（wonderland.ngo）× AllView × AEGIS × Slash 聯合預售結算與席次保留憑證核銷工作台，支援 7 折早鳥方案試算、銀行電匯、第三方刷卡與 USDT (ERC20) 入金。">
   <meta name="theme-color" content="#0B253A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -420,12 +428,12 @@
     .portal-status { font-size: 0.72rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 999px; background: #CBD5E1; color: #334155; }
     .portal-card.active .portal-status { background: var(--kicker); color: #FFFFFF; }
 
-    .net-tabs { display: inline-flex; background: var(--surface-2); padding: 0.25rem; border-radius: 10px; gap: 0.25rem; }
-    .net-btn {
-      border: none; background: transparent; padding: 0.42rem 0.85rem; border-radius: 8px;
-      font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; color: var(--muted); cursor: pointer;
+    .net-badge-box {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      padding: 0.42rem 0.9rem; border-radius: 10px;
+      background: var(--heading); color: #FFFFFF;
+      font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700;
     }
-    .net-btn.active { background: var(--heading); color: #FFFFFF; }
 
     .danger-note {
       padding: 0.85rem 1rem; border-radius: 10px; background: var(--danger-bg);
@@ -572,7 +580,7 @@
             預售安心核銷工作台
             <span id="header-discount-pill" class="escrow-pill">7 折嘗鮮預售・託管級核銷</span>
           </h1>
-          <p class="brand-sub">水月道場 / Wonderland Center × AllView × AEGIS × Slash 聯合結帳與綜合計價中心</p>
+          <p class="brand-sub">水月道場 / Wonderland Center（wonderland.ngo）× AllView × AEGIS × Slash 聯合結帳與綜合計價中心</p>
         </div>
       </div>
 
@@ -819,11 +827,11 @@
                   <span class="method-icon">🪙</span>
                   <span class="method-suit">跨境／Web3 推薦</span>
                 </div>
-                <h3>USDT 虛擬貨幣支付</h3>
-                <p>依產品所屬事業體自動匹配 <strong>allview.tw</strong> 或 <strong>aegis.expert</strong> 專屬入金錢包通道。</p>
+                <h3>USDT 虛擬貨幣支付（ERC20）</h3>
+                <p>依產品所屬體系自動匹配 <strong>aegis.expert</strong> 或 <strong>slash1to3.com</strong> 專屬 Ethereum (ERC20) 入金錢包。</p>
               </div>
               <div class="method-foot">
-                <span>展開專屬 USDT 錢包</span>
+                <span>展開專屬 ERC20 錢包</span>
                 <span class="radio-circle"></span>
               </div>
             </div>
@@ -944,20 +952,20 @@
 
           <div id="panel-usdt" class="hidden">
             <div class="portal-grid">
-              <div id="portal-allview" class="portal-card" role="button" tabindex="0" onclick="switchUsdtPortal('allview')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();switchUsdtPortal('allview')}">
-                <div class="portal-head">
-                  <span class="portal-domain">allview.tw</span>
-                  <span id="portal-status-allview" class="portal-status">AllView 體系通道</span>
-                </div>
-                <small style="color:var(--muted);display:block">適用：01 寰境再製、02 密圈、03 隱證，以及水月道場（08–10）授權代收。</small>
-              </div>
-
               <div id="portal-aegis" class="portal-card" role="button" tabindex="0" onclick="switchUsdtPortal('aegis')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();switchUsdtPortal('aegis')}">
                 <div class="portal-head">
                   <span class="portal-domain">aegis.expert <span id="portal-sub-tag" style="font-size:0.75rem;color:var(--kicker)"></span></span>
-                  <span id="portal-status-aegis" class="portal-status">AEGIS / Slash 通道</span>
+                  <span id="portal-status-aegis" class="portal-status">ERC20 通道</span>
                 </div>
-                <small style="color:var(--muted);display:block">適用：04 神盾殼、05 密文智庫，以及 06 斜槓一二三、07 斜槓104 獨立授權平台。</small>
+                <small style="color:var(--muted);display:block">適用：04 神盾殼 HEShell、05 密文智庫 EncryMind、07 斜槓104 Slash104 企業授權體系。</small>
+              </div>
+
+              <div id="portal-slash1to3" class="portal-card" role="button" tabindex="0" onclick="switchUsdtPortal('slash1to3')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();switchUsdtPortal('slash1to3')}">
+                <div class="portal-head">
+                  <span class="portal-domain">slash1to3.com</span>
+                  <span id="portal-status-slash1to3" class="portal-status">ERC20 通道</span>
+                </div>
+                <small style="color:var(--muted);display:block">適用：01 寰境再製、02 密圈、03 隱證、06 斜槓一二三，以及水月道場（08–10）授權代收。</small>
               </div>
             </div>
 
@@ -971,11 +979,8 @@
               </div>
 
               <div>
-                <small style="display:block;margin-bottom:0.3rem">選擇轉帳主網（Network）</small>
-                <div class="net-tabs">
-                  <button type="button" id="btn-net-trc20" class="net-btn active" onclick="switchUsdtNet('TRC20')">TRON (TRC20)</button>
-                  <button type="button" id="btn-net-erc20" class="net-btn" onclick="switchUsdtNet('ERC20')">Ethereum (ERC20)</button>
-                </div>
+                <small style="display:block;margin-bottom:0.3rem">指定轉帳主網（Network）</small>
+                <span class="net-badge-box">Ethereum (ERC20)</span>
               </div>
             </div>
 
@@ -984,11 +989,11 @@
                 <small id="usdt-wallet-title" style="color:var(--kicker);font-weight:700"></small>
                 <strong id="usdt-wallet-addr" class="mono" style="font-size:0.95rem"></strong>
               </div>
-              <button type="button" class="btn btn-teal btn-sm" onclick="copyUsdtAddr()">一鍵複製錢包地址</button>
+              <button type="button" class="btn btn-teal btn-sm" onclick="copyUsdtAddr()">一鍵複製 ERC20 地址</button>
             </div>
 
             <div class="danger-note">
-              <strong>🛡️ 鏈上轉帳防呆警語：</strong>請務必確認提幣網路與上方選擇的 <strong id="usdt-net-warn">TRON (TRC20)</strong> 完全一致，且僅轉入 <strong>USDT</strong> 資產。轉帳廣播完成後，請複製 <strong>TxID（交易哈希）</strong> 貼入下方 Step 4。
+              <strong>🛡️ 鏈上轉帳防呆警語：</strong>本通道僅支援 <strong>Ethereum (ERC20)</strong> 網路轉入 <strong>USDT</strong> 資產，<strong>切勿使用 TRC20、BEP20 或其他區塊鏈網路轉帳</strong>，以免資產遺失。轉帳廣播完成後，請複製 <strong>TxID（交易哈希）</strong> 貼入下方 Step 4。
             </div>
           </div>
         </div>
@@ -1175,7 +1180,7 @@
 
   <footer class="site-footer no-print">
     <div class="wrap">
-      <p style="margin:0 0 0.35rem;color:#FFFFFF;font-weight:700">聯合預售金流與席次核銷工作台｜水月道場 / Wonderland Center × AllView × AEGIS × Slash</p>
+      <p style="margin:0 0 0.35rem;color:#FFFFFF;font-weight:700">聯合預售金流與席次核銷工作台｜水月道場 / Wonderland Center（wonderland.ngo）× AllView × AEGIS × Slash</p>
       <p style="margin:0">國內電匯受款戶名：貝里斯商全視界數位內容有限公司台灣分公司（彰化銀行和平分行 009｜帳號 54018600664000）</p>
     </div>
   </footer>
@@ -1185,15 +1190,13 @@
     const CONTACT_EMAIL = "contact@wonderland.ngo";
 
     const USDT_WALLETS = {
-      allview: {
-        label: "AllView 體系專屬入金錢包（allview.tw）",
-        TRC20: "TAllView9Presale8Escrow7Wallet6Tron5Net",
-        ERC20: "0xA11V1eW9876543210PresaleEscrowVault001"
-      },
       aegis: {
-        label: "AEGIS / Slash 體系專屬入金錢包（aegis.expert）",
-        TRC20: "TAegis7Expert6Slash5Presale4Escrow3Tron2",
-        ERC20: "0xAEG15E8877665544332211SlashPresaleVault02"
+        label: "aegis.expert 體系專屬 ERC20 入金錢包",
+        ERC20: "0x651333F34FD99C43cc09Ba4d5b6D9074c2F6B81B"
+      },
+      slash1to3: {
+        label: "slash1to3.com 體系專屬 ERC20 入金錢包",
+        ERC20: "0x8634896f845251517237fe47810d13b07fb12b9d"
       }
     };
 
@@ -1201,7 +1204,7 @@
       "01": {
         code: "P01-OL", folder: "OrbiLocale", aliases: ["01", "1", "orbilocale", "p01-ol"],
         name: "寰境再製 OrbiLocale", entity: "AllView（allview.today）", domain: "allview.tw",
-        usdtPortal: "allview", isWonderlandAgency: false,
+        usdtPortal: "slash1to3", isWonderlandAgency: false,
         tagline: "不是翻譯器：先凍結事實，再為 8 種封閉白名單語系重寫文化語感。",
         compTitle: "寰境再製 OrbiLocale 服務邊界與合規宣告",
         compBody: "本產品定位為多語內容文化轉譯再製代理，僅支援 8 種封閉白名單語系（zh-TW / zh-CN / en-US / ja-JP / ko-KR / es-ES / fr-FR / de-DE），白名單外語系請求將予以拒絕。",
@@ -1213,7 +1216,7 @@
       "02": {
         code: "P02-CC", folder: "CipherCircle", aliases: ["02", "2", "ciphercircle", "p02-cc"],
         name: "密圈 CipherCircle", entity: "AllView（allview.today）", domain: "allview.tw",
-        usdtPortal: "allview", isWonderlandAgency: false,
+        usdtPortal: "slash1to3", isWonderlandAgency: false,
         tagline: "公開場合不露名，重要紀錄可查證的偽匿名知識社群平台。",
         compTitle: "密圈 CipherCircle 隱私與條件式舉證邊界宣告",
         compBody: "密圈定位為「公開偽匿名＋條件式舉證」，並非「誰都查不到」的絕對匿名承諾。",
@@ -1225,7 +1228,7 @@
       "03": {
         code: "P03-VP", folder: "VeilProof", aliases: ["03", "3", "veilproof", "p03-vp"],
         name: "隱證 VeilProof", entity: "AllView（allview.today）", domain: "allview.tw",
-        usdtPortal: "allview", isWonderlandAgency: false,
+        usdtPortal: "slash1to3", isWonderlandAgency: false,
         tagline: "底牌不攤牌、動作可回放的商務沙盤推演與談判訓練引擎。",
         compTitle: "隱證 VeilProof 訓練用途與免責邊界宣告",
         compBody: "AI 提示、勝率估算與策略建議僅供商務決策訓練與教育參考，不構成正式法律、投資或併購操作依據。",
@@ -1261,7 +1264,7 @@
       "06": {
         code: "P06-S123", folder: "Slash123", aliases: ["06", "6", "slash123", "slash1to3", "p06-s123"],
         name: "斜槓一二三 / Slash123", entity: "獨立法人（slash1to3.com）", domain: "slash1to3.com",
-        usdtPortal: "aegis", usdtSubTag: "slash1to3.com 專屬子通道", isWonderlandAgency: false,
+        usdtPortal: "slash1to3", isWonderlandAgency: false,
         tagline: "買授權，不買資料：個人專家數位分身能力授權與標售平台。",
         compTitle: "斜槓一二三 / Slash123 法人獨立與授權邊界宣告",
         compBody: "斜槓一二三 / Slash123 為獨立法人機構，與 AEGIS 無從屬關係，由水月道場有限合夥支持成立。平台不訓練模型、不收存明文知識包。",
@@ -1272,7 +1275,7 @@
       "07": {
         code: "P07-S104", folder: "Slash104", aliases: ["07", "7", "slash104", "slash1ofours", "p07-s104"],
         name: "斜槓104 / Slash104", entity: "獨立法人（slash1ofours.com）", domain: "slash1ofours.com",
-        usdtPortal: "aegis", usdtSubTag: "slash1ofours.com 專屬子通道", isWonderlandAgency: false,
+        usdtPortal: "aegis", usdtSubTag: "slash1ofours.com 企業通道", isWonderlandAgency: false,
         tagline: "分身歸公司，知識不跟著離職走：企業級領域知識與智財分身平台。",
         compTitle: "斜槓104 / Slash104 法人獨立與企業治理邊界宣告",
         compBody: "斜槓104 / Slash104 為獨立法人機構，與 AEGIS 無從屬關係，由水月道場有限合夥支持成立。不適用於跨公司共編分身或需下載原始資料庫者。",
@@ -1282,8 +1285,8 @@
       },
       "08": {
         code: "C2-WC-DMR", folder: "EternalMemory", aliases: ["08", "8", "eternalmemory", "c2-wc-dmr"],
-        name: "永恆記憶 EternalMemory", entity: "水月道場 / Wonderland Center", domain: "allview.tw",
-        usdtPortal: "allview", isWonderlandAgency: true,
+        name: "永恆記憶 EternalMemory", entity: "水月道場 / Wonderland Center", domain: "wonderland.ngo",
+        usdtPortal: "slash1to3", isWonderlandAgency: true,
         tagline: "永恆記憶不會假裝他還在：有邊界、可審計的數位思想容器。",
         compTitle: "永恆記憶 EternalMemory 倫理紅線與代收宣告",
         compBody: "數位形象僅為「回聲」，不代表已故者在現世法律、政治或商業上的實質代理人。未經著作權人或法定繼承人書面授權之私密通訊嚴禁匯入。",
@@ -1293,8 +1296,8 @@
       },
       "09": {
         code: "C2-WC-ACP", folder: "AdvanceCare", aliases: ["09", "9", "advancecare", "c2-wc-acp"],
-        name: "善終守護 AdvanceCare", entity: "水月道場 / Wonderland Center", domain: "allview.tw",
-        usdtPortal: "allview", isWonderlandAgency: true,
+        name: "善終守護 AdvanceCare", entity: "水月道場 / Wonderland Center", domain: "wonderland.ngo",
+        usdtPortal: "slash1to3", isWonderlandAgency: true,
         tagline: "「安寧」不等於「放棄治療」：在沒有壓力的時候，先看見兩條路。",
         compTitle: "善終守護 AdvanceCare 核心醫療邊界強制聲明",
         compBody: "善終守護 AdvanceCare 嚴格定位為「教育與決策輔助工具」，絕非醫療行為本身，亦不替代醫師臨床說明。",
@@ -1305,8 +1308,8 @@
       },
       "10": {
         code: "C2-WC-VST", folder: "SeniorTravel", aliases: ["10", "seniortravel", "c2-wc-vst"],
-        name: "寰宇無界 SeniorTravel", entity: "水月道場 / Wonderland Center", domain: "allview.tw",
-        usdtPortal: "allview", isWonderlandAgency: true,
+        name: "寰宇無界 SeniorTravel", entity: "水月道場 / Wonderland Center", domain: "wonderland.ngo",
+        usdtPortal: "slash1to3", isWonderlandAgency: true,
         tagline: "走不遠了，還是可以一起去看看：AI 帶路，真人陪伴。",
         compTitle: "寰宇無界 SeniorTravel 非醫療與無障礙邊界宣告",
         compBody: "本系統的穿戴感知功能只用來動態調節體驗節奏（如疲勞時自動休整），不提供醫療診斷，也不是醫療器材。",
@@ -1439,8 +1442,8 @@ usdt_rate: 32.5
       addonQty: {},
       consent: false,
       method: "bank",
-      usdtPortal: "allview",
-      usdtNet: "TRC20",
+      usdtPortal: "slash1to3",
+      usdtNet: "ERC20",
       catalogPriceMode: "sale"
     };
 
@@ -1614,6 +1617,15 @@ usdt_rate: 32.5
         } else {
           const defIdx = prod.hardwares.findIndex(h => h.defaultBundle && !h.custom);
           if (defIdx >= 0) state.hwSelected[defIdx] = 1;
+        }
+      }
+
+      if (q.get("addon") === "1") {
+        if (prod.addons.length > 0) {
+          state.addonQty[0] = 1;
+        } else {
+          const hwAddonIdx = prod.hardwares.findIndex(h => h.cat === "硬體加購" && !h.custom);
+          if (hwAddonIdx >= 0) state.hwSelected[hwAddonIdx] = 1;
         }
       }
 
@@ -1893,6 +1905,7 @@ usdt_rate: 32.5
       document.getElementById("rec-bank").classList.toggle("hidden", totals.saleTotal < 30000);
       state.method = totals.saleTotal >= 30000 ? "bank" : "cart";
       state.usdtPortal = prod.usdtPortal;
+      state.usdtNet = "ERC20";
 
       updateLockUI();
       renderPaymentPanels();
@@ -2106,38 +2119,33 @@ usdt_rate: 32.5
         txLabel.innerHTML = '您的匯出銀行帳號末五碼 <span style="color:var(--danger)">*</span>';
         txInput.placeholder = "請輸入轉出帳戶最後 5 碼數字";
       } else {
-        pill.textContent = "🪙 Web3 USDT 穩定幣入金";
+        pill.textContent = "🪙 Web3 USDT (Ethereum ERC20) 穩定幣入金";
         document.getElementById("usdt-amount-label").textContent = `${totals.usdtTotal} USDT`;
         renderUsdtUI();
 
-        const portalName = state.usdtPortal === "allview" ? "allview.tw" : (prod.usdtSubTag || "aegis.expert");
-        syncLabel.textContent = `🪙 USDT (${state.usdtNet})｜${portalName}`;
+        const portalName = state.usdtPortal === "slash1to3" ? "slash1to3.com" : "aegis.expert";
+        syncLabel.textContent = `🪙 USDT (Ethereum ERC20)｜${portalName}`;
         txLabel.innerHTML = '區塊鏈交易哈希 TxID <span style="color:var(--danger)">*</span>';
-        txInput.placeholder = "請貼上完整或末段 TxID 交易序號";
+        txInput.placeholder = "請貼上 0x 開頭的完整或末段 TxID 交易序號";
       }
     }
 
     function renderUsdtUI() {
       const prod = getProduct();
-      const isAllview = state.usdtPortal === "allview";
+      const isSlash = state.usdtPortal === "slash1to3";
 
-      document.getElementById("portal-allview").classList.toggle("active", isAllview);
-      document.getElementById("portal-aegis").classList.toggle("active", !isAllview);
-      document.getElementById("portal-status-allview").textContent = isAllview ? "● 已啟用 allview.tw" : "AllView 體系通道";
-      document.getElementById("portal-status-aegis").textContent = !isAllview ? "● 已啟用 aegis.expert" : "AEGIS / Slash 通道";
+      document.getElementById("portal-aegis").classList.toggle("active", !isSlash);
+      document.getElementById("portal-slash1to3").classList.toggle("active", isSlash);
+      document.getElementById("portal-status-aegis").textContent = !isSlash ? "● 已啟用 aegis.expert" : "ERC20 通道";
+      document.getElementById("portal-status-slash1to3").textContent = isSlash ? "● 已啟用 slash1to3.com" : "ERC20 通道";
       document.getElementById("portal-sub-tag").textContent = prod.usdtSubTag ? `(${prod.usdtSubTag})` : "";
 
-      document.getElementById("btn-net-trc20").classList.toggle("active", state.usdtNet === "TRC20");
-      document.getElementById("btn-net-erc20").classList.toggle("active", state.usdtNet === "ERC20");
-
-      const wallet = USDT_WALLETS[state.usdtPortal];
-      document.getElementById("usdt-wallet-title").textContent = `${wallet.label} — ${state.usdtNet} 收款地址`;
-      document.getElementById("usdt-wallet-addr").textContent = wallet[state.usdtNet];
-      document.getElementById("usdt-net-warn").textContent = state.usdtNet === "TRC20" ? "TRON (TRC20)" : "Ethereum (ERC20)";
+      const wallet = USDT_WALLETS[state.usdtPortal] || USDT_WALLETS.slash1to3;
+      document.getElementById("usdt-wallet-title").textContent = `${wallet.label} — Ethereum (ERC20) 收款地址`;
+      document.getElementById("usdt-wallet-addr").textContent = wallet.ERC20;
     }
 
     function switchUsdtPortal(p) { state.usdtPortal = p; renderPaymentPanels(); }
-    function switchUsdtNet(n) { state.usdtNet = n; renderPaymentPanels(); }
 
     function openCartModal() {
       const prod = getProduct();
@@ -2202,7 +2210,7 @@ usdt_rate: 32.5
       const rcpId = `PRESALE-${dateStr}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`;
 
       let maskedTx = tx.length > 8 ? `${tx.slice(0, 6)}••••${tx.slice(-5)}` : (tx.length === 5 ? `末五碼 ***${tx}` : tx);
-      let methodText = state.method === "cart" ? "第三方金流購物車" : (state.method === "bank" ? "彰化銀行 (009) 電匯" : `USDT (${state.usdtNet})`);
+      let methodText = state.method === "cart" ? "第三方金流購物車" : (state.method === "bank" ? "彰化銀行 (009) 電匯" : `USDT (Ethereum ERC20)`);
       let amtText = state.method === "usdt"
         ? `${totals.usdtTotal} USDT（${dLabel}預售價 NT$ ${totals.saleTotal.toLocaleString("zh-TW")}）`
         : `NT$ ${totals.saleTotal.toLocaleString("zh-TW")}（原價 NT$ ${totals.origTotal.toLocaleString("zh-TW")} 之 ${dLabel}）`;
@@ -2250,7 +2258,7 @@ usdt_rate: 32.5
     function copyReceipt() { copyText(buildReceiptPlainText(), "電子收據憑證文字"); }
     function copyTwdNumber() { copyText(String(calculateTotals().saleTotal), `預售金額 ${calculateTotals().saleTotal}`); }
     function copyUsdtNumber() { copyText(calculateTotals().usdtTotal, `USDT 數量 ${calculateTotals().usdtTotal}`); }
-    function copyUsdtAddr() { copyText(document.getElementById("usdt-wallet-addr").textContent, `${state.usdtNet} 錢包地址`); }
+    function copyUsdtAddr() { copyText(document.getElementById("usdt-wallet-addr").textContent, "Ethereum (ERC20) 錢包地址"); }
 
     function copyText(str, label) {
       if (navigator.clipboard && navigator.clipboard.writeText) {

@@ -1,6 +1,18 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
-<!-- 產品線：08｜永恆記憶 EternalMemory（水月道場 / Wonderland Center）｜檔案路徑：EternalMemory/index.html -->
+<!--
+  ============================================================================
+  可調整參數區（請依需求修改下方 JS 常數）：
+  - PRODUCT_CODE：產品編號字串（"08"）
+  - PRICING_MD_PATH：共用價目檔相對路徑（"../CTA/serviceandpricing.md"）
+  - CHECKOUT_PATH：共用結算頁相對路徑（"../CTA/index.html"）
+  - CONTACT_EMAIL：諮詢與意向信箱（"contact@wonderland.ngo"）
+  - DEFAULT_DISCOUNT_RATE：預設折扣率備援值（0.7 代表 7 折）
+  - MEDIA_DIR：行銷影音與六圖所在目錄（"./marketing"）
+  ============================================================================
+  產品線：08｜永恆記憶 EternalMemory（水月道場 / Wonderland Center）
+  檔案路徑：EternalMemory/index.html
+-->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -327,11 +339,17 @@
 
     .hw-bundle-box {
       background: var(--surface-2); border: 1.5px solid var(--line-strong);
-      border-radius: var(--radius-lg); padding: 1.15rem 1.35rem; margin-bottom: 1.8rem;
+      border-radius: var(--radius-lg); padding: 1.15rem 1.35rem; margin-bottom: 1rem;
       display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
     }
     .hw-bundle-label { display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; flex: 1; min-width: 240px; }
     .hw-bundle-label input { width: 22px; height: 22px; margin-top: 0.2rem; accent-color: var(--heading); flex: none; cursor: pointer; }
+
+    .addon-strip {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg);
+      padding: 1.15rem 1.35rem; margin-bottom: 1.8rem;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+    }
 
     .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.5fr 1fr; align-items: start; }
     @media (max-width: 860px) { .reserve-layout { grid-template-columns: 1fr; } }
@@ -372,7 +390,7 @@
     }
   </style>
 </head>
-<body>
+<body data-product-id="08">
   <a class="skip" href="#main">跳到主要內容</a>
 
   <header class="site">
@@ -419,7 +437,7 @@
         </nav>
         <span class="eyebrow">08｜水月道場 / Wonderland Center（C2-WC-DMR）· 有邊界、可審計的數位思想容器</span>
         <h1 id="page-title">永恆記憶不會假裝他還在。</h1>
-        <p class="lead">永恆記憶（EternalMemory）以經合法授權的公開著作、演講與訪談語料為基礎，重現已故先驅或思念親人的說話方式、聲音與思維框架[cite: 11]；全程標示 AI 仿生重現水印，不代替本人表態，關鍵環節由真人把關[cite: 11]。</p>
+        <p class="lead">永恆記憶（EternalMemory）以經合法授權的公開著作、演講與訪談語料為基礎，重現已故先驅或思念親人的說話方式、聲音與思維框架；全程標示 AI 仿生重現水印，不代替本人表態，關鍵環節由真人把關。</p>
         <div class="cta">
           <a class="btn primary" href="#cta-form">選擇 7 折預售方案並前往結算 →</a>
           <a class="btn ghost" href="#marketing-assets">觀看宣傳影片與視覺圖</a>
@@ -438,31 +456,31 @@
         <div class="sec-head">
           <span class="kicker">Three Ethical &amp; Legal Redlines</span>
           <h2 id="red-title">三項倫理與法律紅線：思念有聲，界線清楚</h2>
-          <p class="muted">我們拒絕無邊界自由發揮的幻覺聊天[cite: 11]。每一段畫面與聲音都清楚標示身分屬性，尊重已故者生前意志與家屬感受[cite: 11]。</p>
+          <p class="muted">我們拒絕無邊界自由發揮的幻覺聊天。每一段畫面與聲音都清楚標示身分屬性，尊重已故者生前意志與家屬感受。</p>
         </div>
 
         <div class="grid">
           <div class="card feature">
             <span class="num">紅線 01｜強制透明宣告</span>
             <h3>固定位置水印＋語音開場宣告</h3>
-            <p style="margin:0">所有影音輸出均在固定位置加註「AI 仿生重現，非真人即時發言」水印；語音互動開場前亦主動宣告 AI 屬性[cite: 11]。</p>
+            <p style="margin:0">所有影音輸出均在固定位置加註「AI 仿生重現，非真人即時發言」水印；語音互動開場前亦主動宣告 AI 屬性。</p>
           </div>
 
           <div class="card feature">
             <span class="num">紅線 02｜事實邊界與拒絕臆測</span>
             <h3>生前未表態事件絕不代替裁斷</h3>
-            <p style="margin:0">僅依據授權語料庫回應；遇生前未公開表態的新議題，不以「本人立場」作確定性回答，僅能以其思想框架提出標明為假設的推演[cite: 11]。</p>
+            <p style="margin:0">僅依據授權語料庫回應；遇生前未公開表態的新議題，不以「本人立場」作確定性回答，僅能以其思想框架提出標明為假設的推演。</p>
           </div>
 
           <div class="card feature">
             <span class="num">紅線 03｜資料來源白名單</span>
             <h3>私密通訊與醫療紀錄嚴禁未授權匯入</h3>
-            <p style="margin:0">未經著作權人、出版機構或法定遺產繼承人書面授權的私密通訊（LINE、私密郵件、醫療診斷書），嚴禁匯入語料庫[cite: 11]。</p>
+            <p style="margin:0">未經著作權人、出版機構或法定遺產繼承人書面授權的私密通訊（LINE、私密郵件、醫療診斷書），嚴禁匯入語料庫。</p>
           </div>
         </div>
 
         <div class="boundary-box" style="margin-top:1.8rem">
-          <strong>核心免責與身分邊界聲明：</strong>重現的數位形象只是「數位回聲」，絕不代表已故人物在現世法律、政治或商業環境中的實質代理人，亦不使用「復活」「永生」等宣稱[cite: 11]。語料授權清單與家屬合意書已列為法務簽核閘門[cite: 11]。
+          <strong>核心免責與身分邊界聲明：</strong>重現的數位形象只是「數位回聲」，絕不代表已故人物在現世法律、政治或商業環境中的實質代理人，亦不使用「復活」「永生」等宣稱。語料授權清單與家屬合意書已列為法務簽核閘門；現階段預售不作已通過法規審查之宣稱。
         </div>
       </div>
     </section>
@@ -485,7 +503,7 @@
         <div class="sec-head">
           <span class="kicker">Human-in-the-Loop Governance</span>
           <h2 id="hitl-title">AI 系統執行與真人把關（HITL）嚴格分工</h2>
-          <p class="muted">從授權合約審查、心理衝擊評估到現場即時熔斷，關鍵倫理環節均由真人專業團隊負責[cite: 11]。</p>
+          <p class="muted">從授權合約審查、心理衝擊評估到現場即時熔斷，關鍵倫理環節均由真人專業團隊負責。</p>
         </div>
 
         <div class="table-wrap">
@@ -500,23 +518,23 @@
             <tbody>
               <tr>
                 <td><strong>語料來源與授權</strong></td>
-                <td>對已通過授權之公開著作、演講與訪談進行向量索引與風格建模[cite: 11]。</td>
-                <td>授權合約審核、著作權人與全體法定繼承人書面同意書簽署[cite: 11]。</td>
+                <td>對已通過授權之公開著作、演講與訪談進行向量索引與風格建模。</td>
+                <td>授權合約審核、著作權人與全體法定繼承人書面同意書簽署。</td>
               </tr>
               <tr>
                 <td><strong>聲紋與視覺重現</strong></td>
-                <td>進行語音合成、Talking Head 渲染與唇形對齊輸出[cite: 11]。</td>
-                <td>聲紋與肖像所有權合規簽章、固定位置透明水印核驗[cite: 11]。</td>
+                <td>進行語音合成、影像生成與唇形對齊輸出。</td>
+                <td>聲紋與肖像所有權合規簽章、固定位置透明水印核驗。</td>
               </tr>
               <tr>
                 <td><strong>對話與立場邊界</strong></td>
-                <td>透過邊界審查器與 Hybrid RAG 區分「已公開主張」與「思想框架推演」[cite: 11]。</td>
-                <td>政治／敏感立場紅線審查、家屬心理衝擊評估[cite: 11]。</td>
+                <td>透過邊界審查器與混合檢索區分「已公開主張」與「思想框架推演」。</td>
+                <td>政治／敏感立場紅線審查、家屬心理衝擊評估。</td>
               </tr>
               <tr>
                 <td><strong>互動現場主持</strong></td>
-                <td>即時語音轉文字（ASR）與受控回覆生成[cite: 11]。</td>
-                <td>爭議言論即時熔斷機制（Kill-Switch）中斷與事後覆盤[cite: 11]。</td>
+                <td>即時語音轉文字與受控回覆生成。</td>
+                <td>爭議言論即時熔斷機制（Kill-Switch）中斷與事後覆盤。</td>
               </tr>
             </tbody>
           </table>
@@ -534,19 +552,19 @@
         <div class="faq-list">
           <article class="faq-card">
             <h3>Q1：AI 會說出他沒說過的話嗎？</h3>
-            <p>對他生前未表態的議題，只能以其思想框架提出推演，並明確標示為假設，不會以「本人立場」作確定性回答[cite: 11]。</p>
+            <p>對他生前未表態的議題，只能以其思想框架提出推演，並明確標示為假設，不會以「本人立場」作確定性回答。</p>
           </article>
           <article class="faq-card">
             <h3>Q2：可以用家人的 LINE 對話或私人信件嗎？</h3>
-            <p>未經著作權人、出版機構或法定遺產繼承人書面授權的私密通訊，不得匯入語料庫[cite: 11]。</p>
+            <p>未經著作權人、出版機構或法定遺產繼承人書面授權的私密通訊，不得匯入語料庫。</p>
           </article>
           <article class="faq-card">
             <h3>Q3：如果 AI 說了不恰當的話怎麼辦？</h3>
-            <p>爭議言論由真人以即時熔斷機制（Kill-Switch）立即中斷，並進行事後覆盤與邊界修正[cite: 11]。</p>
+            <p>爭議言論由真人以即時熔斷機制（Kill-Switch）中斷，並進行事後覆盤與邊界修正。</p>
           </article>
           <article class="faq-card">
             <h3>Q4：家族或紀念機構可以選擇地端私有部署嗎？</h3>
-            <p>可以[cite: 1]。您可在下方搭配勾選「四槽 AI NAS 套組（含機殼與預裝，不含硬碟，原價 NT$ 89,900，7 折嘗鮮預售價 NT$ 62,930）」，將珍貴的家族語料留在自有設備上[cite: 1]。</p>
+            <p>可以。您可在下方搭配勾選「四槽 AI NAS 套組（含機殼與預裝，不含硬碟，原價 NT$ 89,900，7 折嘗鮮預售價 NT$ 62,930）」，亦可加購 USB 授權驗證金鑰（單把 7 折 NT$ 2,730）。</p>
           </article>
         </div>
       </div>
@@ -557,32 +575,45 @@
         <div class="sec-head">
           <span class="kicker">70% Early-Bird Presale · EternalMemory</span>
           <h2 id="cta-form-title">選擇您的 7 折嘗鮮預售方案與典藏容器配置</h2>
-          <p class="muted">全系列早鳥預售享 <strong>7 折優惠（現省 30%）</strong>[cite: 1]；點選家族留念、紀念機構或企業傳承方案並選擇是否搭配四槽 AI NAS，即可一鍵前往共用結算中心。</p>
+          <p class="muted">全系列早鳥預售享 <strong id="discount-text-inline">7 折優惠（現省 30%）</strong>；點選家族留念、紀念機構或企業傳承方案並選擇是否搭配四槽 AI NAS，即可一鍵前往共用結算中心。</p>
+          <span id="pricing-sync-status" class="muted" style="font-family:var(--font-mono);font-size:0.84rem;display:inline-block;margin-top:0.25rem">正在同步方案價目...</span>
         </div>
 
         <div class="billing-switch-bar">
           <strong style="color:var(--heading);font-size:0.95rem">步驟 ①：點選訂閱方案與計費週期</strong>
           <div class="billing-pills" role="group" aria-label="計費週期切換">
-            <button type="button" id="bill-yearly" class="bill-pill active" onclick="setBilling('yearly')">年繳方案（再享 7 折）</button>
+            <button type="button" id="bill-yearly" class="bill-pill active" onclick="setBilling('yearly')">年繳方案（享 7 折）</button>
             <button type="button" id="bill-monthly" class="bill-pill" onclick="setBilling('monthly')">月繳方案（享 7 折）</button>
           </div>
         </div>
 
         <div id="plans-grid" class="plans-grid"></div>
 
-        <!-- 四槽 AI NAS 硬體勾選框 -->
+        <!-- 四槽 AI NAS 硬體一次購勾選框 -->
         <div id="hw-bundle-container" class="hw-bundle-box">
           <label class="hw-bundle-label" for="hw-nas-check">
             <input type="checkbox" id="hw-nas-check" checked onchange="renderPlans()">
             <div>
-              <strong style="color:var(--heading);font-size:0.98rem">搭配硬體一次購：四槽 AI NAS 套組（4 槽小組型，不含硬碟）</strong>
-              <span style="display:block;font-size:0.84rem;color:var(--muted);margin-top:0.2rem">家屬小組或小型紀念機構私有典藏節點（含機殼與預裝，不含硬碟；至結算頁可加購 USB 金鑰）</span>
+              <strong id="hw-nas-title" style="color:var(--heading);font-size:0.98rem">搭配硬體一次購：四槽 AI NAS 套組（4 槽小組型，不含硬碟）</strong>
+              <span id="hw-nas-desc" style="display:block;font-size:0.84rem;color:var(--muted);margin-top:0.2rem">家屬小組或小型紀念機構私有典藏節點（含機殼與預裝，不含硬碟）</span>
             </div>
           </label>
           <div style="text-align:right;font-family:var(--font-mono)">
-            <span style="font-size:0.8rem;color:var(--muted);text-decoration:line-through;display:block">原價 NT$ 89,900</span>
-            <strong style="font-size:1.15rem;color:var(--kicker-dark)">7 折 NT$ 62,930</strong>
+            <span id="hw-nas-orig" style="font-size:0.8rem;color:var(--muted);text-decoration:line-through;display:block">原價 NT$ 89,900</span>
+            <strong id="hw-nas-sale" style="font-size:1.15rem;color:var(--kicker-dark)">7 折 NT$ 62,930</strong>
           </div>
+        </div>
+
+        <!-- USB 金鑰硬體加購勾選框 -->
+        <div id="addon-usb-container" class="addon-strip">
+          <label class="hw-bundle-label" for="addon-usb-check">
+            <input type="checkbox" id="addon-usb-check" onchange="renderPlans()">
+            <div>
+              <strong id="addon-usb-title" style="color:var(--heading);font-size:0.95rem">硬體加購：USB 金鑰（加購）（單把，用於授權驗證與解密）</strong>
+              <span id="addon-usb-desc" style="display:block;font-size:0.84rem;color:var(--muted);margin-top:0.15rem">若採用時加購｜原價 NT$ 3,900 → 7 折預售 NT$ 2,730</span>
+            </div>
+          </label>
+          <span id="addon-usb-badge" style="font-family:var(--font-mono);font-weight:700;color:var(--kicker-dark)">+ NT$ 2,730</span>
         </div>
 
         <div class="reserve-layout">
@@ -615,8 +646,8 @@
             </div>
 
             <div class="form-actions">
-              <button type="button" id="go-checkout-btn" class="btn primary">前往 7 折預售結算中心（../CTA） →</button>
-              <button type="button" id="mail-inquiry-btn" class="btn ghost-dark">僅先寄信諮詢（暫不結帳）</button>
+              <button type="button" id="go-checkout-btn" class="btn primary">前往 7 折預售結算中心 →</button>
+              <button type="button" id="mail-inquiry-btn" class="btn ghost-dark">僅先寄信諮詢</button>
             </div>
             <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
           </form>
@@ -629,11 +660,12 @@
               <dt>選定方案</dt><dd id="sum-plan-name">Family（每月 8 場互動場次）</dd>
               <dt>計費週期</dt><dd id="sum-billing">年繳方案</dd>
               <dt>硬體搭配</dt><dd id="sum-hw">四槽 AI NAS 套組（7 折 NT$ 62,930）</dd>
+              <dt>硬體加購</dt><dd id="sum-addon">無</dd>
               <dt>標準原價合計</dt><dd id="sum-orig-price" style="text-decoration:line-through;color:#B8C7C5">NT$ 138,900</dd>
-              <dt>7 折預售總計</dt><dd id="sum-sale-price" style="color:#D4AF37;font-size:1.25rem">NT$ 97,230</dd>
+              <dt>預售實付總計</dt><dd id="sum-sale-price" style="color:#D4AF37;font-size:1.25rem">NT$ 97,230</dd>
             </dl>
             <div class="note" style="background:rgba(255,255,255,0.08);border-color:rgba(212,175,55,0.4);color:#E4ECEA">
-              <strong style="color:#D4AF37">跳轉說明：</strong>點擊「前往 7 折預售結算中心」將導向上層 <code>CTA/index.html</code>；依《代收預售款授權及合約書》，本預售款由全視界台灣分公司代收並開立席次憑證[cite: 11]。
+              <strong style="color:#D4AF37">跳轉說明：</strong>點擊「前往 7 折預售結算中心」將帶入您的方案與硬體配置參數，結算頁支援銀行電匯、第三方刷卡與 USDT 入金，並依授權代收合約開立預售席次憑證。
             </div>
             <p style="margin-top:1.2rem;margin-bottom:0">
               <a class="btn ghost" style="width:100%" href="../index.html#products">瀏覽其他 9 條生態系產品線</a>
@@ -658,34 +690,47 @@
   <footer class="site">
     <div class="wrap">
       <p><strong>© 2026 水月道場 / Wonderland Center（wonderland.ngo）</strong>｜永恆記憶 EternalMemory 專屬預售頁</p>
-      <p class="muted" style="font-size:.84rem">本頁內容依《永恆記憶 EternalMemory 產品說明與預售內容》及《產品定價與 7 折嘗鮮預售價總表》編製，數位形象僅為回聲，不代表現世法律代理人[cite: 1, 11]。</p>
+      <p class="muted" style="font-size:.84rem">本頁內容依《永恆記憶 EternalMemory 產品說明與預售內容》及《全系列產品銷售價格與「7 折嘗鮮預售價」總覽表》編製，數位形象僅為回聲，不代表現世法律代理人。</p>
     </div>
   </footer>
 
   <script>
-    /**
-     * ==========================================================================
-     * 可調整參數區：
-     * - PRODUCT_CODE：傳遞給 ../CTA/index.html 的產品編號（"08"）
-     * - CHECKOUT_PATH：共用結算頁相對路徑（"../CTA/index.html"）
-     * - DISCOUNT_RATE：7 折優惠率（0.7）
-     * - HW_NAS_ORIG：四槽 AI NAS 套組原價（89,900）
-     * - PLANS_08：依據 Excel 總表之 08 永恆記憶方案數據
-     * ==========================================================================
-     */
     const PRODUCT_CODE = "08";
+    const PRICING_MD_PATH = "../CTA/serviceandpricing.md";
     const CHECKOUT_PATH = "../CTA/index.html";
     const CONTACT_EMAIL = "contact@wonderland.ngo";
-    const DISCOUNT_RATE = 0.7;
-    const HW_NAS_ORIG = 89900;
+    const DEFAULT_DISCOUNT_RATE = 0.7;
     const MEDIA_DIR = "./marketing";
 
-    const PLANS_08 = [
-      { plan: "Family", target: "家屬留念", quota: "每月 8 場互動場次", m: 4900, y: 49000, recommended: true },
-      { plan: "Institution", target: "紀念機構、學術單位", quota: "每月 30 場互動場次", m: 14900, y: 149000 },
-      { plan: "Legacy", target: "較高頻或企業傳承", quota: "每月 80 場互動場次", m: 29900, y: 299000 },
-      { plan: "Custom", target: "特殊需求", quota: "客製（洽談）", custom: true }
-    ];
+    // 離線備援價目（當以 file:// 開啟或無法讀取外部 Markdown 時自動啟用）
+    const FALLBACK_PRICING_08 = {
+      discountRate: DEFAULT_DISCOUNT_RATE,
+      hardware: {
+        name: "四槽 AI NAS 套組",
+        spec: "4 槽小組型（含機殼與預裝，不含硬碟）",
+        note: "家屬小組或小型紀念機構",
+        price: 89900
+      },
+      usbAddon: {
+        name: "USB 金鑰（加購）",
+        spec: "單把（用於授權驗證與解密）",
+        note: "若採用時加購",
+        price: 3900
+      },
+      plans: [
+        { plan: "Family", target: "家屬留念", quota: "每月 8 場互動場次", m: 4900, y: 49000, recommended: true },
+        { plan: "Institution", target: "紀念機構、學術單位", quota: "每月 30 場互動場次", m: 14900, y: 149000 },
+        { plan: "Legacy", target: "較高頻或企業傳承", quota: "每月 80 場互動場次", m: 29900, y: 299000 },
+        { plan: "Custom", target: "特殊需求", quota: "客製（洽談）", custom: true }
+      ]
+    };
+
+    let activePricing = {
+      discountRate: FALLBACK_PRICING_08.discountRate,
+      hardware: { ...FALLBACK_PRICING_08.hardware },
+      usbAddon: { ...FALLBACK_PRICING_08.usbAddon },
+      plans: FALLBACK_PRICING_08.plans.map(p => ({ ...p }))
+    };
 
     const MARKETING_MEDIA = {
       video: {
@@ -699,25 +744,138 @@
         { file: "1.形象廣告.jpg", badge: "品牌形象", title: "永恆記憶不會假裝他還在", caption: "有邊界、可審計的數位思想容器，讓思想者與親人的話語以清楚的界線被聽見。" },
         { file: "2.產品說明流程.jpg", badge: "倫理紅線", title: "三項倫理與法律紅線", caption: "強制透明水印宣告、生前未表態議題拒絕臆測、私密通訊須法定繼承人書面授權。" },
         { file: "3.服務交付流程.jpg", badge: "真人把關", title: "AI 與真人把關（HITL）分工", caption: "家屬同意書、心理衝擊評估、敏感立場審查與現場即時熔斷皆由真人專業團隊負責。" },
-        { file: "4.行銷推廣圖片.jpg", badge: "技術管線", title: "邊界審查器與 Hybrid RAG", caption: "嚴格區分生前已公開主張與思想框架假設推演，避免無邊界自由發揮產生幻覺。" },
+        { file: "4.行銷推廣圖片.jpg", badge: "技術管線", title: "邊界審查器與混合檢索", caption: "嚴格區分生前已公開主張與思想框架假設推演，避免無邊界自由發揮產生幻覺。" },
         { file: "5.社群概念圖.jpg", badge: "應用場景", title: "家屬留念、學術講座與企業傳承", caption: "支援語音與影像互動，適合紀念館教育展覽、家族傳承與創辦人理念典藏。" },
         { file: "6.B2B 企業出海 EDM.jpg", badge: "典藏套組", title: "四槽地端 AI NAS 私有典藏方案", caption: "可搭配四槽小組型 AI NAS 設備，將珍貴的授權語料安全保存於家族或機構自有設備。" }
       ]
     };
 
-    let selectedPlanIdx = 0; // 預設選中 Family
+    let selectedPlanIdx = 0;
     let billingCycle = "yearly";
+
+    function getDiscountFoldLabel() {
+      const fold = Math.round(activePricing.discountRate * 100);
+      return fold % 10 === 0 ? `${fold / 10} 折` : `${fold} 折`;
+    }
+
+    function calcSalePrice(orig) {
+      return typeof orig === "number" ? Math.round(orig * activePricing.discountRate) : null;
+    }
+
+    function parsePricingMarkdownFor08(mdText) {
+      let discountRate = DEFAULT_DISCOUNT_RATE;
+      const rateMatch = mdText.match(/discount_rate:\s*([0-9.]+)/i);
+      if (rateMatch) {
+        const parsed = parseFloat(rateMatch[1]);
+        if (!isNaN(parsed) && parsed > 0 && parsed <= 1) discountRate = parsed;
+      }
+
+      const secMatch = mdText.match(/##\s*\[08\][^\n]*\n([\s\S]*?)(?=\n---|\n##\s*\[)/);
+      if (!secMatch) return null;
+
+      let hardware = null;
+      let usbAddon = null;
+      const plans = [];
+
+      secMatch[1].trim().split("\n").forEach(line => {
+        const t = line.trim();
+        if (!t.startsWith("|") || t.includes("---") || t.includes("計費類別")) return;
+        const cells = t.split("|").map(c => c.trim()).filter((_, i, a) => i > 0 && i < a.length - 1);
+        if (cells.length < 7) return;
+
+        const [cat, name, target, quota, mRaw, yRaw, oRaw] = cells;
+        const isCustom = mRaw.includes("洽談") || yRaw.includes("洽談") || oRaw.includes("洽談");
+        const toNum = v => {
+          if (!v || v === "-" || v === "洽談") return null;
+          const n = Number(v.replace(/,/g, ""));
+          return isNaN(n) ? null : n;
+        };
+
+        if (cat === "硬體一次購") {
+          hardware = {
+            name,
+            spec: target,
+            note: quota,
+            price: toNum(oRaw) || FALLBACK_PRICING_08.hardware.price
+          };
+        } else if (cat === "硬體加購") {
+          usbAddon = {
+            name,
+            spec: target,
+            note: quota,
+            price: toNum(oRaw) || FALLBACK_PRICING_08.usbAddon.price
+          };
+        } else if (cat === "軟體訂閱") {
+          plans.push({
+            plan: name,
+            target,
+            quota,
+            m: toNum(mRaw),
+            y: toNum(yRaw),
+            custom: isCustom,
+            recommended: name === "Family"
+          });
+        }
+      });
+
+      if (plans.length === 0) return null;
+      return {
+        discountRate,
+        hardware: hardware || { ...FALLBACK_PRICING_08.hardware },
+        usbAddon: usbAddon || { ...FALLBACK_PRICING_08.usbAddon },
+        plans
+      };
+    }
+
+    async function loadPricingMarkdown() {
+      const statusEl = document.getElementById("pricing-sync-status");
+      try {
+        const resp = await fetch(PRICING_MD_PATH, { cache: "no-cache" });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const mdText = await resp.text();
+        const parsed = parsePricingMarkdownFor08(mdText);
+        if (parsed) {
+          activePricing = parsed;
+          if (statusEl) {
+            statusEl.textContent = `✓ 已同步價目表（${getDiscountFoldLabel()}嘗鮮預售）`;
+          }
+          renderPlans();
+          return;
+        }
+        throw new Error("Empty section");
+      } catch (_) {
+        activePricing = {
+          discountRate: FALLBACK_PRICING_08.discountRate,
+          hardware: { ...FALLBACK_PRICING_08.hardware },
+          usbAddon: { ...FALLBACK_PRICING_08.usbAddon },
+          plans: FALLBACK_PRICING_08.plans.map(p => ({ ...p }))
+        };
+        if (statusEl) {
+          statusEl.textContent = `✓ 已載入離線備援價目（${getDiscountFoldLabel()}嘗鮮預售）`;
+        }
+        renderPlans();
+      }
+    }
 
     function renderPlans() {
       const grid = document.getElementById("plans-grid");
       const hwContainer = document.getElementById("hw-bundle-container");
+      const usbContainer = document.getElementById("addon-usb-container");
       const nasCheck = document.getElementById("hw-nas-check");
+      const usbCheck = document.getElementById("addon-usb-check");
       if (!grid) return;
 
+      const dLabel = getDiscountFoldLabel();
+      const savePct = Math.round((1 - activePricing.discountRate) * 100);
+      const inlineDisc = document.getElementById("discount-text-inline");
+      if (inlineDisc) inlineDisc.textContent = `${dLabel}優惠（現省 ${savePct}%）`;
+
+      document.getElementById("bill-yearly").textContent = `年繳方案（享 ${dLabel}）`;
+      document.getElementById("bill-monthly").textContent = `月繳方案（享 ${dLabel}）`;
       document.getElementById("bill-yearly").classList.toggle("active", billingCycle === "yearly");
       document.getElementById("bill-monthly").classList.toggle("active", billingCycle === "monthly");
 
-      grid.innerHTML = PLANS_08.map((p, idx) => {
+      grid.innerHTML = activePricing.plans.map((p, idx) => {
         const isSel = idx === selectedPlanIdx;
         if (p.custom) {
           return `
@@ -730,11 +888,11 @@
           `;
         }
         const orig = billingCycle === "yearly" ? p.y : p.m;
-        const sale = Math.round(orig * DISCOUNT_RATE);
+        const sale = calcSalePrice(orig);
         const unit = billingCycle === "yearly" ? "/ 年" : "/ 月";
         return `
           <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
-            <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">${p.recommended ? "★ 熱門推薦" : "7 折早鳥"}</span></div>
+            <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">${p.recommended ? "★ 熱門推薦" : `${dLabel}早鳥`}</span></div>
             <div class="plan-quota">${p.quota}</div>
             <div class="plan-target">${p.target}</div>
             <div class="plan-pricing">
@@ -745,25 +903,41 @@
         `;
       }).join("");
 
-      const cur = PLANS_08[selectedPlanIdx];
+      const hwOrig = activePricing.hardware.price;
+      const hwSale = calcSalePrice(hwOrig);
+      document.getElementById("hw-nas-title").textContent = `搭配硬體一次購：${activePricing.hardware.name}（${activePricing.hardware.spec}）`;
+      document.getElementById("hw-nas-desc").textContent = `${activePricing.hardware.note}（含機殼與預裝，不含硬碟）`;
+      document.getElementById("hw-nas-orig").textContent = `原價 NT$ ${hwOrig.toLocaleString("zh-TW")}`;
+      document.getElementById("hw-nas-sale").textContent = `${dLabel} NT$ ${hwSale.toLocaleString("zh-TW")}`;
+
+      const usbOrig = activePricing.usbAddon.price;
+      const usbSale = calcSalePrice(usbOrig);
+      document.getElementById("addon-usb-title").textContent = `硬體加購：${activePricing.usbAddon.name}（${activePricing.usbAddon.spec}）`;
+      document.getElementById("addon-usb-desc").textContent = `${activePricing.usbAddon.note}｜原價 NT$ ${usbOrig.toLocaleString("zh-TW")} → ${dLabel}預售 NT$ ${usbSale.toLocaleString("zh-TW")}`;
+      document.getElementById("addon-usb-badge").textContent = `+ NT$ ${usbSale.toLocaleString("zh-TW")}`;
+
+      const cur = activePricing.plans[selectedPlanIdx] || activePricing.plans[0];
       document.getElementById("sum-plan-name").textContent = `${cur.plan}（${cur.quota}）`;
       document.getElementById("sum-billing").textContent = cur.custom ? "客製專案（洽談）" : (billingCycle === "yearly" ? "年繳方案" : "月繳方案");
 
       if (cur.custom) {
         hwContainer.style.display = "none";
+        usbContainer.style.display = "none";
         document.getElementById("sum-hw").textContent = "依客製需求評估";
+        document.getElementById("sum-addon").textContent = "無";
         document.getElementById("sum-orig-price").textContent = "專案報價";
         document.getElementById("sum-sale-price").textContent = "專人洽談";
       } else {
         hwContainer.style.display = "flex";
+        usbContainer.style.display = "flex";
         const nasChecked = nasCheck.checked;
-        const hwSale = Math.round(HW_NAS_ORIG * DISCOUNT_RATE);
-        document.getElementById("sum-hw").textContent = nasChecked ? `四槽 AI NAS 套組（7 折 NT$ ${hwSale.toLocaleString("zh-TW")}）` : "未加購（雲端受控託管）";
+        const usbChecked = usbCheck.checked;
+        document.getElementById("sum-hw").textContent = nasChecked ? `${activePricing.hardware.name}（${dLabel} NT$ ${hwSale.toLocaleString("zh-TW")}）` : "未加購（雲端受控託管）";
+        document.getElementById("sum-addon").textContent = usbChecked ? `${activePricing.usbAddon.name}（${dLabel} NT$ ${usbSale.toLocaleString("zh-TW")}）` : "無";
 
         const subOrig = billingCycle === "yearly" ? cur.y : cur.m;
-        const hwOrig = nasChecked ? HW_NAS_ORIG : 0;
-        const totalOrig = subOrig + hwOrig;
-        const totalSale = Math.round(subOrig * DISCOUNT_RATE) + (nasChecked ? hwSale : 0);
+        const totalOrig = subOrig + (nasChecked ? hwOrig : 0) + (usbChecked ? usbOrig : 0);
+        const totalSale = calcSalePrice(subOrig) + (nasChecked ? hwSale : 0) + (usbChecked ? usbSale : 0);
         document.getElementById("sum-orig-price").textContent = `NT$ ${totalOrig.toLocaleString("zh-TW")}`;
         document.getElementById("sum-sale-price").textContent = `NT$ ${totalSale.toLocaleString("zh-TW")}`;
       }
@@ -778,13 +952,14 @@
       const feedback = document.getElementById("form-feedback");
 
       const collectFields = () => {
-        const cur = PLANS_08[selectedPlanIdx];
-        const nasChecked = !cur.custom && document.getElementById("hw-nas-check").checked;
+        const cur = activePricing.plans[selectedPlanIdx] || activePricing.plans[0];
+        const nasChecked = !cur.custom && Boolean(document.getElementById("hw-nas-check")?.checked);
+        const usbChecked = !cur.custom && Boolean(document.getElementById("addon-usb-check")?.checked);
         const name = document.getElementById("user-name").value.trim();
         const email = document.getElementById("user-email").value.trim();
         const memScene = document.getElementById("mem-scene").value;
         const notes = document.getElementById("user-notes").value.trim();
-        return { cur, nasChecked, name, email, memScene, notes };
+        return { cur, nasChecked, usbChecked, name, email, memScene, notes };
       };
 
       goBtn.addEventListener("click", () => {
@@ -794,9 +969,14 @@
         params.set("plan", data.cur.plan);
         params.set("billing", billingCycle);
         params.set("bundle", data.nasChecked ? "1" : "0");
+        if (data.usbChecked) params.set("addon", "1");
         if (data.name) params.set("name", data.name);
         if (data.email) params.set("email", data.email);
-        const combinedNotes = [data.memScene, data.notes].filter(Boolean).join("｜");
+        const combinedNotes = [
+          data.memScene,
+          data.usbChecked ? `含${activePricing.usbAddon.name}` : "",
+          data.notes
+        ].filter(Boolean).join("｜");
         if (combinedNotes) params.set("notes", combinedNotes);
 
         window.location.href = `${CHECKOUT_PATH}?${params.toString()}`;
@@ -816,7 +996,8 @@
           `・稱呼 / 單位：${data.name}`,
           `・聯絡信箱：${data.email}`,
           `・感興趣方案：${data.cur.plan}（${billingCycle === "yearly" ? "年繳" : "月繳"}）`,
-          `・搭配硬體：${data.nasChecked ? "四槽 AI NAS 套組" : "不加購 AI NAS"}`,
+          `・搭配硬體：${data.nasChecked ? activePricing.hardware.name : "不加購 AI NAS"}`,
+          `・硬體加購：${data.usbChecked ? activePricing.usbAddon.name : "無"}`,
           `・應用場景：${data.memScene}`,
           `・授權與需求簡述：${data.notes || "（尚未填寫）"}`
         ].join("\n");
@@ -837,7 +1018,7 @@
           <div class="video-stage">
             <video id="promo-video-player" autoplay muted loop playsinline controls preload="auto"${posterSrc ? ` poster="${posterSrc}"` : ""}>
               <source src="${videoSrc}" type="video/mp4">
-              您的瀏覽器不支援 HTML5 影片播放。
+              您的瀏覽器不支援影片播放。
             </video>
             <div id="video-error-fallback" class="media-fallback" style="display:none">宣傳影片載入中或暫時無法播放，請重新整理頁面後再試。</div>
           </div>
@@ -928,6 +1109,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       renderMarketingAssets();
       renderPlans();
+      loadPricingMarkdown();
       initCheckoutBridge();
       initBigText();
     });

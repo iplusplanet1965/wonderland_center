@@ -1,6 +1,18 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
-<!-- 產品線：02｜密圈 CipherCircle（所屬事業體：AllView / allview.today）｜檔案路徑：CipherCircle/index.html -->
+<!--
+  ============================================================================
+  可調整參數區（請依需求修改下方 JS 常數）：
+  - PRODUCT_CODE：產品編號字串（"02"）
+  - PRICING_MD_PATH：共用價目檔相對路徑（"../CTA/serviceandpricing.md"）
+  - CHECKOUT_PATH：共用結算頁相對路徑（"../CTA/index.html"）
+  - CONTACT_EMAIL：諮詢與意向信箱（"contact@wonderland.ngo"）
+  - DEFAULT_DISCOUNT_RATE：預設折扣率備援值（0.7 代表 7 折）
+  - MEDIA_DIR：行銷影音與六圖所在目錄（"./marketing"）
+  ============================================================================
+  產品線：02｜密圈 CipherCircle（所屬事業體：AllView / allview.today）
+  檔案路徑：CipherCircle/index.html
+-->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -310,7 +322,7 @@
     .plans-grid {
       display: grid; gap: 1rem;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.5rem;
     }
     .plan-card {
       background: var(--card); border: 2px solid var(--line); border-radius: var(--radius-lg);
@@ -333,6 +345,14 @@
     .plan-pricing { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--line); font-family: var(--font-mono); }
     .plan-orig { font-size: 0.8rem; color: var(--muted); text-decoration: line-through; display: block; }
     .plan-sale { font-size: 1.28rem; font-weight: 700; color: var(--heading); }
+
+    .addon-strip {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg);
+      padding: 1.15rem 1.35rem; margin-bottom: 1.8rem;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .addon-check { display: flex; align-items: flex-start; gap: 0.65rem; cursor: pointer; max-width: 60ch; }
+    .addon-check input { width: 20px; height: 20px; margin-top: 0.2rem; accent-color: var(--heading); flex: none; }
 
     .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.5fr 1fr; align-items: start; }
     @media (max-width: 860px) { .reserve-layout { grid-template-columns: 1fr; } }
@@ -373,7 +393,7 @@
     }
   </style>
 </head>
-<body>
+<body data-product-id="02">
   <a class="skip" href="#main">跳到主要內容</a>
 
   <header class="site">
@@ -445,7 +465,7 @@
         <div class="grid two">
           <div class="card feature">
             <span class="num">能力 01｜端對端加密通訊與社群空間</span>
-            <h3>動態牆、短影音與 E2EE 加密群聊</h3>
+            <h3>動態牆、短影音與端對端加密群聊</h3>
             <p style="margin:0">整合動態牆、短影音、故事與端對端加密通訊，支援加密群聊、語音／視訊與螢幕共享，並提供限時閱後即焚與本機受控金鑰備份。</p>
           </div>
 
@@ -463,13 +483,13 @@
 
           <div class="card feature">
             <span class="num">能力 04｜偽匿名身分與條件式證據鏈</span>
-            <h3>ZKP 驗證資格＋簽章收據 Merkle Tree</h3>
-            <p style="margin:0">成員可用零知識證明（ZKP）出示組織資格而不暴露真實帳號；重要操作產生簽章收據寫入 Merkle 證據鏈，僅在司法仲裁或授權門檻湊齊時檢驗。</p>
+            <h3>零知識證明驗證資格＋簽章收據證據鏈</h3>
+            <p style="margin:0">成員可用零知識證明出示組織資格而不暴露真實帳號；重要操作產生簽章收據寫入 Merkle 證據鏈，僅在司法仲裁或授權門檻湊齊時檢驗。</p>
           </div>
         </div>
 
         <div class="boundary-box" style="margin-top:1.8rem">
-          <strong>誠實設計邊界聲明：</strong>密圈定位為「公開偽匿名＋條件式舉證」，並非「誰都查不到」的絕對匿名承諾。當司法仲裁或授權門檻金鑰條件滿足時，特定發表或閱讀紀錄可被驗證；本頁不宣稱已通過司法認證或達到外部通訊軟體同等完成度。
+          <strong>誠實設計邊界聲明：</strong>密圈定位為「公開偽匿名＋條件式舉證」，並非「誰都查不到」的絕對匿名承諾。當司法仲裁或授權門檻金鑰條件滿足時，特定發表或閱讀紀錄可被驗證；本頁不宣稱已通過司法認證，亦不與外部通訊軟體作同等安全或完成度比較。
         </div>
       </div>
     </section>
@@ -498,7 +518,7 @@
         <ol class="pipeline">
           <li><strong>客戶端加密與簽署</strong><br><span class="muted" style="font-size:.9rem">發文或傳訊於發送端加密，並產生發送簽章收據。</span></li>
           <li><strong>本地解密與閱讀回執</strong><br><span class="muted" style="font-size:.9rem">具備資格的接收方於本機解密閱覽，回傳閱讀收據。</span></li>
-          <li><strong>寫入 Merkle 證據鏈</strong><br><span class="muted" style="font-size:.9rem">操作與閱讀收據定期打包為 Merkle Tree 不可竄改存證。</span></li>
+          <li><strong>寫入 Merkle 證據鏈</strong><br><span class="muted" style="font-size:.9rem">操作與閱讀收據定期打包為 Merkle Tree 存證。</span></li>
           <li><strong>授權門檻條件式檢驗</strong><br><span class="muted" style="font-size:.9rem">僅在司法仲裁或授權門檻金鑰湊齊時，方可檢驗特定紀錄。</span></li>
         </ol>
       </div>
@@ -537,18 +557,30 @@
         <div class="sec-head">
           <span class="kicker">70% Early-Bird Presale · CipherCircle</span>
           <h2 id="cta-form-title">選擇您的 7 折嘗鮮預售方案並前往結算</h2>
-          <p class="muted">全系列早鳥預售享 <strong>7 折優惠（現省 30%）</strong>；點選適合您社群規模的方案後，即可一鍵帶入參數前往共用結算中心。</p>
+          <p class="muted">全系列早鳥預售享 <strong id="discount-text-inline">7 折優惠（現省 30%）</strong>；點選適合您社群規模的方案後，即可一鍵帶入參數前往共用結算中心。</p>
+          <span id="pricing-sync-status" class="muted" style="font-family:var(--font-mono);font-size:0.84rem;display:inline-block;margin-top:0.25rem">正在同步方案價目...</span>
         </div>
 
         <div class="billing-switch-bar">
           <strong style="color:var(--heading);font-size:0.95rem">步驟 ①：點選訂閱方案與計費週期</strong>
           <div class="billing-pills" role="group" aria-label="計費週期切換">
-            <button type="button" id="bill-yearly" class="bill-pill active" onclick="setBilling('yearly')">年繳方案（再享 7 折）</button>
+            <button type="button" id="bill-yearly" class="bill-pill active" onclick="setBilling('yearly')">年繳方案（享 7 折）</button>
             <button type="button" id="bill-monthly" class="bill-pill" onclick="setBilling('monthly')">月繳方案（享 7 折）</button>
           </div>
         </div>
 
         <div id="plans-grid" class="plans-grid"></div>
+
+        <div class="addon-strip">
+          <label class="addon-check" for="addon-seat-pack">
+            <input type="checkbox" id="addon-seat-pack" onchange="renderPlans()">
+            <div>
+              <strong style="color:var(--heading);font-size:0.95rem">加購：額外席次包（每 50 席 × 1 包）</strong>
+              <span id="addon-price-desc" class="muted" style="display:block;font-size:0.85rem">超出額度加購｜原價 NT$ 4,900 → 7 折預售 NT$ 3,430</span>
+            </div>
+          </label>
+          <span id="addon-badge-price" style="font-family:var(--font-mono);font-weight:700;color:var(--kicker-dark)">+ NT$ 3,430</span>
+        </div>
 
         <div class="reserve-layout">
           <form id="product-cta-form" class="card form-card" novalidate>
@@ -569,7 +601,7 @@
               <select id="community-type">
                 <option value="付費知識社群／線上直播學院">付費知識社群／線上直播學院</option>
                 <option value="敏感議題研究／產業吹哨與匿名投票">敏感議題研究／產業吹哨與匿名投票</option>
-                <option value="專業學會／會員資格 ZKP 驗證論壇">專業學會／會員資格 ZKP 驗證論壇</option>
+                <option value="專業學會／會員資格資格驗證論壇">專業學會／會員資格驗證論壇</option>
                 <option value="大型機構客製門檻仲裁部署">大型機構客製門檻仲裁部署</option>
               </select>
             </div>
@@ -580,8 +612,8 @@
             </div>
 
             <div class="form-actions">
-              <button type="button" id="go-checkout-btn" class="btn primary">前往 7 折預售結算中心（../CTA） →</button>
-              <button type="button" id="mail-inquiry-btn" class="btn ghost-dark">僅先寄信諮詢（暫不結帳）</button>
+              <button type="button" id="go-checkout-btn" class="btn primary">前往 7 折預售結算中心 →</button>
+              <button type="button" id="mail-inquiry-btn" class="btn ghost-dark">僅先寄信諮詢</button>
             </div>
             <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
           </form>
@@ -593,11 +625,12 @@
               <dt>所屬事業體</dt><dd>AllView（allview.today）</dd>
               <dt>選定方案</dt><dd id="sum-plan-name">Professional（每月 200 活躍成員席次）</dd>
               <dt>計費週期</dt><dd id="sum-billing">年繳方案</dd>
+              <dt>加購項目</dt><dd id="sum-addon">無</dd>
               <dt>標準原價</dt><dd id="sum-orig-price" style="text-decoration:line-through;color:#B8C7C5">NT$ 189,000</dd>
-              <dt>7 折預售價</dt><dd id="sum-sale-price" style="color:#D4AF37;font-size:1.25rem">NT$ 132,300</dd>
+              <dt>預售實付價</dt><dd id="sum-sale-price" style="color:#D4AF37;font-size:1.25rem">NT$ 132,300</dd>
             </dl>
             <div class="note" style="background:rgba(255,255,255,0.08);border-color:rgba(212,175,55,0.4);color:#E4ECEA">
-              <strong style="color:#D4AF37">跳轉說明：</strong>點擊「前往 7 折預售結算中心」將導向上層 <code>CTA/index.html</code>，結算頁支援銀行電匯、第三方刷卡與 USDT 入金，並可加購「額外席次包（每 50 席 NT$ 3,430）」。
+              <strong style="color:#D4AF37">跳轉說明：</strong>點擊「前往 7 折預售結算中心」將帶入您的方案與聯絡資訊，結算頁支援銀行電匯、第三方刷卡與 USDT 入金。
             </div>
             <p style="margin-top:1.2rem;margin-bottom:0">
               <a class="btn ghost" style="width:100%" href="../index.html#products">瀏覽其他 9 條生態系產品線</a>
@@ -621,24 +654,41 @@
 
   <footer class="site">
     <div class="wrap">
-      <p><strong>© 2026 AllView（allview.today）× 水月道場 / Wonderland Center</strong>｜密圈 CipherCircle 專屬預售頁</p>
-      <p class="muted" style="font-size:.84rem">本頁內容依《密圈 CipherCircle 產品說明與預售內容》及《產品定價與 7 折嘗鮮預售價總表》編製，正式規格與服務條款以簽署合約為準。</p>
+      <p><strong>© 2026 AllView（allview.today）× 水月道場 / Wonderland Center（wonderland.ngo）</strong>｜密圈 CipherCircle 專屬預售頁</p>
+      <p class="muted" style="font-size:.84rem">本頁內容依《密圈 CipherCircle 產品說明與預售內容》及《全系列產品銷售價格與「7 折嘗鮮預售價」總覽表》編製，正式規格與服務條款以簽署合約為準。</p>
     </div>
   </footer>
 
   <script>
     const PRODUCT_CODE = "02";
+    const PRICING_MD_PATH = "../CTA/serviceandpricing.md";
     const CHECKOUT_PATH = "../CTA/index.html";
     const CONTACT_EMAIL = "contact@wonderland.ngo";
-    const DISCOUNT_RATE = 0.7;
+    const DEFAULT_DISCOUNT_RATE = 0.7;
     const MEDIA_DIR = "./marketing";
 
-    const PLANS_02 = [
-      { plan: "Community", target: "小型知識社群、試用課程", quota: "每月 50 活躍成員席次", m: 6900, y: 69000 },
-      { plan: "Professional", target: "活躍課程／論壇主辦方", quota: "每月 200 活躍成員席次", m: 18900, y: 189000, recommended: true },
-      { plan: "Organization", target: "較大規模知識社群或機構", quota: "每月 800 活躍成員席次", m: 49900, y: 499000 },
-      { plan: "Enterprise", target: "大型或需客製規則", quota: "客製（洽談）", custom: true }
-    ];
+    // 離線備援價目（當以 file:// 開啟或無法讀取外部 Markdown 時自動啟用）
+    const FALLBACK_PRICING_02 = {
+      discountRate: DEFAULT_DISCOUNT_RATE,
+      plans: [
+        { plan: "Community", target: "小型知識社群、試用課程", quota: "每月 50 活躍成員席次", m: 6900, y: 69000 },
+        { plan: "Professional", target: "活躍課程／論壇主辦方", quota: "每月 200 活躍成員席次", m: 18900, y: 189000, recommended: true },
+        { plan: "Organization", target: "較大規模知識社群或機構", quota: "每月 800 活躍成員席次", m: 49900, y: 499000 },
+        { plan: "Enterprise", target: "大型或需客製規則", quota: "客製（洽談）", custom: true }
+      ],
+      addon: {
+        name: "額外席次包",
+        target: "超出額度加購",
+        quota: "每 50 席",
+        price: 4900
+      }
+    };
+
+    let activePricing = {
+      discountRate: FALLBACK_PRICING_02.discountRate,
+      plans: FALLBACK_PRICING_02.plans.map(p => ({ ...p })),
+      addon: { ...FALLBACK_PRICING_02.addon }
+    };
 
     const MARKETING_MEDIA = {
       video: {
@@ -649,9 +699,9 @@
         caption: "呈現公開偽匿名交流、端對端加密直播授課與授權門檻下可查驗 Merkle 證據鏈之架構概念。"
       },
       images: [
-        { file: "1.形象廣告.jpg", badge: "品牌形象", title: "公開不露名，爭議可查證", caption: "結合零知識證明資格驗證與簽章收據證據鏈，在隱私保護與問責之間建立平衡。" },
-        { file: "2.產品說明流程.jpg", badge: "運作流程", title: "四步可驗證資料流", caption: "客戶端加密簽章 → 對方本地解密並回傳閱讀收據 → 寫入 Merkle 證據鏈 → 授權門檻條件式檢驗。" },
-        { file: "3.服務交付流程.jpg", badge: "社群授課", title: "端對端加密直播與知識論壇", caption: "支援階層式論壇、E2EE 直播授課、講義發布與作業加密繳交，保護師生智慧財產。" },
+        { file: "1.形象廣告.jpg", badge: "品牌形象", title: "公開不露名，爭議可查證", caption: "結合資格驗證與簽章收據證據鏈，在隱私保護與問責之間建立平衡。" },
+        { file: "2.產品說明流程.jpg", badge: "運作流程", title: "四步可驗證資料流", caption: "客戶端加密簽章 → 對方本地解密並回傳閱讀收據 → 寫入證據鏈 → 授權門檻條件式檢驗。" },
+        { file: "3.服務交付流程.jpg", badge: "社群授課", title: "端對端加密直播與知識論壇", caption: "支援階層式論壇、端對端加密直播授課、講義發布與作業加密繳交，保護師生智慧財產。" },
         { file: "4.行銷推廣圖片.jpg", badge: "密文運算", title: "FHE 密文推薦與匿名投票", caption: "在密文狀態下執行內容匹配與同態加法累計投票，計票方在未解密前無法窺探個別選擇。" },
         { file: "5.社群概念圖.jpg", badge: "設計邊界", title: "公開偽匿名＋條件式舉證", caption: "非絕對不可追蹤承諾；僅在司法仲裁或授權門檻金鑰湊齊時方可查驗特定操作收據。" },
         { file: "6.B2B 企業出海 EDM.jpg", badge: "組織部署", title: "知識學院與機構專屬社群方案", caption: "支援 50 至 800 名活躍成員席次，可依組織規模彈性加購額外席次包。" }
@@ -661,14 +711,115 @@
     let selectedPlanIdx = 1;
     let billingCycle = "yearly";
 
+    function getDiscountFoldLabel() {
+      const fold = Math.round(activePricing.discountRate * 100);
+      return fold % 10 === 0 ? `${fold / 10} 折` : `${fold} 折`;
+    }
+
+    function calcSalePrice(orig) {
+      return typeof orig === "number" ? Math.round(orig * activePricing.discountRate) : null;
+    }
+
+    function parsePricingMarkdownFor02(mdText) {
+      let discountRate = DEFAULT_DISCOUNT_RATE;
+      const rateMatch = mdText.match(/discount_rate:\s*([0-9.]+)/i);
+      if (rateMatch) {
+        const parsed = parseFloat(rateMatch[1]);
+        if (!isNaN(parsed) && parsed > 0 && parsed <= 1) discountRate = parsed;
+      }
+
+      const secMatch = mdText.match(/##\s*\[02\][^\n]*\n([\s\S]*?)(?=\n---|\n##\s*\[)/);
+      if (!secMatch) return null;
+
+      const plans = [];
+      let addon = null;
+
+      secMatch[1].trim().split("\n").forEach(line => {
+        const t = line.trim();
+        if (!t.startsWith("|") || t.includes("---") || t.includes("計費類別")) return;
+        const cells = t.split("|").map(c => c.trim()).filter((_, i, a) => i > 0 && i < a.length - 1);
+        if (cells.length < 7) return;
+
+        const [cat, name, target, quota, mRaw, yRaw, oRaw] = cells;
+        const isCustom = mRaw.includes("洽談") || yRaw.includes("洽談") || oRaw.includes("洽談");
+        const toNum = v => {
+          if (!v || v === "-" || v === "洽談") return null;
+          const n = Number(v.replace(/,/g, ""));
+          return isNaN(n) ? null : n;
+        };
+
+        if (cat === "軟體訂閱") {
+          plans.push({
+            plan: name,
+            target,
+            quota,
+            m: toNum(mRaw),
+            y: toNum(yRaw),
+            custom: isCustom,
+            recommended: name === "Professional"
+          });
+        } else if (cat === "額度加購") {
+          addon = {
+            name,
+            target,
+            quota,
+            price: toNum(oRaw) || FALLBACK_PRICING_02.addon.price
+          };
+        }
+      });
+
+      if (plans.length === 0) return null;
+      return {
+        discountRate,
+        plans,
+        addon: addon || { ...FALLBACK_PRICING_02.addon }
+      };
+    }
+
+    async function loadPricingMarkdown() {
+      const statusEl = document.getElementById("pricing-sync-status");
+      try {
+        const resp = await fetch(PRICING_MD_PATH, { cache: "no-cache" });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const mdText = await resp.text();
+        const parsed = parsePricingMarkdownFor02(mdText);
+        if (parsed) {
+          activePricing = parsed;
+          if (statusEl) {
+            statusEl.textContent = `✓ 已同步價目表（${getDiscountFoldLabel()}嘗鮮預售）`;
+          }
+          renderPlans();
+          return;
+        }
+        throw new Error("Empty section");
+      } catch (_) {
+        activePricing = {
+          discountRate: FALLBACK_PRICING_02.discountRate,
+          plans: FALLBACK_PRICING_02.plans.map(p => ({ ...p })),
+          addon: { ...FALLBACK_PRICING_02.addon }
+        };
+        if (statusEl) {
+          statusEl.textContent = `✓ 已載入離線備援價目（${getDiscountFoldLabel()}嘗鮮預售）`;
+        }
+        renderPlans();
+      }
+    }
+
     function renderPlans() {
       const grid = document.getElementById("plans-grid");
       if (!grid) return;
 
+      const dLabel = getDiscountFoldLabel();
+      const savePct = Math.round((1 - activePricing.discountRate) * 100);
+      const inlineDisc = document.getElementById("discount-text-inline");
+      if (inlineDisc) inlineDisc.textContent = `${dLabel}優惠（現省 ${savePct}%）`;
+
+      document.getElementById("bill-yearly").textContent = `年繳方案（享 ${dLabel}）`;
+      document.getElementById("bill-monthly").textContent = `月繳方案（享 ${dLabel}）`;
       document.getElementById("bill-yearly").classList.toggle("active", billingCycle === "yearly");
       document.getElementById("bill-monthly").classList.toggle("active", billingCycle === "monthly");
 
-      grid.innerHTML = PLANS_02.map((p, idx) => {
+      grid.innerHTML = activePricing.plans.map((p, idx) => {
         const isSel = idx === selectedPlanIdx;
         if (p.custom) {
           return `
@@ -681,11 +832,11 @@
           `;
         }
         const orig = billingCycle === "yearly" ? p.y : p.m;
-        const sale = Math.round(orig * DISCOUNT_RATE);
+        const sale = calcSalePrice(orig);
         const unit = billingCycle === "yearly" ? "/ 年" : "/ 月";
         return `
           <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
-            <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">${p.recommended ? "★ 熱門推薦" : "7 折早鳥"}</span></div>
+            <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">${p.recommended ? "★ 熱門推薦" : `${dLabel}早鳥`}</span></div>
             <div class="plan-quota">${p.quota}</div>
             <div class="plan-target">${p.target}</div>
             <div class="plan-pricing">
@@ -696,18 +847,33 @@
         `;
       }).join("");
 
-      const cur = PLANS_02[selectedPlanIdx];
+      const addonOrig = activePricing.addon.price;
+      const addonSale = calcSalePrice(addonOrig);
+      const addonChecked = Boolean(document.getElementById("addon-seat-pack")?.checked);
+      const addonDesc = document.getElementById("addon-price-desc");
+      const addonBadge = document.getElementById("addon-badge-price");
+      if (addonDesc) {
+        addonDesc.textContent = `${activePricing.addon.target}（${activePricing.addon.quota}）｜原價 NT$ ${addonOrig.toLocaleString("zh-TW")} → ${dLabel}預售 NT$ ${addonSale.toLocaleString("zh-TW")}`;
+      }
+      if (addonBadge) {
+        addonBadge.textContent = `+ NT$ ${addonSale.toLocaleString("zh-TW")}`;
+      }
+
+      const cur = activePricing.plans[selectedPlanIdx] || activePricing.plans[0];
       document.getElementById("sum-plan-name").textContent = `${cur.plan}（${cur.quota}）`;
       document.getElementById("sum-billing").textContent = cur.custom ? "客製專案（洽談）" : (billingCycle === "yearly" ? "年繳方案" : "月繳方案");
+      document.getElementById("sum-addon").textContent = addonChecked ? `${activePricing.addon.name}（${activePricing.addon.quota}）` : "無";
 
       if (cur.custom) {
-        document.getElementById("sum-orig-price").textContent = "專案報價";
-        document.getElementById("sum-sale-price").textContent = "專人洽談";
+        document.getElementById("sum-orig-price").textContent = addonChecked ? `NT$ ${addonOrig.toLocaleString("zh-TW")}` : "專案報價";
+        document.getElementById("sum-sale-price").textContent = addonChecked ? `專人洽談 + NT$ ${addonSale.toLocaleString("zh-TW")}` : "專人洽談";
       } else {
-        const orig = billingCycle === "yearly" ? cur.y : cur.m;
-        const sale = Math.round(orig * DISCOUNT_RATE);
-        document.getElementById("sum-orig-price").textContent = `NT$ ${orig.toLocaleString("zh-TW")}`;
-        document.getElementById("sum-sale-price").textContent = `NT$ ${sale.toLocaleString("zh-TW")}`;
+        const planOrig = billingCycle === "yearly" ? cur.y : cur.m;
+        const planSale = calcSalePrice(planOrig);
+        const totalOrig = planOrig + (addonChecked ? addonOrig : 0);
+        const totalSale = planSale + (addonChecked ? addonSale : 0);
+        document.getElementById("sum-orig-price").textContent = `NT$ ${totalOrig.toLocaleString("zh-TW")}`;
+        document.getElementById("sum-sale-price").textContent = `NT$ ${totalSale.toLocaleString("zh-TW")}`;
       }
     }
 
@@ -720,12 +886,13 @@
       const feedback = document.getElementById("form-feedback");
 
       const collectFields = () => {
-        const cur = PLANS_02[selectedPlanIdx];
+        const cur = activePricing.plans[selectedPlanIdx] || activePricing.plans[0];
         const name = document.getElementById("user-name").value.trim();
         const email = document.getElementById("user-email").value.trim();
         const commType = document.getElementById("community-type").value;
         const notes = document.getElementById("user-notes").value.trim();
-        return { cur, name, email, commType, notes };
+        const addonChecked = Boolean(document.getElementById("addon-seat-pack")?.checked);
+        return { cur, name, email, commType, notes, addonChecked };
       };
 
       goBtn.addEventListener("click", () => {
@@ -735,9 +902,14 @@
         params.set("plan", data.cur.plan);
         params.set("billing", billingCycle);
         params.set("bundle", "0");
+        if (data.addonChecked) params.set("addon", "1");
         if (data.name) params.set("name", data.name);
         if (data.email) params.set("email", data.email);
-        const combinedNotes = [data.commType, data.notes].filter(Boolean).join("｜");
+        const combinedNotes = [
+          data.commType,
+          data.addonChecked ? `含${activePricing.addon.name}` : "",
+          data.notes
+        ].filter(Boolean).join("｜");
         if (combinedNotes) params.set("notes", combinedNotes);
 
         window.location.href = `${CHECKOUT_PATH}?${params.toString()}`;
@@ -757,6 +929,7 @@
           `・稱呼 / 單位：${data.name}`,
           `・聯絡信箱：${data.email}`,
           `・感興趣方案：${data.cur.plan}（${billingCycle === "yearly" ? "年繳" : "月繳"}）`,
+          `・額度加購：${data.addonChecked ? activePricing.addon.name : "無"}`,
           `・應用情境：${data.commType}`,
           `・需求簡述：${data.notes || "（尚未填寫）"}`
         ].join("\n");
@@ -777,7 +950,7 @@
           <div class="video-stage">
             <video id="promo-video-player" autoplay muted loop playsinline controls preload="auto"${posterSrc ? ` poster="${posterSrc}"` : ""}>
               <source src="${videoSrc}" type="video/mp4">
-              您的瀏覽器不支援 HTML5 影片播放。
+              您的瀏覽器不支援影片播放。
             </video>
             <div id="video-error-fallback" class="media-fallback" style="display:none">宣傳影片載入中或暫時無法播放，請重新整理頁面後再試。</div>
           </div>
@@ -868,6 +1041,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       renderMarketingAssets();
       renderPlans();
+      loadPricingMarkdown();
       initCheckoutBridge();
       initBigText();
     });

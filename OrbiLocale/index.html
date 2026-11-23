@@ -1,6 +1,18 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
-<!-- 產品線：01｜寰境再製 OrbiLocale（所屬事業體：AllView / allview.today）｜檔案路徑：OrbiLocale/index.html -->
+<!--
+  ============================================================================
+  可調整參數區（請依需求修改下方 JS 常數）：
+  - PRODUCT_CODE：產品編號字串（"01"）
+  - PRICING_MD_PATH：共用價目檔相對路徑（"../CTA/serviceandpricing.md"）
+  - CHECKOUT_PATH：共用結算頁相對路徑（"../CTA/index.html"）
+  - CONTACT_EMAIL：諮詢與意向信箱（"contact@wonderland.ngo"）
+  - DEFAULT_DISCOUNT_RATE：預設折扣率備援值（0.7 代表 7 折）
+  - MEDIA_DIR：行銷影音與六圖所在目錄（"./marketing"）
+  ============================================================================
+  產品線：01｜寰境再製 OrbiLocale（所屬事業體：AllView / allview.today）
+  檔案路徑：OrbiLocale/index.html
+-->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -241,7 +253,6 @@
       color: var(--kicker); margin-bottom: 0.4rem;
     }
 
-    /* 宣傳影片與六張視覺圖庫 */
     .video-feature {
       background: var(--card); border: 1px solid var(--line);
       border-top: 4px solid var(--accent); border-radius: var(--radius-lg);
@@ -299,7 +310,6 @@
     .img-modal-body { padding: 1.2rem 1.4rem; text-align: center; overflow-y: auto; }
     .img-modal-body img { max-height: 68vh; margin-inline: auto; border-radius: var(--radius); }
 
-    /* FAQ 與 7 折方案選購跳轉區 */
     .faq-list { display: grid; gap: 1rem; }
     .faq-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.35rem 1.5rem; }
     .faq-card h3 { font-size: 1.08rem; margin-bottom: 0.45rem; }
@@ -322,7 +332,7 @@
     .plans-grid {
       display: grid; gap: 1rem;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.5rem;
     }
     .plan-card {
       background: var(--card); border: 2px solid var(--line); border-radius: var(--radius-lg);
@@ -345,6 +355,14 @@
     .plan-pricing { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--line); font-family: var(--font-mono); }
     .plan-orig { font-size: 0.8rem; color: var(--muted); text-decoration: line-through; display: block; }
     .plan-sale { font-size: 1.28rem; font-weight: 700; color: var(--heading); }
+
+    .addon-strip {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg);
+      padding: 1.15rem 1.35rem; margin-bottom: 1.8rem;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .addon-check { display: flex; align-items: flex-start; gap: 0.65rem; cursor: pointer; max-width: 60ch; }
+    .addon-check input { width: 20px; height: 20px; margin-top: 0.2rem; accent-color: var(--heading); flex: none; }
 
     .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.5fr 1fr; align-items: start; }
     @media (max-width: 860px) { .reserve-layout { grid-template-columns: 1fr; } }
@@ -394,7 +412,7 @@
     }
   </style>
 </head>
-<body>
+<body data-product-id="01">
   <a class="skip" href="#main">跳到主要內容</a>
 
   <header class="site">
@@ -468,9 +486,9 @@
             <span class="num">情境一｜中小企業（B2B / B2B2C）</span>
             <h3>母語官網文案與產品解說影片出海</h3>
             <ul class="product-highlights">
-              <li><strong>輸入內容：</strong>本地母語官網文案（Markdown / HTML / CMS 匯出）、產品解說或展示影片（含原始音訊與畫面字幕）。</li>
+              <li><strong>輸入內容：</strong>本地母語官網文案、產品解說或展示影片（含原始音訊與畫面字幕）。</li>
               <li><strong>凍結邊界：</strong>產品物理事實、規格數據、價格與法規聲明鎖定不更動。</li>
-              <li><strong>文化重構：</strong>依目標市場習慣調整標題、利益點排序、生活化例證與行動呼籲（CTA）。</li>
+              <li><strong>文化重構：</strong>依目標市場習慣調整標題、利益點排序、生活化例證與行動呼籲。</li>
             </ul>
           </div>
 
@@ -478,8 +496,8 @@
             <span class="num">情境二｜自媒體創作者與 MCN</span>
             <h3>跨國發布成片、三軌字幕與置入廣告改編</h3>
             <ul class="product-highlights">
-              <li><strong>輸入內容：</strong>已完成剪輯的長影片或短影音、原始口白軌、標題、簡介、置頂留言與置入贊助段落。</li>
-              <li><strong>影音三軌交付：</strong>同步產出目標語系口白稿（VO）、帶時間戳字幕稿（SRT/VTT）與畫面動態字稿（OSG）。</li>
+              <li><strong>輸入內容：</strong>已完成剪輯的長影片或短影音、原始口白軌、標題、簡介與置入贊助段落。</li>
+              <li><strong>影音三軌交付：</strong>同步產出目標語系口白稿（VO）、字幕稿與畫面動態字稿（OSG）。</li>
               <li><strong>配速與置入改編：</strong>發音長度與原軌對不上時標出建議剪輯點；將來源地流行語與地名梗轉寫為當地聽得懂的利益表述。</li>
             </ul>
           </div>
@@ -514,10 +532,10 @@
 
         <h3 style="margin-bottom:1rem">五段處理管線</h3>
         <ol class="pipeline" style="margin-bottom:2.5rem">
-          <li><strong>事實萃取</strong><br><span class="muted" style="font-size:.9rem">解析文字、語音與 OCR，生成不可變更事實表。</span></li>
+          <li><strong>事實萃取</strong><br><span class="muted" style="font-size:.9rem">解析文字、語音與畫面文字，生成不可變更事實表。</span></li>
           <li><strong>規格載入</strong><br><span class="muted" style="font-size:.9rem">載入目標語系規則、文化風險庫與平台頻道規範。</span></li>
           <li><strong>文化重組</strong><br><span class="muted" style="font-size:.9rem">重構官網敘事、配置影音三軌與改編置入段落。</span></li>
-          <li><strong>一致性閘門</strong><br><span class="muted" style="font-size:.9rem">交叉核對事實表，偵測未授權功效或背書幻覺。</span></li>
+          <li><strong>一致性閘門</strong><br><span class="muted" style="font-size:.9rem">交叉核對事實表，偵測未授權功效或背書推論。</span></li>
           <li><strong>分包與標註</strong><br><span class="muted" style="font-size:.9rem">依語系獨立封裝，產出在地法規與文化人工複核清單。</span></li>
         </ol>
 
@@ -550,7 +568,7 @@
               <tr>
                 <td><code>FR-OL-004</code></td>
                 <td><strong>影音三軌同步引擎</strong></td>
-                <td>同步產出口白稿（VO）、字幕稿（SRT/VTT）與畫面動態字稿（OSG）；目標語發音長度超出原軌時輸出建議剪輯點。</td>
+                <td>同步產出口白稿（VO）、字幕稿與畫面動態字稿（OSG）；目標語發音長度超出原軌時輸出建議剪輯點。</td>
               </tr>
               <tr>
                 <td><code>FR-OL-005</code></td>
@@ -559,8 +577,8 @@
               </tr>
               <tr>
                 <td><code>FR-OL-006</code></td>
-                <td><strong>反幻覺審查器</strong></td>
-                <td>嚴格禁止在目標語系中新增來源未提及的認證、獎項、臨床數據、功效宣稱或權威推薦。</td>
+                <td><strong>事實邊界審查器</strong></td>
+                <td>嚴格禁止在目標語系中新增來源未提及的認證、獎項、數據、功效宣稱或權威推薦。</td>
               </tr>
               <tr>
                 <td><code>FR-OL-007</code></td>
@@ -586,10 +604,10 @@
               <tr><td><code>zh-TW</code></td><td>繁體中文</td><td>台灣／香港文化圈</td><td>自然、親切專業，現代書面語與在地詞彙</td></tr>
               <tr><td><code>zh-CN</code></td><td>簡體中文</td><td>中國大陸數位生態</td><td>簡練直接，適配主流社群節奏</td></tr>
               <tr><td><code>en-US</code></td><td>英文</td><td>國際通用（北美基準）</td><td>價值導向、行動明確、結構清晰</td></tr>
-              <tr><td><code>ja-JP</code></td><td>日文</td><td>日本商業／自媒體標準</td><td>區分です／ます與商務敬語層級</td></tr>
+              <tr><td><code>ja-JP</code></td><td>日文</td><td>日本商業／自媒體標準</td><td>區分敬語與商務語境層級</td></tr>
               <tr><td><code>ko-KR</code></td><td>韓文</td><td>韓國數位平台</td><td>適配尊稱層級與社群互動語氣</td></tr>
-              <tr><td><code>es-ES</code></td><td>西班牙文</td><td>西班牙及泛西語市場</td><td>重視互動感（依通路區分 Tú／Usted）</td></tr>
-              <tr><td><code>fr-FR</code></td><td>法文</td><td>法國／法語區</td><td>精確嚴謹、區隔 Vous／Tu 稱謂</td></tr>
+              <tr><td><code>es-ES</code></td><td>西班牙文</td><td>西班牙及泛西語市場</td><td>重視互動感與目標通路稱謂規範</td></tr>
+              <tr><td><code>fr-FR</code></td><td>法文</td><td>法國／法語區</td><td>精確嚴謹、區隔正式與非正式稱謂</td></tr>
               <tr><td><code>de-DE</code></td><td>德文</td><td>德語區（DACH）</td><td>條理分明，重視事實與規格表述</td></tr>
             </tbody>
           </table>
@@ -630,18 +648,30 @@
         <div class="sec-head">
           <span class="kicker">70% Early-Bird Presale · OrbiLocale</span>
           <h2 id="cta-form-title">選擇您的 7 折嘗鮮預售方案並前往結算</h2>
-          <p class="muted">全系列早鳥預售享 <strong>7 折優惠（現省 30%）</strong>；請先點選下方方案與計費週期，填寫基本需求後即可一鍵帶入參數前往共用結算中心完成預售保留。</p>
+          <p class="muted">全系列早鳥預售享 <strong id="discount-text-inline">7 折優惠（現省 30%）</strong>；請先點選下方方案與計費週期，填寫基本需求後即可一鍵帶入參數前往共用結算中心完成預售保留。</p>
+          <span id="pricing-sync-status" class="muted" style="font-family:var(--font-mono);font-size:0.84rem;display:inline-block;margin-top:0.25rem">正在同步方案價目...</span>
         </div>
 
         <div class="billing-switch-bar">
           <strong style="color:var(--heading);font-size:0.95rem">步驟 ①：點選訂閱方案與計費週期</strong>
           <div class="billing-pills" role="group" aria-label="計費週期切換">
-            <button type="button" id="bill-yearly" class="bill-pill active" onclick="setBilling('yearly')">年繳方案（再享 7 折）</button>
+            <button type="button" id="bill-yearly" class="bill-pill active" onclick="setBilling('yearly')">年繳方案（享 7 折）</button>
             <button type="button" id="bill-monthly" class="bill-pill" onclick="setBilling('monthly')">月繳方案（享 7 折）</button>
           </div>
         </div>
 
         <div id="plans-grid" class="plans-grid"></div>
+
+        <div class="addon-strip">
+          <label class="addon-check" for="addon-task-pack">
+            <input type="checkbox" id="addon-task-pack" onchange="renderPlans()">
+            <div>
+              <strong style="color:var(--heading);font-size:0.95rem">加購：任務加購包（10 次再製任務 × 1 包）</strong>
+              <span id="addon-price-desc" class="muted" style="display:block;font-size:0.85rem">超出額度加購｜原價 NT$ 5,900 → 7 折預售 NT$ 4,130</span>
+            </div>
+          </label>
+          <span id="addon-badge-price" style="font-family:var(--font-mono);font-weight:700;color:var(--kicker-dark)">+ NT$ 4,130</span>
+        </div>
 
         <div class="reserve-layout">
           <form id="product-cta-form" class="card form-card" novalidate>
@@ -702,8 +732,8 @@
             </div>
 
             <div class="form-actions">
-              <button type="button" id="go-checkout-btn" class="btn primary">前往 7 折預售結算中心（../CTA） →</button>
-              <button type="button" id="mail-inquiry-btn" class="btn ghost-dark">僅先寄信諮詢（暫不結帳）</button>
+              <button type="button" id="go-checkout-btn" class="btn primary">前往 7 折預售結算中心 →</button>
+              <button type="button" id="mail-inquiry-btn" class="btn ghost-dark">僅先寄信諮詢</button>
             </div>
             <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
           </form>
@@ -715,11 +745,12 @@
               <dt>所屬事業體</dt><dd>AllView（allview.today）</dd>
               <dt>選定方案</dt><dd id="sum-plan-name">Pro（每月 25 次再製任務）</dd>
               <dt>計費週期</dt><dd id="sum-billing">年繳方案</dd>
+              <dt>加購項目</dt><dd id="sum-addon">無</dd>
               <dt>標準原價</dt><dd id="sum-orig-price" style="text-decoration:line-through;color:#B8C7C5">NT$ 129,000</dd>
-              <dt>7 折預售價</dt><dd id="sum-sale-price" style="color:#D4AF37;font-size:1.25rem">NT$ 90,300</dd>
+              <dt>預售實付價</dt><dd id="sum-sale-price" style="color:#D4AF37;font-size:1.25rem">NT$ 90,300</dd>
             </dl>
             <div class="note" style="background:rgba(255,255,255,0.08);border-color:rgba(212,175,55,0.4);color:#E4ECEA">
-              <strong style="color:#D4AF37">跳轉說明：</strong>點擊「前往 7 折預售結算中心」將導向上層 <code>CTA/index.html</code>，結算頁支援銀行電匯、第三方刷卡與 USDT 入金，並可加購「任務加購包（10 次 NT$ 4,130）」。
+              <strong style="color:#D4AF37">跳轉說明：</strong>點擊「前往 7 折預售結算中心」將帶入您的方案與聯絡資訊，結算頁支援銀行電匯、第三方刷卡與 USDT 入金。
             </div>
             <p style="margin-top:1.2rem;margin-bottom:0">
               <a class="btn ghost" style="width:100%" href="../index.html#products">瀏覽其他 9 條生態系產品線</a>
@@ -743,24 +774,41 @@
 
   <footer class="site">
     <div class="wrap">
-      <p><strong>© 2026 AllView（allview.today）× 水月道場 / Wonderland Center</strong>｜寰境再製 OrbiLocale 專屬預售頁</p>
-      <p class="muted" style="font-size:.84rem">本頁內容依《寰境再製 OrbiLocale 產品說明與預售內容》及《產品定價與 7 折嘗鮮預售價總表》編製，正式規格與服務條款以簽署合約為準。</p>
+      <p><strong>© 2026 AllView（allview.today）× 水月道場 / Wonderland Center（wonderland.ngo）</strong>｜寰境再製 OrbiLocale 專屬預售頁</p>
+      <p class="muted" style="font-size:.84rem">本頁內容依《寰境再製 OrbiLocale 產品說明與預售內容》及《全系列產品銷售價格與「7 折嘗鮮預售價」總覽表》編製，正式規格與服務條款以簽署合約為準。</p>
     </div>
   </footer>
 
   <script>
     const PRODUCT_CODE = "01";
+    const PRICING_MD_PATH = "../CTA/serviceandpricing.md";
     const CHECKOUT_PATH = "../CTA/index.html";
     const CONTACT_EMAIL = "contact@wonderland.ngo";
-    const DISCOUNT_RATE = 0.7;
+    const DEFAULT_DISCOUNT_RATE = 0.7;
     const MEDIA_DIR = "./marketing";
 
-    const PLANS_01 = [
-      { plan: "Starter", target: "創作者、小型團隊、試用", quota: "每月 8 次再製任務", m: 4900, y: 49000 },
-      { plan: "Pro", target: "中小企業、活躍創作者／MCN", quota: "每月 25 次再製任務", m: 12900, y: 129000, recommended: true },
-      { plan: "Business", target: "有固定海外內容需求的企業", quota: "每月 70 次再製任務", m: 29900, y: 299000 },
-      { plan: "Enterprise", target: "大型或客製需求", quota: "客製（洽談）", custom: true }
-    ];
+    // 離線備援價目（當以 file:// 開啟或無法讀取外部 Markdown 時自動啟用）
+    const FALLBACK_PRICING_01 = {
+      discountRate: DEFAULT_DISCOUNT_RATE,
+      plans: [
+        { plan: "Starter", target: "創作者、小型團隊、試用", quota: "每月 8 次再製任務", m: 4900, y: 49000 },
+        { plan: "Pro", target: "中小企業、活躍創作者／MCN", quota: "每月 25 次再製任務", m: 12900, y: 129000, recommended: true },
+        { plan: "Business", target: "有固定海外內容需求的企業", quota: "每月 70 次再製任務", m: 29900, y: 299000 },
+        { plan: "Enterprise", target: "大型或客製需求", quota: "客製（洽談）", custom: true }
+      ],
+      addon: {
+        name: "任務加購包",
+        target: "超出額度加購",
+        quota: "10 次再製任務",
+        price: 5900
+      }
+    };
+
+    let activePricing = {
+      discountRate: FALLBACK_PRICING_01.discountRate,
+      plans: FALLBACK_PRICING_01.plans.map(p => ({ ...p })),
+      addon: { ...FALLBACK_PRICING_01.addon }
+    };
 
     const MARKETING_MEDIA = {
       video: {
@@ -772,10 +820,10 @@
       },
       images: [
         { file: "1.形象廣告.jpg", badge: "品牌形象", title: "文化轉譯內容再製代理", caption: "不是字面翻譯器，而是具備文化轉譯（Transcreation）的內容再製代理：先凍結事實，再重寫語感。" },
-        { file: "2.產品說明流程.jpg", badge: "運作流程", title: "五段產品運作流程", caption: "1 事實萃取 → 2 語系規格載入 → 3 文化與三軌重製 → 4 一致性與反幻覺閘門 → 5 分語系封裝與複核註記。" },
+        { file: "2.產品說明流程.jpg", badge: "運作流程", title: "五段產品運作流程", caption: "1 事實萃取 → 2 語系規格載入 → 3 文化與三軌重製 → 4 一致性與事實邊界閘門 → 5 分語系封裝與複核註記。" },
         { file: "3.服務交付流程.jpg", badge: "交付架構", title: "單次再製任務與分語系交付包", caption: "區隔企業官網與產品片、創作者成片與置入廣告，產出不可變更事實表、三軌稿件與人工複核註記。" },
         { file: "4.行銷推廣圖片.jpg", badge: "核心守則", title: "先凍結事實，再重寫語感", caption: "鎖定品名、規格、數據、價格與法規邊界，支援 8 語系封閉白名單，每語系附人工複核註記。" },
-        { file: "5.社群概念圖.jpg", badge: "影音三軌", title: "影音出海，三軌同步再製", caption: "同步產出口白稿（VO）、字幕稿（SRT/VTT）與畫面動態字稿（OSG），進行置入廣告文化改編且不新增未提及宣稱。" },
+        { file: "5.社群概念圖.jpg", badge: "影音三軌", title: "影音出海，三軌同步再製", caption: "同步產出口白稿（VO）、字幕稿與畫面動態字稿（OSG），進行置入廣告文化改編且不新增未提及宣稱。" },
         { file: "6.B2B 企業出海 EDM.jpg", badge: "企業出海", title: "B2B 企業官網與產品影片出海", caption: "鎖定規格與數據、重構在地賣點並附上人工複核清單，讓品牌官網與產品影片真正走進目標市場。" }
       ]
     };
@@ -783,14 +831,115 @@
     let selectedPlanIdx = 1;
     let billingCycle = "yearly";
 
+    function getDiscountFoldLabel() {
+      const fold = Math.round(activePricing.discountRate * 100);
+      return fold % 10 === 0 ? `${fold / 10} 折` : `${fold} 折`;
+    }
+
+    function calcSalePrice(orig) {
+      return typeof orig === "number" ? Math.round(orig * activePricing.discountRate) : null;
+    }
+
+    function parsePricingMarkdownFor01(mdText) {
+      let discountRate = DEFAULT_DISCOUNT_RATE;
+      const rateMatch = mdText.match(/discount_rate:\s*([0-9.]+)/i);
+      if (rateMatch) {
+        const parsed = parseFloat(rateMatch[1]);
+        if (!isNaN(parsed) && parsed > 0 && parsed <= 1) discountRate = parsed;
+      }
+
+      const secMatch = mdText.match(/##\s*\[01\][^\n]*\n([\s\S]*?)(?=\n---|\n##\s*\[)/);
+      if (!secMatch) return null;
+
+      const plans = [];
+      let addon = null;
+
+      secMatch[1].trim().split("\n").forEach(line => {
+        const t = line.trim();
+        if (!t.startsWith("|") || t.includes("---") || t.includes("計費類別")) return;
+        const cells = t.split("|").map(c => c.trim()).filter((_, i, a) => i > 0 && i < a.length - 1);
+        if (cells.length < 7) return;
+
+        const [cat, name, target, quota, mRaw, yRaw, oRaw] = cells;
+        const isCustom = mRaw.includes("洽談") || yRaw.includes("洽談") || oRaw.includes("洽談");
+        const toNum = v => {
+          if (!v || v === "-" || v === "洽談") return null;
+          const n = Number(v.replace(/,/g, ""));
+          return isNaN(n) ? null : n;
+        };
+
+        if (cat === "軟體訂閱") {
+          plans.push({
+            plan: name,
+            target,
+            quota,
+            m: toNum(mRaw),
+            y: toNum(yRaw),
+            custom: isCustom,
+            recommended: name === "Pro"
+          });
+        } else if (cat === "額度加購") {
+          addon = {
+            name,
+            target,
+            quota,
+            price: toNum(oRaw) || FALLBACK_PRICING_01.addon.price
+          };
+        }
+      });
+
+      if (plans.length === 0) return null;
+      return {
+        discountRate,
+        plans,
+        addon: addon || { ...FALLBACK_PRICING_01.addon }
+      };
+    }
+
+    async function loadPricingMarkdown() {
+      const statusEl = document.getElementById("pricing-sync-status");
+      try {
+        const resp = await fetch(PRICING_MD_PATH, { cache: "no-cache" });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const mdText = await resp.text();
+        const parsed = parsePricingMarkdownFor01(mdText);
+        if (parsed) {
+          activePricing = parsed;
+          if (statusEl) {
+            statusEl.textContent = `✓ 已同步價目表（${getDiscountFoldLabel()}嘗鮮預售）`;
+          }
+          renderPlans();
+          return;
+        }
+        throw new Error("Empty section");
+      } catch (_) {
+        activePricing = {
+          discountRate: FALLBACK_PRICING_01.discountRate,
+          plans: FALLBACK_PRICING_01.plans.map(p => ({ ...p })),
+          addon: { ...FALLBACK_PRICING_01.addon }
+        };
+        if (statusEl) {
+          statusEl.textContent = `✓ 已載入離線備援價目（${getDiscountFoldLabel()}嘗鮮預售）`;
+        }
+        renderPlans();
+      }
+    }
+
     function renderPlans() {
       const grid = document.getElementById("plans-grid");
       if (!grid) return;
 
+      const dLabel = getDiscountFoldLabel();
+      const savePct = Math.round((1 - activePricing.discountRate) * 100);
+      const inlineDisc = document.getElementById("discount-text-inline");
+      if (inlineDisc) inlineDisc.textContent = `${dLabel}優惠（現省 ${savePct}%）`;
+
+      document.getElementById("bill-yearly").textContent = `年繳方案（享 ${dLabel}）`;
+      document.getElementById("bill-monthly").textContent = `月繳方案（享 ${dLabel}）`;
       document.getElementById("bill-yearly").classList.toggle("active", billingCycle === "yearly");
       document.getElementById("bill-monthly").classList.toggle("active", billingCycle === "monthly");
 
-      grid.innerHTML = PLANS_01.map((p, idx) => {
+      grid.innerHTML = activePricing.plans.map((p, idx) => {
         const isSel = idx === selectedPlanIdx;
         if (p.custom) {
           return `
@@ -803,11 +952,11 @@
           `;
         }
         const orig = billingCycle === "yearly" ? p.y : p.m;
-        const sale = Math.round(orig * DISCOUNT_RATE);
+        const sale = calcSalePrice(orig);
         const unit = billingCycle === "yearly" ? "/ 年" : "/ 月";
         return `
           <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
-            <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">${p.recommended ? "★ 熱門推薦" : "7 折早鳥"}</span></div>
+            <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">${p.recommended ? "★ 熱門推薦" : `${dLabel}早鳥`}</span></div>
             <div class="plan-quota">${p.quota}</div>
             <div class="plan-target">${p.target}</div>
             <div class="plan-pricing">
@@ -818,18 +967,33 @@
         `;
       }).join("");
 
-      const cur = PLANS_01[selectedPlanIdx];
+      const addonOrig = activePricing.addon.price;
+      const addonSale = calcSalePrice(addonOrig);
+      const addonChecked = Boolean(document.getElementById("addon-task-pack")?.checked);
+      const addonDesc = document.getElementById("addon-price-desc");
+      const addonBadge = document.getElementById("addon-badge-price");
+      if (addonDesc) {
+        addonDesc.textContent = `${activePricing.addon.target}（${activePricing.addon.quota}）｜原價 NT$ ${addonOrig.toLocaleString("zh-TW")} → ${dLabel}預售 NT$ ${addonSale.toLocaleString("zh-TW")}`;
+      }
+      if (addonBadge) {
+        addonBadge.textContent = `+ NT$ ${addonSale.toLocaleString("zh-TW")}`;
+      }
+
+      const cur = activePricing.plans[selectedPlanIdx] || activePricing.plans[0];
       document.getElementById("sum-plan-name").textContent = `${cur.plan}（${cur.quota}）`;
       document.getElementById("sum-billing").textContent = cur.custom ? "客製專案（洽談）" : (billingCycle === "yearly" ? "年繳方案" : "月繳方案");
+      document.getElementById("sum-addon").textContent = addonChecked ? `${activePricing.addon.name}（${activePricing.addon.quota}）` : "無";
 
       if (cur.custom) {
-        document.getElementById("sum-orig-price").textContent = "專案報價";
-        document.getElementById("sum-sale-price").textContent = "專人洽談";
+        document.getElementById("sum-orig-price").textContent = addonChecked ? `NT$ ${addonOrig.toLocaleString("zh-TW")}` : "專案報價";
+        document.getElementById("sum-sale-price").textContent = addonChecked ? `專人洽談 + NT$ ${addonSale.toLocaleString("zh-TW")}` : "專人洽談";
       } else {
-        const orig = billingCycle === "yearly" ? cur.y : cur.m;
-        const sale = Math.round(orig * DISCOUNT_RATE);
-        document.getElementById("sum-orig-price").textContent = `NT$ ${orig.toLocaleString("zh-TW")}`;
-        document.getElementById("sum-sale-price").textContent = `NT$ ${sale.toLocaleString("zh-TW")}`;
+        const planOrig = billingCycle === "yearly" ? cur.y : cur.m;
+        const planSale = calcSalePrice(planOrig);
+        const totalOrig = planOrig + (addonChecked ? addonOrig : 0);
+        const totalSale = planSale + (addonChecked ? addonSale : 0);
+        document.getElementById("sum-orig-price").textContent = `NT$ ${totalOrig.toLocaleString("zh-TW")}`;
+        document.getElementById("sum-sale-price").textContent = `NT$ ${totalSale.toLocaleString("zh-TW")}`;
       }
     }
 
@@ -842,14 +1006,15 @@
       const feedback = document.getElementById("form-feedback");
 
       const collectFields = () => {
-        const cur = PLANS_01[selectedPlanIdx];
+        const cur = activePricing.plans[selectedPlanIdx] || activePricing.plans[0];
         const name = document.getElementById("user-name").value.trim();
         const email = document.getElementById("user-email").value.trim();
         const contentType = document.getElementById("content-type").value;
         const sourceLocale = document.getElementById("source-locale").value;
         const notes = document.getElementById("user-notes").value.trim();
+        const addonChecked = Boolean(document.getElementById("addon-task-pack")?.checked);
         const targetLocales = Array.from(document.querySelectorAll("input[name='locales']:checked")).map(el => el.value);
-        return { cur, name, email, contentType, sourceLocale, targetLocales, notes };
+        return { cur, name, email, contentType, sourceLocale, targetLocales, notes, addonChecked };
       };
 
       goBtn.addEventListener("click", () => {
@@ -859,12 +1024,17 @@
         params.set("plan", data.cur.plan);
         params.set("billing", billingCycle);
         params.set("bundle", "0");
+        if (data.addonChecked) params.set("addon", "1");
         if (data.name) params.set("name", data.name);
         if (data.email) params.set("email", data.email);
         if (data.targetLocales.length > 0) {
           params.set("locales", `${data.sourceLocale}→${data.targetLocales.join(",")}`);
         }
-        const combinedNotes = [data.contentType, data.notes].filter(Boolean).join("｜");
+        const combinedNotes = [
+          data.contentType,
+          data.addonChecked ? `含${activePricing.addon.name}` : "",
+          data.notes
+        ].filter(Boolean).join("｜");
         if (combinedNotes) params.set("notes", combinedNotes);
 
         window.location.href = `${CHECKOUT_PATH}?${params.toString()}`;
@@ -884,6 +1054,7 @@
           `・稱呼 / 單位：${data.name}`,
           `・聯絡信箱：${data.email}`,
           `・感興趣方案：${data.cur.plan}（${billingCycle === "yearly" ? "年繳" : "月繳"}）`,
+          `・額度加購：${data.addonChecked ? activePricing.addon.name : "無"}`,
           `・內容類型：${data.contentType}`,
           `・來源與目標語系：${data.sourceLocale} → ${data.targetLocales.join("、") || "尚未勾選"}`,
           `・專案背景簡述：${data.notes || "（尚未填寫）"}`
@@ -905,7 +1076,7 @@
           <div class="video-stage">
             <video id="promo-video-player" autoplay muted loop playsinline controls preload="auto"${posterSrc ? ` poster="${posterSrc}"` : ""}>
               <source src="${videoSrc}" type="video/mp4">
-              您的瀏覽器不支援 HTML5 影片播放。
+              您的瀏覽器不支援影片播放。
             </video>
             <div id="video-error-fallback" class="media-fallback" style="display:none">宣傳影片載入中或暫時無法播放，請重新整理頁面後再試。</div>
           </div>
@@ -996,6 +1167,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       renderMarketingAssets();
       renderPlans();
+      loadPricingMarkdown();
       initCheckoutBridge();
       initBigText();
     });

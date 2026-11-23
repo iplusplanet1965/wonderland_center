@@ -1,15 +1,27 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
-<!-- 產品線：04｜神盾殼 HEShell（所屬事業體：AEGIS / aegis.expert）｜檔案路徑：HEShell/index.html -->
+<!--
+  ============================================================================
+  可調整參數區（請依需求修改下方 JS 常數）：
+  - PRODUCT_CODE：產品編號字串（"04"）
+  - PRICING_MD_PATH：共用價目檔相對路徑（"../CTA/serviceandpricing.md"）
+  - CHECKOUT_PATH：共用結算頁相對路徑（"../CTA/index.html"）
+  - CONTACT_EMAIL：諮詢與意向信箱（"contact@wonderland.ngo"）
+  - DEFAULT_DISCOUNT_RATE：預設折扣率備援值（0.7 代表 7 折）
+  - MEDIA_DIR：行銷影音與六圖所在目錄（"./marketing"）
+  ============================================================================
+  產品線：04｜神盾殼 HEShell（所屬事業體：AEGIS / aegis.expert）
+  檔案路徑：HEShell/index.html
+-->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>神盾殼 HEShell｜USB 硬體金鑰邊界與 FAIL-CLOSED 本機安全殼層 — 7 折嘗鮮預售</title>
   <meta name="description" content="神盾殼 HEShell 是具備 USB 硬體金鑰邊界與 FAIL-CLOSED 路由原則的本機 AI 安全殼層：不支援密文就不送，沒有明文後備。">
   <meta name="theme-color" content="#0B253A">
-  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-  <link href="[https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap](https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap)" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --font-body: "Noto Sans TC", "Source Han Sans TW", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
@@ -325,14 +337,19 @@
     .plan-orig { font-size: 0.8rem; color: var(--muted); text-decoration: line-through; display: block; }
     .plan-sale { font-size: 1.28rem; font-weight: 700; color: var(--heading); }
 
-    /* 硬體搭配勾選卡 */
     .hw-bundle-box {
       background: var(--surface-2); border: 1.5px solid var(--line-strong);
-      border-radius: var(--radius-lg); padding: 1.15rem 1.35rem; margin-bottom: 1.8rem;
+      border-radius: var(--radius-lg); padding: 1.15rem 1.35rem; margin-bottom: 1rem;
       display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
     }
     .hw-bundle-label { display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; flex: 1; min-width: 240px; }
     .hw-bundle-label input { width: 22px; height: 22px; margin-top: 0.2rem; accent-color: var(--heading); flex: none; cursor: pointer; }
+
+    .addon-strip {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg);
+      padding: 1.15rem 1.35rem; margin-bottom: 1.8rem;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+    }
 
     .reserve-layout { display: grid; gap: 1.6rem; grid-template-columns: 1.5fr 1fr; align-items: start; }
     @media (max-width: 860px) { .reserve-layout { grid-template-columns: 1fr; } }
@@ -373,7 +390,7 @@
     }
   </style>
 </head>
-<body>
+<body data-product-id="04">
   <a class="skip" href="#main">跳到主要內容</a>
 
   <header class="site">
@@ -420,7 +437,7 @@
         </nav>
         <span class="eyebrow">04｜AEGIS（aegis.expert）· USB 硬體金鑰邊界與 FAIL-CLOSED 安全殼層</span>
         <h1 id="page-title">不支援密文就不送，沒有明文後備。</h1>
-        <p class="lead">神盾殼（HEShell）是本機 AI 安全殼層與密文路由中繼[cite: 7]：檢查目標端點經簽章的 L1／L2 能力宣告，不支援密文即直接拒絕；拔除 USB 立即中止傳輸、白屏並抹除記憶體明文[cite: 7]。</p>
+        <p class="lead">神盾殼（HEShell）是本機 AI 安全殼層與密文路由中繼：檢查目標端點經簽章的 L1／L2 能力宣告，不支援密文即直接拒絕；拔除 USB 立即中止傳輸、白屏並抹除記憶體明文。</p>
         <div class="cta">
           <a class="btn primary" href="#cta-form">選擇 7 折預售方案並前往結算 →</a>
           <a class="btn ghost" href="#marketing-assets">觀看宣傳影片與視覺圖</a>
@@ -439,7 +456,7 @@
         <div class="sec-head">
           <span class="kicker">L0–L3 Capability Grading</span>
           <h2 id="grad-title">能力分級說清楚：L1 本期交付、L2 條件交付、L3 不承諾</h2>
-          <p class="muted">許多「加密 AI」只加密了傳輸線路（TLS/HTTPS），伺服器端仍看得到明文[cite: 7]。在 HEShell 分級中，傳輸層加密（L0）不屬於本產品，也不列為隱私賣點[cite: 7]。</p>
+          <p class="muted">許多「加密 AI」只加密了傳輸線路（TLS/HTTPS），伺服器端仍看得到明文。在 HEShell 分級中，傳輸層加密（L0）不屬於本產品，也不列為隱私賣點。</p>
         </div>
 
         <div class="table-wrap">
@@ -455,29 +472,29 @@
               <tr>
                 <td><code>L0</code></td>
                 <td>僅傳輸層加密（TLS / HTTPS）</td>
-                <td>伺服器端仍看得到明文，<strong>非本產品，不列為隱私賣點</strong>[cite: 7]。</td>
+                <td>伺服器端仍看得到明文，<strong>非本產品，不列為隱私賣點</strong>。</td>
               </tr>
               <tr>
                 <td><code>L1</code></td>
                 <td>指定 HE API 固定電路密文運算</td>
-                <td><strong>本期交付基準</strong>（如 Embedding 比對、距離計算、數值評分與分類）[cite: 7]。</td>
+                <td><strong>本期交付基準</strong>（如 Embedding 比對、距離計算、數值評分與分類）。</td>
               </tr>
               <tr>
                 <td><code>L2</code></td>
                 <td>端點密文模型推論</td>
-                <td><strong>條件交付</strong>，僅限具備經簽章 Capability Manifest 之端點[cite: 7]。</td>
+                <td><strong>條件交付</strong>，僅限具備經簽章 Capability Manifest 之端點。</td>
               </tr>
               <tr>
                 <td><code>L3</code></td>
                 <td>任意閉源商用 LLM 直接處理密文</td>
-                <td><strong>非現行科技，明確不承諾</strong>；無能力宣告即阻斷（<code>HE_002</code>）[cite: 7]。</td>
+                <td><strong>非現行科技，明確不承諾</strong>；無能力宣告即阻斷（<code>HE_002</code>）。</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <div class="boundary-box" style="margin-top:1.8rem">
-          <strong>回傳與金鑰邊界聲明：</strong>HEShell 不訓練也不微調任何模型，提問明文不會送到外部 HE Provider，伺服器端也不持有解密金鑰[cite: 7]。加密範圍為送出的使用者輸入，運算結果以明文回傳[cite: 7]。USB 金鑰不做雲端備份，遺失不補發[cite: 7]。
+          <strong>回傳與金鑰邊界聲明：</strong>HEShell 不訓練也不微調任何模型，提問明文不會送到外部 HE Provider，伺服器端也不持有解密金鑰。加密範圍為送出的使用者輸入，運算結果以明文回傳。USB 金鑰不做雲端備份，遺失不補發。
         </div>
       </div>
     </section>
@@ -500,32 +517,32 @@
         <div class="sec-head">
           <span class="kicker">Four Defense Mechanisms</span>
           <h2 id="prot-title">四項本機與路由防護設計</h2>
-          <p class="muted">從出境封包檢查到本機記憶體鎖定，確保不留明文後備路徑[cite: 7]。</p>
+          <p class="muted">從出境封包檢查到本機記憶體鎖定，確保不留明文後備路徑。</p>
         </div>
 
         <div class="grid two">
           <div class="card feature">
             <span class="num">防護 01｜FAIL-CLOSED 零明文後備</span>
             <h3>無能力宣告即阻斷，出境檢查明文字元</h3>
-            <p style="margin:0">檢查經簽章的 Capability Manifest，非 L1/L2 一律阻斷；出境封包若偵測到自然語言明文字元，立即強制關閉連線（<code>HE_003</code>）[cite: 7]。</p>
+            <p style="margin:0">檢查經簽章的 Capability Manifest，非 L1/L2 一律阻斷；出境封包若偵測到自然語言明文字元，立即強制關閉連線（<code>HE_003</code>）。</p>
           </div>
 
           <div class="card feature">
             <span class="num">防護 02｜USB 硬體金鑰邊界</span>
             <h3>秘密金鑰不經 API 上傳、禁止雲端備份</h3>
-            <p style="margin:0">私鑰於本機組合成複合金鑰存於 USB，每次對話產生獨立 Session；拔除 USB 立即中止傳輸、白屏並抹除記憶體明文[cite: 7]。</p>
+            <p style="margin:0">私鑰於本機組合成複合金鑰存於 USB，每次對話產生獨立 Session；拔除 USB 立即中止傳輸、白屏並抹除記憶體明文。</p>
           </div>
 
           <div class="card feature">
             <span class="num">防護 03｜本機記憶體防護</span>
             <h3>鎖定實體記憶體，防止寫入 Swap</h3>
-            <p style="margin:0">透過 <code>mlock</code> / <code>VirtualLock</code> 鎖定敏感記憶體區段，防止明文資料被作業系統換頁寫入硬碟 Swap/Pagefile[cite: 7]。</p>
+            <p style="margin:0">透過 <code>mlock</code> / <code>VirtualLock</code> 鎖定敏感記憶體區段，防止明文資料被作業系統換頁寫入硬碟 Swap/Pagefile。</p>
           </div>
 
           <div class="card feature">
             <span class="num">防護 04｜誠實等待與零明文日誌</span>
             <h3>五段階段指示器，不假裝逐字串流</h3>
-            <p style="margin:0">誠實呈現「金鑰封裝 → 密文傳輸 → 密文同態運算 → 密文下載 → 本機解密驗證」五階段；日誌僅記延遲、位元組數與錯誤碼[cite: 7]。</p>
+            <p style="margin:0">誠實呈現「金鑰封裝 → 密文傳輸 → 密文同態運算 → 密文下載 → 本機解密驗證」五階段；日誌僅記延遲、位元組數與錯誤碼。</p>
           </div>
         </div>
       </div>
@@ -541,15 +558,15 @@
         <div class="faq-list">
           <article class="faq-card">
             <h3>Q1：可以用 HEShell 加密我們現在用的雲端 AI 聊天服務嗎？</h3>
-            <p>不行[cite: 7]。一般商用 LLM API 不能直接處理密文（L3 不是現行技術）；HEShell 只會把請求送往有明確密文能力宣告的端點，其餘一律拒絕[cite: 7]。</p>
+            <p>不行。一般商用 LLM API 不能直接處理密文（L3 不是現行技術）；HEShell 只會把請求送往有明確密文能力宣告的端點，其餘一律拒絕。</p>
           </article>
           <article class="faq-card">
             <h3>Q2：v1 目前能做哪些運算？</h3>
-            <p>L1 為本期交付：指定 HE API 上的固定電路密文運算，例如 Embedding 比對、距離計算、數值評分與分類；L2 為條件交付，取決於端點能力[cite: 7]。</p>
+            <p>L1 為本期交付：指定 HE API 上的固定電路密文運算，例如 Embedding 比對、距離計算、數值評分與分類；L2 為條件交付，取決於端點能力。</p>
           </article>
           <article class="faq-card">
             <h3>Q3：USB 金鑰需要另外購買嗎？</h3>
-            <p>需要[cite: 1]。Starter／Pro／Team 通用單把 USB 硬體金鑰（原價 NT$ 12,900，7 折嘗鮮預售價 NT$ 9,030，隨貨交付、遺失不補發），可在下方一併勾選搭配結算[cite: 1]。</p>
+            <p>需要。Starter／Pro／Team 通用單把 USB 硬體金鑰（原價 NT$ 12,900，7 折嘗鮮預售價 NT$ 9,030，隨貨交付、遺失不補發），可在下方一併勾選搭配結算。</p>
           </article>
         </div>
       </div>
@@ -560,13 +577,14 @@
         <div class="sec-head">
           <span class="kicker">70% Early-Bird Presale · HEShell</span>
           <h2 id="cta-form-title">選擇您的 7 折嘗鮮預售方案與 USB 金鑰配置</h2>
-          <p class="muted">全系列早鳥預售享 <strong>7 折優惠（現省 30%）</strong>[cite: 1]；點選軟體訂閱方案並勾選 USB 硬體金鑰後，即可一鍵帶入參數前往共用結算中心。</p>
+          <p class="muted">全系列早鳥預售享 <strong id="discount-text-inline">7 折優惠（現省 30%）</strong>；點選軟體訂閱方案並勾選 USB 硬體金鑰後，即可一鍵帶入參數前往共用結算中心。</p>
+          <span id="pricing-sync-status" class="muted" style="font-family:var(--font-mono);font-size:0.84rem;display:inline-block;margin-top:0.25rem">正在同步方案價目...</span>
         </div>
 
         <div class="billing-switch-bar">
           <strong style="color:var(--heading);font-size:0.95rem">步驟 ①：點選軟體訂閱方案與計費週期</strong>
           <div class="billing-pills" role="group" aria-label="計費週期切換">
-            <button type="button" id="bill-yearly" class="bill-pill active" onclick="setBilling('yearly')">年繳方案（再享 7 折）</button>
+            <button type="button" id="bill-yearly" class="bill-pill active" onclick="setBilling('yearly')">年繳方案（享 7 折）</button>
             <button type="button" id="bill-monthly" class="bill-pill" onclick="setBilling('monthly')">月繳方案（享 7 折）</button>
           </div>
         </div>
@@ -578,14 +596,26 @@
           <label class="hw-bundle-label" for="hw-usb-check">
             <input type="checkbox" id="hw-usb-check" checked onchange="renderPlans()">
             <div>
-              <strong style="color:var(--heading);font-size:0.98rem">搭配硬體一次購：USB 硬體安全金鑰（Starter／Pro／Team 通用）</strong>
-              <span style="display:block;font-size:0.84rem;color:var(--muted);margin-top:0.2rem">隨貨交付（不做雲端備份、遺失不補發；Team 方案至結算頁可調整多把數量）[cite: 1, 7]</span>
+              <strong id="hw-title-label" style="color:var(--heading);font-size:0.98rem">搭配硬體一次購：USB 金鑰（Starter／Pro／Team 通用）</strong>
+              <span id="hw-desc-label" style="display:block;font-size:0.84rem;color:var(--muted);margin-top:0.2rem">隨貨交付（不做雲端備份、遺失不補發；Team 方案至結算頁可調整多把數量）</span>
             </div>
           </label>
           <div style="text-align:right;font-family:var(--font-mono)">
-            <span style="font-size:0.8rem;color:var(--muted);text-decoration:line-through;display:block">原價 NT$ 12,900</span>
-            <strong style="font-size:1.15rem;color:var(--kicker-dark)">7 折 NT$ 9,030</strong>
+            <span id="hw-orig-price-label" style="font-size:0.8rem;color:var(--muted);text-decoration:line-through;display:block">原價 NT$ 12,900</span>
+            <strong id="hw-sale-price-label" style="font-size:1.15rem;color:var(--kicker-dark)">7 折 NT$ 9,030</strong>
           </div>
+        </div>
+
+        <!-- 額度加購勾選框 -->
+        <div class="addon-strip">
+          <label class="hw-bundle-label" for="addon-req-pack">
+            <input type="checkbox" id="addon-req-pack" onchange="renderPlans()">
+            <div>
+              <strong id="addon-title-label" style="color:var(--heading);font-size:0.95rem">加購：額外請求包（100 次密文運算請求 × 1 包）</strong>
+              <span id="addon-price-desc" style="display:block;font-size:0.84rem;color:var(--muted);margin-top:0.15rem">超出額度加購｜原價 NT$ 1,490 → 7 折預售 NT$ 1,043</span>
+            </div>
+          </label>
+          <span id="addon-badge-price" style="font-family:var(--font-mono);font-weight:700;color:var(--kicker-dark)">+ NT$ 1,043</span>
         </div>
 
         <div class="reserve-layout">
@@ -618,8 +648,8 @@
             </div>
 
             <div class="form-actions">
-              <button type="button" id="go-checkout-btn" class="btn primary">前往 7 折預售結算中心（../CTA） →</button>
-              <button type="button" id="mail-inquiry-btn" class="btn ghost-dark">僅先寄信諮詢（暫不結帳）</button>
+              <button type="button" id="go-checkout-btn" class="btn primary">前往 7 折預售結算中心 →</button>
+              <button type="button" id="mail-inquiry-btn" class="btn ghost-dark">僅先寄信諮詢</button>
             </div>
             <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
           </form>
@@ -631,12 +661,13 @@
               <dt>所屬事業體</dt><dd>AEGIS（aegis.expert）</dd>
               <dt>選定方案</dt><dd id="sum-plan-name">Professional（每月 500 次密文運算請求）</dd>
               <dt>計費週期</dt><dd id="sum-billing">年繳方案</dd>
-              <dt>硬體搭配</dt><dd id="sum-hw">USB 金鑰 × 1（NT$ 9,030）</dd>
+              <dt>硬體搭配</dt><dd id="sum-hw">USB 金鑰 × 1（7 折 NT$ 9,030）</dd>
+              <dt>加購項目</dt><dd id="sum-addon">無</dd>
               <dt>標準原價合計</dt><dd id="sum-orig-price" style="text-decoration:line-through;color:#B8C7C5">NT$ 61,900</dd>
-              <dt>7 折預售總計</dt><dd id="sum-sale-price" style="color:#D4AF37;font-size:1.25rem">NT$ 43,330</dd>
+              <dt>預售實付總計</dt><dd id="sum-sale-price" style="color:#D4AF37;font-size:1.25rem">NT$ 43,330</dd>
             </dl>
             <div class="note" style="background:rgba(255,255,255,0.08);border-color:rgba(212,175,55,0.4);color:#E4ECEA">
-              <strong style="color:#D4AF37">跳轉說明：</strong>點擊「前往 7 折預售結算中心」將導向上層 <code>CTA/index.html</code>，結算頁支援銀行電匯、第三方刷卡與 <code>aegis.expert</code> USDT 入金，並可加購額外請求包[cite: 1, 3]。
+              <strong style="color:#D4AF37">跳轉說明：</strong>點擊「前往 7 折預售結算中心」將帶入您的方案與硬體搭配參數，結算頁支援銀行電匯、第三方刷卡與 <code>aegis.expert</code> USDT 入金。
             </div>
             <p style="margin-top:1.2rem;margin-bottom:0">
               <a class="btn ghost" style="width:100%" href="../index.html#products">瀏覽其他 9 條生態系產品線</a>
@@ -660,25 +691,48 @@
 
   <footer class="site">
     <div class="wrap">
-      <p><strong>© 2026 AEGIS（aegis.expert）× 水月道場 / Wonderland Center</strong>｜神盾殼 HEShell 專屬預售頁</p>
-      <p class="muted" style="font-size:.84rem">本頁內容依《神盾殼 HEShell 產品說明與預售內容》及《產品定價與 7 折嘗鮮預售價總表》編製，L3 非現行技術不承諾[cite: 1, 7]。</p>
+      <p><strong>© 2026 AEGIS（aegis.expert）× 水月道場 / Wonderland Center（wonderland.ngo）</strong>｜神盾殼 HEShell 專屬預售頁</p>
+      <p class="muted" style="font-size:.84rem">本頁內容依《神盾殼 HEShell 產品說明與預售內容》及《全系列產品銷售價格與「7 折嘗鮮預售價」總覽表》編製，L3 非現行科技明確不承諾。</p>
     </div>
   </footer>
 
   <script>
     const PRODUCT_CODE = "04";
+    const PRICING_MD_PATH = "../CTA/serviceandpricing.md";
     const CHECKOUT_PATH = "../CTA/index.html";
     const CONTACT_EMAIL = "contact@wonderland.ngo";
-    const DISCOUNT_RATE = 0.7;
-    const HW_USB_ORIG = 12900;
+    const DEFAULT_DISCOUNT_RATE = 0.7;
     const MEDIA_DIR = "./marketing";
 
-    const PLANS_04 = [
-      { plan: "Starter", target: "個人或小團隊試用", quota: "每月 100 次密文運算請求", m: 1900, y: 19000 },
-      { plan: "Professional", target: "資安或研發團隊日常使用", quota: "每月 500 次密文運算請求", m: 4900, y: 49000, recommended: true },
-      { plan: "Team", target: "多人共用或較高頻率", quota: "每月 2,000 次密文運算請求", m: 12900, y: 129000 },
-      { plan: "Enterprise", target: "需客製或大量使用", quota: "客製（洽談）", custom: true }
-    ];
+    // 離線備援價目（當以 file:// 開啟或無法讀取外部 Markdown 時自動啟用）
+    const FALLBACK_PRICING_04 = {
+      discountRate: DEFAULT_DISCOUNT_RATE,
+      hardware: {
+        name: "USB 金鑰（Starter／Pro／Team 通用）",
+        spec: "隨貨交付（遺失不補發）",
+        note: "單把硬體金鑰（Team 可加購）",
+        price: 12900
+      },
+      plans: [
+        { plan: "Starter", target: "個人或小團隊試用", quota: "每月 100 次密文運算請求", m: 1900, y: 19000 },
+        { plan: "Professional", target: "資安或研發團隊日常使用", quota: "每月 500 次密文運算請求", m: 4900, y: 49000, recommended: true },
+        { plan: "Team", target: "多人共用或較高頻率", quota: "每月 2,000 次密文運算請求", m: 12900, y: 129000 },
+        { plan: "Enterprise", target: "需客製或大量使用", quota: "客製（洽談）", custom: true }
+      ],
+      addon: {
+        name: "額外請求包",
+        target: "超出額度加購",
+        quota: "100 次密文運算請求",
+        price: 1490
+      }
+    };
+
+    let activePricing = {
+      discountRate: FALLBACK_PRICING_04.discountRate,
+      hardware: { ...FALLBACK_PRICING_04.hardware },
+      plans: FALLBACK_PRICING_04.plans.map(p => ({ ...p })),
+      addon: { ...FALLBACK_PRICING_04.addon }
+    };
 
     const MARKETING_MEDIA = {
       video: {
@@ -701,15 +755,127 @@
     let selectedPlanIdx = 1;
     let billingCycle = "yearly";
 
+    function getDiscountFoldLabel() {
+      const fold = Math.round(activePricing.discountRate * 100);
+      return fold % 10 === 0 ? `${fold / 10} 折` : `${fold} 折`;
+    }
+
+    function calcSalePrice(orig) {
+      return typeof orig === "number" ? Math.round(orig * activePricing.discountRate) : null;
+    }
+
+    function parsePricingMarkdownFor04(mdText) {
+      let discountRate = DEFAULT_DISCOUNT_RATE;
+      const rateMatch = mdText.match(/discount_rate:\s*([0-9.]+)/i);
+      if (rateMatch) {
+        const parsed = parseFloat(rateMatch[1]);
+        if (!isNaN(parsed) && parsed > 0 && parsed <= 1) discountRate = parsed;
+      }
+
+      const secMatch = mdText.match(/##\s*\[04\][^\n]*\n([\s\S]*?)(?=\n---|\n##\s*\[)/);
+      if (!secMatch) return null;
+
+      const plans = [];
+      let hardware = null;
+      let addon = null;
+
+      secMatch[1].trim().split("\n").forEach(line => {
+        const t = line.trim();
+        if (!t.startsWith("|") || t.includes("---") || t.includes("計費類別")) return;
+        const cells = t.split("|").map(c => c.trim()).filter((_, i, a) => i > 0 && i < a.length - 1);
+        if (cells.length < 7) return;
+
+        const [cat, name, target, quota, mRaw, yRaw, oRaw] = cells;
+        const isCustom = mRaw.includes("洽談") || yRaw.includes("洽談") || oRaw.includes("洽談");
+        const toNum = v => {
+          if (!v || v === "-" || v === "洽談") return null;
+          const n = Number(v.replace(/,/g, ""));
+          return isNaN(n) ? null : n;
+        };
+
+        if (cat.startsWith("硬體")) {
+          hardware = {
+            name,
+            spec: target,
+            note: quota,
+            price: toNum(oRaw) || FALLBACK_PRICING_04.hardware.price
+          };
+        } else if (cat === "軟體訂閱") {
+          plans.push({
+            plan: name,
+            target,
+            quota,
+            m: toNum(mRaw),
+            y: toNum(yRaw),
+            custom: isCustom,
+            recommended: name === "Professional"
+          });
+        } else if (cat === "額度加購") {
+          addon = {
+            name,
+            target,
+            quota,
+            price: toNum(oRaw) || FALLBACK_PRICING_04.addon.price
+          };
+        }
+      });
+
+      if (plans.length === 0) return null;
+      return {
+        discountRate,
+        hardware: hardware || { ...FALLBACK_PRICING_04.hardware },
+        plans,
+        addon: addon || { ...FALLBACK_PRICING_04.addon }
+      };
+    }
+
+    async function loadPricingMarkdown() {
+      const statusEl = document.getElementById("pricing-sync-status");
+      try {
+        const resp = await fetch(PRICING_MD_PATH, { cache: "no-cache" });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const mdText = await resp.text();
+        const parsed = parsePricingMarkdownFor04(mdText);
+        if (parsed) {
+          activePricing = parsed;
+          if (statusEl) {
+            statusEl.textContent = `✓ 已同步價目表（${getDiscountFoldLabel()}嘗鮮預售）`;
+          }
+          renderPlans();
+          return;
+        }
+        throw new Error("Empty section");
+      } catch (_) {
+        activePricing = {
+          discountRate: FALLBACK_PRICING_04.discountRate,
+          hardware: { ...FALLBACK_PRICING_04.hardware },
+          plans: FALLBACK_PRICING_04.plans.map(p => ({ ...p })),
+          addon: { ...FALLBACK_PRICING_04.addon }
+        };
+        if (statusEl) {
+          statusEl.textContent = `✓ 已載入離線備援價目（${getDiscountFoldLabel()}嘗鮮預售）`;
+        }
+        renderPlans();
+      }
+    }
+
     function renderPlans() {
       const grid = document.getElementById("plans-grid");
-      const usbChecked = document.getElementById("hw-usb-check").checked;
+      const usbChecked = Boolean(document.getElementById("hw-usb-check")?.checked);
+      const addonChecked = Boolean(document.getElementById("addon-req-pack")?.checked);
       if (!grid) return;
 
+      const dLabel = getDiscountFoldLabel();
+      const savePct = Math.round((1 - activePricing.discountRate) * 100);
+      const inlineDisc = document.getElementById("discount-text-inline");
+      if (inlineDisc) inlineDisc.textContent = `${dLabel}優惠（現省 ${savePct}%）`;
+
+      document.getElementById("bill-yearly").textContent = `年繳方案（享 ${dLabel}）`;
+      document.getElementById("bill-monthly").textContent = `月繳方案（享 ${dLabel}）`;
       document.getElementById("bill-yearly").classList.toggle("active", billingCycle === "yearly");
       document.getElementById("bill-monthly").classList.toggle("active", billingCycle === "monthly");
 
-      grid.innerHTML = PLANS_04.map((p, idx) => {
+      grid.innerHTML = activePricing.plans.map((p, idx) => {
         const isSel = idx === selectedPlanIdx;
         if (p.custom) {
           return `
@@ -722,11 +888,11 @@
           `;
         }
         const orig = billingCycle === "yearly" ? p.y : p.m;
-        const sale = Math.round(orig * DISCOUNT_RATE);
+        const sale = calcSalePrice(orig);
         const unit = billingCycle === "yearly" ? "/ 年" : "/ 月";
         return `
           <button type="button" class="plan-card ${isSel ? "selected" : ""}" onclick="selectPlan(${idx})">
-            <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">${p.recommended ? "★ 熱門推薦" : "7 折早鳥"}</span></div>
+            <div class="plan-top"><span class="plan-title">${p.plan}</span><span class="plan-badge">${p.recommended ? "★ 熱門推薦" : `${dLabel}早鳥`}</span></div>
             <div class="plan-quota">${p.quota}</div>
             <div class="plan-target">${p.target}</div>
             <div class="plan-pricing">
@@ -737,19 +903,32 @@
         `;
       }).join("");
 
-      const cur = PLANS_04[selectedPlanIdx];
+      const hwOrig = activePricing.hardware.price;
+      const hwSale = calcSalePrice(hwOrig);
+      document.getElementById("hw-title-label").textContent = `搭配硬體一次購：${activePricing.hardware.name}`;
+      document.getElementById("hw-desc-label").textContent = `${activePricing.hardware.spec}｜${activePricing.hardware.note}（不做雲端備份；Team 方案至結算頁可調整多把數量）`;
+      document.getElementById("hw-orig-price-label").textContent = `原價 NT$ ${hwOrig.toLocaleString("zh-TW")}`;
+      document.getElementById("hw-sale-price-label").textContent = `${dLabel} NT$ ${hwSale.toLocaleString("zh-TW")}`;
+
+      const addonOrig = activePricing.addon.price;
+      const addonSale = calcSalePrice(addonOrig);
+      document.getElementById("addon-title-label").textContent = `加購：${activePricing.addon.name}（${activePricing.addon.quota} × 1 包）`;
+      document.getElementById("addon-price-desc").textContent = `${activePricing.addon.target}｜原價 NT$ ${addonOrig.toLocaleString("zh-TW")} → ${dLabel}預售 NT$ ${addonSale.toLocaleString("zh-TW")}`;
+      document.getElementById("addon-badge-price").textContent = `+ NT$ ${addonSale.toLocaleString("zh-TW")}`;
+
+      const cur = activePricing.plans[selectedPlanIdx] || activePricing.plans[0];
       document.getElementById("sum-plan-name").textContent = `${cur.plan}（${cur.quota}）`;
       document.getElementById("sum-billing").textContent = cur.custom ? "客製專案（洽談）" : (billingCycle === "yearly" ? "年繳方案" : "月繳方案");
-      document.getElementById("sum-hw").textContent = usbChecked ? "USB 金鑰 × 1（7 折 NT$ 9,030）" : "未加購（僅軟體訂閱）";
+      document.getElementById("sum-hw").textContent = usbChecked ? `USB 金鑰 × 1（${dLabel} NT$ ${hwSale.toLocaleString("zh-TW")}）` : "未加購（僅軟體訂閱）";
+      document.getElementById("sum-addon").textContent = addonChecked ? `${activePricing.addon.name}（${activePricing.addon.quota}）` : "無";
 
       if (cur.custom) {
         document.getElementById("sum-orig-price").textContent = "專案報價";
         document.getElementById("sum-sale-price").textContent = "專人洽談";
       } else {
         const subOrig = billingCycle === "yearly" ? cur.y : cur.m;
-        const hwOrig = usbChecked ? HW_USB_ORIG : 0;
-        const totalOrig = subOrig + hwOrig;
-        const totalSale = Math.round(subOrig * DISCOUNT_RATE) + Math.round(hwOrig * DISCOUNT_RATE);
+        const totalOrig = subOrig + (usbChecked ? hwOrig : 0) + (addonChecked ? addonOrig : 0);
+        const totalSale = calcSalePrice(subOrig) + (usbChecked ? hwSale : 0) + (addonChecked ? addonSale : 0);
         document.getElementById("sum-orig-price").textContent = `NT$ ${totalOrig.toLocaleString("zh-TW")}`;
         document.getElementById("sum-sale-price").textContent = `NT$ ${totalSale.toLocaleString("zh-TW")}`;
       }
@@ -764,13 +943,14 @@
       const feedback = document.getElementById("form-feedback");
 
       const collectFields = () => {
-        const cur = PLANS_04[selectedPlanIdx];
-        const usbChecked = document.getElementById("hw-usb-check").checked;
+        const cur = activePricing.plans[selectedPlanIdx] || activePricing.plans[0];
+        const usbChecked = Boolean(document.getElementById("hw-usb-check")?.checked);
+        const addonChecked = Boolean(document.getElementById("addon-req-pack")?.checked);
         const name = document.getElementById("user-name").value.trim();
         const email = document.getElementById("user-email").value.trim();
         const useCase = document.getElementById("use-case").value;
         const notes = document.getElementById("user-notes").value.trim();
-        return { cur, usbChecked, name, email, useCase, notes };
+        return { cur, usbChecked, addonChecked, name, email, useCase, notes };
       };
 
       goBtn.addEventListener("click", () => {
@@ -780,9 +960,14 @@
         params.set("plan", data.cur.plan);
         params.set("billing", billingCycle);
         params.set("bundle", data.usbChecked ? "1" : "0");
+        if (data.addonChecked) params.set("addon", "1");
         if (data.name) params.set("name", data.name);
         if (data.email) params.set("email", data.email);
-        const combinedNotes = [data.useCase, data.notes].filter(Boolean).join("｜");
+        const combinedNotes = [
+          data.useCase,
+          data.addonChecked ? `含${activePricing.addon.name}` : "",
+          data.notes
+        ].filter(Boolean).join("｜");
         if (combinedNotes) params.set("notes", combinedNotes);
 
         window.location.href = `${CHECKOUT_PATH}?${params.toString()}`;
@@ -803,6 +988,7 @@
           `・聯絡信箱：${data.email}`,
           `・感興趣方案：${data.cur.plan}（${billingCycle === "yearly" ? "年繳" : "月繳"}）`,
           `・搭配硬體：${data.usbChecked ? "USB 硬體金鑰 × 1" : "不加購 USB 金鑰"}`,
+          `・額度加購：${data.addonChecked ? activePricing.addon.name : "無"}`,
           `・運算場景：${data.useCase}`,
           `・需求簡述：${data.notes || "（尚未填寫）"}`
         ].join("\n");
@@ -823,7 +1009,7 @@
           <div class="video-stage">
             <video id="promo-video-player" autoplay muted loop playsinline controls preload="auto"${posterSrc ? ` poster="${posterSrc}"` : ""}>
               <source src="${videoSrc}" type="video/mp4">
-              您的瀏覽器不支援 HTML5 影片播放。
+              您的瀏覽器不支援影片播放。
             </video>
             <div id="video-error-fallback" class="media-fallback" style="display:none">宣傳影片載入中或暫時無法播放，請重新整理頁面後再試。</div>
           </div>
@@ -914,6 +1100,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       renderMarketingAssets();
       renderPlans();
+      loadPricingMarkdown();
       initCheckoutBridge();
       initBigText();
     });
